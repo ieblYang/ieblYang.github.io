@@ -1,0 +1,81 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>波玻拨啵菠萝 | 波玻拨啵菠萝</title>
+        <link>https://ieblyang.github.io/</link>
+        <description>波玻拨啵菠萝 | 波玻拨啵菠萝</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 11 Mar 2020 11:04:49 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.github.io/" rel="self" type="application/rss+xml" /><item>
+                <title>Posts</title>
+                <link>https://ieblyang.github.io/posts/</link>
+                <pubDate>Mon, 23 Mar 2020 11:22:40 &#43;0800</pubDate><guid>https://ieblyang.github.io/posts/</guid>
+                <description></description>
+            </item><item>
+                <title>关于</title>
+                <link>https://ieblyang.github.io/about/</link>
+                <pubDate>Wed, 11 Mar 2020 11:04:49 &#43;0800</pubDate><guid>https://ieblyang.github.io/about/</guid>
+                <description>&lt;h4 id=&#34;个人简介&#34;&gt;个人简介&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;昵称：菠萝&lt;/li&gt;
+&lt;li&gt;学校：郑州大学&lt;/li&gt;
+&lt;li&gt;专业：软件工程&lt;/li&gt;
+&lt;li&gt;编程语言：Java、Python、C语言、Scratch&lt;/li&gt;
+&lt;li&gt;专业方向：Java Web、深度学习&lt;/li&gt;
+&lt;li&gt;特长：视频制作、摄影、After Effects、Premiere、Photoshop &amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
+* 主要项目经验:
+	* [郑州大学青年大学习登录检测系统](http://zzdxqndxx.zzu.edu.cn/user/to_login)
+	* 郑州大学我最喜爱的老师投票小程序
+	* FaceAI人脸识别智能小程序
+	* 酒店客房管理系统
+	* 网上图书商城
+	* 初高中教务系统
+	* ...
+
+* 主要视频作品：
+	* 郑州大学2017级新生开学典礼正片及开场
+	* 郑州大学2018级新生开学典礼正片及开场
+	* [郑州大学2019级新生开学典礼正片及开场](https://www.bilibili.com/video/BV17E411R7fp)
+	* 郑州大学2017年毕业典礼正片及开场
+	* 郑州大学2018年毕业典礼正片及开场
+	* [郑州大学2019年毕业典礼正片及开场](https://www.bilibili.com/video/BV1EE411R7jx)
+	* 郑州大学第五届国际文化节开场视频
+	* 郑州大学我最喜爱的老师颁奖典礼系列视频
+	* [郑州大学工学60年（原工学院55年）暨创新发展论坛](https://mp.weixin.qq.com/s/HznF_AKqcI0GKCg5tYrwfg)
+	* [微电影：“浮”屏之外](https://v.qq.com/x/page/d03502e1ctb.html)
+	* “互联网+” 项目一分钟介绍系列视频
+	* ...
+--&gt;
+&lt;h4 id=&#34;博客详情&#34;&gt;博客详情&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;技术支持：&lt;a href=&#34;https://github.com/dillonzq/LoveIt/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;&lt;img
+        class=&#34;lazyload&#34;
+        src=&#34;https://ieblyang.github.io/svg/loading.small.min.svg&#34;
+        data-sizes=&#34;auto&#34;
+        data-srcset=&#34;https://img.shields.io/github/v/release/dillonzq/LoveIt?style=flat-square,  1.5x,  2x&#34;
+        data-src=&#34;&#34;
+        alt=&#34;GitHub release (latest by date)&#34;
+        title=&#34;GitHub release (latest by date)&#34; /&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;技术支持：&lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;&lt;img
+        class=&#34;lazyload&#34;
+        src=&#34;https://ieblyang.github.io/svg/loading.small.min.svg&#34;
+        data-sizes=&#34;auto&#34;
+        data-srcset=&#34;https://img.shields.io/badge/Hugo-%5E0.62.0-ff4088?style=flat-square&amp;amp;logo=hugo,  1.5x,  2x&#34;
+        data-src=&#34;&#34;
+        alt=&#34;Hugo&#34;
+        title=&#34;Hugo&#34; /&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;使用主题：&lt;a href=&#34;https://github.com/dillonzq/LoveIt&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;LoveIt :(far fa-heart):&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;联系方式&#34;&gt;联系方式&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;QQ：1030007324&lt;/li&gt;
+&lt;li&gt;Mail：bolon.young@gmail.com&lt;/li&gt;
+&lt;li&gt;TEL:185****0827&lt;/li&gt;
+&lt;li&gt;Bilibili：&lt;a href=&#34;https://space.bilibili.com/92547562?from=search&amp;amp;seid=11925650061458383377&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;波玻拨啵菠萝&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+            </item></channel>
+</rss>

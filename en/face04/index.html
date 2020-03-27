@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>TensorFlow基础串讲 | ieblYang</title>
+        <meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 TensorFlow基础串讲"><meta property="og:title" content="TensorFlow基础串讲" />
+<meta property="og:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 TensorFlow基础串讲" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ieblyang.github.io/en/face04/" />
+<meta property="article:published_time" content="2020-03-12T15:12:40+08:00" />
+<meta property="article:modified_time" content="2020-03-12T15:12:40+08:00" /><meta property="og:site_name" content="ieblYang" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TensorFlow基础串讲"/>
+<meta name="twitter:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 TensorFlow基础串讲"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://ieblyang.github.io/en/face04/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://ieblyang.github.io/en/face03/" /><link rel="next" href="https://ieblyang.github.io/en/face05/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.9679f10076c3db0a03c8c8a5128dba53.css" integrity="md5-lnnxAHbD2woDyMilEo26Uw=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><link rel="stylesheet" href="/css/style.min.ae21e349d7dcddfd942a94491d8158d5.css" integrity="md5-riHjSdfc3f2UKpRJHYFY1Q=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "TensorFlow基础串讲",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ieblyang.github.io\/en\/face04\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/ieblyang.github.io\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "人脸识别, TensorFlow","wordcount":  944 ,
+        "url": "https:\/\/ieblyang.github.io\/en\/face04\/","datePublished": "2020-03-12","dateModified": "2020-03-12","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                "@type": "Organization",
+                "name": "ieblYang",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/ieblyang.github.io\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "ieblYang"
+            },"description": "基于TensorFlow的人脸识别智能小程序的设计与实现 TensorFlow基础串讲"
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/en/">ieblYang</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/en/posts/" rel="noopener noreffer">Posts</a><a class="menu-item" href="/en/tags/" rel="noopener noreffer">Tags</a><a class="menu-item" href="/en/categories/" rel="noopener noreffer">Categories</a><a class="menu-item" href="/en/categories/documentation/" rel="noopener noreffer">Documentation</a><a class="menu-item" href="/en/about/" rel="noopener noreffer">About</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/face04/" selected>English</option><option value="/face04/">简体中文</option></select>
+                </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/en/">ieblYang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/en/posts/" title="" rel="noopener noreffer">Posts</a><a class="menu-item" href="/en/tags/" title="" rel="noopener noreffer">Tags</a><a class="menu-item" href="/en/categories/" title="" rel="noopener noreffer">Categories</a><a class="menu-item" href="/en/categories/documentation/" title="" rel="noopener noreffer">Documentation</a><a class="menu-item" href="/en/about/" title="" rel="noopener noreffer">About</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/en/face04/" selected>English</option><option value="/face04/">简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">TensorFlow基础串讲</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://ieblyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ieblYang</a>
+</span>&nbsp;
+                    <span class="post-category">included in<a href="/en/categories/face-recognition">
+                                <i class="far fa-folder fa-fw"></i>Face recognition
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-12>2020-03-12</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 944 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>5 min&nbsp;<span id="/en/face04/" class="leancloud_visitors" data-flag-title="TensorFlow基础串讲">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/featured-image.png, /images/face/featured-image.png 1.5x, /images/face/featured-image.png 2x"
+        data-src="/images/face/featured-image.png"
+        alt="基于TensorFlow的人脸识别智能小程序的设计与实现 TensorFlow基础串讲"
+        title="基于TensorFlow的人脸识别智能小程序的设计与实现 TensorFlow基础串讲" /></div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">Contents</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>Contents</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-什么是tensorflow">1 什么是TensorFlow？</a></li>
+    <li><a href="#2-tensorflow的架构">2 TensorFlow的架构</a></li>
+    <li><a href="#3-tensorflow的优点">3 TensorFlow的优点</a></li>
+    <li><a href="#4-tensorflow中的基本概念">4 TensorFlow中的基本概念</a>
+      <ul>
+        <li><a href="#41-graph">4.1 Graph</a></li>
+        <li><a href="#42-session">4.2 Session</a></li>
+        <li><a href="#43-tensor">4.3 Tensor</a></li>
+        <li><a href="#44-operation">4.4 Operation</a></li>
+        <li><a href="#45-feed">4.5 Feed</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-tensorflow在深度学习中使用的api">5 TensorFlow在深度学习中使用的API</a></li>
+    <li><a href="#6-tensorflow中的数据操作">6 TensorFlow中的数据操作</a>
+      <ul>
+        <li><a href="#61-tfrecord">6.1 TFRecord</a></li>
+        <li><a href="#62-数据写入相关的api方法">6.2 数据写入相关的API方法</a></li>
+        <li><a href="#63-数据读取相关的api方法">6.3 数据读取相关的API方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-tensorflow在深度学习中高级封装">7 TensorFlow在深度学习中高级封装</a>
+      <ul>
+        <li><a href="#71-tensorflow在深度学习中使用的api">7.1 TensorFlow在深度学习中使用的API</a></li>
+        <li><a href="#72-slimarg_scope">7.2 slim.arg_scope</a></li>
+        <li><a href="#73-batchnorm层使用技巧">7.3 BatchNorm层使用技巧</a></li>
+        <li><a href="#74-slim-net">7.4 slim net</a></li>
+        <li><a href="#75-slim-loss">7.5 slim loss</a></li>
+        <li><a href="#76-slim-learn">7.6 slim learn</a></li>
+        <li><a href="#77-slim-metrics">7.7 slim metrics</a></li>
+        <li><a href="#78-slim-ecaluation">7.8 slim ecaluation</a></li>
+        <li><a href="#79-slim-data">7.9 slim data</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-tensorflow常见的数据增强方法">8 TensorFlow常见的数据增强方法</a>
+      <ul>
+        <li><a href="#81-tfimage库进行数据增强">8.1 tf.image库进行数据增强</a></li>
+        <li><a href="#82-其他数据增强的方法">8.2 其他数据增强的方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#9-tensorboard使用介绍">9 Tensorboard使用介绍</a>
+      <ul>
+        <li><a href="#91-tensorboard可以进行网络可视化训练中间结果可视化">9.1 Tensorboard可以进行网络可视化/训练中间结果可视化</a></li>
+        <li><a href="#92-tfsummary">9.2 tf.summary</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>基于TensorFlow的人脸识别智能小程序的设计与实现 TensorFlow基础串讲</p>
+<h2 id="1-什么是tensorflow">1 什么是TensorFlow？</h2>
+<ul>
+<li>Google开源的基于数据流图的科学计算库，适合用于机器学习、深度学习等人工智能领；</li>
+<li><a href="https://github.com/tensorflow">https://github.com/tensorflow</a></li>
+<li><a href="https://github.com/tensorflow/models">https://github.com/tensorflow/models</a></li>
+<li>Tensor(张量、数据)+Flow（数据流、数据流向）=TensorFlow（整个数据按一定的方向流动，在流动的同时需要进行一系列的运算）</li>
+</ul>
+<h2 id="2-tensorflow的架构">2 TensorFlow的架构</h2>
+<ul>
+<li>前端：编程模型、构造计算图、Python、C++、Java（计算图的设计）</li>
+<li>后端：运行计算图、C++（计算图的搭建）</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face04/1.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<h2 id="3-tensorflow的优点">3 TensorFlow的优点</h2>
+<ul>
+<li>高度的灵活性（支持非常原子的操作，比如 <code>+</code>、<code>-</code>、<code>*</code>、<code>/</code> 、与或非等基本运算，提供了非常丰富的API接口）</li>
+<li>真正的可移植性（底层采用C实现）</li>
+<li>将科研与产品联系在一起（采用TensorFlow进行的科研模型可以直接用在产品上）</li>
+<li>自动求微分</li>
+<li>多语言支持（Python、C++、Java）</li>
+<li>性能最优化（由Google维护）</li>
+<li>社区内容丰富（Github收藏量远远高于其他深度学习模块）</li>
+</ul>
+<h2 id="4-tensorflow中的基本概念">4 TensorFlow中的基本概念</h2>
+<h3 id="41-graph">4.1 Graph</h3>
+<p>图描述了计算的过程，可以通过tensorboard图形化流程结构</p>
+<ul>
+<li>声明（单个/多个）</li>
+<li>保存为pb文件（包括网络结构和网络参数）</li>
+<li>从pb中恢复Graph</li>
+<li>TensorFlow可视化</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face04/2.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#声明</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_default_graph</span><span class="p">()</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">graph</span>
+
+<span class="c1">#如何声明和交叉使用多个Graph？</span>
+<span class="n">g1</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">g1</span><span class="o">.</span><span class="n">as_default</span><span class="p">():</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s2">&#34;x1&#34;</span><span class="p">)</span>
+    
+<span class="n">g2</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">g2</span><span class="o">.</span><span class="n">as_default</span><span class="p">():</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s2">&#34;x2&#34;</span><span class="p">)</span>
+    
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">(</span><span class="n">graph</span><span class="o">=</span><span class="n">g2</span><span class="p">)</span> <span class="k">as</span> <span class="n">sess1</span><span class="p">:</span>
+    <span class="n">x1_list</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">import_graph_def</span><span class="p">(</span><span class="n">g1</span><span class="o">.</span><span class="n">as_graph_def</span><span class="p">,</span>
+            <span class="n">return_elements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;x1:0&#34;</span><span class="p">],</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">sess_1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">x1_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">x2</span><span class="p">)))</span>
+    
+<span class="c1">#保存pb</span>
+<span class="n">g1</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">write_graph</span><span class="p">(</span><span class="n">g1</span><span class="o">.</span><span class="n">as_graph_def</span><span class="p">(),</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;graph.pb&#39;</span><span class="p">,</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="c1">#从pb中恢复Graph</span>
+<span class="c1">#load graph</span>
+<span class="k">with</span> <span class="n">gfile</span><span class="o">.</span><span class="n">FastGFile</span><span class="p">(</span><span class="s2">&#34;graph.pb&#34;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">graph_def</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">GraphDef</span><span class="p">()</span>
+    <span class="n">graph_def</span><span class="o">.</span><span class="n">ParseFromString</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">import_graph_def</span><span class="p">(</span><span class="n">graph_def</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    
+<span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">c1_tensor</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">get_tensor_by_name</span><span class="p">(</span><span class="s2">&#34;c1:0&#34;</span><span class="p">)</span> <span class="c1">#获取计算图的节点</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">c1_tensor</span><span class="p">)</span> <span class="c1">#计算计算图相应节点的值</span>
+
+<span class="c1">#使用tensorboard可视化计算图结构</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;input a&#39;</span><span class="p">)</span> <span class="c1">#定义常量</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;input b&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;maltiply_c&#39;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;add_d&#39;</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;add_e&#39;</span><span class="p">)</span>
+<span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">FileWriter</span><span class="p">(</span><span class="s1">&#39;graph&#39;</span><span class="p">,</span><span class="n">sess</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="42-session">4.2 Session</h3>
+<ul>
+<li>图必须在称之为“会话”的上下文中执行。</li>
+<li>会话将图的op（操作）分发到诸如CPU或GPU之类的设备上执行。</li>
+<li>前段和后端的沟通，起到桥梁的作用</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face04/3.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#创建和关闭会话</span>
+<span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="c1">#常用</span>
+<span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">InteractiveSession</span><span class="p">()</span> <span class="c1">#交互式，对交互性要求比较高的脚本中，希望实时看到脚本运行的结果</span>
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">Sess</span><span class="p">:</span> <span class="c1">#定义Session的作用域，和sess = tf.Session() 等价</span>
+<span class="o">...</span>
+<span class="n">sess</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1">#注入机制,完成计算图的运算，桥梁作用</span>
+<span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">add</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">add_val</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">add</span><span class="p">,</span><span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">a</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="p">:</span><span class="mi">2</span><span class="p">})</span> 
+
+<span class="c1">#制定资源设备</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> 
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> 
+<span class="n">add</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&#34;/cpu:0&#34;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">ass</span><span class="p">,</span><span class="n">feed_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="p">:</span><span class="mi">1</span><span class="p">}))</span>
+        
+<span class="c1">#资源分配-控制GPU资源使用率</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">ConfigProto</span><span class="p">()</span>
+<span class="n">config</span><span class="o">.</span><span class="n">gpu_options</span><span class="o">.</span><span class="n">allow_growth</span> <span class="o">=</span> <span class="bp">True</span>  <span class="c1">#按需分配</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="43-tensor">4.3 Tensor</h3>
+<ul>
+<li>在TensorFlow中，所有在结点之间传递的数据都为Tensor对象</li>
+<li>N维数组，图像：<code>（batch*height*width*channel）</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#Tensor的定义</span>
+<span class="c1">#tf.constant() 常量</span>
+<span class="n">cons</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;testconst&#39;</span><span class="p">,</span><span class="n">verify_shape</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="c1">#                  取值         类型             形状        名称              形状是否可以改变</span>
+
+<span class="c1">#tf.Variable() 变量</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">]),</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;W&#39;</span><span class="p">)</span>
+
+<span class="c1">#tf.placeholder() 占位符</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">144</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span><span class="bp">None</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+
+<span class="c1">#tf.SparseTensor() 稀疏的张量        </span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="44-operation">4.4 Operation</h3>
+<ul>
+<li>TensorFlow Graph 中的计算节点，输入输出均为Tensor</li>
+<li>调用<code>Session.run(tensor)</code>或者<code>tensor.eval()</code>方可获取该Tensor的值</li>
+</ul>
+<h3 id="45-feed">4.5 Feed</h3>
+<p>通过feed为计算图注入值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">a</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="n">b</span><span class="p">:</span><span class="mi">4</span><span class="p">})</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="5-tensorflow在深度学习中使用的api">5 TensorFlow在深度学习中使用的API</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">tf.split(split_dam,num_split,value,name=&#39;split&#39;)
+tf.concat(concat_dim,values,name=&#39;concat&#39;)
+tf.cast()
+tf.reshape()
+tf.equal()
+tf.matmul(a,b)
+tf.argmax()
+tf.squeeze()
+#tf.nn
+tf.nn.conv2d
+tf.nn.max_pool
+tf.nn.avg_pool
+tf.nn.relu
+tf.nn.dropout
+tf.nn.l2_normalize
+tf.nn.batch_normalization
+tf.nn.l2_loss
+tf.nn.softmax_cross_enyropy_with_logits
+#tf.train
+tf.train.Saver.save
+tf.train.Saver.restore
+tf.train.GradientDescentOptimizer(0.01).minimize(loss)
+tf.train.exponential_decay(1e-2,global_step,decay_steps=sample_size/batch,decay_rate=0.98,staircase=True)
+tf.train.string_input_producer(filenames,num_epochs=num_epochs,shuffle=True)
+tf.train.shuffle_batch([example,lable],batch_size=batch_size,capacity=capacity,min_after_dequeue=min_after_dequeue)
+tf.train.Coordinator
+tf.train.start_queue_runners(sess=sess,coord=coord
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="6-tensorflow中的数据操作">6 TensorFlow中的数据操作</h2>
+<p>TensorFlow提供了<code>TFRecord</code>的格式来统一存储数据</p>
+<h3 id="61-tfrecord">6.1 TFRecord</h3>
+<p>TFRecord将图像数据和标签放在一起的二进制文件（protocol buffer），能更好的利用内存，实现快速的复制，移动， 读取，存储</p>
+<ul>
+<li>数据读取：<code>tf.train.string_input_producer</code></li>
+<li>数据解析：<code>tf.TFRecordReader、tf.parse_single_example</code></li>
+<li>数据写入：<code>tf.python_io.TFRecordWriter</code></li>
+</ul>
+<h3 id="62-数据写入相关的api方法">6.2 数据写入相关的API方法</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">writer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">python_io</span><span class="o">.</span><span class="n">TFRecordWriter</span><span class="p">()</span>
+<span class="n">example</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Example</span><span class="p">()</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">SerializeToString</span><span class="p">())</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="63-数据读取相关的api方法">6.3 数据读取相关的API方法</h3>
+<ul>
+<li>直接从文件中读取图片</li>
+<li>从TF-Record中解析打包的图片数据</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">string_input_producer</span><span class="err">、</span><span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">slice_input_producer</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">data库</span><span class="err">（动态图机制）</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="7-tensorflow在深度学习中高级封装">7 TensorFlow在深度学习中高级封装</h2>
+<h3 id="71-tensorflow在深度学习中使用的api">7.1 TensorFlow在深度学习中使用的API</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#slim</span>
+<span class="n">slim</span> <span class="n">layers</span>
+<span class="n">slim</span><span class="o">.</span><span class="n">arg_scope</span>
+<span class="n">slim</span><span class="o">.</span><span class="n">data</span>
+<span class="n">slim</span> <span class="n">evaluation</span>
+<span class="n">slim</span> <span class="n">learning</span>
+<span class="n">slim</span> <span class="n">losses</span>
+<span class="n">slim</span> <span class="n">nets</span>
+<span class="n">slim</span> <span class="n">variables</span>
+<span class="n">slim</span> <span class="n">metrics</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="72-slimarg_scope">7.2 slim.arg_scope</h3>
+<p><code>arg_scope(list_ops_or_scope,**kwargs)</code></p>
+<ul>
+<li><code>list_ops_or_scope</code>:操作列表或作用域列表</li>
+<li><code>kwargs</code>: 参数，以keyword=value方式显示</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">net</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span><span class="mi">4</span><span class="p">,</span>
+                    <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span>
+                    <span class="n">weights_initializer</span><span class="o">=</span>
+                    <span class="n">tf</span><span class="o">.</span><span class="n">truncated_normal_initializer</span> <span class="p">(</span><span class="n">stddey</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span><span class="err">，</span>
+                    <span class="n">weights_regularizer</span><span class="o">=</span>
+                    <span class="n">slim</span><span class="o">.</span><span class="mi">12</span><span class="n">_regularizer</span><span class="p">(</span><span class="mf">0.0005</span><span class="p">),</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;convl&#39;</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">slim</span><span class="o">.</span><span class="n">arg_scope</span> <span class="p">([</span><span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span><span class="p">],</span><span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span>
+                    <span class="n">weights_initializer</span><span class="o">=</span>
+                    <span class="n">tf</span><span class="o">.</span><span class="n">truncated</span> <span class="n">normal</span> <span class="n">initializer</span><span class="p">(</span><span class="n">stddev</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+                    <span class="n">weights_regularizer</span><span class="o">=</span>
+                    <span class="n">slim</span><span class="o">.</span><span class="mi">12</span><span class="n">_regularizer</span><span class="p">(</span><span class="mf">0.</span> <span class="mo">0005</span><span class="p">)):</span>
+    <span class="n">net</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span> <span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="mi">64</span><span class="p">,[</span><span class="mi">11</span><span class="err">，</span> <span class="mi">11</span><span class="p">],</span> <span class="n">scope</span><span class="o">=</span><span class="s1">&#39;conv1&#39;</span><span class="p">)</span>
+    <span class="n">net</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span> <span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">128</span><span class="p">,[</span><span class="mi">11</span><span class="err">，</span> <span class="mi">11</span><span class="p">],</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;VALID&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span> <span class="s1">&#39;conv2&#39;</span><span class="p">)</span>
+    <span class="n">net</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">net</span><span class="err">，</span> <span class="mi">256</span><span class="p">,[</span><span class="mi">11</span><span class="err">，</span> <span class="mi">11</span><span class="p">],</span> <span class="n">scope</span><span class="o">=</span> <span class="s1">&#39;conv3&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="73-batchnorm层使用技巧">7.3 BatchNorm层使用技巧</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#slim.batch_norm()函数</span>
+    <span class="n">normalizer_fn</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">batch_norm</span>
+    <span class="n">normalizer_params</span> <span class="o">=</span> <span class="n">batch_norm_params</span>
+<span class="c1">#batch_norm_params</span>
+    <span class="s1">&#39;is_training&#39;</span><span class="p">:</span><span class="n">is_training</span><span class="p">,</span>
+    <span class="s1">&#39;zero_debias_moving_mean&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span>
+    <span class="s1">&#39;decay&#39;</span><span class="p">:</span><span class="n">batch_norm_decay</span><span class="p">,</span>
+    <span class="s1">&#39;epsilon&#39;</span><span class="p">:</span><span class="n">batch_norm_epsilon</span><span class="p">,</span>
+    <span class="s1">&#39;scale&#39;</span><span class="p">:</span><span class="n">batch_nrom_scale</span><span class="p">,</span>
+    <span class="s1">&#39;updates_collections&#39;</span><span class="p">:</span><span class="n">tf</span><span class="o">.</span><span class="n">GraphKeys</span><span class="o">.</span><span class="n">UPDATE_OPS</span><span class="p">,</span>
+    
+<span class="k">with</span> <span class="n">slim</span><span class="o">.</span><span class="n">arg_</span> <span class="n">scope</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span><span class="p">],</span>
+    <span class="n">weights_regularizer</span><span class="o">=</span><span class="n">slim</span><span class="o">.</span><span class="mi">12</span><span class="n">_regularizer</span><span class="p">(</span><span class="n">weight_decay</span><span class="p">),</span>
+    <span class="n">weights_initializer</span><span class="o">=</span><span class="n">slim</span><span class="o">.</span><span class="n">variance_scaling_initializer</span><span class="p">(),</span>
+    <span class="n">activation_fn</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">relu</span><span class="p">,</span>
+    <span class="n">normalizer_fn</span><span class="o">=</span><span class="n">slim</span><span class="o">.</span><span class="n">batch_</span> <span class="n">norm</span><span class="p">,</span>
+    <span class="n">normalizer_params</span><span class="o">=</span><span class="n">batch_norm_params</span><span class="p">)</span> <span class="p">:</span>
+        <span class="k">with</span> <span class="n">slim</span><span class="o">.</span><span class="n">arg_scope</span><span class="p">([</span><span class="n">slim</span><span class="o">.</span><span class="n">batch_norm</span><span class="p">],</span> <span class="o">**</span><span class="n">batch_norm_params</span> <span class="p">):</span>
+            <span class="k">with</span> <span class="n">slim</span><span class="o">.</span><span class="n">arg_scope</span><span class="p">([</span><span class="n">slim</span><span class="o">.</span><span class="n">max_pool2d</span><span class="p">],</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arg_SC</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">arg_SC</span>
+                
+<span class="n">update_ops</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_collection</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">GraphKeys</span><span class="o">.</span><span class="n">UPDATE</span> <span class="n">OPS</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">control_dependencies</span><span class="p">(</span><span class="n">update_ops</span><span class="p">):</span>
+        <span class="n">train</span> <span class="n">step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span>
+            <span class="n">GradientDescentoptimizer</span> <span class="p">(</span><span class="mf">0.01</span><span class="p">)</span><span class="o">.</span>
+            <span class="n">minimize</span> <span class="p">(</span><span class="n">total_loss</span><span class="p">)</span>
+
+<span class="n">batchnorm</span> <span class="n">updates</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_collection</span> <span class="p">(</span><span class="n">UPDATE_OPS_COLLECTION</span><span class="p">)</span>
+<span class="n">batchnorm</span> <span class="n">updates_op</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">group</span> <span class="p">(</span><span class="o">*</span><span class="n">batchnorm_updates</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="74-slim-net">7.4 slim net</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.nets</span> <span class="kn">import</span> <span class="n">alexnet</span>
+<span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.nets</span> <span class="kn">import</span> <span class="n">inception</span>
+<span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.nets</span> <span class="kn">import</span> <span class="n">oxerfeat</span>
+<span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.nets</span> <span class="kn">import</span> <span class="n">resnet_utils</span>
+<span class="kn">from</span> <span class="nn">tensorf1ow.contrib.slim.python.slim.nets</span> <span class="kn">import</span> <span class="n">resnet_v1</span>
+<span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.nets</span> <span class="kn">import</span> <span class="n">resnet_v2</span>
+<span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.nets</span> <span class="kn">import</span> <span class="n">ygg</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="75-slim-loss">7.5 slim loss</h3>
+<ul>
+<li>
+<p>经验风险小</p>
+<ul>
+<li>分类损失</li>
+<li>平方损失</li>
+<li>等等</li>
+</ul>
+</li>
+<li>
+<p>正则化LOSS</p>
+<ul>
+<li>变量的L2正则化约束</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">weights_</span> <span class="n">regularizer</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="mi">12</span> <span class="n">regularizer</span> <span class="p">(</span><span class="mf">0.0005</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">loss_val</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="mi">12</span><span class="n">_loss</span> <span class="p">(</span><span class="n">var</span><span class="p">)</span>
+<span class="n">regularization_loss</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">add_n</span><span class="p">(</span>
+    <span class="n">slim</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">get_regularization_losses</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">total_loss1</span> <span class="o">=</span> <span class="n">classification_loss</span> <span class="o">+</span>
+                    <span class="n">sum_of_squares_loss</span> <span class="o">+</span> <span class="n">pose_loss</span>
+                    <span class="o">+</span> <span class="n">regularization_loss</span>
+<span class="n">slim</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">add_loss</span><span class="p">(</span><span class="n">pose_loss</span><span class="p">)</span>
+<span class="n">total_loss2</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">get_total_loss</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="76-slim-learn">7.6 slim learn</h3>
+<ul>
+<li>梯度/学习率/BP
+<ul>
+<li>学习率更新</li>
+<li>优化函数</li>
+<li>等等</li>
+</ul>
+</li>
+<li>学习率</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">piecewise_constant</span> <span class="err">分段常数衰减</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">inverse_time_decay</span> <span class="err">反时限衰减</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">polynomial_decay</span> <span class="err">多项式衰减</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">exponential_decay</span> <span class="err">指数衰减</span>
+<span class="o">...</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="77-slim-metrics">7.7 slim metrics</h3>
+<p>TF-Slim提供了一系列度量操作，使评估模型变得简单</p>
+<ul>
+<li><code>value_ op</code>是一个幂等操作，返回度量的当前值。</li>
+<li><code>update_ op</code>是执行上述聚合步骤以及返回度量值的操作。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">mae_</span> <span class="n">value_</span> <span class="n">op</span><span class="p">,</span> <span class="n">mae_</span> <span class="n">update</span> <span class="n">_op</span> <span class="o">=</span>
+    <span class="n">slim</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">streaming_mean_absolute_error</span><span class="p">(</span>
+        <span class="n">predictions</span><span class="p">,</span> <span class="n">labels</span>
+        <span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="78-slim-ecaluation">7.8 slim ecaluation</h3>
+<ul>
+<li>TF-Slim提供一个评估模块<code>evaluation.py</code>，其中包含用于使用<code>metric_ ops.py</code>模块中的指标编写模型评估脚本的帮助</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">slim</span><span class="o">.</span><span class="n">evaluation</span><span class="o">.</span><span class="n">evaluation_1oop</span><span class="p">(</span>
+    <span class="s1">&#39;local&#39;</span><span class="p">,</span>
+    <span class="n">checkpoint_dir</span><span class="p">,</span>
+    <span class="mi">1</span><span class="n">og_dir</span><span class="p">,</span>
+    <span class="n">num_evals</span><span class="o">=</span><span class="n">num</span> <span class="n">batches</span><span class="p">,</span>
+    <span class="n">eval_op</span><span class="o">=</span><span class="n">names_to_updates</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span>
+    <span class="n">summary_op</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">summary_ops</span><span class="p">),</span>
+    <span class="n">eval_interval</span> <span class="n">secs</span><span class="o">=</span><span class="n">eval_interval_secs</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>函数: <code>evaluation_ loop</code>、<code>evaluation once</code></li>
+</ul>
+<h3 id="79-slim-data">7.9 slim data</h3>
+<ul>
+<li><code>slim.data</code>包 下面有很多对数据的操作方法</li>
+<li>在<code>slim._init_</code>中有如下几种:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.data</span> <span class="kn">import</span> <span class="n">data_decoder</span>
+<span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.data</span> <span class="kn">import</span> <span class="n">data_provider</span>
+<span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.data</span> <span class="kn">import</span> <span class="n">dataset</span>
+<span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.data</span> <span class="kn">import</span> <span class="n">dataset_data_provider</span>
+<span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.data</span> <span class="kn">import</span> <span class="n">parallel_reader</span>
+<span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.data</span> <span class="kn">import</span> <span class="n">prefetch_queue</span>
+<span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.data</span> <span class="kn">import</span> <span class="n">tfexample_decoder</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="8-tensorflow常见的数据增强方法">8 TensorFlow常见的数据增强方法</h2>
+<h3 id="81-tfimage库进行数据增强">8.1 tf.image库进行数据增强</h3>
+<ul>
+<li>颜色扰动(亮度、对比度、HSV、 RGB等)</li>
+<li>裁剪/Pad</li>
+<li>噪声/模糊</li>
+<li>翻转/旋转(空间几何变换/放射变换)</li>
+<li>Draw Boxes</li>
+<li>标准化</li>
+</ul>
+<h3 id="82-其他数据增强的方法">8.2 其他数据增强的方法</h3>
+<ul>
+<li>Mixup</li>
+<li>Oversampling</li>
+<li>锐化/浮雕/灰度</li>
+<li>边界检测</li>
+<li>超像素</li>
+<li>255-V</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="s2">&#34;&#34;&#34;图像亮度[-1, 1]&#34;&#34;&#34;</span>
+<span class="c1"># img_data = tf.image.adjust_brightness(img_data, delta=-.7) </span>
+<span class="s2">&#34;&#34;&#34;随机图像亮度&#34;&#34;&#34;</span>
+<span class="c1"># img_data = tf.image.random_brightness(img_data, max_delta=0.6)</span>
+<span class="s2">&#34;&#34;&#34;随机对比度&#34;&#34;&#34;</span>
+<span class="c1"># img_data = tf.image.random_contrast(img.data, lower=0, upper=4)</span>
+<span class="s2">&#34;&#34;&#34;随机色调&#34;&#34;&#34;</span>
+<span class="c1"># img_data = tf.image.random_hue(img. data, 0.5)</span>
+<span class="s2">&#34;&#34;&#34;随机饱和度&#34;&#34;&#34;</span>
+<span class="c1"># img_data = tf.image.random_saturation(img_data, lower=0, upper=2)</span>
+<span class="s2">&#34;&#34;&#34;图片标准化 (x-mean) / max(stddev, 1.0/sqrt(image.NumElements()))&#34;&#34;&#34;</span>
+<span class="c1"># img_data = tf.image.per_image_standardization( img.data)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="9-tensorboard使用介绍">9 Tensorboard使用介绍</h2>
+<h3 id="91-tensorboard可以进行网络可视化训练中间结果可视化">9.1 Tensorboard可以进行网络可视化/训练中间结果可视化</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">pip3 install tensorboard
+tensorboard --logdir logs
+<span class="c1">#Scalars/Graph/lmage/Histogram/Distributions</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="92-tfsummary">9.2 tf.summary</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">writer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">FileWriter</span><span class="p">(</span><span class="s2">&#34;logs/&#34;</span><span class="p">,</span> <span class="n">sess</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">histogram</span><span class="s1">&#39;bias&#39;</span><span class="p">,</span><span class="n">bias</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">scalar</span><span class="p">(</span><span class="s1">&#39;loss&#39;</span><span class="p">,</span><span class="n">loss</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">image</span><span class="p">(</span> <span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="n">image</span><span class="p">)</span>
+    <span class="n">merged</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">merge_all</span><span class="p">()</span>
+    <span class="n">rs</span><span class="o">=</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">merged</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">add_summary</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span><span class="n">step</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2020-03-12</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/en/face04/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://ieblyang.github.io/en/face04/" data-title="TensorFlow基础串讲" data-via="ieblYang" data-hashtags="人脸识别,TensorFlow"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://ieblyang.github.io/en/face04/" data-hashtag="人脸识别"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://ieblyang.github.io/en/face04/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://ieblyang.github.io/en/face04/" data-title="TensorFlow基础串讲" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://ieblyang.github.io/en/face04/" data-title="TensorFlow基础串讲" data-image="/images/face/featured-image.png" data-ralateuid="ieblYang"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on 百度" data-sharer="baidu" data-url="https://ieblyang.github.io/en/face04/" data-title="TensorFlow基础串讲"><i class="loveit it-baidu-fill"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://ieblyang.github.io/en/face04/" data-title="TensorFlow基础串讲"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="Share on Skype" data-sharer="skype" data-url="https://ieblyang.github.io/en/face04/" data-title="TensorFlow基础串讲"><i class="fab fa-skype fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/en/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB">人脸识别</a>,&nbsp;<a href="/en/tags/tensorflow">TensorFlow</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/en/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/en/face03/" class="prev" rel="prev" title="卷积神经网基础串讲"><i class="fas fa-angle-left fa-fw"></i>卷积神经网基础串讲</a>
+            <a href="/en/face05/" class="next" rel="next" title="Tensorflow Cifar-10图像分类任务">Tensorflow Cifar-10图像分类任务<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"><div id="valine"></div><script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                new Valine({
+                    el: '#valine',
+                    appId: 'QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI',
+                    appKey: 'WBmoGyJtbqUswvfLh6L8iEBr',placeholder: 'Your comment ...',verify: true,avatar: 'mp',pageSize: 10,lang: 'en',visitor: true,recordIP: true,});
+            });
+        </script>
+        <noscript>
+            Please enable JavaScript to view the <a href="https://valine.js.org/">comments powered by Valine.</a>
+        </noscript></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/valine/valine.48fc8c7a134ff56a24e2e2d3106ec39a.css" integrity="md5-SPyMehNP9Wok4uLTEG7Dmg=="><link rel="stylesheet" href="/lib/iconfont/iconfont.min.60491d359fba28667d44b1b4c808a0bd.css" integrity="md5-YEkdNZ&#43;6KGZ9RLG0yAigvQ=="><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.f0e116a1a6b325059928a106254352e1.css" integrity="md5-8OEWoaazJQWZKKEGJUNS4Q=="><script src="/lib/valine/Valine.min.1698240d38b9277036a3059775e55a03.js" integrity="md5-FpgkDTi5J3A2owWXdeVaAw=="></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.c4f5974788ebb82890a0e7771763939c.js" integrity="md5-xPWXR4jruCiQoOd3F2OTnA=="></script><script src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script src="/lib/lazysizes/lazysizes.min.0812d0f17b90a4aefd97bb91085ad252.js" integrity="md5-CBLQ8XuQpK79l7uRCFrSUg=="></script><script src="/lib/lightgallery/lightgallery.min.4bc95325ef47ddceda10ae0ee66e925c.js" integrity="md5-S8lTJe9H3c7aEK4O5m6SXA=="></script><script src="/lib/lightgallery/lg-thumbnail.min.874045ba82acdc496e8c871b77c5c1e5.js" integrity="md5-h0BFuoKs3ElujIcbd8XB5Q=="></script><script src="/lib/lightgallery/lg-zoom.min.409e9d2da92a979799deed01377eeff6.js" integrity="md5-QJ6dLakql5eZ3u0BN37v9g=="></script><script src="/js/theme.min.2d8c56f0eeaac5b7d58911d3c7522b29.js" integrity="md5-LYxW8O6qxbfViRHTx1IrKQ=="></script></body>
+</html>
