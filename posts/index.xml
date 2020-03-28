@@ -7,18 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-<<<<<<< HEAD
-    <lastBuildDate>Thu, 12 Mar 2020 11:44:40 +0800</lastBuildDate>
-=======
     <lastBuildDate>Mon, 23 Mar 2020 11:22:40 +0800</lastBuildDate>
->>>>>>> add / update posts
     
 	<atom:link href="https://ieblyang.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-<<<<<<< HEAD
-=======
       <title>Markdown 基本语法</title>
       <link>https://ieblyang.github.io/basic-markdown-syntax/</link>
       <pubDate>Wed, 11 Mar 2020 16:45:40 +0800</pubDate>
@@ -145,7 +139,6 @@
     </item>
     
     <item>
->>>>>>> add / update posts
       <title>深度学习基础串讲</title>
       <link>https://ieblyang.github.io/face02/</link>
       <pubDate>Thu, 12 Mar 2020 11:44:40 +0800</pubDate>
@@ -154,8 +147,6 @@
       <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 深度学习基础串讲&lt;/p&gt;</description>
     </item>
     
-<<<<<<< HEAD
-=======
     <item>
       <title>Ubuntu16.04安装中文输入法</title>
       <link>https://ieblyang.github.io/ubuntu-fcitx/</link>
@@ -210,6 +201,5 @@
       <description>&lt;p&gt;这篇文章介绍了如何在windows系统上基于github.io利用hugo搭建自己的个人博客。&lt;/p&gt;</description>
     </item>
     
->>>>>>> add / update posts
   </channel>
 </rss>

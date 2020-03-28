@@ -2,7 +2,25 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://ieblyang.github.io/categories/</loc><lastmod>2020-03-12T11:44:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://ieblyang.github.io/basic-markdown-syntax/</loc><lastmod>2020-03-11T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/basic-markdown-syntax/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/basic-markdown-syntax/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/emoji-support/</loc><lastmod>2020-03-11T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/emoji-support/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/emoji-support/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/categories/</loc><lastmod>2020-03-23T11:22:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.github.io/en/categories/"
@@ -11,7 +29,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.github.io/categories/"
                     /></url><url>
-            <loc>https://ieblyang.github.io/categories/face-recognition/</loc><lastmod>2020-03-12T11:44:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://ieblyang.github.io/categories/face-recognition/</loc><lastmod>2020-03-23T11:22:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.github.io/en/categories/face-recognition/"
@@ -20,11 +38,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.github.io/categories/face-recognition/"
                     /></url><url>
-<<<<<<< HEAD
-            <loc>https://ieblyang.github.io/posts/</loc><lastmod>2020-03-12T11:44:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-=======
             <loc>https://ieblyang.github.io/posts/</loc><lastmod>2020-03-23T11:22:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
->>>>>>> add / update posts
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.github.io/en/posts/"
@@ -33,11 +47,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.github.io/posts/"
                     /></url><url>
-<<<<<<< HEAD
-            <loc>https://ieblyang.github.io/tags/</loc><lastmod>2020-03-12T11:44:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-=======
             <loc>https://ieblyang.github.io/tags/</loc><lastmod>2020-03-23T11:22:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
->>>>>>> add / update posts
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.github.io/en/tags/"
@@ -46,9 +56,6 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.github.io/tags/"
                     /></url><url>
-<<<<<<< HEAD
-            <loc>https://ieblyang.github.io/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/</loc><lastmod>2020-03-12T11:44:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-=======
             <loc>https://ieblyang.github.io/tags/tensorflow/</loc><lastmod>2020-03-23T11:22:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -203,7 +210,6 @@
                     href="https://ieblyang.github.io/bug02/"
                     /></url><url>
             <loc>https://ieblyang.github.io/tags/numpy/</loc><lastmod>2020-03-15T20:30:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
->>>>>>> add / update posts
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.github.io/en/tags/numpy/"
@@ -212,8 +218,6 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.github.io/tags/numpy/"
                     /></url><url>
-<<<<<<< HEAD
-=======
             <loc>https://ieblyang.github.io/bug01/</loc><lastmod>2020-03-15T20:30:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -331,7 +335,6 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.github.io/face03/"
                     /></url><url>
->>>>>>> add / update posts
             <loc>https://ieblyang.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc><lastmod>2020-03-12T11:44:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -349,6 +352,195 @@
                     rel="alternate"
                     hreflang="zh-cn"
                     href="https://ieblyang.github.io/face02/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/tags/fcitx/</loc><lastmod>2020-03-12T11:00:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/tags/fcitx/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/tags/fcitx/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/categories/ubuntu-16.04/</loc><lastmod>2020-03-12T11:00:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/categories/ubuntu-16.04/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/categories/ubuntu-16.04/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/tags/ubuntu16.04/</loc><lastmod>2020-03-12T11:00:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/tags/ubuntu16.04/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/tags/ubuntu16.04/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/ubuntu-fcitx/</loc><lastmod>2020-03-12T11:00:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/ubuntu-fcitx/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/ubuntu-fcitx/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/tags/%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/</loc><lastmod>2020-03-12T11:00:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/tags/%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/tags/%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/tags/pycharm/</loc><lastmod>2020-03-12T10:17:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/tags/pycharm/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/tags/pycharm/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/tags/python3.5/</loc><lastmod>2020-03-12T10:17:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/tags/python3.5/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/tags/python3.5/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/ubuntu-pycharm/</loc><lastmod>2020-03-12T10:17:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/ubuntu-pycharm/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/ubuntu-pycharm/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/ubuntu-python/</loc><lastmod>2020-03-12T10:17:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/ubuntu-python/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/ubuntu-python/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/ubuntu-only-guest/</loc><lastmod>2020-03-12T09:52:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/ubuntu-only-guest/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/ubuntu-only-guest/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/tags/vncviewer/</loc><lastmod>2020-03-12T08:13:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/tags/vncviewer/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/tags/vncviewer/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/vncviever-aliyun-ecs/</loc><lastmod>2020-03-12T08:13:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/vncviever-aliyun-ecs/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/vncviever-aliyun-ecs/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</loc><lastmod>2020-03-12T08:13:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/categories/github/</loc><lastmod>2020-03-11T22:10:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/categories/github/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/categories/github/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/tags/github/</loc><lastmod>2020-03-11T22:10:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/tags/github/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/tags/github/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/tags/hugo/</loc><lastmod>2020-03-11T22:10:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/tags/hugo/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/tags/hugo/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/tags/windows/</loc><lastmod>2020-03-11T22:10:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/tags/windows/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/tags/windows/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/github-build/</loc><lastmod>2020-03-11T22:10:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/github-build/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/github-build/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/categories/documentation/</loc><lastmod>2020-03-11T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/categories/documentation/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/categories/documentation/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/tags/emoji/</loc><lastmod>2020-03-11T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/tags/emoji/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/tags/emoji/"
+                    /></url><url>
+            <loc>https://ieblyang.github.io/tags/markdown/</loc><lastmod>2020-03-11T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.github.io/en/tags/markdown/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.github.io/tags/markdown/"
                     /></url><url>
             <loc>https://ieblyang.github.io/about/</loc><lastmod>2020-03-11T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
