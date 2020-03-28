@@ -224,11 +224,7 @@
 
 ![Minion](/images/face/face06/13.jpg)
 
-<<<<<<< HEAD
-{{< admonition note "笔记">}}
-=======
 {{% admonition note "笔记"%}}
->>>>>>> add / update posts
 * VJ(Viola-Jones)框架算法要点:
 	* 使用类Haar输入特征：对矩形图像区域的和或差进行阈值化。
 	* 积分图像技术加速了矩形图像区域的45度旋转的值的计算，这个图像结构被用来加速类Haar输入特征的计算。
@@ -249,11 +245,7 @@
 	* 目前比较先进的人脸检测算法.它结合了 cascade 和 alignment ，一方面做alignment对进一步的人脸识别意义重大，
 	另一方面作者在 section 2 讲到了landmark附近的特征可促进分类器分辨出更准确的结果，
 	最后，将这两者放在一起做不仅相互促进而且还相互节省了时间。
-<<<<<<< HEAD
-{{< /admonition >}}
-=======
 {{% /admonition %}}
->>>>>>> add / update posts
 
 ### 5.2 从粗粒度到细粒度的级联模型（Deep Learning） 
 
@@ -367,21 +359,13 @@ $$L(x,c,l,g)=\dfrac{1}{N} (L_{conf}(x,c)+\alpha L_{loc}(x,l,g))$$
 * https://github.com/tensorflow/models.git
    * [目标检测算法源码框架](https://github.com/tensorflow/models/tree/master/research/object_detection)
    * [安装教程](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md)
-<<<<<<< HEAD
-{{< /admonition >}}
-=======
 {{% /admonition %}}
->>>>>>> add / update posts
 
 ## 9 人脸检测数据清洗与数据打包
 
 ### 9.1 WIDER FACE 数据集
 
-<<<<<<< HEAD
-{{< admonition note "笔记">}}
-=======
 {{% admonition note "笔记"%}}
->>>>>>> add / update posts
 WIDER FACE数据集
 * 由香港中文大学提出
 * 32203个图像和393703个人脸图像
@@ -398,19 +382,11 @@ WIDER FACE数据集
 ![Minion](/images/face/face06/21.jpg)
 * VOC主要有三个重要的文件夹
 
-<<<<<<< HEAD
-{{< admonition note "笔记">}}
-* Annotations 存放标注信息
-* ImageSets	  存放训练和测试用到的文件列表
-* JPEGImages  存放图片信息
-{{< /admonition >}}
-=======
 {{% admonition note "笔记"%}}
 * Annotations 存放标注信息
 * ImageSets	  存放训练和测试用到的文件列表
 * JPEGImages  存放图片信息
 {{% /admonition %}}
->>>>>>> add / update posts
 
 * VOC数据基本结构
 

@@ -92,11 +92,7 @@ app.json -> pages
 
 {{% admonition success "官方文档"%}}
 官方文档 -> 组件 -> 基础内容 -> text
-<<<<<<< HEAD
-{{< /admonition >}}
-=======
 {{% /admonition %}}
->>>>>>> add / update posts
 
 * 写文本时最好用`<text> </text>`包裹，便于对文件设置样式和添加标签
 * 不建议直接使用`<button> </button>`，可以使用`<view> <text> 按钮 </text> </view>`的形式来实现按钮

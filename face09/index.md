@@ -243,11 +243,7 @@ python3 src/align/align_dataset_mtcnn.py lfw lfw_160--image_size 160 --margin 32
 
 ## 6 参考资料
 
-<<<<<<< HEAD
-{{< admonition note "参考资料">}}
-=======
 {{% admonition note "参考资料"%}}
->>>>>>> add / update posts
 * [《机器学习》第10章 降维与度量分析](https://www.jianshu.com/p/db8f15c3fe56)
 * [【技术综述】深度学习中的数据增强方法都有哪些？](https://zhuanlan.zhihu.com/p/61759947)
 * [face recognition[翻译][深度人脸识别:综述]](https://www.cnblogs.com/shouhuxianjian/p/9789243.html)

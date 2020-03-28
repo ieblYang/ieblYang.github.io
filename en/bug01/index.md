@@ -15,11 +15,7 @@
 
 ### 报错信息
 
-<<<<<<< HEAD
-{{< admonition bug "报错信息">}}
-=======
 {{% admonition bug "报错信息"%}}
->>>>>>> add / update posts
 ValueError: Object arrays cannot be loaded when allow_pickle=False
 {{% /admonition %}}
 
