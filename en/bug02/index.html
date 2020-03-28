@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>解决AttributeError: module &#39;scipy.misc&#39; ···  &#39;imread&#39;的报错 | ieblYang</title>
+        <meta name="Description" content="解决AttributeError: module &#39;scipy.misc&#39; has no attribute &#39;imread&#39;的报错"><meta property="og:title" content="解决AttributeError: module &#39;scipy.misc&#39; ···  &#39;imread&#39;的报错" />
+<meta property="og:description" content="解决AttributeError: module &#39;scipy.misc&#39; has no attribute &#39;imread&#39;的报错" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ieblyang.github.io/en/bug02/" />
+<meta property="article:published_time" content="2020-03-15T20:46:40+08:00" />
+<meta property="article:modified_time" content="2020-03-15T20:46:40+08:00" /><meta property="og:site_name" content="ieblYang" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="解决AttributeError: module &#39;scipy.misc&#39; ···  &#39;imread&#39;的报错"/>
+<meta name="twitter:description" content="解决AttributeError: module &#39;scipy.misc&#39; has no attribute &#39;imread&#39;的报错"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://ieblyang.github.io/en/bug02/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://ieblyang.github.io/en/bug01/" /><link rel="next" href="https://ieblyang.github.io/en/face10/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.9679f10076c3db0a03c8c8a5128dba53.css" integrity="md5-lnnxAHbD2woDyMilEo26Uw=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><link rel="stylesheet" href="/css/style.min.ae21e349d7dcddfd942a94491d8158d5.css" integrity="md5-riHjSdfc3f2UKpRJHYFY1Q=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "解决AttributeError: module \x27scipy.misc\x27 ···  \x27imread\x27的报错",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ieblyang.github.io\/en\/bug02\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/ieblyang.github.io\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Bug Fixes, 人脸匹配, scipy","wordcount":  67 ,
+        "url": "https:\/\/ieblyang.github.io\/en\/bug02\/","datePublished": "2020-03-15","dateModified": "2020-03-15","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                "@type": "Organization",
+                "name": "ieblYang",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/ieblyang.github.io\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "ieblYang"
+            },"description": "解决AttributeError: module \x27scipy.misc\x27 has no attribute \x27imread\x27的报错"
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/en/">ieblYang</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/en/posts/" rel="noopener noreffer">Posts</a><a class="menu-item" href="/en/tags/" rel="noopener noreffer">Tags</a><a class="menu-item" href="/en/categories/" rel="noopener noreffer">Categories</a><a class="menu-item" href="/en/categories/documentation/" rel="noopener noreffer">Documentation</a><a class="menu-item" href="/en/about/" rel="noopener noreffer">About</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/bug02/" selected>English</option><option value="/bug02/">简体中文</option></select>
+                </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/en/">ieblYang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/en/posts/" title="" rel="noopener noreffer">Posts</a><a class="menu-item" href="/en/tags/" title="" rel="noopener noreffer">Tags</a><a class="menu-item" href="/en/categories/" title="" rel="noopener noreffer">Categories</a><a class="menu-item" href="/en/categories/documentation/" title="" rel="noopener noreffer">Documentation</a><a class="menu-item" href="/en/about/" title="" rel="noopener noreffer">About</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/en/bug02/" selected>English</option><option value="/bug02/">简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">解决AttributeError: module &#39;scipy.misc&#39; ···  &#39;imread&#39;的报错</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://ieblyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ieblYang</a>
+</span>&nbsp;
+                    <span class="post-category">included in<a href="/en/categories/bug-fixes">
+                                <i class="far fa-folder fa-fw"></i>Bug fixes
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-15>2020-03-15</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 67 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>1 min&nbsp;<span id="/en/bug02/" class="leancloud_visitors" data-flag-title="解决AttributeError: module &#39;scipy.misc&#39; ···  &#39;imread&#39;的报错">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/bug/featured-image.png, /images/bug/featured-image.png 1.5x, /images/bug/featured-image.png 2x"
+        data-src="/images/bug/featured-image.png"
+        alt="解决AttributeError: module &#39;scipy.misc&#39; has no attribute &#39;imread&#39;的报错"
+        title="解决AttributeError: module &#39;scipy.misc&#39; has no attribute &#39;imread&#39;的报错" /></div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">Contents</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>Contents</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#系统配置">系统配置</a></li>
+        <li><a href="#报错信息">报错信息</a></li>
+        <li><a href="#问题分析">问题分析</a></li>
+        <li><a href="#修复方法">修复方法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>解决AttributeError: module &lsquo;scipy.misc&rsquo; has no attribute &lsquo;imread'的报错</p>
+<h3 id="系统配置">系统配置</h3>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>系统配置</p>
+            <div class="admonition-content"><ul>
+<li>ubuntu 16.04</li>
+<li>python 3.5</li>
+<li>tensorflow 1.12.0</li>
+</ul></div>
+        </div>
+<h3 id="报错信息">报错信息</h3>
+<div class="admonition bug">
+            <p class="admonition-title"><i class="icon fas fa-bug"></i>报错信息</p>
+            <div class="admonition-content">module &lsquo;scipy_misc&rsquo; has no attribute &lsquo;imread&rsquo;</div>
+        </div>
+<h3 id="问题分析">问题分析</h3>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>问题分析</p>
+            <div class="admonition-content"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">python3 src<span class="se">\a</span>lign<span class="se">\a</span>lign_dataset_mtcnn.py /root/py3_tensorflow/dataset/LFW /root/py3_tensorflow/dataset/LFW-160 --margin <span class="m">32</span> --random_order --gpu_memory_fraction 0.25
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>在解析LFW数据集时报错，应该是在安装FaceNet的依赖的时候没有在<code>requirements.txt</code>中限定版本，默认安装了高版本的scipy</li>
+<li>imread is deprecated! imread is deprecated in SciPy 1.0.0, and will be removed in 1.2.0. Use imageio.imread instead.</li>
+</ul>
+</div>
+        </div>
+<h3 id="修复方法">修复方法</h3>
+<div class="admonition success">
+            <p class="admonition-title"><i class="icon fas fa-check-circle"></i>修复方法</p>
+            <div class="admonition-content"><ul>
+<li>降低scipy的版本为1.2.1</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">sudo pip3 uninstall scipy
+sudo pip3 install <span class="nv">scipy</span><span class="o">==</span>1.2.1
+</code></pre></td></tr></table>
+</div>
+</div></div>
+        </div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2020-03-15</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/en/bug02/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://ieblyang.github.io/en/bug02/" data-title="解决AttributeError: module &#39;scipy.misc&#39; ···  &#39;imread&#39;的报错" data-via="ieblYang" data-hashtags="Bug Fixes,人脸匹配,scipy"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://ieblyang.github.io/en/bug02/" data-hashtag="Bug Fixes"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://ieblyang.github.io/en/bug02/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://ieblyang.github.io/en/bug02/" data-title="解决AttributeError: module &#39;scipy.misc&#39; ···  &#39;imread&#39;的报错" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://ieblyang.github.io/en/bug02/" data-title="解决AttributeError: module &#39;scipy.misc&#39; ···  &#39;imread&#39;的报错" data-image="/images/bug/featured-image.png" data-ralateuid="ieblYang"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on 百度" data-sharer="baidu" data-url="https://ieblyang.github.io/en/bug02/" data-title="解决AttributeError: module &#39;scipy.misc&#39; ···  &#39;imread&#39;的报错"><i class="loveit it-baidu-fill"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://ieblyang.github.io/en/bug02/" data-title="解决AttributeError: module &#39;scipy.misc&#39; ···  &#39;imread&#39;的报错"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="Share on Skype" data-sharer="skype" data-url="https://ieblyang.github.io/en/bug02/" data-title="解决AttributeError: module &#39;scipy.misc&#39; ···  &#39;imread&#39;的报错"><i class="fab fa-skype fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/en/tags/bug-fixes">Bug Fixes</a>,&nbsp;<a href="/en/tags/%E4%BA%BA%E8%84%B8%E5%8C%B9%E9%85%8D">人脸匹配</a>,&nbsp;<a href="/en/tags/scipy">scipy</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/en/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/en/bug01/" class="prev" rel="prev" title="解决ValueError: Object arrays ··· allow_pickle=False的报错"><i class="fas fa-angle-left fa-fw"></i>解决ValueError: Object arrays ··· allow_pickle=False的报错</a>
+            <a href="/en/face10/" class="next" rel="next" title="人脸对齐/关键点训练业务实战">人脸对齐/关键点训练业务实战<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"><div id="valine"></div><script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                new Valine({
+                    el: '#valine',
+                    appId: 'QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI',
+                    appKey: 'WBmoGyJtbqUswvfLh6L8iEBr',placeholder: 'Your comment ...',verify: true,avatar: 'mp',pageSize: 10,lang: 'en',visitor: true,recordIP: true,});
+            });
+        </script>
+        <noscript>
+            Please enable JavaScript to view the <a href="https://valine.js.org/">comments powered by Valine.</a>
+        </noscript></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },],
+                strict: false,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/valine/valine.48fc8c7a134ff56a24e2e2d3106ec39a.css" integrity="md5-SPyMehNP9Wok4uLTEG7Dmg=="><link rel="stylesheet" href="/lib/iconfont/iconfont.min.60491d359fba28667d44b1b4c808a0bd.css" integrity="md5-YEkdNZ&#43;6KGZ9RLG0yAigvQ=="><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.f0e116a1a6b325059928a106254352e1.css" integrity="md5-8OEWoaazJQWZKKEGJUNS4Q=="><link rel="stylesheet" href="/lib/katex/katex.min.4afae7d446ba01ebf7fff19893eaf3a1.css" integrity="md5-Svrn1Ea6Aev3//GYk&#43;rzoQ=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.b1994d1b9785dd8801dbf655df7bf6d9.css" integrity="md5-sZlNG5eF3YgB2/ZV33v22Q=="><script src="/lib/valine/Valine.min.1698240d38b9277036a3059775e55a03.js" integrity="md5-FpgkDTi5J3A2owWXdeVaAw=="></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.c4f5974788ebb82890a0e7771763939c.js" integrity="md5-xPWXR4jruCiQoOd3F2OTnA=="></script><script src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script src="/lib/lazysizes/lazysizes.min.0812d0f17b90a4aefd97bb91085ad252.js" integrity="md5-CBLQ8XuQpK79l7uRCFrSUg=="></script><script src="/lib/lightgallery/lightgallery.min.4bc95325ef47ddceda10ae0ee66e925c.js" integrity="md5-S8lTJe9H3c7aEK4O5m6SXA=="></script><script src="/lib/lightgallery/lg-thumbnail.min.874045ba82acdc496e8c871b77c5c1e5.js" integrity="md5-h0BFuoKs3ElujIcbd8XB5Q=="></script><script src="/lib/lightgallery/lg-zoom.min.409e9d2da92a979799deed01377eeff6.js" integrity="md5-QJ6dLakql5eZ3u0BN37v9g=="></script><script src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script src="/js/theme.min.2d8c56f0eeaac5b7d58911d3c7522b29.js" integrity="md5-LYxW8O6qxbfViRHTx1IrKQ=="></script></body>
+</html>
