@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>人脸对齐/关键点训练业务实战 | 波玻拨啵菠萝</title>
+        <meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务实战"><meta property="og:title" content="人脸对齐/关键点训练业务实战" />
+<meta property="og:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务实战" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ieblyang.github.io/face10/" />
+<meta property="article:published_time" content="2020-03-18T19:24:40+08:00" />
+<meta property="article:modified_time" content="2020-03-18T19:24:40+08:00" /><meta property="og:site_name" content="波玻拨啵菠萝" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="人脸对齐/关键点训练业务实战"/>
+<meta name="twitter:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务实战"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://ieblyang.github.io/face10/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://ieblyang.github.io/bug02/" /><link rel="next" href="https://ieblyang.github.io/miniprogram01/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.9679f10076c3db0a03c8c8a5128dba53.css" integrity="md5-lnnxAHbD2woDyMilEo26Uw=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><link rel="stylesheet" href="/css/style.min.ae21e349d7dcddfd942a94491d8158d5.css" integrity="md5-riHjSdfc3f2UKpRJHYFY1Q=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "人脸对齐\/关键点训练业务实战",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ieblyang.github.io\/face10\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/ieblyang.github.io\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "人脸识别, TensorFlow, SENet, 人脸对齐","wordcount":  2808 ,
+        "url": "https:\/\/ieblyang.github.io\/face10\/","datePublished": "2020-03-18","dateModified": "2020-03-18","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                "@type": "Organization",
+                "name": "ieblYang",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/ieblyang.github.io\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "ieblYang"
+            },"description": "基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐\/关键点训练业务实战"
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/">波玻拨啵菠萝</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/posts/" rel="noopener noreffer">文章</a><a class="menu-item" href="/tags/" rel="noopener noreffer">标签</a><a class="menu-item" href="/categories/" rel="noopener noreffer">分类</a><a class="menu-item" href="/categories/documentation/" rel="noopener noreffer">文档</a><a class="menu-item" href="/about/" rel="noopener noreffer">关于</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/face10/">English</option><option value="/face10/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/">波玻拨啵菠萝</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" rel="noopener noreffer">文章</a><a class="menu-item" href="/tags/" title="" rel="noopener noreffer">标签</a><a class="menu-item" href="/categories/" title="" rel="noopener noreffer">分类</a><a class="menu-item" href="/categories/documentation/" title="" rel="noopener noreffer">文档</a><a class="menu-item" href="/about/" title="" rel="noopener noreffer">关于</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/en/face10/">English</option><option value="/face10/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">人脸对齐/关键点训练业务实战</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://ieblyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ieblYang</a>
+</span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/face-recognition">
+                                <i class="far fa-folder fa-fw"></i>Face recognition
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-18>2020-03-18</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 2808 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 6 分钟&nbsp;<span id="/face10/" class="leancloud_visitors" data-flag-title="人脸对齐/关键点训练业务实战">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/featured-image.png, /images/face/featured-image.png 1.5x, /images/face/featured-image.png 2x"
+        data-src="/images/face/featured-image.png"
+        alt="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务实战"
+        title="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务实战" /></div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-人脸对齐关键点业务介绍">1 人脸对齐/关键点业务介绍</a></li>
+    <li><a href="#2-人脸关键点算法评价指标">2 人脸关键点算法评价指标</a>
+      <ul>
+        <li><a href="#21-通常将输出结果表示成点的集合再进一步表示成向量">2.1 通常将输出结果表示成点的集合，再进一步表示成向量</a></li>
+        <li><a href="#22-nmenormalized-mean-error">2.2 NME：Normalized mean error</a></li>
+        <li><a href="#23-cedcumulative-errors-distributioncedcurve">2.3 CED：Cumulative Errors Distribution（CED）curve</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-人脸关键点方法介绍">3 人脸关键点方法介绍</a>
+      <ul>
+        <li><a href="#31-传统方法">3.1 传统方法</a>
+          <ul>
+            <li><a href="#311-形状学习">3.1.1 形状学习</a></li>
+            <li><a href="#312-级联回归学习">3.1.2 级联回归学习</a></li>
+          </ul>
+        </li>
+        <li><a href="#32-深度学习方法">3.2 深度学习方法</a>
+          <ul>
+            <li><a href="#321-多级回归">3.2.1 多级回归</a></li>
+            <li><a href="#322-多任务">3.2.2 多任务</a></li>
+            <li><a href="#323-直接回归">3.2.3 直接回归</a></li>
+            <li><a href="#324-热图">3.2.4 热图</a></li>
+            <li><a href="#325-3d人脸关键点定位">3.2.5 3D人脸关键点定位</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#4-人脸关键点常用数据集">4 人脸关键点常用数据集</a></li>
+    <li><a href="#5-人脸关键点定位问题挑战及解决思路">5 人脸关键点定位问题挑战及解决思路</a></li>
+    <li><a href="#6-编程实战及模型优化">6 编程实战及模型优化</a>
+      <ul>
+        <li><a href="#61-tensorflowsenet模型详细介绍">6.1 TensorFlow+SENet模型详细介绍</a></li>
+        <li><a href="#62-环境参数">6.2 环境参数</a></li>
+        <li><a href="#63-数据准备">6.3 数据准备</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-实例代码">7 实例代码</a></li>
+    <li><a href="#8-参考资料">8 参考资料</a></li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务实战</p>
+<h2 id="1-人脸对齐关键点业务介绍">1 人脸对齐/关键点业务介绍</h2>
+<ul>
+<li>
+<p>根据输入的人脸图像，自动定位出面部特征关键点，如眼睛、鼻尖、嘴角点、眉毛以及人脸各部件轮廓点等<br>
+<img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face10/1.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+</li>
+<li>
+<p>2D人脸</p>
+</li>
+<li>
+<p>3D人脸</p>
+</li>
+<li>
+<p>关键点数量：5,21,29,68,96,192&hellip;&hellip;</p>
+</li>
+<li>
+<p>旷视科技<code>1000</code>点与<code>8000</code>点对比如下图</p>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face10/2.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<ul>
+<li>表情识别、人脸编辑、人脸美妆、三维重建</li>
+</ul>
+<h2 id="2-人脸关键点算法评价指标">2 人脸关键点算法评价指标</h2>
+<h3 id="21-通常将输出结果表示成点的集合再进一步表示成向量">2.1 通常将输出结果表示成点的集合，再进一步表示成向量</h3>
+<h3 id="22-nmenormalized-mean-error">2.2 NME：Normalized mean error</h3>
+<ul>
+<li>两外眼角间距离</li>
+<li>人脸外接矩阵对角线长度
+$$ e = \frac{\textstyle\sum_{i=1}^n \Vert X_{(i)}^e-X_{(i)}^e \Vert_2}{N * d_{io}}$$</li>
+</ul>
+<h3 id="23-cedcumulative-errors-distributioncedcurve">2.3 CED：Cumulative Errors Distribution（CED）curve</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face10/3.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<ul>
+<li>横坐标表达当前的偏差值</li>
+<li>纵坐标表达满足当前偏差值得图片的数量</li>
+</ul>
+<h2 id="3-人脸关键点方法介绍">3 人脸关键点方法介绍</h2>
+<h3 id="31-传统方法">3.1 传统方法</h3>
+<h4 id="311-形状学习">3.1.1 形状学习</h4>
+<ul>
+<li>基于形状学习的模型：ASM、AAM</li>
+<li>基于形状学习的人脸关键点流程</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face10/4.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+            <div class="admonition-content"><ul>
+<li>主要作用：勾勒出人脸基准点的轮廓，轮廓属于特定的形状。</li>
+<li>人脸模型：对人脸特征点进行建模，首先选择基准图片，利用基准图片作为参照，
+将训练集的图片按照基准进行变换，得到训练集的图像处理后的集合，
+对训练集中人脸关键点标定的位置，对每一个点进行特征提取，以当前关键点为中心，
+提取它的局部的图像区域进行特征提取，假设特征提取后有5个点，就会得到5个向量。</li>
+<li>点搜索：给定一个测试集的图片，进行关键点的搜索，
+初步搜索时选择5个点中的某几个点作为最开始搜索的对象，通常选择眼睛或鼻子。</li>
+<li>对齐：根据基准点对人脸进行对齐。</li>
+<li>其他点的搜索定位：以基准点为参照，预测想要定位的其他的点的大致位置！</li>
+</ul></div>
+        </div>
+<h4 id="312-级联回归学习">3.1.2 级联回归学习</h4>
+<ul>
+<li>基于级联回归学习的模型：CPR</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face10/5.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+            <div class="admonition-content"><ul>
+<li>对于人脸特征点定位，人脸关键点检测的目的是估计向量(Facial Shape) $S=(x_1,y_1,x_2,y_2,&hellip;,x_K,y_K)$ ，
+其中 $K$ 表示关键点的个数，由于每个关键点有横纵两个坐标，所以 $S$ 的长度为 $2K$ 。
+对于一个输入 $I$ , 给定一个初始形状 $S^0$ (通常是在训练集计算得到的平均形状)。
+每一级输出的是根据输入图像得到的偏移估计$\Delta S$，那么每一级都会更准确的预测
+脸上Landmark的位置
+$$S^{t+1 }= S^t+r_t(\phi(I,S^t))$$
+其中，$S^t$ 和 $S^{t+1}$ 分别表示第 $t$ 和 $t+1$ 级预测的人脸形状(即所有关键点集合)，表示回归函数</li>
+<li>CPR通过一系列回归器将一个指定的初始预测值逐步细化，
+每一个回归器都依靠前一个回归器的输出来执行简单的图像操作，
+整个系统可自动的从训练样本中学习。</li>
+<li>CPR检测流程一共有T个阶段，在每个阶段中首先进行特征提取f，
+这里使用的是shape-indexed features，
+也可以使用诸如HOG、SIFT等人工设计的特征，
+或者其他可学习特征（learning based features），
+然后通过训练得到的回归器R来估计增量ΔS( update vector)，
+把ΔS加到前一个阶段的S上得到新的S，这样通过不断的迭代即可以得到最终的S(shape)。</li>
+</ul></div>
+        </div>
+<blockquote>
+<p>推荐阅读文献</p>
+<ul>
+<li>Face Alignment at 3000 FPS via Regressing Local Binary Features(LBF)</li>
+<li>Joint Cascade Face Detection and Alignment</li>
+<li>One Millisecond Face Alignment with an Ensemble of Regresion Trees(ETR)</li>
+<li>Face Alignment In-the-Wild: A Survey</li>
+<li>Facial feature point detection: A comprehensive survey</li>
+</ul>
+</blockquote>
+<h3 id="32-深度学习方法">3.2 深度学习方法</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face10/6.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<h4 id="321-多级回归">3.2.1 多级回归</h4>
+<ul>
+<li>DCNN
+<ul>
+<li>总体思想是由粗到细，实现5个人脸关键点的精确定位。网络结构分为3层：level 1、level 2、level 3。每层都包含多个独立的CNN模型，负责预测部分或全部关键点位置，在此基础上平均来得到该层最终的预测结果。</li>
+</ul>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face10/7.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<ul>
+<li>DCNN-Face++</li>
+</ul>
+<h4 id="322-多任务">3.2.2 多任务</h4>
+<ul>
+<li>
+<p>TCDCN</p>
+<ul>
+<li>使用与人脸相关的属性共同来学习人脸的特征点位置，通过这种多任务的学习，来提高人脸特征点检测的鲁棒性。具体而言，就是在人脸特征点检测时候，同时进行多个任务（包括性别、是否戴眼镜、是否微笑以及脸部姿势）的学习。使用这些辅助属性可以帮助更好的定位特征点。</li>
+</ul>
+</li>
+<li>
+<p>MTCNN</p>
+<ul>
+<li>CNN回归和检测多任务，多尺度级联，三个网络级联，由粗到精，同时完成检测和特征点定位回归。</li>
+</ul>
+</li>
+</ul>
+<h4 id="323-直接回归">3.2.3 直接回归</h4>
+<ul>
+<li>Vanilla CNN
+<ul>
+<li>作者对网络不同层的特征进行使用GMM进行聚类分析，发现网络进行的是层次的，由粗到精(hierarchical, coarse to fine)的特征定位，越深的网络特征越能反应出特征点的位置。</li>
+</ul>
+</li>
+</ul>
+<h4 id="324-热图">3.2.4 热图</h4>
+<ul>
+<li>DAN
+<ul>
+<li>与以往级联神经网络输入的是图像的某一部分不同，DAN各阶段网络的输入均为整张图片。当网络均采用整张图片作为输入时，DAN可以有效的克服头部姿态以及初始化带来的问题，从而得到更好的检测效果。之所以DAN能将整张图片作为输入，是因为其加入了关键点热图（Landmark Heatmaps），关键点热图的使用是本文的重要创新点。</li>
+</ul>
+</li>
+</ul>
+<h4 id="325-3d人脸关键点定位">3.2.5 3D人脸关键点定位</h4>
+<ul>
+<li>
+<p>2D人脸主要为可见点信息，对于侧脸很难训练</p>
+</li>
+<li>
+<p>正脸到侧脸姿态变化较大，且标注十分困难</p>
+</li>
+<li>
+<p>人脸本身就具有深度信息</p>
+<ul>
+<li>Dense Face Alignment</li>
+<li>DenseReg</li>
+<li>FAN</li>
+<li>3DDFA</li>
+<li>PRNet</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-人脸关键点常用数据集">4 人脸关键点常用数据集</h2>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>个数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://bioid.com/About/BioID-Face-Database" target="_blank" rel="noopener noreffer">BiolD</a>
+</td>
+<td>20</td>
+</tr>
+<tr>
+<td><a href="http://neerajkumar.org/databases/lfpw/" target="_blank" rel="noopener noreffer">LFPW</a>
+</td>
+<td>29</td>
+</tr>
+<tr>
+<td><a href="https://lrs.icg.tugraz.at/research/aflw/" target="_blank" rel="noopener noreffer">AFLW</a>
+</td>
+<td>21</td>
+</tr>
+<tr>
+<td><a href="http://www.vision.caltech.edu/xpburgos/" target="_blank" rel="noopener noreffer">COFW</a>
+</td>
+<td>29</td>
+</tr>
+<tr>
+<td><a href="https://sites.google.com/site/junliangxing/codes" target="_blank" rel="noopener noreffer">ICCV13/MVFW</a>
+</td>
+<td>68</td>
+</tr>
+<tr>
+<td><a href="https://sites.google.com/site/junliangxing/codes" target="_blank" rel="noopener noreffer">OCFW</a>
+</td>
+<td>68</td>
+</tr>
+<tr>
+<td><a href="http://ibug.doc.ic.ac.uk/resources/300-W_IMAVIS/" target="_blank" rel="noopener noreffer">300-W</a>
+</td>
+<td>68</td>
+</tr>
+<tr>
+<td><a href="http://www.f-zhou.com/fa_code.html" target="_blank" rel="noopener noreffer">HELEN</a>
+</td>
+<td>29</td>
+</tr>
+<tr>
+<td><a href="http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" target="_blank" rel="noopener noreffer">CelebA</a>
+</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>300W-LP
+<ul>
+<li>68点</li>
+<li>AFW,LFPW,HELEN,IBUG and XM2VTS</li>
+</ul>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face10/8.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<ul>
+<li>Dlib库
+<ul>
+<li>能够检测出当前图片中的人脸的位置，并且完成人脸定位（68点），生成深度学习输入的训练样本。</li>
+</ul>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face10/9.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<h2 id="5-人脸关键点定位问题挑战及解决思路">5 人脸关键点定位问题挑战及解决思路</h2>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决思路</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>环境的变化</td>
+<td>数据增强</td>
+</tr>
+<tr>
+<td>姿态的变化</td>
+<td>姿态分类、人脸对齐（矫正）</td>
+</tr>
+<tr>
+<td>表情的变化</td>
+<td>数据增强，GAN</td>
+</tr>
+<tr>
+<td>遮挡问题</td>
+<td>3D人脸关键点定位、优化主干网络</td>
+</tr>
+<tr>
+<td>稠密点</td>
+<td>3D人脸关键点定位、优化主干网络</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-编程实战及模型优化">6 编程实战及模型优化</h2>
+<p>TensorFlow+SENet-人脸关键点定位编程实战及模型优化</p>
+<h3 id="61-tensorflowsenet模型详细介绍">6.1 TensorFlow+SENet模型详细介绍</h3>
+<ul>
+<li>人脸关键点网络结构</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face10/10.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+            <div class="admonition-content"><ul>
+<li>数据：训练样本</li>
+<li>网络结构：SENet</li>
+<li>输出：预测人脸中的68个关键点，表示为<code>68*2=136</code>维的向量</li>
+<li>回归网络</li>
+</ul></div>
+        </div>
+<ul>
+<li>网络结构</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face10/11.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<ul>
+<li>SENet模型详细介绍</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face10/12.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+            <div class="admonition-content"><ul>
+<li>SE-Inception Module 是将SE模块嵌入到Inception结构的一个示例。方框旁边的维度信息代表该层的输出。
+这里我们使用global average pooling作为Squeeze操作。紧接着两个Fully Connected
+层组成一个Bottleneck结构去建模通道间的相关性，并输出和输入特征同样数目的权重。
+我们首先将特征维度降低到输入的1/16，然后经过ReLu激活后再通过一个Fully Connected
+层升回到原来的维度。这样做比直接用一个Fully Connected层的好处在于：
+<ul>
+<li>具有更多的非线性，可以更好地拟合通道间复杂的相关性；</li>
+<li>极大地减少了参数量和计算量。然后通过一个Sigmoid的门获得0~1之间归一化的权重，最后通过一个Scale的操作来将归一化后的权重加权到每个通道的特征上。</li>
+</ul>
+</li>
+<li>SE-ResNet Module 操作过程基本和SE-Inception一样，只不过是在Addition前对分支上
+Residual的特征进行了特征重标定。如果对Addition后主支上的特征进行重标定，
+由于在主干上存在0~1的scale操作，在网络较深BP优化时就会在靠近输入层容易
+出现梯度消散的情况，导致模型难以优化。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">X1 = conv(X0)
+X2 = weight(X0)
+X3 = X0 + X1 ** X2
+</code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+<h3 id="62-环境参数">6.2 环境参数</h3>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>环境参数</p>
+            <div class="admonition-content"><ul>
+<li>Tensorflow1.12</li>
+<li>Ubuntu16.04</li>
+<li>Python3.5</li>
+</ul></div>
+        </div>
+<h3 id="63-数据准备">6.3 数据准备</h3>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>数据准备</p>
+            <div class="admonition-content"><ul>
+<li>300W-LP</li>
+</ul></div>
+        </div>
+<h2 id="7-实例代码">7 实例代码</h2>
+<blockquote>
+<p>正在优化中，后期上传</p>
+<p>&ndash; <em>ieblYang</em></p>
+</blockquote>
+<h2 id="8-参考资料">8 参考资料</h2>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>参考资料</p>
+            <div class="admonition-content"><ul>
+<li><a href="https://www.jianshu.com/p/e4b9317a817f" target="_blank" rel="noopener noreffer">人脸关键点对齐</a>
+</li>
+<li><a href="https://blog.csdn.net/App_12062011/article/details/81777923?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener noreffer">人脸对齐（十）&ndash;人脸对齐综述</a>
+</li>
+<li><a href="https://blog.csdn.net/qq_28618765/article/details/78128619?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener noreffer">人脸特征点检测（四）——Tasks-Constrained DCN（TCDCN）</a>
+</li>
+<li><a href="https://blog.csdn.net/u013841196/article/details/81048054" target="_blank" rel="noopener noreffer">人脸关键点检测9——DAN</a>
+</li>
+<li><a href="https://www.tinymind.cn/articles/3764" target="_blank" rel="noopener noreffer">SE-Inception v3架构的模型搭建（keras代码实现）</a>
+</li>
+<li><a href="https://blog.csdn.net/qq_22764813/article/details/95051082" target="_blank" rel="noopener noreffer">对SE_ResNet的理解</a>
+</li>
+</ul></div>
+        </div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-03-18 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://ieblyang.github.io/face10/" data-title="人脸对齐/关键点训练业务实战" data-via="ieblYang" data-hashtags="人脸识别,TensorFlow,SENet,人脸对齐"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://ieblyang.github.io/face10/" data-hashtag="人脸识别"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://ieblyang.github.io/face10/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://ieblyang.github.io/face10/" data-title="人脸对齐/关键点训练业务实战" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://ieblyang.github.io/face10/" data-title="人脸对齐/关键点训练业务实战" data-image="/images/face/featured-image.png" data-ralateuid="ieblYang"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://ieblyang.github.io/face10/" data-title="人脸对齐/关键点训练业务实战"><i class="loveit it-baidu-fill"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://ieblyang.github.io/face10/" data-title="人脸对齐/关键点训练业务实战"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://ieblyang.github.io/face10/" data-title="人脸对齐/关键点训练业务实战"><i class="fab fa-skype fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB">人脸识别</a>,&nbsp;<a href="/tags/tensorflow">TensorFlow</a>,&nbsp;<a href="/tags/senet">SENet</a>,&nbsp;<a href="/tags/%E4%BA%BA%E8%84%B8%E5%AF%B9%E9%BD%90">人脸对齐</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/bug02/" class="prev" rel="prev" title="解决AttributeError: module &#39;scipy.misc&#39; ···  &#39;imread&#39;的报错"><i class="fas fa-angle-left fa-fw"></i>解决AttributeError: module &#39;scipy.misc&#39; ···  &#39;imread&#39;的报错</a>
+            <a href="/miniprogram01/" class="next" rel="next" title="结合官方文档，入门微信小程序">结合官方文档，入门微信小程序<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"><div id="valine"></div><script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                new Valine({
+                    el: '#valine',
+                    appId: 'QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI',
+                    appKey: 'WBmoGyJtbqUswvfLh6L8iEBr',placeholder: '你的评论 ...',verify: true,avatar: 'mp',pageSize: 10,lang: 'zh-cn',visitor: true,recordIP: true,});
+            });
+        </script>
+        <noscript>
+            Please enable JavaScript to view the <a href="https://valine.js.org/">comments powered by Valine.</a>
+        </noscript></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },],
+                strict: false,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/valine/valine.48fc8c7a134ff56a24e2e2d3106ec39a.css" integrity="md5-SPyMehNP9Wok4uLTEG7Dmg=="><link rel="stylesheet" href="/lib/iconfont/iconfont.min.60491d359fba28667d44b1b4c808a0bd.css" integrity="md5-YEkdNZ&#43;6KGZ9RLG0yAigvQ=="><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.f0e116a1a6b325059928a106254352e1.css" integrity="md5-8OEWoaazJQWZKKEGJUNS4Q=="><link rel="stylesheet" href="/lib/katex/katex.min.4afae7d446ba01ebf7fff19893eaf3a1.css" integrity="md5-Svrn1Ea6Aev3//GYk&#43;rzoQ=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.b1994d1b9785dd8801dbf655df7bf6d9.css" integrity="md5-sZlNG5eF3YgB2/ZV33v22Q=="><script src="/lib/valine/Valine.min.1698240d38b9277036a3059775e55a03.js" integrity="md5-FpgkDTi5J3A2owWXdeVaAw=="></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.c4f5974788ebb82890a0e7771763939c.js" integrity="md5-xPWXR4jruCiQoOd3F2OTnA=="></script><script src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script src="/lib/lazysizes/lazysizes.min.0812d0f17b90a4aefd97bb91085ad252.js" integrity="md5-CBLQ8XuQpK79l7uRCFrSUg=="></script><script src="/lib/lightgallery/lightgallery.min.4bc95325ef47ddceda10ae0ee66e925c.js" integrity="md5-S8lTJe9H3c7aEK4O5m6SXA=="></script><script src="/lib/lightgallery/lg-thumbnail.min.874045ba82acdc496e8c871b77c5c1e5.js" integrity="md5-h0BFuoKs3ElujIcbd8XB5Q=="></script><script src="/lib/lightgallery/lg-zoom.min.409e9d2da92a979799deed01377eeff6.js" integrity="md5-QJ6dLakql5eZ3u0BN37v9g=="></script><script src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script src="/js/theme.min.2d8c56f0eeaac5b7d58911d3c7522b29.js" integrity="md5-LYxW8O6qxbfViRHTx1IrKQ=="></script></body>
+</html>
