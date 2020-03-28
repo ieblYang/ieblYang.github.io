@@ -5,9 +5,9 @@ This article offers a sample of basic Markdown syntax that can be used in Hugo c
 
 <!--more-->
 
-{{< admonition >}}
+{{% admonition %}}
 This article is a shameful copy of the great [Grav](http://learn.getgrav.org/content/markdown) original page
-{{< /admonition >}}
+{{% /admonition %}}
 
 Let's face it: Writing content for the Web is tiresome. WYSIWYG editors help alleviate this task, but they generally result in horrible code, or worse yet, ugly web pages.
 
@@ -34,9 +34,9 @@ John Gruber, the author of Markdown, puts it like this:
 
 Without further delay, let us go over the main elements of Markdown and what the resulting HTML looks like!
 
-{{< admonition tip >}}
+{{% admonition tip %}}
 :(far fa-bookmark): Bookmark this page for easy future reference!
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 1 Headings
 
@@ -60,7 +60,7 @@ The HTML looks like this:
 <h6>h6 Heading</h6>
 ```
 
-{{< admonition note "Heading IDs" >}}
+{{% admonition note "Heading IDs" %}}
 To add a custom heading ID, enclose the custom ID in curly braces on the same line as the heading:
 
 ```markdown
@@ -72,7 +72,7 @@ The HTML looks like this:
 ```html
 <h3 id="custom-id">A Great Heading</h3>
 ```
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 2 Comments
 
@@ -372,7 +372,7 @@ The HTML looks like this:
 </ol>
 ```
 
-{{< admonition tip >}}
+{{% admonition tip %}}
 If you just use `1.` for each number, Markdown will automatically number each item. For example:
 
 ```markdown
@@ -396,7 +396,7 @@ The rendered output looks like this:
 1. Faucibus porta lacus fringilla vel
 1. Aenean sit amet erat nunc
 1. Eget porttitor lorem
-{{< /admonition >}}
+{{% /admonition %}}
 
 ### Task Lists
 
@@ -471,11 +471,11 @@ The HTML looks like this:
 
 Use "fences" <code>```</code> to block in multiple lines of code with a language attribute.
 
-{{< highlight markdown >}}
+{{% highlight markdown %}}
 ```markdown
 Sample text here...
 ```
-{{< / highlight >}}
+{{% / highlight %}}
 
 The HTML looks like this:
 
@@ -494,7 +494,7 @@ To activate it, simply add the file extension of the language you want to use di
 
 For example, to apply syntax highlighting to JavaScript code:
 
-{{< highlight markdown >}}
+{{% highlight markdown %}}
 ```js
 grunt.initConfig({
   assemble: {
@@ -515,7 +515,7 @@ grunt.initConfig({
   }
 };
 ```
-{{< / highlight >}}
+{{% / highlight %}}
 
 The rendered output looks like this:
 
@@ -540,9 +540,9 @@ grunt.initConfig({
 };
 ```
 
-{{< admonition >}}
+{{% admonition %}}
 [Syntax highlighting page](https://gohugo.io/content-management/syntax-highlighting/) in **Hugo** Docs introduces more about syntax highlighting, including highlight shortcode.
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 10 Tables
 
@@ -591,7 +591,7 @@ The HTML looks like this:
 </table>
 ```
 
-{{< admonition note "Right or center aligned text" >}}
+{{% admonition note "Right or center aligned text" %}}
 Adding a colon on the right side of the dashes below any heading will right align text for that column.
 
 Adding colons on both sides of the dashes below any heading will center align text for that column.
@@ -611,7 +611,7 @@ The rendered output looks like this:
 | data   | path to data files to supply the data that will be passed into templates. |
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 11 Links
 
@@ -679,9 +679,9 @@ Content for chapter one.
 Content for chapter one.
 ```
 
-{{< admonition >}}
+{{% admonition %}}
 The specific placement of the anchor tag seems to be arbitrary. They are placed inline here since it seems to be unobtrusive, and it works.
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 12 Footnotes
 
@@ -740,7 +740,7 @@ With a reference later in the document defining the URL location:
 
 [id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
 
-{{< admonition tip >}}
+{{% admonition tip %}}
 **LoveIt** theme has [special shortcode for image](../theme-documentation-shortcodes/#image), which provides more features.
-{{< /admonition >}}
+{{% /admonition %}}
 

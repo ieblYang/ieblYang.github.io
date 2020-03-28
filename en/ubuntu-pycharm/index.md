@@ -4,9 +4,9 @@
 这篇文章展示了如何在Ubuntu16.04系统中安装Pycharm并进行基本配置.
 <!--more-->
 
-{{< admonition note "系统环境">}}  
+{{% admonition note "系统环境" %}}  
 * Ubuntu 16.04  
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 1 下载
 
@@ -43,17 +43,17 @@ sh pycharm.sh
 
 ### 4.1 调出pycharm顶部菜单栏
 
-{{< admonition note "配置">}}  
+{{% admonition note "配置"%}}  
 * 按`Ctrl + Shift + A`打开`Find Action`对话框，键入`Experimental features`，然后按Enter键。
 * 取消`linux.native.menu`选项旁边的复选框，应用更改并关闭对话框。
 * 重启PyCharm
-{{< /admonition >}}
+{{% /admonition %}}
 
 ### 4.2 将pycharm固定到系统桌面菜单栏
 
-{{< admonition note "配置">}} 
+{{% admonition note "配置"%}} 
 顶部菜单栏->`tools`->`Create Desktop Entry…`
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 5 完成
 
@@ -61,10 +61,10 @@ sh pycharm.sh
 
 ## 6 参考资料
 
-{{< admonition note "参考资料">}}
+{{% admonition note "参考资料"%}}
 https://blog.csdn.net/shuiyixin/article/details/89530415
 https://blog.csdn.net/loco1223/article/details/91127366
 https://blog.csdn.net/Boogyman/article/details/100527532
 https://blog.csdn.net/qq_42517220/article/details/86756538
-{{< /admonition >}}
+{{% /admonition %}}
 

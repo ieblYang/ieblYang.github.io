@@ -48,7 +48,11 @@ $$ e = \frac{\textstyle\sum_{i=1}^n \Vert X_{(i)}^e-X_{(i)}^e \Vert_2}{N * d_{io
 
 ![Minion](/images/face/face10/4.jpg)
 
+<<<<<<< HEAD
 {{< admonition note "笔记">}}
+=======
+{{% admonition note "笔记"%}}
+>>>>>>> add / update posts
 * 主要作用：勾勒出人脸基准点的轮廓，轮廓属于特定的形状。
 * 人脸模型：对人脸特征点进行建模，首先选择基准图片，利用基准图片作为参照，
 将训练集的图片按照基准进行变换，得到训练集的图像处理后的集合，
@@ -58,7 +62,11 @@ $$ e = \frac{\textstyle\sum_{i=1}^n \Vert X_{(i)}^e-X_{(i)}^e \Vert_2}{N * d_{io
 初步搜索时选择5个点中的某几个点作为最开始搜索的对象，通常选择眼睛或鼻子。
 * 对齐：根据基准点对人脸进行对齐。
 * 其他点的搜索定位：以基准点为参照，预测想要定位的其他的点的大致位置！
+<<<<<<< HEAD
 {{< /admonition >}}
+=======
+{{% /admonition %}}
+>>>>>>> add / update posts
 
 #### 3.1.2 级联回归学习
 
@@ -66,7 +74,11 @@ $$ e = \frac{\textstyle\sum_{i=1}^n \Vert X_{(i)}^e-X_{(i)}^e \Vert_2}{N * d_{io
 
 ![Minion](/images/face/face10/5.jpg)
 
+<<<<<<< HEAD
 {{< admonition note "笔记" >}}
+=======
+{{% admonition note "笔记" %}}
+>>>>>>> add / update posts
 * 对于人脸特征点定位，人脸关键点检测的目的是估计向量(Facial Shape) $S=(x_1,y_1,x_2,y_2,...,x_K,y_K)$ ，
 其中 $K$ 表示关键点的个数，由于每个关键点有横纵两个坐标，所以 $S$ 的长度为 $2K$ 。 
 对于一个输入 $I$ , 给定一个初始形状 $S^0$ (通常是在训练集计算得到的平均形状)。
@@ -83,7 +95,11 @@ $$S^{t+1 }= S^t+r_t(\phi(I,S^t))$$
 或者其他可学习特征（learning based features），
 然后通过训练得到的回归器R来估计增量ΔS( update vector)，
 把ΔS加到前一个阶段的S上得到新的S，这样通过不断的迭代即可以得到最终的S(shape)。
+<<<<<<< HEAD
 {{< /admonition >}}
+=======
+{{% /admonition %}}
+>>>>>>> add / update posts
 
 > 推荐阅读文献  
 > * Face Alignment at 3000 FPS via Regressing Local Binary Features(LBF)
@@ -180,12 +196,12 @@ TensorFlow+SENet-人脸关键点定位编程实战及模型优化
   
 ![Minion](/images/face/face10/10.jpg)
 
-{{< admonition note "笔记" >}}
+{{% admonition note "笔记" %}}
 * 数据：训练样本
 * 网络结构：SENet
 * 输出：预测人脸中的68个关键点，表示为`68*2=136`维的向量
 * 回归网络
-{{< /admonition >}}
+{{% /admonition %}}
 
 
 * 网络结构
@@ -196,7 +212,7 @@ TensorFlow+SENet-人脸关键点定位编程实战及模型优化
   
 ![Minion](/images/face/face10/12.jpg)
 
-{{< admonition note "笔记" >}}
+{{% admonition note "笔记" %}}
 
 * SE-Inception Module 是将SE模块嵌入到Inception结构的一个示例。方框旁边的维度信息代表该层的输出。
 这里我们使用global average pooling作为Squeeze操作。紧接着两个Fully Connected 
@@ -216,10 +232,11 @@ X2 = weight(X0)
 X3 = X0 + X1 ** X2
 ```
 
-{{< /admonition >}}
+{{% /admonition %}}
 
 ### 6.2 环境参数
 
+<<<<<<< HEAD
 {{< admonition note "环境参数">}}
 * Tensorflow1.12
 * Ubuntu16.04
@@ -229,8 +246,19 @@ X3 = X0 + X1 ** X2
 ### 6.3 数据准备
 
 {{< admonition note "数据准备">}}
+=======
+{{% admonition note "环境参数"%}}
+* Tensorflow1.12
+* Ubuntu16.04
+* Python3.5
+{{% /admonition %}}
+
+### 6.3 数据准备
+
+{{% admonition note "数据准备"%}}
+>>>>>>> add / update posts
 * 300W-LP
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 7 实例代码
 
@@ -241,11 +269,15 @@ X3 = X0 + X1 ** X2
 
 ## 8 参考资料
 
+<<<<<<< HEAD
 {{< admonition note "参考资料">}}
+=======
+{{% admonition note "参考资料"%}}
+>>>>>>> add / update posts
 * [人脸关键点对齐](https://www.jianshu.com/p/e4b9317a817f)
 * [人脸对齐（十）--人脸对齐综述](https://blog.csdn.net/App_12062011/article/details/81777923?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task)
 * [人脸特征点检测（四）——Tasks-Constrained DCN（TCDCN）](https://blog.csdn.net/qq_28618765/article/details/78128619?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task)
 * [人脸关键点检测9——DAN](https://blog.csdn.net/u013841196/article/details/81048054)
 * [SE-Inception v3架构的模型搭建（keras代码实现）](https://www.tinymind.cn/articles/3764)
 * [对SE_ResNet的理解](https://blog.csdn.net/qq_22764813/article/details/95051082)
-{{< /admonition>}}
+{{% /admonition%}}

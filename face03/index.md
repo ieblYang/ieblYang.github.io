@@ -4,16 +4,21 @@
 基于TensorFlow的人脸识别智能小程序的设计与实现 卷积神经网基础串讲
 
 <!--more-->
+
 ## 1 卷积神经网发展历程与基本概念
 
 ![Minion](/images/face/face03/1.jpg)
 
 ### 1.1 什么是卷积神经网
 
+<<<<<<< HEAD
 {{< admonition note "笔记" >}}
+=======
+{{% admonition note "笔记" %}}
+>>>>>>> add / update posts
 * 以卷积结构为主，搭建起来的深度网络
 * 将图片作为网络的输入，自动提取特征，并对图片的变形（如平移、比例缩放、倾斜）等具有高度不变形
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 2 卷积神经网络的重要组成单元
 
@@ -21,12 +26,12 @@
 
 #### 2.1.1 基本定义
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 * 基本定义：对图像和滤波矩阵做内积（逐个元素相乘再求和）的操作
 	* 滤波器
 	* 每一种卷积对应一种特征
 	* lm2col实现卷积运算
-{{< /admonition >}}
+{{% /admonition %}}
 
 #### 2.1.2 卷集中的重要参数
 
@@ -110,12 +115,12 @@ net = slim.conv2d(input_x,64,[3,3],scope='conv1_1')
 
 #### 2.2.1 基本定义
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 * 基本定义：对输入的特征图进行压缩
 	* 使特征图变小，简化网络计算复杂度
 	* 进行特征压缩，提取主要特征
 	* 增大感受野
-{{< /admonition >}}
+{{% /admonition %}}
 
 #### 2.2.2 常见的池化策略
 
@@ -127,14 +132,14 @@ net = slim.conv2d(input_x,64,[3,3],scope='conv1_1')
 
 #### 2.3.1 基本定义
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 * 基本概念：增加网络的非线性，进而提升网络的表达能力
 	* 非线性
 	* 单调性
 	* 可微性
 	* 取值范围
 	* Sigmoid、Tanh、ReLU、ELU、Maxout、Softplus、Softsign
-{{< /admonition >}}
+{{% /admonition %}}
 
 #### 2.3.2 Sigmoid
 
@@ -165,10 +170,10 @@ net = slim.conv2d(input_x,64,[3,3],scope='conv1_1')
 
 #### 2.4.1 基本概念
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 * 基本概念：通过一定的规范化手段，把每层神经网络任意神经元这个输入值的分布强行拉回到均值为0方差为1的标准正态分布
 ![Minion](/images/face/face03/5.jpg)
-{{< /admonition >}}
+{{% /admonition %}}
 
 #### 2.4.2 BatchNorm层优点
 
@@ -380,11 +385,11 @@ logits=None,name=None)
 
 ## 4 轻量型卷积神经网
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 * 更少的参数量
 * 更少的计算量
 * 移动端、嵌入式平台
-{{< /admonition >}}
+{{% /admonition %}}
 
 ### 4.1 SqueezeNet
 
@@ -417,13 +422,13 @@ logits=None,name=None)
 	* ECCV 2018
 	* 该模型最大的贡献点在于解释了如何去设计轻量型卷积网络的几个标准和规范
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 **轻量型卷积神经网设计标准**
 * 相同的通道宽度可最小化内存访问成本（MAC）
 * 过度的组卷积会增加MAC
 * 网络碎片化（例如GoogleNet的多路径结构）会降低并行度
 * 元素级运算不可忽视
-{{< /admonition >}}
+{{% /admonition %}}
 
 ### 4.4 Xception
 
@@ -480,14 +485,14 @@ logits=None,name=None)
 
 ## 6 卷积神经网中的Attention机制
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 人类大脑在接受和处理外界信号时的一种机制
 * one-hot分布或者soft的软分布
 * Soft-Attention或者Hard-Attention
 
 ![Minion](/images/face/face03/19.jpg)
 
-{{< /admonition >}}
+{{% /admonition %}}
 
 Attention实现机制：
 * 保留所有分量均做加权（即soft attention）
@@ -503,11 +508,11 @@ Attention实现机制：
 
 ## 7 模型压缩
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 学院派VS工程派
 * 学院派注重精度
 * 工程派注重精度与效率的结合
-{{< /admonition >}}
+{{% /admonition %}}
 
 ### 7.1 模型剪枝
 

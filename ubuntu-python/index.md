@@ -5,11 +5,11 @@
 
 <!--more-->
 
-{{< admonition note "系统环境">}}  
+{{% admonition note "系统环境"%}}  
 * Ubuntu 16.04  
 * 原始python版本 python2.7
 * 安装python版本 python3.5
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 1 ubuntu安装Python3.5
 
@@ -39,7 +39,7 @@ sudo update-alternatives --config python
 
 ## 3 参考资料
 
-{{< admonition note "参考资料">}}
+{{% admonition note "参考资料"%}}
 https://blog.csdn.net/qq_36801146/article/details/89380491
-{{< /admonition >}}
+{{% /admonition %}}
 

@@ -88,7 +88,7 @@ if __name__ == '__main__':
 	app.run()
 ```
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 * 首先导入了`Flask`类。 该类的实例将会成为WSGI应用。
 * 接着创建一个该类的实例。第一个参数是应用模块或者包的名称。如果使用一个单一模块(就像本例),
 那么应当使用 `name` ，因为名称会根据这个模块是按应用方式使用还是作为一个模块导入而发生变化(可能
@@ -97,7 +97,7 @@ if __name__ == '__main__':
 * 然后使用 `route()` 装饰器来告诉 Flask 触发函数的 URL 。
 * 函数名称被用于生成相关联的URL。函数最后返回需要在用户浏览器中显示的信息。
 把它保存为 `hello. py` 或其他类似名称。不要使用`flask.py`作为应用名称，这会与 Flask 本身发生冲突。
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 4 参数配置
 
@@ -135,11 +135,11 @@ app.config.from_object('config')
 app.run(host='0.0.0.0', debug=app.config['DEBUG'], port=90)
 ```
 
-{{< admonition abstract "重要">}}
+{{% admonition abstract "重要"%}}
 * `app.config.from_object('config')` 载入配置文件，使用时`DEBUG`必须大写
 * config 配置文件中的参数必须全部大写
 * `DEBUG` 的值默认值为 False
-{{< /admonition >}}
+{{% /admonition %}}
 
 ### 4.3 使用flask-script插件配置
 
@@ -213,7 +213,7 @@ def show_subpath(subpath):
 	return 'Subpath %s' % escape(subpath)
 ```
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 参数
 * 路径参数
 	* 位置参数
@@ -236,7 +236,7 @@ Flask中参数
 	* path 接收到的数据格式是字符串，会将斜线`/`认为是一个字符
 	* uuid 只接收uuid字符串，唯一码，一种生成规则
 	* any 列出的元组中的任意一个
-{{< /admonition >}}
+{{% /admonition %}}
 
 ### 6.2 唯一的URL / 重定向行为
 
@@ -251,11 +251,11 @@ def about():
 	return 'The about page'
 ```
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 * `projects` 的 URL 是中规中矩的，尾部有一个斜杠，看起来就如同一个文件夹。 访问一个没有斜杠结尾的 URL 时 Flask 会自动进行重定向，在尾部加上一个斜杠。
 
 * `about` 的 URL 没有尾部斜杠，因此其行为表现与一个文件类似。如果访问这个 URL 时添加了尾部斜杠就会得到一个 404 错误。这样可以保持 URL 唯一，并帮助 搜索引擎避免重复索引同一页面。
-{{< /admonition >}}
+{{% /admonition %}}
 
 ### 6.3 反向解析
 
@@ -279,14 +279,14 @@ def about():
 	* static 资源
 	* path 相对于资源的路径 
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 为什么不在把 URL 写死在模板中，而要使用反转函数 `url_for()` 动态构建？
 * 反转通常比硬编码 URL 的描述性更好。
 * 可以只在一个地方改变 URL ，而不用到处乱找。
 * URL 创建会为你处理特殊字符的转义和 Unicode 数据，比较直观。
 * 生产的路径总是绝对路径，可以避免相对路径产生副作用。
 * 如果应用是放在 URL 根路径之外的地方（如在 `/myapplication` 中，不在 `/` 中）， `url_for()` 会妥善处理。
-{{< /admonition >}}
+{{% /admonition %}}
 
 ```Python
 from flask import Flask, escape, url_for

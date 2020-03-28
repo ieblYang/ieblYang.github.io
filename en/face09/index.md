@@ -37,7 +37,7 @@
 * 纹理：对颜色矩阵差分可以得到纹理特征
 * 形状：对图像中的结构信息进行分解
 * 学习：对以上三种人为设计的基本信息进行学习，加入监督信息、类别信息等，更加鲁棒
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 如何进行特征表示的优化学习？
 * PCA（无监督）	
 	* 对高维的稠密的可以通过PCA进行特征降维，提取主成分
@@ -53,7 +53,11 @@
 	* 哈希函数可以是基于线性的、核函数、球面函数、深度神经网络、无参函数
 	  通过机器学习机制将数据映射成简洁的二进制串的形式, 
 	  同时使得哈希码尽可能地保持原空间中的近邻关系, 即保相似性
+<<<<<<< HEAD
 {{< /admonition >}}
+=======
+{{% /admonition %}}
+>>>>>>> add / update posts
 
 ![Minion](/images/face/face09/5.jpg)
 
@@ -88,7 +92,11 @@ $$D_M(x)=\sqrt{(x−μ)^TS^{-1}(x−μ)}$$
 
 ![Minion](/images/face/face09/7.jpg)
 
+<<<<<<< HEAD
 {{< admonition note "笔记">}}
+=======
+{{% admonition note "笔记"%}}
+>>>>>>> add / update posts
 * 分类问题的网络是单支的
 	* 进行人脸特征匹配时，用欧氏距离和余弦距离来测量当前提取出来的特征向量，特征向量利用网络进行学习
 	* 样本量非常丰富，单类样本样本数量非常多时，通常采用分类网络
@@ -102,7 +110,11 @@ $$D_M(x)=\sqrt{(x−μ)^TS^{-1}(x−μ)}$$
 	* 样本量比较少，单类样本数量也比较少时，通常采用多分支网络结构
 * 重排序（ReRank）
 	* 利用深度学习网络提取完特征，并对特征进行了相似性度量和排序后，根据排序结果再次重新排序
+<<<<<<< HEAD
 {{< /admonition>}}
+=======
+{{% /admonition%}}
+>>>>>>> add / update posts
 
 ![Minion](/images/face/face09/8.jpg)
 
@@ -114,52 +126,83 @@ $$D_M(x)=\sqrt{(x−μ)^TS^{-1}(x−μ)}$$
 
 ![Minion](/images/face/face09/9.jpg)
 
+<<<<<<< HEAD
 {{< admonition note "笔记">}}
 * Anchor和Positive为同类样本
 * 经过学习之后，同类样本之间的相似度更高（距离更小）
 {{< /admonition>}}	
+=======
+{{% admonition note "笔记"%}}
+* Anchor和Positive为同类样本
+* 经过学习之后，同类样本之间的相似度更高（距离更小）
+{{% /admonition%}}	
+>>>>>>> add / update posts
 
 #### 4.1.2 网络结构
 
 ![Minion](/images/face/face09/10.jpg)
 
+<<<<<<< HEAD
 {{< admonition note "笔记">}}
+=======
+{{% admonition note "笔记"%}}
+>>>>>>> add / update posts
 * FaceNet也可称为Triplet Net的一个网络结构
 * Batch由多个三元组构成，包含样本对(Anchor,Positive,Negative)
 * DEEP ARCHITECTURE 深度网络主干网络（标准卷积神经网），对输入的图像进行特征提取，将图片转化成向量
 * 对提取出来的向量通过L2进行归一化
 * 得到归一化后的EMBEDDING（最终的特征向量）
 * EMBEDDING作为 Triplet Loss 的输入，输入同样为三元组(Anchor的特征向量,Positive的特征向量,Negative的特征向量)
+<<<<<<< HEAD
 {{< /admonition>}}
+=======
+{{% /admonition%}}
+>>>>>>> add / update posts
 
 #### 4.1.3 Loss设计
 
 $$\displaystyle\sum_{i=1}^N[\text{\textbardbl}f(x{_i^a})-f(x{_i^p})\text{\textbardbl}{_2^2}
 -\text{\textbardbl}f(x{_i^a})-f(x{_i^n})\text{\textbardbl}{_2^2}+\alpha]_+$$
 
+<<<<<<< HEAD
 {{< admonition note "笔记">}}
+=======
+{{% admonition note "笔记"%}}
+>>>>>>> add / update posts
 * N个三元组
 * (Anchor-Positive)-(Anchor-Negative) 得到同类和不同类之间的样本距离差
 * α为间隔，通过α可以调节同类样本和不同类样本之间的距离满足多大的距离差才能算作一个样本
 * 通过Loss的设计学出来的特征可以用来度量样本的相似度
 * 计算向量相似度时采用的是二范式，即欧氏距离
 * 利用FaceNet进行特征向量提取，计算样本相似度时只采用欧氏距离即可
+<<<<<<< HEAD
 {{< /admonition>}}
+=======
+{{% /admonition%}}
+>>>>>>> add / update posts
 
 #### 4.1.4 难例挖掘
 
 * OHEM
 
+<<<<<<< HEAD
 {{< admonition note "笔记">}}
 * 难例挖掘是指,针对模型训练过程中导致损失值很大的一些样本(即使模型很大概率分类错误的样本),重新训练它们.
 * 维护一个错误分类样本池, 把每个batch训练数据中的出错率很大的样本放入该样本池中,当积累到一个batch以后,将这些样本放回网络重新训练.
 * 在进行Loss计算时，主要考虑难例，对简单样本不计算Loss
 {{< /admonition>}}
+=======
+{{% admonition note "笔记"%}}
+* 难例挖掘是指,针对模型训练过程中导致损失值很大的一些样本(即使模型很大概率分类错误的样本),重新训练它们.
+* 维护一个错误分类样本池, 把每个batch训练数据中的出错率很大的样本放入该样本池中,当积累到一个batch以后,将这些样本放回网络重新训练.
+* 在进行Loss计算时，主要考虑难例，对简单样本不计算Loss
+{{% /admonition%}}
+>>>>>>> add / update posts
 
 #### 4.1.5 数据增强
 
 * 颜色信息、几何变换、GAN、多样本数据增强
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 * 数据增强也叫数据扩增，意思是在不实质性的增加数据的情况下，让有限的数据产生等价于更多数据的价值。
 * 颜色信息常包括：噪声、模糊、颜色变换、擦除、填充等。
 * 几何变换常包括：翻转，旋转，裁剪，变形，缩放等。
@@ -168,16 +211,24 @@ $$\displaystyle\sum_{i=1}^N[\text{\textbardbl}f(x{_i^a})-f(x{_i^p})\text{\textba
 	* D是一个判别网络，判别一张图片是不是“真实的”，即是真实的图片，还是由G生成的图片。
 	![Minion](/images/face/face09/11.jpg)
 * 多样本数据增强不同于单样本数据增强，多样本数据增强方法利用多个样本来产生新的样本。
+<<<<<<< HEAD
 {{< /admonition>}}
+=======
+{{% /admonition%}}
+>>>>>>> add / update posts
 
 ### 4.2 FaceNet环境搭建
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 
 * 源码地址：
 	* <https://github.com/davidsandberg/facenet>
 	* TensorFlow1.12、Ubuntu16.04、Python3.5
 	* <https://github.com/VisualComputingInstitute/triplet-reid>
+<<<<<<< HEAD
 {{< /admonition>}}
+=======
+{{% /admonition%}}
+>>>>>>> add / update posts
 
 ```Bash
 #下载FaceNet
@@ -243,7 +294,11 @@ python3 src/align/align_dataset_mtcnn.py lfw lfw_160--image_size 160 --margin 32
 
 ## 6 参考资料
 
+<<<<<<< HEAD
 {{< admonition note "参考资料">}}
+=======
+{{% admonition note "参考资料"%}}
+>>>>>>> add / update posts
 * [《机器学习》第10章 降维与度量分析](https://www.jianshu.com/p/db8f15c3fe56)
 * [【技术综述】深度学习中的数据增强方法都有哪些？](https://zhuanlan.zhihu.com/p/61759947)
 * [face recognition[翻译][深度人脸识别:综述]](https://www.cnblogs.com/shouhuxianjian/p/9789243.html)
@@ -253,4 +308,4 @@ python3 src/align/align_dataset_mtcnn.py lfw lfw_160--image_size 160 --margin 32
 * [CelebA数据集详细介绍及其属性提取源代码](https://zhuanlan.zhihu.com/p/35975956)
 * [性别年龄论文阅读（3）——VGGFace2](https://blog.csdn.net/heruili/article/details/88208757)
 * [Dataset之CASIA-WebFace](https://blog.csdn.net/qq_41185868/article/details/82925992)
-{{< /admonition>}}
+{{% /admonition%}}
