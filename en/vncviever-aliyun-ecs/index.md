@@ -5,11 +5,11 @@
 
 <!--more-->
 
-{{< admonition note "系统环境">}}
+{{% admonition note "系统环境" %}}
 * 桌面端版本：Windows 10  
 * 远程端版本：Ubuntu 16.04  
 * VNCViewer版本：6.20.113  
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 1 安装配置好服务器
 
@@ -17,11 +17,11 @@
 
 为`阿里云ECS`添加`安全组`
 
-{{< admonition note "安全组">}}
+{{% admonition note "安全组"%}}
 * 协议类型：自定义TCP
 * 端口范围：5900/59001
 * 授权对象：0.0.0.0/0
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 3 连接Terminal
 
@@ -126,12 +126,12 @@ gnome-terminal &
 ```
 ## 7 启动vncserver
 
-{{< admonition tip>}}
+{{% admonition tip%}}
 自动生成新桌面  
 第一次生成:1  
 第二次生成:2  
 表示不同的桌面
-{{< /admonition >}}
+{{% /admonition %}}
 
 ```Bash
 vncviewer
@@ -149,15 +149,15 @@ vncserver -kill :1      #:1表示桌面号
 
 ### 9.2 创建新的连接
 
-{{< admonition note "创建新链接">}}
+{{% admonition note "创建新链接"%}}
 `File` -> `New connection`   
 在`VNC Server`中输入**IP:桌面号**`39.105.95.4:1`
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 10 参考资料
 
-{{< admonition note "参考资料">}}
+{{% admonition note "参考资料"%}}
 <https://www.jianshu.com/p/a4c99712a2b4>  
 <https://blog.csdn.net/u012435142/article/details/82261586>
-{{< /admonition >}}
+{{% /admonition %}}
 

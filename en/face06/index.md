@@ -224,7 +224,7 @@
 
 ![Minion](/images/face/face06/13.jpg)
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 * VJ(Viola-Jones)框架算法要点:
 	* 使用类Haar输入特征：对矩形图像区域的和或差进行阈值化。
 	* 积分图像技术加速了矩形图像区域的45度旋转的值的计算，这个图像结构被用来加速类Haar输入特征的计算。
@@ -245,7 +245,7 @@
 	* 目前比较先进的人脸检测算法.它结合了 cascade 和 alignment ，一方面做alignment对进一步的人脸识别意义重大，
 	另一方面作者在 section 2 讲到了landmark附近的特征可促进分类器分辨出更准确的结果，
 	最后，将这两者放在一起做不仅相互促进而且还相互节省了时间。
-{{< /admonition >}}
+{{% /admonition %}}
 
 ### 5.2 从粗粒度到细粒度的级联模型（Deep Learning） 
 
@@ -352,27 +352,27 @@ $$L(x,c,l,g)=\dfrac{1}{N} (L_{conf}(x,c)+\alpha L_{loc}(x,l,g))$$
 
 ## 8.3 TensorFlow+SSD环境搭建
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 * 安装TensorFlow环境
 	* TensorFlow-gpu版本1.12以上
 
 * https://github.com/tensorflow/models.git
    * [目标检测算法源码框架](https://github.com/tensorflow/models/tree/master/research/object_detection)
    * [安装教程](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md)
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 9 人脸检测数据清洗与数据打包
 
 ### 9.1 WIDER FACE 数据集
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 WIDER FACE数据集
 * 由香港中文大学提出
 * 32203个图像和393703个人脸图像
 * 在尺度，姿势，遮挡，表情，装扮，光照等
 * 61个事件类别组织的，对于每一个事件类别，选取其中的40%作为训练集,10%用于交叉验证，50%作为测试集 
 * 下载地址：<http://shuoyang1213.me/WIDERFACE/> 
-{{< /admonition >}}
+{{% /admonition %}}
 
 ![Minion](/images/face/face06/20.jpg)
 
@@ -382,11 +382,11 @@ WIDER FACE数据集
 ![Minion](/images/face/face06/21.jpg)
 * VOC主要有三个重要的文件夹
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 * Annotations 存放标注信息
 * ImageSets	  存放训练和测试用到的文件列表
 * JPEGImages  存放图片信息
-{{< /admonition >}}
+{{% /admonition %}}
 
 * VOC数据基本结构
 
@@ -451,7 +451,7 @@ WIDER FACE数据集
 
 ## 10 参考资料
 
-{{< admonition note "参考资料">}}
+{{% admonition note "参考资料"%}}
 * [FDDB人脸检测算法评价标准](https://yinguobing.com/fddb/)
 * [目标检测 IOU（交并比） 理解笔记](https://www.cnblogs.com/zfcode/p/mu-biao-jian-ce-IOU-jiao-bing-bi-li-jie-bi-ji.html)
 * [走近人脸检测（2）——VJ人脸检测器及其发展](https://blog.csdn.net/zchang81/article/details/71515490)
@@ -459,4 +459,4 @@ WIDER FACE数据集
 * [DPM目标检测算法](https://blog.csdn.net/weixin_41798111/article/details/79989794)
 * [解读 Joint Cascade Face Detection and Alignment 人脸检测算法](https://blog.csdn.net/smf0504/article/details/52244254)
 * [人脸识别技术大总结1——Face Detection & Alignment](https://www.cnblogs.com/sciencefans/p/4394861.html)
-{{< /admonition>}}
+{{% /admonition%}}

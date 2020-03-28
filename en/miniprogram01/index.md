@@ -41,7 +41,7 @@
 │       └── logs.js  
 ├── utils  
 └── project.config.json
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 * pages 存放页面  
 
 |文件|作用|举例（英雄联盟）|
@@ -57,13 +57,13 @@
 * app.wxss 	应用程序级别的全局样式
 * project.config.json 项目配置文件
 * **就近原则** 页面配置 高于 全局配置
-{{< /admonition >}}
+{{% /admonition %}}
 
 ### 2.2 注册小程序页面
 
-{{< admonition success "官方文档">}}
+{{% admonition success "官方文档"%}}
 官方文档 -> 框架 -> 小程序配置 -> 全局配置 -> pages
-{{< /admonition >}}
+{{% /admonition %}}
 
 app.json -> pages
 
@@ -80,9 +80,9 @@ app.json -> pages
 
 #### 2.3.1 view
 
-{{< admonition success "官方文档">}}
+{{% admonition success "官方文档"%}}
 官方文档 -> 组件 -> 视图容器 -> view
-{{< /admonition >}}
+{{% /admonition %}}
 
 * `<view> </view>` 相当于网页中的 `<div> </div>`
 
@@ -90,18 +90,18 @@ app.json -> pages
 
 #### 2.3.2 text
 
-{{< admonition success "官方文档">}}
+{{% admonition success "官方文档"%}}
 官方文档 -> 组件 -> 基础内容 -> text
-{{< /admonition >}}
+{{% /admonition %}}
 
 * 写文本时最好用`<text> </text>`包裹，便于对文件设置样式和添加标签
 * 不建议直接使用`<button> </button>`，可以使用`<view> <text> 按钮 </text> </view>`的形式来实现按钮
 
 #### 2.3.3 window
 
-{{< admonition success "官方文档">}}
+{{% admonition success "官方文档"%}}
 官方文档 -> 框架 -> 小程序配置 -> 全局配置 -> window
-{{< /admonition >}}
+{{% /admonition %}}
 
 * 用于设置小程序的状态栏、导航条、标题、窗口背景色。
 
@@ -136,9 +136,9 @@ app.json -> pages
 
 ### 2.5 移动端分辨率及小程序自适应单位RPX
 
-{{< admonition success "官方文档">}}
+{{% admonition success "官方文档"%}}
 官方文档 -> 指南 -> 小程序框架 -> 视图层 -> wxss
-{{< /admonition >}}
+{{% /admonition %}}
   
  | 设备           | 屏幕尺寸|分辨率(pt)|Reader|分辨率(px)|渲染后   |PPI|
  |----------------|--------|---------|-------|---------|--------|---|

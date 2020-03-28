@@ -5,9 +5,9 @@
 
 <!--more-->
 
-{{< admonition >}}
+{{% admonition %}}
 这篇文章借鉴了一篇很棒的来自 [Grav](http://learn.getgrav.org/content/markdown)的文章
-{{< /admonition >}}
+{{% /admonition %}}
 
 事实上, 编写 Web 内容很麻烦. [WYSIWYG]^(所见即所得) 编辑器帮助减轻了这一任务. 但通常会导致代码太糟, 或更糟糕的是, 网页也会很丑.
 
@@ -34,9 +34,9 @@ John Gruber, Markdown 的作者如是说:
 
 话不多说, 我们来回顾一下 Markdown 的主要语法以及生成的 HTML 样式!
 
-{{< admonition tip >}}
+{{% admonition tip %}}
 :(far fa-bookmark): 将此页保存为书签，以备将来参考!
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 1 标题
 
@@ -60,7 +60,7 @@ John Gruber, Markdown 的作者如是说:
 <h6>h6 标题</h6>
 ```
 
-{{< admonition note "标题 ID" >}}
+{{% admonition note "标题 ID" %}}
 要添加自定义标题 ID, 请在与标题相同的行中将自定义 ID 放在花括号中:
 
 ```markdown
@@ -72,7 +72,7 @@ John Gruber, Markdown 的作者如是说:
 ```html
 <h3 id="custom-id">一个很棒的标题</h3>
 ```
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 2 注释
 
@@ -372,7 +372,7 @@ odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac 
 </ol>
 ```
 
-{{< admonition tip >}}
+{{% admonition tip %}}
 如果你对每一项使用 `1.`, Markdown 将自动为每一项编号. 例如:
 
 ```markdown
@@ -396,7 +396,7 @@ odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac 
 1. Faucibus porta lacus fringilla vel
 1. Aenean sit amet erat nunc
 1. Eget porttitor lorem
-{{< /admonition >}}
+{{% /admonition %}}
 
 ### 任务列表
 
@@ -472,11 +472,11 @@ odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac 
 
 使用 "围栏" <code>```</code> 来生成一段带有语言属性的代码块.
 
-{{< highlight markdown >}}
+{{% highlight markdown %}}
 ```markdown
 Sample text here...
 ```
-{{< / highlight >}}
+{{% / highlight %}}
 
 输出的 HTML 看起来像这样:
 
@@ -495,7 +495,7 @@ Sample text here...
 
 例如, 在以下 JavaScript 代码中应用语法高亮:
 
-{{< highlight markdown >}}
+{{% highlight markdown %}}
 ```js
 grunt.initConfig({
   assemble: {
@@ -516,7 +516,7 @@ grunt.initConfig({
   }
 };
 ```
-{{< / highlight >}}
+{{% / highlight %}}
 
 呈现的输出效果如下:
 
@@ -541,10 +541,10 @@ grunt.initConfig({
 };
 ```
 
-{{< admonition >}}
+{{% admonition %}}
 **Hugo** 文档中的 [语法高亮页面](https://gohugo.io/content-management/syntax-highlighting/) 介绍了有关语法高亮的更多信息,
 包括语法高亮的 shortcode.
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 10 表格
 
@@ -593,7 +593,7 @@ grunt.initConfig({
 </table>
 ```
 
-{{< admonition note "文本右对齐或居中对齐" >}}
+{{% admonition note "文本右对齐或居中对齐" %}}
 在任何标题下方的破折号右侧添加冒号将使该列的文本右对齐.
 
 在任何标题下方的破折号两边添加冒号将使该列的对齐文本居中.
@@ -613,7 +613,7 @@ grunt.initConfig({
 | data   | path to data files to supply the data that will be passed into templates. |
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 11 链接
 
@@ -681,9 +681,9 @@ Content for chapter one.
 Content for chapter one.
 ```
 
-{{< admonition >}}
+{{% admonition %}}
 定位标记的位置几乎是任意的. 因为它们并不引人注目, 所以它们通常被放在同一行了.
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 12 脚注
 
@@ -747,6 +747,6 @@ Content for chapter one.
 
 [id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
 
-{{< admonition tip >}}
+{{% admonition tip %}}
 **LoveIt** 主题提供了一个包含更多功能的 [图片的 shortcode](../theme-documentation-shortcodes/#image).
-{{< /admonition >}}
+{{% /admonition %}}

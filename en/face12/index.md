@@ -73,13 +73,13 @@ CelebA中有 10,177人 的 202,599张 图片
 │   └── img_align_celeba_png.7z 
 └── README.txt  
 
-{{< admonition note "笔记">}}
+{{% admonition note "笔记"%}}
 * `identity_CelebA.txt`	身份标记：图片名 + 编号，相同编号代表同一人，如：000001.jpg 2880
 * `list_attr_celeba.txt`  标记图片属性  
 * `list_landmarks_align_celeba.txt`  对齐后的图片，人脸标记（眼鼻嘴）`lefteye_x` `lefteye_y` `righteye_x` `righteye_y` `nose_x` `nose_y` `leftmouth_x` `leftmouth_y` `rightmouth_x` `rightmouth_y`  
 * `list_landmarks_celeba.txt` 自然环境下的图片，人脸标记（眼鼻嘴）`lefteye_x` `lefteye_y` `righteye_x` `righteye_y` `nose_x` `nose_y` `leftmouth_x` `leftmouth_y` `rightmouth_x` `rightmouth_y`  
 * `list_eval_partition.txt`  分组：训练、验证、测试  
-{{< /admonition >}}
+{{% /admonition %}}
 
 #### 4.1.2 下载的图片
 

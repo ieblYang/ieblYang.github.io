@@ -5,16 +5,16 @@
 
 <!--more-->
 
-{{< admonition note "系统环境">}}  
+{{% admonition note "系统环境"%}}  
 * Ubuntu 16.04  
 * Aliyun Workbench
 * Aliyun VNC
-{{< /admonition >}}
+{{% /admonition %}}
 
-{{< admonition warning>}}  
+{{% admonition warning%}}  
 * 图形化桌面安装好后，远程连接进去，发现只能使用guest帐号，不能选择其他用户
 * 登录进去有警告信息！
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 1 连接Terminal
 
@@ -95,7 +95,7 @@ reboot
 
 ## 7 参考资料
 
-{{< admonition note "参考资料">}}
+{{% admonition note "参考资料"%}}
 https://blog.csdn.net/Never_Give_up_z/article/details/83190285
-{{< /admonition >}}
+{{% /admonition %}}
 

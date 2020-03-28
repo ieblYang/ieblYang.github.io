@@ -5,10 +5,10 @@
 
 <!--more-->
 
-{{< admonition note "系统环境">}}  
+{{% admonition note "系统环境"%}}  
 * Windows 10  
 * hugo_extended_0.68.3_Windows-64bit
-{{< /admonition >}}
+{{% /admonition %}}
 
 ## 1 git
 
@@ -62,7 +62,7 @@ $ hugo new site 文件名称（如 blog）
 ├── themes  
 ├── config.toml  
 
-{{< admonition note "笔记" >}}
+{{% admonition note "笔记" %}}
 * archetypes：存放default.md，头文件格式，每次新建文章默认显示的头部信息在此修改
 * content：存放博客文章，markdown格式文件
 * data：存放自定义或者导入的模板
@@ -70,7 +70,7 @@ $ hugo new site 文件名称（如 blog）
 * static：存放图片、css、js等静态资源
 * themes：存放主题文件，每个主题都是一个独立的文件夹
 * config.toml：网站配置文件
-{{< /admonition >}}
+{{% /admonition %}}
 
 ### 2.4 创建文章
 * 进入**站点根目录**即`D:\hugo\blog`下，执行命令
