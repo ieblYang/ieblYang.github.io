@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>人脸匹配训练业务实战 | 波玻拨啵菠萝</title>
+        <meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配训练业务实战"><meta property="og:title" content="人脸匹配训练业务实战" />
+<meta property="og:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配训练业务实战" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ieblyang.github.io/face09/" />
+<meta property="article:published_time" content="2020-03-14T13:07:40+08:00" />
+<meta property="article:modified_time" content="2020-03-14T13:07:40+08:00" /><meta property="og:site_name" content="波玻拨啵菠萝" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="人脸匹配训练业务实战"/>
+<meta name="twitter:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配训练业务实战"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://ieblyang.github.io/face09/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://ieblyang.github.io/flask01/" /><link rel="next" href="https://ieblyang.github.io/bug01/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.9679f10076c3db0a03c8c8a5128dba53.css" integrity="md5-lnnxAHbD2woDyMilEo26Uw=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><link rel="stylesheet" href="/css/style.min.ae21e349d7dcddfd942a94491d8158d5.css" integrity="md5-riHjSdfc3f2UKpRJHYFY1Q=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "人脸匹配训练业务实战",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ieblyang.github.io\/face09\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/ieblyang.github.io\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "人脸识别, TensorFlow, 人脸匹配","wordcount":  3164 ,
+        "url": "https:\/\/ieblyang.github.io\/face09\/","datePublished": "2020-03-14","dateModified": "2020-03-14","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                "@type": "Organization",
+                "name": "ieblYang",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/ieblyang.github.io\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "ieblYang"
+            },"description": "基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配训练业务实战"
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/">波玻拨啵菠萝</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/posts/" rel="noopener noreffer">文章</a><a class="menu-item" href="/tags/" rel="noopener noreffer">标签</a><a class="menu-item" href="/categories/" rel="noopener noreffer">分类</a><a class="menu-item" href="/categories/documentation/" rel="noopener noreffer">文档</a><a class="menu-item" href="/about/" rel="noopener noreffer">关于</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/face09/">English</option><option value="/face09/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/">波玻拨啵菠萝</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" rel="noopener noreffer">文章</a><a class="menu-item" href="/tags/" title="" rel="noopener noreffer">标签</a><a class="menu-item" href="/categories/" title="" rel="noopener noreffer">分类</a><a class="menu-item" href="/categories/documentation/" title="" rel="noopener noreffer">文档</a><a class="menu-item" href="/about/" title="" rel="noopener noreffer">关于</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/en/face09/">English</option><option value="/face09/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">人脸匹配训练业务实战</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://ieblyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ieblYang</a>
+</span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/face-recognition">
+                                <i class="far fa-folder fa-fw"></i>Face recognition
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-14>2020-03-14</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 3164 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 7 分钟&nbsp;<span id="/face09/" class="leancloud_visitors" data-flag-title="人脸匹配训练业务实战">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/featured-image.png, /images/face/featured-image.png 1.5x, /images/face/featured-image.png 2x"
+        data-src="/images/face/featured-image.png"
+        alt="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配训练业务实战"
+        title="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配训练业务实战" /></div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-人脸匹配业务介绍">1 人脸匹配业务介绍</a></li>
+    <li><a href="#2-人脸匹配算法性能评价指标">2 人脸匹配算法性能评价指标</a>
+      <ul>
+        <li><a href="#21-cmc曲线">2.1 CMC曲线</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-人脸匹配方法介绍">3 人脸匹配方法介绍</a>
+      <ul>
+        <li><a href="#31-人脸特征表示问题">3.1 人脸特征表示问题</a></li>
+        <li><a href="#32-人脸特征度量问题">3.2 人脸特征度量问题</a>
+          <ul>
+            <li><a href="#321-什么是度量问题">3.2.1 什么是度量问题？</a></li>
+            <li><a href="#322-欧氏距离euclidean-distance">3.2.2 欧氏距离（Euclidean Distance）</a></li>
+            <li><a href="#323-马氏距离mahalanobis-distance">3.2.3 马氏距离（Mahalanobis Distance）</a></li>
+            <li><a href="#324-度量优化问题">3.2.4 度量优化问题</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#33-人脸匹配的深度学习方法">3.3 人脸匹配的深度学习方法</a></li>
+    <li><a href="#4-facenet编程实战及模型优化">4 FaceNet编程实战及模型优化</a>
+      <ul>
+        <li><a href="#41-facenet模型详细介绍">4.1 FaceNet模型详细介绍</a>
+          <ul>
+            <li><a href="#411-learn-to-rank">4.1.1 Learn to rank</a></li>
+            <li><a href="#412-网络结构">4.1.2 网络结构</a></li>
+            <li><a href="#413-loss设计">4.1.3 Loss设计</a></li>
+            <li><a href="#414-难例挖掘">4.1.4 难例挖掘</a></li>
+            <li><a href="#415-数据增强">4.1.5 数据增强</a></li>
+          </ul>
+        </li>
+        <li><a href="#42-facenet环境搭建">4.2 FaceNet环境搭建</a></li>
+        <li><a href="#43-人脸匹配数据准备">4.3 人脸匹配数据准备</a>
+          <ul>
+            <li><a href="#431-常见数据集">4.3.1 常见数据集</a></li>
+            <li><a href="#432-数据格式">4.3.2 数据格式</a></li>
+            <li><a href="#433-人脸匹配数据准备">4.3.3 人脸匹配数据准备</a>
+              <ul>
+                <li><a href="#1方法一">1.方法一</a></li>
+                <li><a href="#2方法二">2.方法二</a></li>
+                <li><a href="#3通过mtcnn完成人脸匹配数据准备">3.通过mtcnn完成人脸匹配数据准备</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#5-实例代码">5 实例代码</a></li>
+    <li><a href="#6-参考资料">6 参考资料</a></li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配训练业务实战</p>
+<h2 id="1-人脸匹配业务介绍">1 人脸匹配业务介绍</h2>
+<ul>
+<li>1:1 验证， verification</li>
+<li>1:N 识别， identification</li>
+</ul>
+<h2 id="2-人脸匹配算法性能评价指标">2 人脸匹配算法性能评价指标</h2>
+<ul>
+<li>人脸验证：ROC曲线、PR曲线</li>
+<li>人脸识别：CMC曲线</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face09/1.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<h3 id="21-cmc曲线">2.1 CMC曲线</h3>
+<ul>
+<li>累积匹配曲线</li>
+<li>Top1 error 预测出来最大概率的那个分类是正确的概率。</li>
+<li>Top5 error 预测出来最大概率的5个分类里有正确的概率。</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face09/2.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<h2 id="3-人脸匹配方法介绍">3 人脸匹配方法介绍</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face09/3.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<h3 id="31-人脸特征表示问题">3.1 人脸特征表示问题</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face09/4.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<ul>
+<li>颜色：一般输出一个向量，通常为一个直方图</li>
+<li>纹理：对颜色矩阵差分可以得到纹理特征</li>
+<li>形状：对图像中的结构信息进行分解</li>
+<li>学习：对以上三种人为设计的基本信息进行学习，加入监督信息、类别信息等，更加鲁棒</li>
+</ul>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+            <div class="admonition-content">如何进行特征表示的优化学习？</p>
+<ul>
+<li>PCA（无监督）
+<ul>
+<li>对高维的稠密的可以通过PCA进行特征降维，提取主成分</li>
+</ul>
+</li>
+<li>LDA（有监督）
+<ul>
+<li>优化特征空间</li>
+</ul>
+</li>
+<li>迁移学习
+<ul>
+<li>对于空间上存在不同分布的两种样本，指向同一个投影（Common Subspace）</li>
+</ul>
+</li>
+<li>稀疏表示（Deep Learning之前的一代技术）
+<ul>
+<li>多用于信号分解、图像降噪等领域，用较少的基本信号的线性组合来表达大部分或者全部的原始信号</li>
+</ul>
+</li>
+<li>低秩学习（low-rank）
+<ul>
+<li>图像数据具有局部相似性，可能存在“一一表示”，从而矩阵就可能不是满秩</li>
+</ul>
+</li>
+<li>哈希学习
+<ul>
+<li>哈希函数可以是基于线性的、核函数、球面函数、深度神经网络、无参函数
+通过机器学习机制将数据映射成简洁的二进制串的形式,
+同时使得哈希码尽可能地保持原空间中的近邻关系, 即保相似性</li>
+</ul>
+</li>
+</ul></div>
+        </div>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face09/5.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<h3 id="32-人脸特征度量问题">3.2 人脸特征度量问题</h3>
+<h4 id="321-什么是度量问题">3.2.1 什么是度量问题？</h4>
+<ul>
+<li>A和B同类，A和C不同类</li>
+<li>A和B的相似性大于A和C的相似性
+<img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face09/6.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></li>
+</ul>
+<h4 id="322-欧氏距离euclidean-distance">3.2.2 欧氏距离（Euclidean Distance）</h4>
+<ul>
+<li>欧氏距离是最常见的距离度量，衡量的是多维空间中各个点之间的绝对距离。</li>
+<li>如点$x=(x_1,…,x_n)$和$y=(y_1,…,y_n)$之间的距离为：
+$$ d(x,y)=\sqrt{\displaystyle\sum_{i=1}^n(x_i - y_i)^2} $$</li>
+</ul>
+<h4 id="323-马氏距离mahalanobis-distance">3.2.3 马氏距离（Mahalanobis Distance）</h4>
+<ul>
+<li>是由马哈拉诺比斯（P. C. Mahalanobis）提出的，表示数据的协方差距离。
+它是一种有效的计算两个未知样本集的相似度的方法。</li>
+<li>与欧氏距离不同的是它考虑到各种特性之间的联系,
+并且是尺度无关的（scale-invariant），即独立于测量尺度。</li>
+<li>对于一个均值为$μ=(μ_1,μ_2,μ_3,&hellip;,μ_p)^T$协方差矩阵为$S$的多变量$x=(x_1,x_2,x_3,&hellip;,x_p)^T$其马氏距离为：
+$$D_M(x)=\sqrt{(x−μ)^TS^{-1}(x−μ)}$$</li>
+</ul>
+<h4 id="324-度量优化问题">3.2.4 度量优化问题</h4>
+<ul>
+<li>对解空间加不同的约束，在很大的假设空间中找出合适的解，缩小解空间。</li>
+</ul>
+<h2 id="33-人脸匹配的深度学习方法">3.3 人脸匹配的深度学习方法</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face09/7.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+            <div class="admonition-content"><ul>
+<li>分类问题的网络是单支的
+<ul>
+<li>进行人脸特征匹配时，用欧氏距离和余弦距离来测量当前提取出来的特征向量，特征向量利用网络进行学习</li>
+<li>样本量非常丰富，单类样本样本数量非常多时，通常采用分类网络</li>
+</ul>
+</li>
+<li>相似性的网络是多分支的
+<ul>
+<li>通过多分支网络对输入的样本进行改造，根据样本id设计不同的Loss</li>
+<li>2分支采用 Contrastive Loss</li>
+<li>3分支采用 Triplet Loss</li>
+<li>利用两种不同的Loss提取出特征，提取的特征具有鉴别信息（同类之间相似性很小，不同类之间相似性很大）</li>
+<li>通常采用欧氏距离进行Loss的计算</li>
+<li>多分支网络在进行特征表示时，会进行不同分支间参数共享，网络收敛后，去除其中一只来提取特征，以此提取出特征向量</li>
+<li>样本量比较少，单类样本数量也比较少时，通常采用多分支网络结构</li>
+</ul>
+</li>
+<li>重排序（ReRank）
+<ul>
+<li>利用深度学习网络提取完特征，并对特征进行了相似性度量和排序后，根据排序结果再次重新排序</li>
+</ul>
+</li>
+</ul></div>
+        </div>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face09/8.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<h2 id="4-facenet编程实战及模型优化">4 FaceNet编程实战及模型优化</h2>
+<h3 id="41-facenet模型详细介绍">4.1 FaceNet模型详细介绍</h3>
+<h4 id="411-learn-to-rank">4.1.1 Learn to rank</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face09/9.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+            <div class="admonition-content"><ul>
+<li>Anchor和Positive为同类样本</li>
+<li>经过学习之后，同类样本之间的相似度更高（距离更小）</li>
+</ul></div>
+        </div>	
+<h4 id="412-网络结构">4.1.2 网络结构</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face09/10.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+            <div class="admonition-content"><ul>
+<li>FaceNet也可称为Triplet Net的一个网络结构</li>
+<li>Batch由多个三元组构成，包含样本对(Anchor,Positive,Negative)</li>
+<li>DEEP ARCHITECTURE 深度网络主干网络（标准卷积神经网），对输入的图像进行特征提取，将图片转化成向量</li>
+<li>对提取出来的向量通过L2进行归一化</li>
+<li>得到归一化后的EMBEDDING（最终的特征向量）</li>
+<li>EMBEDDING作为 Triplet Loss 的输入，输入同样为三元组(Anchor的特征向量,Positive的特征向量,Negative的特征向量)</li>
+</ul></div>
+        </div>
+<h4 id="413-loss设计">4.1.3 Loss设计</h4>
+<p>$$\displaystyle\sum_{i=1}^N[\text{\textbardbl}f(x{_i^a})-f(x{_i^p})\text{\textbardbl}{_2^2}
+-\text{\textbardbl}f(x{_i^a})-f(x{_i^n})\text{\textbardbl}{_2^2}+\alpha]_+$$</p>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+            <div class="admonition-content"><ul>
+<li>N个三元组</li>
+<li>(Anchor-Positive)-(Anchor-Negative) 得到同类和不同类之间的样本距离差</li>
+<li>α为间隔，通过α可以调节同类样本和不同类样本之间的距离满足多大的距离差才能算作一个样本</li>
+<li>通过Loss的设计学出来的特征可以用来度量样本的相似度</li>
+<li>计算向量相似度时采用的是二范式，即欧氏距离</li>
+<li>利用FaceNet进行特征向量提取，计算样本相似度时只采用欧氏距离即可</li>
+</ul></div>
+        </div>
+<h4 id="414-难例挖掘">4.1.4 难例挖掘</h4>
+<ul>
+<li>OHEM</li>
+</ul>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+            <div class="admonition-content"><ul>
+<li>难例挖掘是指,针对模型训练过程中导致损失值很大的一些样本(即使模型很大概率分类错误的样本),重新训练它们.</li>
+<li>维护一个错误分类样本池, 把每个batch训练数据中的出错率很大的样本放入该样本池中,当积累到一个batch以后,将这些样本放回网络重新训练.</li>
+<li>在进行Loss计算时，主要考虑难例，对简单样本不计算Loss</li>
+</ul></div>
+        </div>
+<h4 id="415-数据增强">4.1.5 数据增强</h4>
+<ul>
+<li>颜色信息、几何变换、GAN、多样本数据增强</li>
+</ul>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+            <div class="admonition-content"><ul>
+<li>数据增强也叫数据扩增，意思是在不实质性的增加数据的情况下，让有限的数据产生等价于更多数据的价值。</li>
+<li>颜色信息常包括：噪声、模糊、颜色变换、擦除、填充等。</li>
+<li>几何变换常包括：翻转，旋转，裁剪，变形，缩放等。</li>
+<li>GAN包含两个网络，一个是生成网络，一个是对抗网络，基本原理如下：
+<ul>
+<li>G是一个生成图片的网络，它接收随机的噪声z，通过噪声生成图片，记做G(z) 。</li>
+<li>D是一个判别网络，判别一张图片是不是“真实的”，即是真实的图片，还是由G生成的图片。
+<img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face09/11.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></li>
+</ul>
+</li>
+<li>多样本数据增强不同于单样本数据增强，多样本数据增强方法利用多个样本来产生新的样本。</li>
+</ul></div>
+        </div>
+<h3 id="42-facenet环境搭建">4.2 FaceNet环境搭建</h3>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+            <div class="admonition-content"><ul>
+<li>源码地址：
+<ul>
+<li><a href="https://github.com/davidsandberg/facenet">https://github.com/davidsandberg/facenet</a></li>
+<li>TensorFlow1.12、Ubuntu16.04、Python3.5</li>
+<li><a href="https://github.com/VisualComputingInstitute/triplet-reid">https://github.com/VisualComputingInstitute/triplet-reid</a></li>
+</ul>
+</li>
+</ul></div>
+        </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash"><span class="c1">#下载FaceNet</span>
+git clone https://github.com/davidsandberg/facenet
+<span class="c1"># 进入facenet目录下</span>
+<span class="nb">cd</span> facenet
+<span class="c1">#修改 requirements.txt 将tensorflow==1.7注释掉，保存</span>
+gedit requirements.txt
+<span class="c1"># 下载需要的依赖库</span>
+sudo pip3 install -r requirements.txt
+<span class="c1">#安装完成</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="43-人脸匹配数据准备">4.3 人脸匹配数据准备</h3>
+<h4 id="431-常见数据集">4.3.1 常见数据集</h4>
+<ul>
+<li><a href="http://vis-www.cs.umass.edu/lfw/" target="_blank" rel="noopener noreffer">LFW</a>
+
+<ul>
+<li>LFW人脸数据库主要用来研究非受限情况下的人脸识别问题,主要测试人脸识别的准确率。</li>
+</ul>
+</li>
+<li><a href="http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" target="_blank" rel="noopener noreffer">Celeba</a>
+
+<ul>
+<li>CelebA由香港中文大学开放提供，广泛用于人脸相关的计算机视觉训练任务，可用于人脸属性标识训练、人脸检测训练以及landmark标记等。</li>
+</ul>
+</li>
+<li><a href="http://zeus.robots.ox.ac.uk/vgg_face2/signup/" target="_blank" rel="noopener noreffer">VGGface2</a>
+
+<ul>
+<li>VGGFace2 是一个大规模人脸识别数据，包含331万图片，9131个ID，平均图片个数为362.6。</li>
+</ul>
+</li>
+<li>CASIA-WebFace
+<ul>
+<li>CASIA-WebFace数据集包含了10575 个人的494414 张图像。CASIA-webface数据库，压缩包有4个多g，里面包含了10000个人，一共50万张人脸图片，无论是做SVM，DNN还是别的训练，都是非常好的数据库。</li>
+</ul>
+</li>
+<li><a href="http://biometrics.idealtest.org/dbDetailForUser.do?id=9" target="_blank" rel="noopener noreffer">CASIA-faceV5</a>
+
+<ul>
+<li>亚洲人脸数据库</li>
+</ul>
+</li>
+</ul>
+<h4 id="432-数据格式">4.3.2 数据格式</h4>
+<ul>
+<li>文件夹名/文件夹名_文件名</li>
+<li>同一个人的图片放在相同文件夹</li>
+</ul>
+<h4 id="433-人脸匹配数据准备">4.3.3 人脸匹配数据准备</h4>
+<h5 id="1方法一">1.方法一</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash"><span class="c1">#下载FaceNet源码</span>
+git clone https://github.com/davidsandberg/facenet
+<span class="c1"># 进入facenet目录下</span>
+<span class="nb">cd</span> facenet
+<span class="c1">#安装所需依赖库</span>
+sudo pip3 install -r requirements.txt
+<span class="c1">#添加环境变量</span>
+<span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/src
+<span class="c1">#人脸对齐脚本 -&gt; 将图片裁剪成160*160的人脸图片</span>
+python3 src/align/align_dataset_mtcnn.py lfw lfw_160--image_size <span class="m">160</span> --margin <span class="m">32</span> --random_order -- gpu_memory_fraction 0.25
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="2方法二">2.方法二</h5>
+<ul>
+<li>dlib库用来进行人脸检测+关键点定位</li>
+<li>根据关键点或者人脸检测结果，提取人脸图像</li>
+</ul>
+<h5 id="3通过mtcnn完成人脸匹配数据准备">3.通过mtcnn完成人脸匹配数据准备</h5>
+<h2 id="5-实例代码">5 实例代码</h2>
+<blockquote>
+<p>正在优化中，后期上传</p>
+<p>&ndash; <em>ieblYang</em></p>
+</blockquote>
+<h2 id="6-参考资料">6 参考资料</h2>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>参考资料</p>
+            <div class="admonition-content"><ul>
+<li><a href="https://www.jianshu.com/p/db8f15c3fe56" target="_blank" rel="noopener noreffer">《机器学习》第10章 降维与度量分析</a>
+</li>
+<li><a href="https://zhuanlan.zhihu.com/p/61759947" target="_blank" rel="noopener noreffer">【技术综述】深度学习中的数据增强方法都有哪些？</a>
+</li>
+<li><a href="https://www.cnblogs.com/shouhuxianjian/p/9789243.html" target="_blank" rel="noopener noreffer">face recognition[翻译][深度人脸识别:综述]</a>
+</li>
+<li><a href="https://baijiahao.baidu.com/s?id=1599774773742858032&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener noreffer">NanoNets :数据有限时如何应用深度学习？</a>
+</li>
+<li><a href="https://www.leiphone.com/news/201805/avOH5g1ZX3lAbmjp.html" target="_blank" rel="noopener noreffer">数据增强：数据有限时如何使用深度学习 ？</a>
+</li>
+<li><a href="https://blog.csdn.net/qq_41185868/article/details/82915063" target="_blank" rel="noopener noreffer">LFW人脸数据库的简介</a>
+</li>
+<li><a href="https://zhuanlan.zhihu.com/p/35975956" target="_blank" rel="noopener noreffer">CelebA数据集详细介绍及其属性提取源代码</a>
+</li>
+<li><a href="https://blog.csdn.net/heruili/article/details/88208757" target="_blank" rel="noopener noreffer">性别年龄论文阅读（3）——VGGFace2</a>
+</li>
+<li><a href="https://blog.csdn.net/qq_41185868/article/details/82925992" target="_blank" rel="noopener noreffer">Dataset之CASIA-WebFace</a>
+</li>
+</ul></div>
+        </div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-03-14 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/face09/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://ieblyang.github.io/face09/" data-title="人脸匹配训练业务实战" data-via="ieblYang" data-hashtags="人脸识别,TensorFlow,人脸匹配"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://ieblyang.github.io/face09/" data-hashtag="人脸识别"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://ieblyang.github.io/face09/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://ieblyang.github.io/face09/" data-title="人脸匹配训练业务实战" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://ieblyang.github.io/face09/" data-title="人脸匹配训练业务实战" data-image="/images/face/featured-image.png" data-ralateuid="ieblYang"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://ieblyang.github.io/face09/" data-title="人脸匹配训练业务实战"><i class="loveit it-baidu-fill"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://ieblyang.github.io/face09/" data-title="人脸匹配训练业务实战"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://ieblyang.github.io/face09/" data-title="人脸匹配训练业务实战"><i class="fab fa-skype fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB">人脸识别</a>,&nbsp;<a href="/tags/tensorflow">TensorFlow</a>,&nbsp;<a href="/tags/%E4%BA%BA%E8%84%B8%E5%8C%B9%E9%85%8D">人脸匹配</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/flask01/" class="prev" rel="prev" title="结合官方文档 入门Flask"><i class="fas fa-angle-left fa-fw"></i>结合官方文档 入门Flask</a>
+            <a href="/bug01/" class="next" rel="next" title="解决ValueError: Object arrays ··· allow_pickle=False的报错">解决ValueError: Object arrays ··· allow_pickle=False的报错<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"><div id="valine"></div><script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                new Valine({
+                    el: '#valine',
+                    appId: 'QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI',
+                    appKey: 'WBmoGyJtbqUswvfLh6L8iEBr',placeholder: '你的评论 ...',verify: true,avatar: 'mp',pageSize: 10,lang: 'zh-cn',visitor: true,recordIP: true,});
+            });
+        </script>
+        <noscript>
+            Please enable JavaScript to view the <a href="https://valine.js.org/">comments powered by Valine.</a>
+        </noscript></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },],
+                strict: false,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/valine/valine.48fc8c7a134ff56a24e2e2d3106ec39a.css" integrity="md5-SPyMehNP9Wok4uLTEG7Dmg=="><link rel="stylesheet" href="/lib/iconfont/iconfont.min.60491d359fba28667d44b1b4c808a0bd.css" integrity="md5-YEkdNZ&#43;6KGZ9RLG0yAigvQ=="><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.f0e116a1a6b325059928a106254352e1.css" integrity="md5-8OEWoaazJQWZKKEGJUNS4Q=="><link rel="stylesheet" href="/lib/katex/katex.min.4afae7d446ba01ebf7fff19893eaf3a1.css" integrity="md5-Svrn1Ea6Aev3//GYk&#43;rzoQ=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.b1994d1b9785dd8801dbf655df7bf6d9.css" integrity="md5-sZlNG5eF3YgB2/ZV33v22Q=="><script src="/lib/valine/Valine.min.1698240d38b9277036a3059775e55a03.js" integrity="md5-FpgkDTi5J3A2owWXdeVaAw=="></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.c4f5974788ebb82890a0e7771763939c.js" integrity="md5-xPWXR4jruCiQoOd3F2OTnA=="></script><script src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script src="/lib/lazysizes/lazysizes.min.0812d0f17b90a4aefd97bb91085ad252.js" integrity="md5-CBLQ8XuQpK79l7uRCFrSUg=="></script><script src="/lib/lightgallery/lightgallery.min.4bc95325ef47ddceda10ae0ee66e925c.js" integrity="md5-S8lTJe9H3c7aEK4O5m6SXA=="></script><script src="/lib/lightgallery/lg-thumbnail.min.874045ba82acdc496e8c871b77c5c1e5.js" integrity="md5-h0BFuoKs3ElujIcbd8XB5Q=="></script><script src="/lib/lightgallery/lg-zoom.min.409e9d2da92a979799deed01377eeff6.js" integrity="md5-QJ6dLakql5eZ3u0BN37v9g=="></script><script src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script src="/js/theme.min.2d8c56f0eeaac5b7d58911d3c7522b29.js" integrity="md5-LYxW8O6qxbfViRHTx1IrKQ=="></script></body>
+</html>
