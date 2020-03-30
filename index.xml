@@ -1,17 +1,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>波玻拨啵菠萝 | 波玻拨啵菠萝</title>
-        <link>https://ieblyang.github.io/</link>
+        <link>https://ieblyang.tech/</link>
         <description>波玻拨啵菠萝 | 波玻拨啵菠萝</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 11 Mar 2020 11:04:49 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.github.io/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 11 Mar 2020 11:04:49 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/" rel="self" type="application/rss+xml" /><item>
                 <title>Posts</title>
-                <link>https://ieblyang.github.io/posts/</link>
-                <pubDate>Mon, 23 Mar 2020 11:22:40 &#43;0800</pubDate><guid>https://ieblyang.github.io/posts/</guid>
+                <link>https://ieblyang.tech/posts/</link>
+                <pubDate>Mon, 23 Mar 2020 11:22:40 &#43;0800</pubDate><guid>https://ieblyang.tech/posts/</guid>
                 <description></description>
             </item><item>
                 <title>关于</title>
-                <link>https://ieblyang.github.io/about/</link>
-                <pubDate>Wed, 11 Mar 2020 11:04:49 &#43;0800</pubDate><guid>https://ieblyang.github.io/about/</guid>
+                <link>https://ieblyang.tech/about/</link>
+                <pubDate>Wed, 11 Mar 2020 11:04:49 &#43;0800</pubDate><guid>https://ieblyang.tech/about/</guid>
                 <description>&lt;h4 id=&#34;个人简介&#34;&gt;个人简介&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;昵称：菠萝&lt;/li&gt;
@@ -49,7 +49,7 @@
 &lt;ul&gt;
 &lt;li&gt;技术支持：&lt;a href=&#34;https://github.com/dillonzq/LoveIt/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;&lt;img
         class=&#34;lazyload&#34;
-        src=&#34;https://ieblyang.github.io/svg/loading.small.min.svg&#34;
+        src=&#34;https://ieblyang.tech/svg/loading.small.min.svg&#34;
         data-sizes=&#34;auto&#34;
         data-srcset=&#34;https://img.shields.io/github/v/release/dillonzq/LoveIt?style=flat-square,  1.5x,  2x&#34;
         data-src=&#34;&#34;
@@ -58,7 +58,7 @@
 &lt;/li&gt;
 &lt;li&gt;技术支持：&lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;&lt;img
         class=&#34;lazyload&#34;
-        src=&#34;https://ieblyang.github.io/svg/loading.small.min.svg&#34;
+        src=&#34;https://ieblyang.tech/svg/loading.small.min.svg&#34;
         data-sizes=&#34;auto&#34;
         data-srcset=&#34;https://img.shields.io/badge/Hugo-%5E0.62.0-ff4088?style=flat-square&amp;amp;logo=hugo,  1.5x,  2x&#34;
         data-src=&#34;&#34;

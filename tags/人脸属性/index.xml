@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>人脸属性 on 波玻拨啵菠萝</title>
-    <link>https://ieblyang.github.io/tags/%E4%BA%BA%E8%84%B8%E5%B1%9E%E6%80%A7/</link>
+    <link>https://ieblyang.tech/tags/%E4%BA%BA%E8%84%B8%E5%B1%9E%E6%80%A7/</link>
     <description>Recent content in 人脸属性 on 波玻拨啵菠萝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 23 Mar 2020 11:22:40 +0800</lastBuildDate>
     
-	<atom:link href="https://ieblyang.github.io/tags/%E4%BA%BA%E8%84%B8%E5%B1%9E%E6%80%A7/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ieblyang.tech/tags/%E4%BA%BA%E8%84%B8%E5%B1%9E%E6%80%A7/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>人脸属性业务实战</title>
-      <link>https://ieblyang.github.io/face12/</link>
+      <link>https://ieblyang.tech/face12/</link>
       <pubDate>Mon, 23 Mar 2020 11:22:40 +0800</pubDate>
       
-      <guid>https://ieblyang.github.io/face12/</guid>
+      <guid>https://ieblyang.tech/face12/</guid>
       <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸属性业务实战&lt;/p&gt;</description>
     </item>
     

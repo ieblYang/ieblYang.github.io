@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>人脸识别 on ieblYang</title>
-    <link>https://ieblyang.github.io/en/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/</link>
+    <link>https://ieblyang.tech/en/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/</link>
     <description>Recent content in 人脸识别 on ieblYang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 23 Mar 2020 11:22:40 +0800</lastBuildDate>
     
-	<atom:link href="https://ieblyang.github.io/en/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ieblyang.tech/en/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>人脸属性业务实战</title>
-      <link>https://ieblyang.github.io/en/face12/</link>
+      <link>https://ieblyang.tech/en/face12/</link>
       <pubDate>Mon, 23 Mar 2020 11:22:40 +0800</pubDate>
       
-      <guid>https://ieblyang.github.io/en/face12/</guid>
+      <guid>https://ieblyang.tech/en/face12/</guid>
       <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸属性业务实战&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>活体检测业务实战</title>
-      <link>https://ieblyang.github.io/en/face11/</link>
+      <link>https://ieblyang.tech/en/face11/</link>
       <pubDate>Sun, 22 Mar 2020 10:27:40 +0800</pubDate>
       
-      <guid>https://ieblyang.github.io/en/face11/</guid>
+      <guid>https://ieblyang.tech/en/face11/</guid>
       <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 活体检测业务实战&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>人脸对齐/关键点训练业务实战</title>
-      <link>https://ieblyang.github.io/en/face10/</link>
+      <link>https://ieblyang.tech/en/face10/</link>
       <pubDate>Wed, 18 Mar 2020 19:24:40 +0800</pubDate>
       
-      <guid>https://ieblyang.github.io/en/face10/</guid>
+      <guid>https://ieblyang.tech/en/face10/</guid>
       <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务实战&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>人脸匹配业务实战</title>
-      <link>https://ieblyang.github.io/en/face09/</link>
+      <link>https://ieblyang.tech/en/face09/</link>
       <pubDate>Sat, 14 Mar 2020 13:07:40 +0800</pubDate>
       
-      <guid>https://ieblyang.github.io/en/face09/</guid>
+      <guid>https://ieblyang.tech/en/face09/</guid>
       <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配业务实战&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>人脸检测业务理论</title>
-      <link>https://ieblyang.github.io/en/face06/</link>
+      <link>https://ieblyang.tech/en/face06/</link>
       <pubDate>Thu, 12 Mar 2020 17:33:40 +0800</pubDate>
       
-      <guid>https://ieblyang.github.io/en/face06/</guid>
+      <guid>https://ieblyang.tech/en/face06/</guid>
       <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Tensorflow Cifar-10图像分类任务</title>
-      <link>https://ieblyang.github.io/en/face05/</link>
+      <link>https://ieblyang.tech/en/face05/</link>
       <pubDate>Thu, 12 Mar 2020 15:12:40 +0800</pubDate>
       
-      <guid>https://ieblyang.github.io/en/face05/</guid>
+      <guid>https://ieblyang.tech/en/face05/</guid>
       <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现  Tensorflow Cifar-10图像分类任务&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>TensorFlow基础串讲</title>
-      <link>https://ieblyang.github.io/en/face04/</link>
+      <link>https://ieblyang.tech/en/face04/</link>
       <pubDate>Thu, 12 Mar 2020 15:12:40 +0800</pubDate>
       
-      <guid>https://ieblyang.github.io/en/face04/</guid>
+      <guid>https://ieblyang.tech/en/face04/</guid>
       <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 TensorFlow基础串讲&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>卷积神经网基础串讲</title>
-      <link>https://ieblyang.github.io/en/face03/</link>
+      <link>https://ieblyang.tech/en/face03/</link>
       <pubDate>Thu, 12 Mar 2020 12:43:40 +0800</pubDate>
       
-      <guid>https://ieblyang.github.io/en/face03/</guid>
+      <guid>https://ieblyang.tech/en/face03/</guid>
       <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 卷积神经网基础串讲&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>深度学习基础串讲</title>
-      <link>https://ieblyang.github.io/en/face02/</link>
+      <link>https://ieblyang.tech/en/face02/</link>
       <pubDate>Thu, 12 Mar 2020 11:44:40 +0800</pubDate>
       
-      <guid>https://ieblyang.github.io/en/face02/</guid>
+      <guid>https://ieblyang.tech/en/face02/</guid>
       <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 深度学习基础串讲&lt;/p&gt;</description>
     </item>
     

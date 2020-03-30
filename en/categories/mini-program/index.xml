@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mini program on ieblYang</title>
-    <link>https://ieblyang.github.io/en/categories/mini-program/</link>
+    <link>https://ieblyang.tech/en/categories/mini-program/</link>
     <description>Recent content in mini program on ieblYang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sat, 21 Mar 2020 13:53:40 +0800</lastBuildDate>
     
-	<atom:link href="https://ieblyang.github.io/en/categories/mini-program/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ieblyang.tech/en/categories/mini-program/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>结合官方文档，入门微信小程序</title>
-      <link>https://ieblyang.github.io/en/miniprogram01/</link>
+      <link>https://ieblyang.tech/en/miniprogram01/</link>
       <pubDate>Sat, 21 Mar 2020 13:53:40 +0800</pubDate>
       
-      <guid>https://ieblyang.github.io/en/miniprogram01/</guid>
+      <guid>https://ieblyang.tech/en/miniprogram01/</guid>
       <description>&lt;p&gt;结合微信小程序官方文档，学习小程序基础必背知识&lt;/p&gt;</description>
     </item>
     

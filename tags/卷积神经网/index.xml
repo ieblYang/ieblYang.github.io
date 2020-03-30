@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>卷积神经网 on 波玻拨啵菠萝</title>
-    <link>https://ieblyang.github.io/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91/</link>
+    <link>https://ieblyang.tech/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91/</link>
     <description>Recent content in 卷积神经网 on 波玻拨啵菠萝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Thu, 12 Mar 2020 12:43:40 +0800</lastBuildDate>
     
-	<atom:link href="https://ieblyang.github.io/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ieblyang.tech/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>卷积神经网基础串讲</title>
-      <link>https://ieblyang.github.io/face03/</link>
+      <link>https://ieblyang.tech/face03/</link>
       <pubDate>Thu, 12 Mar 2020 12:43:40 +0800</pubDate>
       
-      <guid>https://ieblyang.github.io/face03/</guid>
+      <guid>https://ieblyang.tech/face03/</guid>
       <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 卷积神经网基础串讲&lt;/p&gt;</description>
     </item>
     

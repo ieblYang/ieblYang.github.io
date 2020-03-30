@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>中文输入法 on ieblYang</title>
-    <link>https://ieblyang.github.io/en/tags/%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+    <link>https://ieblyang.tech/en/tags/%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/</link>
     <description>Recent content in 中文输入法 on ieblYang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Thu, 12 Mar 2020 11:00:40 +0800</lastBuildDate>
     
-	<atom:link href="https://ieblyang.github.io/en/tags/%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ieblyang.tech/en/tags/%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ubuntu16.04安装中文输入法</title>
-      <link>https://ieblyang.github.io/en/ubuntu-fcitx/</link>
+      <link>https://ieblyang.tech/en/ubuntu-fcitx/</link>
       <pubDate>Thu, 12 Mar 2020 11:00:40 +0800</pubDate>
       
-      <guid>https://ieblyang.github.io/en/ubuntu-fcitx/</guid>
+      <guid>https://ieblyang.tech/en/ubuntu-fcitx/</guid>
       <description>&lt;p&gt;这篇文章展示了如何在Ubuntu16.04系统中安装中文输入法.&lt;/p&gt;</description>
     </item>
     
