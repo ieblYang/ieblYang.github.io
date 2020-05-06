@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 23 Mar 2020 11:22:40 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2020 21:03:40 +0800</lastBuildDate>
     
 	<atom:link href="https://ieblyang.tech/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -28,6 +28,33 @@
       
       <guid>https://ieblyang.tech/emoji-support/</guid>
       <description>&lt;p&gt;Emoji 可以通过多种方式在 Hugo 项目中启用.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>微信小程序自定义showToast图片</title>
+      <link>https://ieblyang.tech/miniprogram03/</link>
+      <pubDate>Wed, 06 May 2020 21:03:40 +0800</pubDate>
+      
+      <guid>https://ieblyang.tech/miniprogram03/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>微信小程序函数节流，防止多次点击跳转</title>
+      <link>https://ieblyang.tech/miniprogram02/</link>
+      <pubDate>Mon, 20 Apr 2020 13:53:40 +0800</pubDate>
+      
+      <guid>https://ieblyang.tech/miniprogram02/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu16.04安装Mysql数据库</title>
+      <link>https://ieblyang.tech/ubuntu-mysql/</link>
+      <pubDate>Sat, 18 Apr 2020 10:17:40 +0800</pubDate>
+      
+      <guid>https://ieblyang.tech/ubuntu-mysql/</guid>
+      <description>&lt;p&gt;这篇文章展示了如何在Ubuntu16.04系统中安装Mysql数据库，并安装可视化工具WorkBench&lt;/p&gt;</description>
     </item>
     
     <item>

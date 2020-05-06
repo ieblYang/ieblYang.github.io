@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>函数节流 on 波玻拨啵菠萝</title>
+    <link>https://ieblyang.tech/tags/%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/</link>
+    <description>Recent content in 函数节流 on 波玻拨啵菠萝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 20 Apr 2020 13:53:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://ieblyang.tech/tags/%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>微信小程序函数节流，防止多次点击跳转</title>
+      <link>https://ieblyang.tech/miniprogram02/</link>
+      <pubDate>Mon, 20 Apr 2020 13:53:40 +0800</pubDate>
+      
+      <guid>https://ieblyang.tech/miniprogram02/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

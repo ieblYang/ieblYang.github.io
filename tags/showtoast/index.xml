@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>showToast on 波玻拨啵菠萝</title>
+    <link>https://ieblyang.tech/tags/showtoast/</link>
+    <description>Recent content in showToast on 波玻拨啵菠萝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 06 May 2020 21:03:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://ieblyang.tech/tags/showtoast/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>微信小程序自定义showToast图片</title>
+      <link>https://ieblyang.tech/miniprogram03/</link>
+      <pubDate>Wed, 06 May 2020 21:03:40 +0800</pubDate>
+      
+      <guid>https://ieblyang.tech/miniprogram03/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
