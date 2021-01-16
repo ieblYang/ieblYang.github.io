@@ -1,7 +1,7 @@
-# 人脸检测业务理论
+# 人脸检测业务理论及实现
 
 
-基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论
+基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现
 
 <!--more-->
 
@@ -360,7 +360,7 @@ $$L(x,c,l,g)=\dfrac{1}{N} (L_{conf}(x,c)+\alpha L_{loc}(x,l,g))$$
    * [安装教程](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md)
 {{% /admonition %}}
 
-## 9 人脸检测数据清洗与数据打包
+## 9 人脸检测数据集
 
 ### 9.1 WIDER FACE 数据集
 
@@ -441,14 +441,156 @@ WIDER FACE数据集
                 利用这六个值可以对人脸数据进行清洗
 ```
 
-### 9.4 实例代码
+## 10 实例代码
 
->处理widerface数据集转VOC
-><https://github.com/ieblYang/widerface>
->
-> -- _ieblYang_
+### 10.1 数据集处理
 
-## 10 参考资料
+WIDER FACE数据集在使用前，需要将它转化为Passcal VOC2007格式。Passcal VOC2007格式主要有三个重要的文件夹，Annotations用来存放标注信息，ImageSets存放训练和测试用到的文件列表，JPEGImages用来存放图片信息。
+
+第一步，将WIDER FACE解析好的数据写入到xml文件中，处理时需要获取图片的基本信息，代码如下：
+
+```Python
+size = doc.createElement('size')		# 获取图片的基本信息
+annotation.appendChild(size)
+width = doc.createElement('width')	   # 宽度
+width.appendChild(doc.createTextNode(str(saveimg.shape[1])))
+height = doc.createElement('height')	# 高度
+height.appendChild(doc.createTextNode(str(saveimg.shape[0])))
+depth = doc.createElement('depth')		# 通道数量
+depth.appendChild(doc.createTextNode(str(saveimg.shape[2])))
+```
+
+在这一步中，需要获取到人脸的坐标信息，代码如下：
+
+```Python
+# bboxes 当前图片中人脸框的坐标
+for i in range(len(bboxes)):		
+bbox = bboxes[i]
+objects = doc.createElement('object')
+annotation.appendChild(objects)
+object_name = doc.createElement('name')
+object_name.appendChild(doc.createTextNode('face'))
+objects.appendChild(object_name)
+pose = doc.createElement('pose')
+pose.appendChild(doc.createTextNode('Unspecified'))
+objects.appendChild(pose)
+truncated = doc.createElement('truncated')
+truncated.appendChild(doc.createTextNode('0'))
+objects.appendChild(truncated)
+difficult = doc.createElement('difficult')
+difficult.appendChild(doc.createTextNode('0'))
+objects.appendChild(difficult)
+bndbox = doc.createElement('bndbox')
+objects.appendChild(bndbox)
+xmin = doc.createElement('xmin')
+xmin.appendChild(doc.createTextNode(str(bbox[0])))
+bndbox.appendChild(xmin)
+ymin = doc.createElement('ymin')
+ymin.appendChild(doc.createTextNode(str(bbox[1])))
+bndbox.appendChild(ymin)
+xmax = doc.createElement('xmax')
+xmax.appendChild(doc.createTextNode(str(bbox[0] + bbox[2])))
+bndbox.appendChild(xmax)
+ymax = doc.createElement('ymax')
+ymax.appendChild(doc.createTextNode(str(bbox[1] + bbox[3])))
+bndbox.appendChild(ymax)
+```
+
+第二步，对WIDER FACE数据集的训练集和测试集的真值文件进行解析。在这一过程中，需要对WIDER FACE数据集进行简单的数据清洗操作，使训练数据更加接近实际的业务场景，主要代码如下：
+
+```Python
+sc = max(im_data.shape)
+im_data_tmp = numpy.zeros([sc, sc, 3],  dtype = numpy.uint8)
+off_w = (sc - im_data.shape[1])  //  2
+off_h = (sc - im_data.shape[0])  //  2
+# 对图片进行周围填充，填充为正方形
+im_data_tmp[off_h:im_data.shape[0] + off_h, off_w:im_data.shape[1] + off_w, ...] = im_data
+im_data = im_data_tmp
+numbox = int(gt.readline())
+bboxes = []
+for i in range(numbox):
+line = gt.readline()
+infos = line.split(" ")
+for j in range(infos.__len__() - 1):
+infos[j] = int(infos[j])
+# 数据清洗：保留resize到640×640 尺寸在8×8以上的人脸
+if infos[2] * 80 < im_data.shape[1] or infos[3] * 80 < im_data.shape[0]:
+continue
+bbox = (infos[0] + off_w, infos[1] + off_h, infos[2], infos[3])
+bboxes.append(bbox)
+```
+
+第三步，以SSD模型中的create_pascal_tf_record.py脚本为基础新建create_face_tf_record.py脚本对已经转化成Passcal VOC2007格式的训练样本和测试样本分别进行打包，在这一过程中需要将源码中的YEARS修改为widerface，将label_map_path指定到face_lable_map.pbtxt，训练集数据打包的命令参数如下：
+
+```Bash
+python3 object_detection/dataset_tools/create_face_tf_record.py \
+--data_dir=/mnt/dataset \
+--year=widerface \
+--output_path=/mnt/dataset/widerface/TF-data/train.record \
+--set=train
+```
+
+### 10.2 模型训练
+在SSD模型训练中，主要用到的是model_main脚本，由于源码中没有提供专门针对于resnet_50_v1_fpn这一结构的配置文件，所以在选取主干网络时，以ssd_resnet50_v1_fpn_shared_box_predictor_640x640_coco14_sync.config
+为基础进行修改，将其修改为用于人脸检测任务的配置文件，并将修改好的配置文件重命名为ssd_resnet50_v1_fpn_shared_box_predictor_640x640_coco14_
+sync_face.config，模型主要用于解决人脸识别问题，所以需要将num_classes设置为1。在训练过程中不需要用到预训练模型，所以将预训练模型fine_tune_checkpoint删除或注释掉，最后，修改输入输出的数据。
+模型训练的命令及参数配置如下：
+
+```Bash
+python3 object_detection/model_main.py \ 
+--pipeline_config_path= \
+/mnt/FaceAI/models/research/object_detection/samples/configs/ssd_resnet50_v1_fpn_shared_box_predictor_640x640_coco14_sync_face.config 
+--model_dir=/mnt/dataset/widerface/resnet50v1-fpn \
+--num_train_steps=100000 \
+--alsologtostder \
+```
+
+模型训练中，预设的训练次数为100000次，通过观察tensorboard中的loss曲线，模型训练的loss在40000次后已经趋于稳定，在训练74839次时停止了模型的训练，总的loss曲线如下图所示：
+
+![Minion](/images/face/face06/22.jpg)
+
+### 10.3 模型固化
+
+在模型结束后，使用tensorflow models提供的export_interence_graph.py脚本将已经训练好的模型打包成pb文件，命令与参数配置如下：
+
+```Bash
+python3 object_detection/export_inference_graph.py \ 
+--input_type =image_tensor \
+--popeline_config_path= \
+/mnt/FaceAI/models/research/object_detection/samples/configs/ssd_resnet50_v1_fpn_shared_box_predictor_640x640_coco14_sync_face.config \
+--trained_checkpoint_prefix= \
+/mnt/FaceAI/dataset/widerface/model/resnet50v1-fpn/model.ckpt-75065
+--output_directory= \
+/mnt/FaceAI/dataset/widerface/model/resnet50v1-fpn/pb
+```
+
+### 10.4 模型测试
+
+在模型测试中，利用graph构图后，使用opencv读取用于测试的人脸图片，如果阈值大于0.6则表示识别出人脸，对识别出人脸的图片进行人脸框绘制，并将结果显示出来，实现代码如下：
+
+```Python
+for image_path in im_path_list:
+imdata = cv2.imread(image_path)
+sp = imdata.shape
+imdata = cv2.resize(imdata, IMAGE_SIZE)
+output_dict  =  run_inference_for_single_image( imdata,  detection_graph )
+for i in range(len(output_dict['detection_scores'])):
+if output_dict['detection_scores'][i] > 0.6:
+    bbox = output_dict['detection_scores'][i]
+    y1 = int(IMAGE_SIZE[0] * bbox[0])
+    x1 = int(IMAGE_SIZE[1] * bbox[1])
+    y2 = int(IMAGE_SIZE[0] * bbox[2])
+    x2 = int(IMAGE_SIZE[1] * bbox[3])
+    cv2.rectangle(imdata, (x1,y1), (x2,y2), (0,255,0), 2)
+cv2.imshow("im", imdata)
+cv2.waitKey(0)
+```
+
+模型测试的结果如下图所示：
+
+![Minion](/images/face/face06/23.png)
+
+## 11 参考资料
 
 {{% admonition note "参考资料"%}}
 * [FDDB人脸检测算法评价标准](https://yinguobing.com/fddb/)

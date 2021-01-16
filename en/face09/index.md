@@ -1,7 +1,7 @@
-# 人脸匹配业务实战
+# 人脸匹配业务理论及实现
 
 
-基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配业务实战
+基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配业务理论及实现
 
 <!--more-->
 
@@ -235,15 +235,68 @@ python3 src/align/align_dataset_mtcnn.py lfw lfw_160--image_size 160 --margin 32
 ##### 3.通过mtcnn完成人脸匹配数据准备	
 	
 ## 5 实例代码
+### 5.1 数据集处理
+在使用FaceNet框架进行人脸匹配模型训练时，需要将数据转换为FaceNet要求的数据格式，同一个人的不同图片存放在同一个文件夹下，数据格式为：“文件夹名/文件夹名_文件名”。在FaceNet中不需要额外的将数据打包为tfrecord格式，如果与要求的格式一致，FaceNet框架会自动解析数据。
 
->
->正在优化中，后期上传
->
-> -- _ieblYang_
+LFW数据集的处理：在使用FaceNet框架时需要将图片裁剪到160*160，系统使用FaceNet自带的align_dataset_mtcnn.py脚本对LFW数据集中的人脸图片进行处理。命令和参数的配置如下：
+
+```Bash
+python3 src/align/align_dataset_mtcnn.py /mnt/dataset/LFW  /mnt/dataset/LFW-160  --image_size 160 --margin 32  --random_order  --gpu_memory_fraction 0.25
+```
+
+CASIA-FaceV5亚洲人脸数据集的处理：使用dlib库创建人脸检测器，利用人脸检测器对数据集中的图片依次进行检测，将未检测出人脸的图片过滤掉，成功检测出人脸的图片先获取到检测出的人脸位置，对检测出的人脸框进行扩充，这样做可以保证获取到的人脸是一张完整的人脸，根据扩充后的坐标将图片裁剪为160 * 160大小，裁剪后的图片根据不同的人存储到相对应的文件夹下，主要代码如下：
+
+```Python
+for idx_folder in im_folder_list:
+    im_items_list = glob.glob(idx_folder + "/*")
+    if not os.path.exists("{}/{}".format(crop_im_path, idx)):
+        os.mkdir("{}/{}".format(crop_im_path, idx))
+    idx_im = 0
+    for im_path in im_items_list:
+        im_data = cv2.imread(im_path)
+        dets = detector(im_data, 1)
+        if dets.__len__() == 0:
+            continue
+        d = dets[0]
+        # 获取人脸坐标
+x1 = d.left()
+        y1 = d.top()
+        x2 = d.right()
+        y2 = d.bottom()
+        # 对识别出的人脸进行扩充
+        y1 = int(y1 - (y2 - y1) * 0.3)
+        x1 = int(x1 - (x2 - x1) * 0.05)
+        x2 = int(x2 + (x2 - x1) * 0.05)
+        y2 = y2
+        im_crop_data = im_data[y1:y2,x1:x2]
+        im_data = cv2.resize(im_crop_data, (160, 160))
+        im_save_path = "{}/{}/{}_{}.jpg".format(crop_im_path, idx, idx, "%04d" % idx_im)
+        cv2.imwrite(im_save_path, im_data)
+        idx_im += 1
+    idx += 1
+```
+### 5.2 模型训练
+人脸匹配模型训练采用FaceNet提供的train_tripletloss.py脚本，在使用tripletloss训练时，需要修改数据的存放路径，其余参数采用默认参数，相关代码如下：
+```
+    parser.add_argument('--data_dir', type=str,
+        help='Path to the data directory containing aligned face patches.',
+        default='/mnt/dataset/64_CASIA-FaceV5/crop_image_160'
+                '')
+```
+模型训练中loss曲线如下图所示:
+![Minion](/images/face/face09/13.jpg)
+
+### 5.3 模型固化	
+FaceNet提供了freeze_graph.py脚本，来进行模型固化。脚本运行需要两个参数，model_dir是训练好的模型的路径，output_file是固化好的pb文件的输出路径。
+### 5.4 模型测试
+使用FaceNet中提供得validate_on_lfw.py脚本，利用经过处理的LFW数据集对训练好的模型进行测试。该脚本使用auc实现对算法性能的评价。在使用该脚本时，需要传入两个参数，一个是处理好的LFW数据集的路径，一个是训练好的模型的路径。
+测试得到的数据如下图所示：
+![Minion](/images/face/face09/14.png)
+
 
 ## 6 参考资料
 
-{{% admonition note "参考资料" %}}
+{{% admonition note "参考资料"%}}
 * [《机器学习》第10章 降维与度量分析](https://www.jianshu.com/p/db8f15c3fe56)
 * [【技术综述】深度学习中的数据增强方法都有哪些？](https://zhuanlan.zhihu.com/p/61759947)
 * [face recognition[翻译][深度人脸识别:综述]](https://www.cnblogs.com/shouhuxianjian/p/9789243.html)

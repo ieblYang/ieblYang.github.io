@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>卷积神经网基础串讲 | 波玻拨啵菠萝</title>
+        <title>卷积神经网基础串讲 | ieblYang</title>
         <meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 卷积神经网基础串讲"><meta property="og:title" content="卷积神经网基础串讲" />
 <meta property="og:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 卷积神经网基础串讲" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ieblyang.tech/face03/" />
 <meta property="article:published_time" content="2020-03-12T12:43:40+08:00" />
-<meta property="article:modified_time" content="2020-03-12T12:43:40+08:00" /><meta property="og:site_name" content="波玻拨啵菠萝" />
+<meta property="article:modified_time" content="2020-03-12T12:43:40+08:00" /><meta property="og:site_name" content="ieblYang" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="卷积神经网基础串讲"/>
 <meta name="twitter:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 卷积神经网基础串讲"/>
@@ -61,7 +61,7 @@
         </script><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/">波玻拨啵菠萝</a>
+            <a href="/">ieblYang</a>
         </div>
         <div class="menu"><a class="menu-item" href="/posts/" rel="noopener noreffer">文章</a><a class="menu-item" href="/tags/" rel="noopener noreffer">标签</a><a class="menu-item" href="/categories/" rel="noopener noreffer">分类</a><a class="menu-item" href="/categories/documentation/" rel="noopener noreffer">文档</a><a class="menu-item" href="/about/" rel="noopener noreffer">关于</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><span class="menu-item">|</span>
             <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
@@ -74,7 +74,7 @@
     <div class="header-wrapper">
         <div class="header-container">
             <div class="header-title">
-                <a href="/">波玻拨啵菠萝</a>
+                <a href="/">ieblYang</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -259,7 +259,8 @@
             <div class="admonition-content"><ul>
 <li>以卷积结构为主，搭建起来的深度网络</li>
 <li>将图片作为网络的输入，自动提取特征，并对图片的变形（如平移、比例缩放、倾斜）等具有高度不变形</li>
-</ul></div>
+</ul>
+</div>
         </div>
 <h2 id="2-卷积神经网络的重要组成单元">2 卷积神经网络的重要组成单元</h2>
 <h3 id="21-卷积">2.1 卷积</h3>
@@ -274,7 +275,8 @@
 <li>lm2col实现卷积运算</li>
 </ul>
 </li>
-</ul></div>
+</ul>
+</div>
         </div>
 <h4 id="212-卷集中的重要参数">2.1.2 卷集中的重要参数</h4>
 <h5 id="1-卷积核">1. 卷积核</h5>
@@ -414,7 +416,8 @@
 <li>增大感受野</li>
 </ul>
 </li>
-</ul></div>
+</ul>
+</div>
         </div>
 <h4 id="222-常见的池化策略">2.2.2 常见的池化策略</h4>
 <ul>
@@ -436,7 +439,8 @@
 <li>Sigmoid、Tanh、ReLU、ELU、Maxout、Softplus、Softsign</li>
 </ul>
 </li>
-</ul></div>
+</ul>
+</div>
         </div>
 <h4 id="232-sigmoid">2.3.2 Sigmoid</h4>
 <ul>
@@ -495,7 +499,8 @@
         data-src=""
         alt="Minion"
         title="Minion" /></li>
-</ul></div>
+</ul>
+</div>
         </div>
 <h4 id="242-batchnorm层优点">2.4.2 BatchNorm层优点</h4>
 <ul>
@@ -793,7 +798,8 @@
 <li>更少的参数量</li>
 <li>更少的计算量</li>
 <li>移动端、嵌入式平台</li>
-</ul></div>
+</ul>
+</div>
         </div>
 <h3 id="41-squeezenet">4.1 SqueezeNet</h3>
 <ul>
@@ -855,13 +861,14 @@
 </ul>
 <div class="admonition note">
             <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
-            <div class="admonition-content"><strong>轻量型卷积神经网设计标准</strong></p>
+            <div class="admonition-content"><p><strong>轻量型卷积神经网设计标准</strong></p>
 <ul>
 <li>相同的通道宽度可最小化内存访问成本（MAC）</li>
 <li>过度的组卷积会增加MAC</li>
 <li>网络碎片化（例如GoogleNet的多路径结构）会降低并行度</li>
 <li>元素级运算不可忽视</li>
-</ul></div>
+</ul>
+</div>
         </div>
 <h3 id="44-xception">4.4 Xception</h3>
 <ul>
@@ -1009,11 +1016,12 @@
 <h2 id="7-模型压缩">7 模型压缩</h2>
 <div class="admonition note">
             <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
-            <div class="admonition-content">学院派VS工程派</p>
+            <div class="admonition-content"><p>学院派VS工程派</p>
 <ul>
 <li>学院派注重精度</li>
 <li>工程派注重精度与效率的结合</li>
-</ul></div>
+</ul>
+</div>
         </div>
 <h3 id="71-模型剪枝">7.1 模型剪枝</h3>
 <ul>
@@ -1106,7 +1114,7 @@
     <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
         </div>
 
-        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
     </div>
 </footer>
 </div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">

@@ -1,7 +1,7 @@
-# 人脸对齐/关键点训练业务实战
+# 人脸对齐/关键点训练业务理论及实现
 
 
-基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务实战
+基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务理论及实现
 
 <!--more-->
 
@@ -234,10 +234,128 @@ X3 = X0 + X1 ** X2
 
 ## 7 实例代码
 
->
->正在优化中，后期上传
->
-> -- _ieblYang_
+### 7.1 数据集处理
+
+对landmark中的标注信息进行适当的调整，代码如下：
+
+```Python
+x_max = int(np.max(landmark[0:68, 0]))
+x_min = int(np.min(landmark[0:68, 0]))
+y_max = int(np.max(landmark[0:68, 1]))
+y_min = int(np.min(landmark[0:68, 1]))
+y_min = int(y_min - (y_max - y_min)  * 0.3)
+y_max = int(y_max + (y_max - y_min)  * 0.05)
+x_min = int(x_min - (x_max - x_min)  * 0.05)
+x_max = int(x_max + (x_max - x_min)  * 0.05)
+```
+
+对数据进行裁剪，将人脸区域抠出来，获取人脸框的大小并对landmark数据进行标准化，将其归一化到0~1之间，对x,y的处理如下：
+
+```Python
+im_point.append((landmark[p][0] - x_min) * 1.0 / sp[1])
+im_point.append((landmark[p][1] - y_min) * 1.0 / sp[0])
+```
+将图片的大小改变为128*128的大小，将整个数据集中80%的数据划分为训练集，剩余的20%划分为测试集。
+
+### 7.2 模型训练
+
+数据读取：定义get_one_batch函数，每次从中获取一个batchsize的数据，定义type=0时为训练集，读取train.tfrecords文件，type=1时为测试集，读取test.tfrecords。定义和读取文件队列，对训练集使用shuffle_batch获取队列中的数据，对测试集直接使用batch获取队列中的数据。定义features对读取出的数据进行解析，获取features中的image和label，接着将图像数据解码为uint8格式，对图像数据进行reshape并将其转换为float型。
+
+定义网络结构：定义输入为placeholder，数据类型为float32，shape中batch_size定义为None，图像尺寸为128 * 128 * 3；模型共需要预测68个人脸关键点共136个点，将label的shape定义为136，具体代码如下：
+
+```Python
+input_x = tf.placeholder(tf.float32, shape=[None, 128, 128, 3])
+label = tf.placeholder(tf.float32, shape=[None, 136])
+logits = SENet(input_x, is_training=True, keep_prob=0.8)
+```
+SENet:定义senet_blob(net, in_dim, on_dim, stride)函数，其中in_dim 为输入特征图通道数，on_dim为输出特征图通道数，stride表示当前网络是否进行下采样。对输入的张量进行备份，并进行卷积操作，对通道的数量进行适当的降维，第一次，降4倍，进行1 * 1的卷积，接着进行3 * 3的卷积，接着再进行1 * 1的卷积，得到与输出维度相同的卷积，对stride大于1的数据通道poll2d进行下采样。通过reduce_mean对1、2维度进行average_pooling，调用slim.fully_connected加入全连接层，加入激活层，再次加入全连接层，使用sigomid将权重映射到0,1之间，得到通道加权之后的网络结构，将得到的值与备份的张量相加，实现跳连部分。
+
+定义好基本模块之后，开始搭建SENet网络结构，定义权重可选的正则化程序为slim.l2_regularizer(0.00001)、定义权重初始化程序为slim.variance_scaling_initializer()、定义激活函数为tf.nn.relu、定义正则化函数为slim.batch_norm、定义正则化函数的参数为bn_param。网络结构定义代码如下：
+
+```Python
+with slim.arg_scope([slim.batch_norm], **bn_param):
+     net = slim.conv2d(input_x, 32, [3, 3])
+     net = slim.avg_pool2d(net, [3, 3], stride=2, padding="SAME")
+     net = senet_blob(net, 32, 64, 2)
+     net = senet_blob(net, 64, 128, 2)
+     net = senet_blob(net, 128, 128, 2)
+     net = senet_blob(net, 128, 256, 2)
+     net = senet_blob(net, 256, 512, 2)
+     net = tf.reduce_mean(net, axis=[1, 2]))
+     net = slim.fully_connected(net, 1024)
+     net = tf.nn.dropout(net, keep_prob=keep_prob)
+     net = tf.nn.relu(net)
+     net = slim.fully_connected(net, 136)
+     return net
+```
+
+网络维度的变化如下图所示：
+
+![Minion](/images/face/face10/13.png)
+
+学习率：学习率采用衰减学习率，初始学习率为0.001，衰减步长为1000步，每次衰减0.98，定义update_ops对batchnorm层进行更新，具体代码如下：
+
+```Python
+global_step = tf.Variable(0, trainable=False)
+lr = tf.train.exponential_decay(0.001, global_step,
+                                decay_steps=1000,
+                                decay_rate=0.98,
+                                staircase=False)
+update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
+with tf.control_dependencies(update_ops):
+    train_op = tf.train.AdamOptimizer(lr).minimize(loss, global_step)
+```
+模型共训练150000次，并对模型和日志信息进行保存，loss曲线如下图所示：
+
+![Minion](/images/face/face10/14.jpg)
+
+
+### 7.3 模型固化
+
+模型固化部分的网络结构与模型训练中的基本一致，需要将is_training修改为False、keep_prob修改为1.0,将shape中的None置为1表示每次处理一张图片，修改前后的代码如下：
+
+```Python
+#修改前：input_x = tf.placeholder(tf.float32, shape=[None, 128, 128, 3])
+input_x = tf.placeholder(tf.float32, shape=[1, 128, 128, 3])
+#修改前：logits = SENet(input_x, is_training=True, keep_prob=0.8)
+logits = SENet(input_x, is_training=False, keep_prob=1.0)
+根据读取到的ckpt文件恢复当前的graph，定义输出的网络节点的对应部分，并保存pb文件，相关代码如下：
+    coord = tf.train.Coordinator()
+    tf.train.start_queue_runners(sess=session, coord=coord)
+    init_op = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer())
+    session.run(init_op)
+    ckpt = tf.train.get_checkpoint_state("models-3")
+    saver.restore(session, ckpt.model_checkpoint_path)
+    print(ckpt.model_checkpoint_path)
+    output_graph_def = tf.graph_util.convert_variables_to_constants(session,session.graph.as_graph_def(),['fully_connected_9/Relu'])
+with tf.gfile.FastGFile("face_landmark_model.pb", "wb") as f:
+        f.write(output_graph_def.SerializeToString())
+        f.close()
+```
+
+### 7.4 模型测试
+
+读取打包好的pb文件，从pb文件中恢复当前的graph， 接着进行前项推理，通过opencv读取用于测试的人脸图片，将图片resize到128 * 128，将读取到的图片扩充为四维后传给网络，使用opencv对68个人脸关键点进行绘制，并显示输出结果，相关代码如下：
+
+```Python
+for im_url in im_list:
+    im_data = cv2.imread(im_url)
+    sp = im_data.shape
+    im_data = im_data[sp[0] * 1//4:,:,:]
+    im_data = cv2.resize(im_data, (128, 128))
+    pred = sess.run(landmark, {"Placeholder:0":
+                                   np.expand_dims(im_data, 0)})
+    pred = pred[0]
+    for i in range(0, 136, 2):
+        cv2.circle(im_data, (int(pred[i] * 128), int(pred[i+1] * 128)), 2, (0, 255, 0), 2)
+    cv2.imshow("test", im_data)
+    cv2.waitKey(0)
+```
+
+人脸关键点定位的模型测试结果如下图所示：
+
+![Minion](/images/face/face10/15.jpg)
+
 
 ## 8 参考资料
 

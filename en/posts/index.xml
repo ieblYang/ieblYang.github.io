@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 06 May 2020 21:03:40 +0800</lastBuildDate>
-    
-	<atom:link href="https://ieblyang.tech/en/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 06 May 2020 21:03:40 +0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Basic Markdown Syntax</title>
       <link>https://ieblyang.tech/en/basic-markdown-syntax/</link>
@@ -85,12 +81,12 @@
     </item>
     
     <item>
-      <title>人脸对齐/关键点训练业务实战</title>
+      <title>人脸对齐/关键点训练业务理论及实现</title>
       <link>https://ieblyang.tech/en/face10/</link>
       <pubDate>Wed, 18 Mar 2020 19:24:40 +0800</pubDate>
       
       <guid>https://ieblyang.tech/en/face10/</guid>
-      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务实战&lt;/p&gt;</description>
+      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务理论及实现&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -99,7 +95,7 @@
       <pubDate>Sun, 15 Mar 2020 20:46:40 +0800</pubDate>
       
       <guid>https://ieblyang.tech/en/bug02/</guid>
-      <description>&lt;p&gt;解决AttributeError: module &amp;lsquo;scipy.misc&amp;rsquo; has no attribute &amp;lsquo;imread&#39;的报错&lt;/p&gt;</description>
+      <description>&lt;p&gt;解决AttributeError: module &amp;lsquo;scipy.misc&amp;rsquo; has no attribute &amp;lsquo;imread&amp;rsquo;的报错&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -112,12 +108,12 @@
     </item>
     
     <item>
-      <title>人脸匹配业务实战</title>
+      <title>人脸匹配业务理论及实现</title>
       <link>https://ieblyang.tech/en/face09/</link>
       <pubDate>Sat, 14 Mar 2020 13:07:40 +0800</pubDate>
       
       <guid>https://ieblyang.tech/en/face09/</guid>
-      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配业务实战&lt;/p&gt;</description>
+      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配业务理论及实现&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -130,12 +126,12 @@
     </item>
     
     <item>
-      <title>人脸检测业务理论</title>
+      <title>人脸检测业务理论及实现</title>
       <link>https://ieblyang.tech/en/face06/</link>
       <pubDate>Thu, 12 Mar 2020 17:33:40 +0800</pubDate>
       
       <guid>https://ieblyang.tech/en/face06/</guid>
-      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论&lt;/p&gt;</description>
+      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现&lt;/p&gt;</description>
     </item>
     
     <item>

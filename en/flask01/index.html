@@ -336,7 +336,8 @@ sudo apt-get install python-virtualenv
 <li>然后使用 <code>route()</code> 装饰器来告诉 Flask 触发函数的 URL 。</li>
 <li>函数名称被用于生成相关联的URL。函数最后返回需要在用户浏览器中显示的信息。
 把它保存为 <code>hello. py</code> 或其他类似名称。不要使用<code>flask.py</code>作为应用名称，这会与 Flask 本身发生冲突。</li>
-</ul></div>
+</ul>
+</div>
         </div>
 <h2 id="4-参数配置">4 参数配置</h2>
 <h3 id="41-利用apprun配置">4.1 利用app.run（）配置</h3>
@@ -399,7 +400,8 @@ sudo apt-get install python-virtualenv
 <li><code>app.config.from_object('config')</code> 载入配置文件，使用时<code>DEBUG</code>必须大写</li>
 <li>config 配置文件中的参数必须全部大写</li>
 <li><code>DEBUG</code> 的值默认值为 False</li>
-</ul></div>
+</ul>
+</div>
         </div>
 <h3 id="43-使用flask-script插件配置">4.3 使用flask-script插件配置</h3>
 <h4 id="431-安装使用">4.3.1 安装使用</h4>
@@ -527,7 +529,7 @@ python3 manage.py runserver --help
 </div>
 </div><div class="admonition note">
             <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
-            <div class="admonition-content">参数</p>
+            <div class="admonition-content"><p>参数</p>
 <ul>
 <li>路径参数
 <ul>
@@ -562,7 +564,8 @@ Flask中参数</li>
 <li>any 列出的元组中的任意一个</li>
 </ul>
 </li>
-</ul></div>
+</ul>
+</div>
         </div>
 <h3 id="62-唯一的url--重定向行为">6.2 唯一的URL / 重定向行为</h3>
 <p>以下的两条规则的不同之处在于是否使用尾部的<code>/</code>:</p>
@@ -630,7 +633,7 @@ Flask中参数</li>
 <li>
 <p>获取静态资源路径</p>
 <ul>
-<li>url_for(&lsquo;static&rsquo;,filename='path&rsquo;)</li>
+<li>url_for(&lsquo;static&rsquo;,filename=&lsquo;path&rsquo;)</li>
 <li>static 资源</li>
 <li>path 相对于资源的路径</li>
 </ul>
@@ -638,14 +641,15 @@ Flask中参数</li>
 </ul>
 <div class="admonition note">
             <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
-            <div class="admonition-content">为什么不在把 URL 写死在模板中，而要使用反转函数 <code>url_for()</code> 动态构建？</p>
+            <div class="admonition-content"><p>为什么不在把 URL 写死在模板中，而要使用反转函数 <code>url_for()</code> 动态构建？</p>
 <ul>
 <li>反转通常比硬编码 URL 的描述性更好。</li>
 <li>可以只在一个地方改变 URL ，而不用到处乱找。</li>
 <li>URL 创建会为你处理特殊字符的转义和 Unicode 数据，比较直观。</li>
 <li>生产的路径总是绝对路径，可以避免相对路径产生副作用。</li>
 <li>如果应用是放在 URL 根路径之外的地方（如在 <code>/myapplication</code> 中，不在 <code>/</code> 中）， <code>url_for()</code> 会妥善处理。</li>
-</ul></div>
+</ul>
+</div>
         </div>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1763,8 +1767,8 @@ Jinja2由Flask作者开发</p>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/en/face06/" class="prev" rel="prev" title="人脸检测业务理论"><i class="fas fa-angle-left fa-fw"></i>人脸检测业务理论</a>
-            <a href="/en/face09/" class="next" rel="next" title="人脸匹配业务实战">人脸匹配业务实战<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/en/face06/" class="prev" rel="prev" title="人脸检测业务理论及实现"><i class="fas fa-angle-left fa-fw"></i>人脸检测业务理论及实现</a>
+            <a href="/en/face09/" class="next" rel="next" title="人脸匹配业务理论及实现">人脸匹配业务理论及实现<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div class="comment"><div id="valine"></div><script>
             document.addEventListener("DOMContentLoaded", function(event) {
@@ -1782,7 +1786,7 @@ Jinja2由Flask作者开发</p>
     <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
         </div>
 
-        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
     </div>
 </footer>
 </div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">

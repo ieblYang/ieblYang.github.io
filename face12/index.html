@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>人脸属性业务实战 | 波玻拨啵菠萝</title>
+        <title>人脸属性业务实战 | ieblYang</title>
         <meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸属性业务实战"><meta property="og:title" content="人脸属性业务实战" />
 <meta property="og:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸属性业务实战" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ieblyang.tech/face12/" />
 <meta property="article:published_time" content="2020-03-23T11:22:40+08:00" />
-<meta property="article:modified_time" content="2020-03-23T11:22:40+08:00" /><meta property="og:site_name" content="波玻拨啵菠萝" />
+<meta property="article:modified_time" content="2021-01-16T11:54:40+08:00" /><meta property="og:site_name" content="ieblYang" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="人脸属性业务实战"/>
 <meta name="twitter:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸属性业务实战"/>
@@ -37,8 +37,8 @@
                 "url": "https:\/\/ieblyang.tech\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "人脸识别, TensorFlow, 人脸属性","wordcount":  957 ,
-        "url": "https:\/\/ieblyang.tech\/face12\/","datePublished": "2020-03-23","dateModified": "2020-03-23","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            },"genre": "posts","keywords": "人脸识别, TensorFlow, 人脸属性","wordcount":  3501 ,
+        "url": "https:\/\/ieblyang.tech\/face12\/","datePublished": "2020-03-23","dateModified": "2021-01-16","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
                 "@type": "Organization",
                 "name": "ieblYang",
                 "logo": {
@@ -61,7 +61,7 @@
         </script><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/">波玻拨啵菠萝</a>
+            <a href="/">ieblYang</a>
         </div>
         <div class="menu"><a class="menu-item" href="/posts/" rel="noopener noreffer">文章</a><a class="menu-item" href="/tags/" rel="noopener noreffer">标签</a><a class="menu-item" href="/categories/" rel="noopener noreffer">分类</a><a class="menu-item" href="/categories/documentation/" rel="noopener noreffer">文档</a><a class="menu-item" href="/about/" rel="noopener noreffer">关于</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><span class="menu-item">|</span>
             <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
@@ -74,7 +74,7 @@
     <div class="header-wrapper">
         <div class="header-container">
             <div class="header-title">
-                <a href="/">波玻拨啵菠萝</a>
+                <a href="/">ieblYang</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -100,8 +100,8 @@
                                 <i class="far fa-folder fa-fw"></i>Face recognition
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-23>2020-03-23</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 957 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;<span id="/face12/" class="leancloud_visitors" data-flag-title="人脸属性业务实战">
+                <i class="fas fa-pencil-alt fa-fw"></i>约 3501 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 7 分钟&nbsp;<span id="/face12/" class="leancloud_visitors" data-flag-title="人脸属性业务实战">
                         <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="featured-image"><img
@@ -146,7 +146,14 @@
       </ul>
     </li>
     <li><a href="#5-多任务网络结构">5 多任务网络结构</a></li>
-    <li><a href="#6-实例代码">6 实例代码</a></li>
+    <li><a href="#6-实例代码">6 实例代码</a>
+      <ul>
+        <li><a href="#61-数据集处理">6.1 数据集处理</a></li>
+        <li><a href="#62-模型训练">6.2 模型训练</a></li>
+        <li><a href="#63-模型固化">6.3 模型固化</a></li>
+        <li><a href="#64-模型测试">6.4 模型测试</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
                 </details>
@@ -170,30 +177,30 @@
 <table>
 <thead>
 <tr>
-<th align="center">常用数据集</th>
+<th style="text-align:center">常用数据集</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">UTKFace</td>
+<td style="text-align:center">UTKFace</td>
 </tr>
 <tr>
-<td align="center">SCUT-FBP5500</td>
+<td style="text-align:center">SCUT-FBP5500</td>
 </tr>
 <tr>
-<td align="center">CelebA</td>
+<td style="text-align:center">CelebA</td>
 </tr>
 <tr>
-<td align="center">APPA-REAL</td>
+<td style="text-align:center">APPA-REAL</td>
 </tr>
 <tr>
-<td align="center">AFAD Dataset</td>
+<td style="text-align:center">AFAD Dataset</td>
 </tr>
 <tr>
-<td align="center">FER+</td>
+<td style="text-align:center">FER+</td>
 </tr>
 <tr>
-<td align="center">NKI</td>
+<td style="text-align:center">NKI</td>
 </tr>
 </tbody>
 </table>
@@ -271,7 +278,8 @@
 <li><code>list_landmarks_align_celeba.txt</code>  对齐后的图片，人脸标记（眼鼻嘴）<code>lefteye_x</code> <code>lefteye_y</code> <code>righteye_x</code> <code>righteye_y</code> <code>nose_x</code> <code>nose_y</code> <code>leftmouth_x</code> <code>leftmouth_y</code> <code>rightmouth_x</code> <code>rightmouth_y</code></li>
 <li><code>list_landmarks_celeba.txt</code> 自然环境下的图片，人脸标记（眼鼻嘴）<code>lefteye_x</code> <code>lefteye_y</code> <code>righteye_x</code> <code>righteye_y</code> <code>nose_x</code> <code>nose_y</code> <code>leftmouth_x</code> <code>leftmouth_y</code> <code>rightmouth_x</code> <code>rightmouth_y</code></li>
 <li><code>list_eval_partition.txt</code>  分组：训练、验证、测试</li>
-</ul></div>
+</ul>
+</div>
         </div>
 <h4 id="412-下载的图片">4.1.2 下载的图片</h4>
 <ul>
@@ -480,14 +488,357 @@ sudo apt-get install p7zip-full
         alt="Minion"
         title="Minion" /></p>
 <h2 id="6-实例代码">6 实例代码</h2>
-<blockquote>
-<p>数据处理代码后期上传！</p>
-<p>&ndash; <em>ieblYang</em></p>
-</blockquote></div><div class="post-footer" id="post-footer">
+<h3 id="61-数据集处理">6.1 数据集处理</h3>
+<p>人脸属性的标注信息存储在Anno文件夹下的list_attr_celeba.txt中，从标注文件中可以看出，CelebA数据集中标注了40种人脸属性的信息，系统选取其中的四个属性进行数据打包，分别为是否戴眼镜、性别、是否微笑、是否年轻，这四个属性对应的下标依次为15、20、31、39。</p>
+<p>在进行数据打包前，需要先对人脸图片进行适当的处理，在CelebA数据集中，所有的人脸图片存储在Img文件夹下，所有人脸图片又分为三类文件，分别是img_celeba.7z，纯“野生”文件，即从网络上爬取的没有进行裁剪的图片，img_algin_celeba_png.7z，将爬取到的“野生”文件裁剪出人脸部分后的到的图片，并且图片的格式为png格式，img_align_celeba.zip,将爬取到的“野生”文件经过人脸对齐和裁剪后得到的人脸图像，图片的格式为jpg格式，图片比较小，所以系统选用了img_algin_celeba文件中的图片进行处理和模型训练。</p>
+<p>在数据集处理中，使用dlib库定义人脸检测器，对数据集中的人脸图片进行人脸检测，若没有发现人脸信息则将这张图片过滤掉，在成功获取到人脸框之后，需要对人脸框进行一定的扩充，对扩充后的人脸框仍然小于50 * 50的人脸图片要将其过滤掉，对数据集中的图片进行过滤的代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rects</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">rects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">rects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">top</span><span class="p">()</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">rects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">y2</span> <span class="o">=</span> <span class="n">rects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bottom</span><span class="p">()</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">),</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span> <span class="o">&lt;</span> <span class="mi">50</span> <span class="ow">or</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span> <span class="o">&lt;</span> <span class="mi">50</span> <span class="ow">or</span> <span class="n">x1</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">y1</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>对符合要求的人脸图片，先进行人脸对齐，将图片裁剪为128 * 128的大小，然后定义tfrecord字典的格式，其中image为byte型，eyeglasses、male、smiling、young为int型，相关代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">ex</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Example</span><span class="p">(</span>
+        <span class="n">features</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Features</span><span class="p">(</span>
+            <span class="n">feature</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&#34;image&#34;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Feature</span><span class="p">(</span>
+                    <span class="n">bytes_list</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">BytesList</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="n">im_data</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()])</span>
+                <span class="p">),</span>
+                <span class="s2">&#34;Eyeglasses&#34;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Feature</span><span class="p">(</span>
+                    <span class="n">int64_list</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Int64List</span><span class="p">(</span>
+                        <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">attr_val</span><span class="p">[</span><span class="mi">16</span><span class="p">])]</span>
+                    <span class="p">)</span>
+                <span class="p">),</span>
+                <span class="s2">&#34;Male&#34;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Feature</span><span class="p">(</span>
+                    <span class="n">int64_list</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Int64List</span><span class="p">(</span>
+                        <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">attr_val</span><span class="p">[</span><span class="mi">21</span><span class="p">])]</span>
+                    <span class="p">)</span>
+                <span class="p">),</span>
+                <span class="s2">&#34;Smiling&#34;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Feature</span><span class="p">(</span>
+                    <span class="n">int64_list</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Int64List</span><span class="p">(</span>
+                        <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">attr_val</span><span class="p">[</span><span class="mi">32</span><span class="p">])]</span>
+                    <span class="p">)</span>
+                <span class="p">),</span>
+                <span class="s2">&#34;Young&#34;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Feature</span><span class="p">(</span>
+                    <span class="n">int64_list</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Int64List</span><span class="p">(</span>
+                        <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">attr_val</span><span class="p">[</span><span class="mi">40</span><span class="p">])]</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>最后，对数据集进行训练集与测试集的划分，其中95%的数据划分为训练集，剩余的5%划分为测试集。</p>
+<h3 id="62-模型训练">6.2 模型训练</h3>
+<p>主干网络使用slim提供的inception_v3_base，batch_norm层的参数配置如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">batch_norm_params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&#34;is_training&#34;</span><span class="p">:</span> <span class="n">is_training</span><span class="p">,</span>
+        <span class="s2">&#34;trainable&#34;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+        <span class="s2">&#34;decay&#34;</span><span class="p">:</span> <span class="mf">0.9997</span><span class="p">,</span>
+        <span class="s2">&#34;epsilon&#34;</span><span class="p">:</span> <span class="mf">0.00001</span><span class="p">,</span>
+        <span class="s2">&#34;variables_collections&#34;</span><span class="p">:{</span>
+            <span class="s2">&#34;beta&#34;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s2">&#34;gamma&#34;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s2">&#34;moving_mean&#34;</span><span class="p">:[</span><span class="s2">&#34;moving_vars&#34;</span><span class="p">],</span>
+            <span class="s2">&#34;moving_variance&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;moving_var&#39;</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>对卷积层和全连接层进行权值上的约束时，正则化方法采用L2正则，并定义这些层是可训练的，对卷积层的参数进行初始化，调用主干网络即inception_v3_base传入图片，获取到inception_v3_base网络的输出结果，使用tf.reduce_mean函数计算张量tensor沿着1、2维度上的平均值。使用tf.nn.dropout函数在训练过程中随机的扔掉一部分神经元，防止或减轻过拟合问题，针对系统研究的四个属性以主干网络的输出为四个分支的输入来定义分支，主要代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">weights_regularizer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">l2_regularizer</span><span class="p">(</span><span class="mf">0.00004</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">slim</span><span class="o">.</span><span class="n">arg_scope</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">slim</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">],</span>
+        <span class="n">weights_regularizer</span> <span class="o">=</span> <span class="n">weights_regularizer</span><span class="p">,</span>
+        <span class="n">trainable</span> <span class="o">=</span> <span class="bp">True</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">slim</span><span class="o">.</span><span class="n">arg_scope</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span><span class="p">],</span>
+            <span class="n">weights_initializer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">truncated_normal_initializer</span><span class="p">(</span><span class="n">stddev</span><span class="o">=</span><span class="mf">0.1</span><span class="p">),</span>
+            <span class="n">activation_fn</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">relu</span><span class="p">,</span>
+            <span class="n">normalizer_fn</span> <span class="o">=</span> <span class="n">batch_norm</span><span class="p">,</span>
+            <span class="n">normalizer_params</span> <span class="o">=</span> <span class="n">batch_norm_params</span><span class="p">):</span>
+            <span class="n">nets</span><span class="p">,</span> <span class="n">endpoints</span> <span class="o">=</span> <span class="n">inception_v3_base</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">nets</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">endpoints</span><span class="p">)</span>
+            <span class="n">net</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">nets</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+            <span class="n">net</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">drop_out</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;droplast&#34;</span><span class="p">)</span>
+            <span class="n">net</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&#34;flatten&#34;</span><span class="p">)</span>
+    <span class="n">net_eyeglasses</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">activation_fn</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">net_male</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">activation_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+    <span class="n">net_smiling</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">activation_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+    <span class="n">net_young</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">activation_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">net_eyeglasses</span><span class="p">,</span> <span class="n">net_male</span><span class="p">,</span> <span class="n">net_smiling</span><span class="p">,</span> <span class="n">net_young</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>输入和label定义：网络搭建完成后，定义输入和label，并获取网络的预测结果，对于模型训练设置dropout=0.5，is_training=True，代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">input_x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">label_eyeglasses</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">label_male</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">label_smiling</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">label_young</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Loss的定义：采用交叉熵损失作为模型训练的Loss，对于tf.losses.sparse_softmax_cross_entropy其中labels是一维的， 预测结果是二维的，最后结果选取二维的最大值所对应的索引，即概率分布中最大的值。使用tf.nn.softmax将预测结果处理到0 ~ 1之间，将loss_eyeglasses，loss_male，loss_smiling，loss_young相加来定义总的loss，接着定义正则化的loss，定义loss的代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">loss_eyeglasses</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">sparse_softmax_cross_entropy</span><span class="p">(</span>
+<span class="n">labels</span><span class="o">=</span> <span class="n">label_eyeglasses</span><span class="p">,</span> <span class="n">logits</span> <span class="o">=</span> <span class="n">logits_eyeglasses</span><span class="p">)</span>
+<span class="n">loss_male</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">sparse_softmax_cross_entropy</span><span class="p">(</span>
+<span class="n">labels</span><span class="o">=</span><span class="n">label_male</span><span class="p">,</span> <span class="n">logits</span> <span class="o">=</span> <span class="n">logits_male</span><span class="p">)</span>
+<span class="n">loss_smiling</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">sparse_softmax_cross_entropy</span><span class="p">(</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">label_smiling</span><span class="p">,</span> <span class="n">logits</span> <span class="o">=</span> <span class="n">logits_smiling</span><span class="p">)</span>
+<span class="n">loss_young</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">sparse_softmax_cross_entropy</span><span class="p">(</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">label_young</span><span class="p">,</span> <span class="n">logits</span> <span class="o">=</span> <span class="n">logits_young</span><span class="p">)</span>
+<span class="n">logits_eyeglasses</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits_eyeglasses</span><span class="p">)</span>
+<span class="n">logits_male</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits_male</span><span class="p">)</span>
+<span class="n">logits_smiling</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits_smiling</span><span class="p">)</span>
+<span class="n">logits_young</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits_young</span><span class="p">)</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">loss_eyeglasses</span> <span class="o">+</span> <span class="n">loss_male</span> <span class="o">+</span> <span class="n">loss_smiling</span> <span class="o">+</span> <span class="n">loss_young</span>
+<span class="n">reg_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_collection</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">GraphKeys</span><span class="o">.</span><span class="n">REGULARIZATION_LOSSES</span><span class="p">)</span>
+<span class="n">l2_loss</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">add_n</span><span class="p">(</span><span class="n">reg_set</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>学习方式与学习率的定义：定义学习率的衰减方式为指数衰减，初始学习率为0.0001，衰减的步长为1000，每次衰减的比率为0.98，相关代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">global_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">exponential_decay</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">global_step</span><span class="p">,</span>
+                                <span class="n">decay_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                                <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.98</span><span class="p">,</span>
+                                <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>优化器的定义;定义训练的方式为AdamOptimizer，传入学习率和loss，相关代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">update_ops</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_collection</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">GraphKeys</span><span class="o">.</span><span class="n">UPDATE_OPS</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">control_dependencies</span><span class="p">(</span><span class="n">update_ops</span><span class="p">):</span>
+    <span class="n">train_op</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">AdamOptimizer</span><span class="p">(</span><span class="n">lr</span><span class="p">)</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">loss</span> <span class="o">+</span> <span class="n">l2_loss</span><span class="p">,</span> <span class="n">global_step</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>对于训练集使用tf.train.shuffle_batch将队列中的数据打乱后再读取，在数据打包时，各个属性的label值用-1,1来表示，对这些值进行处理，将数据变为0,1，相关代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">batch_im</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="s2">&#34;image&#34;</span><span class="p">]</span>
+    <span class="n">batch_eye</span> <span class="o">=</span> <span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s2">&#34;Eyeglasses&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">batch_male</span> <span class="o">=</span> <span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s2">&#34;Male&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">batch_smiling</span> <span class="o">=</span> <span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s2">&#34;Smiling&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">batch_young</span> <span class="o">=</span> <span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s2">&#34;Young&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">batch_im</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">decode_raw</span><span class="p">(</span><span class="n">batch_im</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>模型共训练150000次，并对模型和日志信息进行保存，loss曲线如下图所示：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face12/6.jpg,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p>
+<h3 id="63-模型固化">6.3 模型固化</h3>
+<p>模型前项推理基本与模型训练部分一致，需要注意的是inception_v3函数中的dropout需要修改为1.0，is_training修改为False。
+为了使预测结果更直观，调用起来更方便，将softmax值转换成argmax值，得到概率分布值高的所对应的轴，实现代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">logits_eyeglasses</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits_eyeglasses</span><span class="p">)</span>
+<span class="n">logits_male</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits_male</span><span class="p">)</span>
+<span class="n">logits_smiling</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits_smiling</span><span class="p">)</span>
+<span class="n">logits_young</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits_young</span><span class="p">)</span>
+
+<span class="n">logits_eyeglasses</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">logits_eyeglasses</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">logits_male</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">logits_male</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">logits_smiling</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">logits_smiling</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">logits_young</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">logits_young</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>使用convert_variables_to_constants函数将计算图中的变量取值以常量的形式保存。在人脸属性模型的多任务网络中，在模型固化的节点list中放入人脸属性的四个节点的tensor的name，从而转化多任务网络的pb模型，参数配置如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">output_graph_def</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">graph_util</span><span class="o">.</span>\
+        <span class="n">convert_variables_to_constants</span><span class="p">(</span><span class="n">session</span><span class="p">,</span>
+               <span class="n">session</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">as_graph_def</span><span class="p">(),</span>
+               <span class="p">[</span><span class="s1">&#39;ArgMax&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;ArgMax_1&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;ArgMax_2&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;ArgMax_3&#39;</span><span class="p">])</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="64-模型测试">6.4 模型测试</h3>
+<p>首先，读取打包好的pb文件，进行反序列化，恢复当前的graph。接着，获取需要推理的tensor，分别为pred_eyeglasses、pred_young、pred_male、pred_smiling，使用opencv读取测试图片，使用dlib库定义人脸检测器，提取出人脸框，并进行人脸数据的裁剪，计算当前四个tensor所对应的值，并在控制台打印输出结果，人脸属性模型测试结果如下图所示：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/face/face12/7.png,  1.5x,  2x"
+        data-src=""
+        alt="Minion"
+        title="Minion" /></p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>本文于 2020-03-23 更新</span>
+                <span>本文于 2021-01-16 更新</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -525,7 +876,7 @@ sudo apt-get install p7zip-full
     <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
         </div>
 
-        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
     </div>
 </footer>
 </div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">

@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 12 Mar 2020 08:13:40 +0800</lastBuildDate>
-    
-	<atom:link href="https://ieblyang.tech/en/tags/vncviewer/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 12 Mar 2020 08:13:40 +0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/tags/vncviewer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VNCViewer远程阿里云ECS服务器</title>
       <link>https://ieblyang.tech/en/vncviever-aliyun-ecs/</link>
