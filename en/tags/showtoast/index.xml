@@ -1,21 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>showToast on ieblYang</title>
-    <link>https://ieblyang.tech/en/tags/showtoast/</link>
-    <description>Recent content in showToast on ieblYang</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 06 May 2020 21:03:40 +0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/tags/showtoast/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>微信小程序自定义showToast图片</title>
-      <link>https://ieblyang.tech/en/miniprogram03/</link>
-      <pubDate>Wed, 06 May 2020 21:03:40 +0800</pubDate>
-      
-      <guid>https://ieblyang.tech/en/miniprogram03/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>showToast - Tag - ieblYang</title>
+        <link>https://ieblyang.tech/en/tags/showtoast/</link>
+        <description>showToast - Tag - ieblYang</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 06 May 2020 21:03:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/tags/showtoast/" rel="self" type="application/rss+xml" /><item>
+    <title>微信小程序自定义showToast图片</title>
+    <link>https://ieblyang.tech/en/miniprogram03/</link>
+    <pubDate>Wed, 06 May 2020 21:03:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/miniprogram03/</guid>
+    <description><![CDATA[微信小程序自定义showToast图片]]></description>
+</item></channel>
 </rss>

@@ -1,21 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>SENet on ieblYang</title>
-    <link>https://ieblyang.tech/en/tags/senet/</link>
-    <description>Recent content in SENet on ieblYang</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 18 Mar 2020 19:24:40 +0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/tags/senet/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>人脸对齐/关键点训练业务理论及实现</title>
-      <link>https://ieblyang.tech/en/face10/</link>
-      <pubDate>Wed, 18 Mar 2020 19:24:40 +0800</pubDate>
-      
-      <guid>https://ieblyang.tech/en/face10/</guid>
-      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务理论及实现&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>SENet - Tag - ieblYang</title>
+        <link>https://ieblyang.tech/en/tags/senet/</link>
+        <description>SENet - Tag - ieblYang</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 18 Mar 2020 19:24:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/tags/senet/" rel="self" type="application/rss+xml" /><item>
+    <title>人脸对齐/关键点训练业务理论及实现</title>
+    <link>https://ieblyang.tech/en/face10/</link>
+    <pubDate>Wed, 18 Mar 2020 19:24:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/face10/</guid>
+    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务理论及实现</p>]]></description>
+</item></channel>
 </rss>

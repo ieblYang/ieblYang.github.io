@@ -5,25 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>人脸检测业务理论及实现 | ieblYang</title>
-        <meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现"><meta property="og:title" content="人脸检测业务理论及实现" />
+        <title>人脸检测业务理论及实现 - ieblYang</title><meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现"><meta property="og:title" content="人脸检测业务理论及实现" />
 <meta property="og:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ieblyang.tech/face06/" />
+<meta property="og:image" content="https://ieblyang.tech/face06/featured-image.png"/>
 <meta property="article:published_time" content="2020-03-12T17:33:40+08:00" />
-<meta property="article:modified_time" content="2021-01-16T10:27:40+08:00" /><meta property="og:site_name" content="ieblYang" />
-<meta name="twitter:card" content="summary"/>
+<meta property="article:modified_time" content="2021-01-16T10:27:40+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ieblyang.tech/face06/featured-image.png"/>
 <meta name="twitter:title" content="人脸检测业务理论及实现"/>
 <meta name="twitter:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现"/>
-<meta name="theme-color" content="#ffffff">
-<meta name="msapplication-TileColor" content="#da532c">
-<link rel="canonical" href="https://ieblyang.tech/face06/" />
-<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://ieblyang.tech/face05/" /><link rel="next" href="https://ieblyang.tech/flask01/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.9679f10076c3db0a03c8c8a5128dba53.css" integrity="md5-lnnxAHbD2woDyMilEo26Uw=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><link rel="stylesheet" href="/css/style.min.ae21e349d7dcddfd942a94491d8158d5.css" integrity="md5-riHjSdfc3f2UKpRJHYFY1Q=="><script type="application/ld+json">
+<meta name="application-name" content="ieblYang">
+<meta name="apple-mobile-web-app-title" content="ieblYang"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ieblyang.tech/face06/" /><link rel="prev" href="https://ieblyang.tech/face05/" /><link rel="next" href="https://ieblyang.tech/flask01/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -32,98 +28,109 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/ieblyang.tech\/face06\/"
-        },"image": {
-                "@type": "ImageObject",
-                "url": "https:\/\/ieblyang.tech\/cover.png",
-                "width":  800 ,
-                "height":  600 
-            },"genre": "posts","keywords": "人脸识别, TensorFlow, 人脸检测","wordcount":  5486 ,
-        "url": "https:\/\/ieblyang.tech\/face06\/","datePublished": "2020-03-12","dateModified": "2021-01-16","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
-                "@type": "Organization",
-                "name": "ieblYang",
-                "logo": {
-                "@type": "ImageObject",
-                "url": "https:\/\/ieblyang.tech\/logo.png",
-                "width":  127 ,
-                "height":  40 
-                }
-            },"author": {
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/ieblyang.tech\/face06\/featured-image.png",
+                            "width":  1420 ,
+                            "height":  708 
+                        }],"genre": "posts","keywords": "FaceRecognition, TensorFlow, FaceDetection","wordcount":  5486 ,
+        "url": "https:\/\/ieblyang.tech\/face06\/","datePublished": "2020-03-12T17:33:40+08:00","dateModified": "2021-01-16T10:27:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "ieblYang","logo": "https:\/\/ieblyang.tech\/images\/avatar.png"},"author": {
                 "@type": "Person",
                 "name": "ieblYang"
             },"description": "基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现"
     }
     </script></head>
-    <body><script>
-            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
-                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
-            }
-            window.isDark && document.body.classList.add('dark-theme');
-        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/">ieblYang</a>
+            <a href="/" title="ieblYang"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>ieblYang</a>
         </div>
-        <div class="menu"><a class="menu-item" href="/posts/" rel="noopener noreffer">文章</a><a class="menu-item" href="/tags/" rel="noopener noreffer">标签</a><a class="menu-item" href="/categories/" rel="noopener noreffer">分类</a><a class="menu-item" href="/categories/documentation/" rel="noopener noreffer">文档</a><a class="menu-item" href="/about/" rel="noopener noreffer">关于</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><span class="menu-item">|</span>
-            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
-                <i class="fas fa-adjust fa-fw"></i>
-            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/face06/">English</option><option value="/face06/" selected>简体中文</option></select>
-                </a></div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/face06/">English</option><option value="/face06/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
     </div>
 </header><header class="mobile" id="header-mobile">
-    <div class="header-wrapper">
-        <div class="header-container">
+    <div class="header-container">
+        <div class="header-wrapper">
             <div class="header-title">
-                <a href="/">ieblYang</a>
+                <a href="/" title="ieblYang"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>ieblYang</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" rel="noopener noreffer">文章</a><a class="menu-item" href="/tags/" title="" rel="noopener noreffer">标签</a><a class="menu-item" href="/categories/" title="" rel="noopener noreffer">分类</a><a class="menu-item" href="/categories/documentation/" title="" rel="noopener noreffer">文档</a><a class="menu-item" href="/about/" title="" rel="noopener noreffer">关于</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
                     <select class="language-select" onchange="location = this.value;"><option value="/en/face06/">English</option><option value="/face06/" selected>简体中文</option></select>
                 </a></div>
     </div>
 </header>
-
-<script>
-    window.desktopHeaderMode = "fixed";
-    window.mobileHeaderMode = "auto";
-</script>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
 <main class="main">
-                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">人脸检测业务理论及实现</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://ieblyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ieblYang</a>
-</span>&nbsp;
-                    <span class="post-category">收录于<a href="/categories/face-recognition">
-                                <i class="far fa-folder fa-fw"></i>Face recognition
-                            </a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-12>2020-03-12</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 5486 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>预计阅读 11 分钟&nbsp;<span id="/face06/" class="leancloud_visitors" data-flag-title="人脸检测业务理论及实现">
-                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">人脸检测业务理论及实现</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://ieblyang.tech" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ieblYang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/facerecognition/"><i class="far fa-folder fa-fw"></i>人脸识别</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-12">2020-03-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5486 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;<span id="/face06/" class="leancloud_visitors" data-flag-title="人脸检测业务理论及实现">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
+        data-src="/face06/featured-image.png"
+        data-srcset="/face06/featured-image.png, /face06/featured-image.png 1.5x, /face06/featured-image.png 2x"
         data-sizes="auto"
-        data-srcset="/images/face/featured-image.png, /images/face/featured-image.png 1.5x, /images/face/featured-image.png 2x"
-        data-src="/images/face/featured-image.png"
-        alt="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现"
-        title="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现" /></div><div class="toc" id="toc-auto">
-                <h2 class="toc-title">目录</h2>
-                <div class="toc-content" id="toc-content-auto"></div>
-            </div>
-            <div class="toc" id="toc-static">
-                <details>
-                    <summary>
-                        <div class="toc-title">
-                            <span>目录</span>
-                            <span><i class="details icon fas fa-angle-down"></i></span>
-                        </div>
-                    </summary>
-                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+        alt="/face06/featured-image.png"
+        title="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#1-人脸业务场景综述">1 人脸业务场景综述</a>
       <ul>
@@ -211,7 +218,6 @@
     <li><a href="#11-参考资料">11 参考资料</a></li>
   </ul>
 </nav></div>
-                </details>
             </div><div class="content" id="content"><p>基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现</p>
 <h2 id="1-人脸业务场景综述">1 人脸业务场景综述</h2>
 <h3 id="11-生物信息识别">1.1 生物信息识别</h3>
@@ -237,12 +243,12 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="1.jpg"
+        data-srcset="/face06/1.jpg, 1.jpg 1.5x, /face06/1.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/1.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/1.jpg"
+        title="人脸检测" /></p>
 <h4 id="122-人脸关键点人脸对齐-face-alignment">1.2.2 人脸关键点（人脸对齐 Face Alignment）</h4>
 <ul>
 <li>
@@ -260,12 +266,12 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="2.jpg"
+        data-srcset="/face06/2.jpg, 2.jpg 1.5x, /face06/2.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/2.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/2.jpg"
+        title="人脸关键点" /></p>
 <h4 id="123-人脸属性face-attribute">1.2.3 人脸属性（Face Attribute）</h4>
 <ul>
 <li>
@@ -282,12 +288,12 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="3.jpg"
+        data-srcset="/face06/3.jpg, 3.jpg 1.5x, /face06/3.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/3.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/3.jpg"
+        title="人脸属性" /></p>
 <h4 id="124-人脸对比face-compare">1.2.4 人脸对比（Face Compare）</h4>
 <p>计算两个人脸之间的相似度</p>
 <ul>
@@ -299,12 +305,12 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="4.jpg"
+        data-srcset="/face06/4.jpg, 4.jpg 1.5x, /face06/4.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/4.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/4.jpg"
+        title="人脸对比" /></p>
 <h4 id="125-其他人脸业务场景">1.2.5 其他人脸业务场景</h4>
 <ul>
 <li>人脸活体检测</li>
@@ -321,12 +327,12 @@
 <h3 id="13-人脸业务流程">1.3 人脸业务流程</h3>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="5.jpg"
+        data-srcset="/face06/5.jpg, 5.jpg 1.5x, /face06/5.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/5.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/5.jpg"
+        title="人脸业务流程" /></p>
 <h3 id="14-人脸采集相关问题">1.4 人脸采集相关问题</h3>
 <ul>
 <li>不同性别分布，男性、女性。</li>
@@ -363,12 +369,12 @@
 <h3 id="16-人脸资源相关厂商">1.6 人脸资源——相关厂商</h3>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="6.jpg"
+        data-srcset="/face06/6.jpg, 6.jpg 1.5x, /face06/6.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/6.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/6.jpg"
+        title="人脸资源" /></p>
 <h2 id="2-人脸检测问题">2 人脸检测问题</h2>
 <ul>
 <li>
@@ -393,12 +399,12 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="7.jpg"
+        data-srcset="/face06/7.jpg, 7.jpg 1.5x, /face06/7.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/7.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/7.jpg"
+        title="多人脸识别" /></p>
 <h2 id="3-人脸标注方法">3 人脸标注方法</h2>
 <h3 id="31-矩形框">3.1 矩形框</h3>
 <p>传统方法都采用矩形标记法，用一个矩形框将画面中的人脸区域包含在内。这种标记方法存在的问题在于很难给出一个恰好包含面部的矩形框，并且获得各种不同算法的一致的认可。因此采用矩形框的方法无法很好的对不同算法的结果做出准确且有效的评价。</p>
@@ -410,12 +416,12 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="8.jpg"
+        data-srcset="/face06/8.jpg, 8.jpg 1.5x, /face06/8.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/8.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/8.jpg"
+        title="矩形框标注" /></p>
 <h3 id="32-椭圆形标注">3.2 椭圆形标注</h3>
 <p>由于人脸天然呈现为椭圆形，所以用椭圆形来表征是一种较为准确的方法，如下图所示,这种方法可以对侧脸与转动后的面部进行描述，常用5个值来标定。</p>
 <ul>
@@ -427,12 +433,12 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="9.jpg"
+        data-srcset="/face06/9.jpg, 9.jpg 1.5x, /face06/9.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/9.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/9.jpg"
+        title="椭圆形标注" /></p>
 <h2 id="4-人脸检测性能评价指标">4 人脸检测性能评价指标</h2>
 <h3 id="41-检测率误报率">4.1 检测率、误报率</h3>
 <ul>
@@ -450,12 +456,12 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="10.jpg"
+        data-srcset="/face06/10.jpg, 10.jpg 1.5x, /face06/10.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/10.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/10.jpg"
+        title="IOU" /></p>
 <h3 id="44-precision-recallroc">4.4 Precision-Recall/ROC</h3>
 <ul>
 <li>accuracy $ =\frac{TP}{P+N}$</li>
@@ -488,12 +494,12 @@
 </table>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="11.jpg"
+        data-srcset="/face06/11.jpg, 11.jpg 1.5x, /face06/11.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/11.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/11.jpg"
+        title="Precision-Recall/ROC" /></p>
 <h4 id="441-pr曲线">4.4.1 PR曲线</h4>
 <ul>
 <li>precisidon$ =\frac{TP}{TP+FP}$</li>
@@ -530,12 +536,12 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="12.jpg"
+        data-srcset="/face06/12.jpg, 12.jpg 1.5x, /face06/12.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/12.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/12.jpg"
+        title="PR曲线" /></p>
 <h4 id="442-roc曲线">4.4.2 ROC曲线</h4>
 <ul>
 <li>前提：当前图片智能有一个人脸</li>
@@ -571,24 +577,27 @@
 </table>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="11.1.jpg"
+        data-srcset="/face06/11.1.jpg, 11.1.jpg 1.5x, /face06/11.1.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/11.1.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/11.1.jpg"
+        title="ROC曲线" /></p>
 <h2 id="5-人脸检测方法介绍">5 人脸检测方法介绍</h2>
 <h3 id="51-传统的人脸检测方法">5.1 传统的人脸检测方法</h3>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="13.jpg"
+        data-srcset="/face06/13.jpg, 13.jpg 1.5x, /face06/13.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/13.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
-<div class="admonition note">
-            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+        alt="/face06/13.jpg"
+        title="传统的人脸检测方法" /></p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>笔记<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
             <div class="admonition-content"><ul>
 <li>
 <p>VJ(Viola-Jones)框架算法要点:</p>
@@ -623,38 +632,39 @@
 </ul>
 </div>
         </div>
+    </div>
 <h3 id="52-从粗粒度到细粒度的级联模型deep-learning">5.2 从粗粒度到细粒度的级联模型（Deep Learning）</h3>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="14.jpg"
+        data-srcset="/face06/14.jpg, 14.jpg 1.5x, /face06/14.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/14.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/14.jpg"
+        title="从粗粒度到细粒度的级联模型" /></p>
 <h3 id="53-通用目标检测算法基于人脸问题的优化">5.3 通用目标检测算法+基于人脸问题的优化</h3>
 <ul>
 <li>通用目标检测算法</li>
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="15.jpg"
+        data-srcset="/face06/15.jpg, 15.jpg 1.5x, /face06/15.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/15.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/15.jpg"
+        title="通用目标检测算法" /></p>
 <ul>
 <li>人脸检测算法</li>
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="16.jpg"
+        data-srcset="/face06/16.jpg, 16.jpg 1.5x, /face06/16.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/16.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/16.jpg"
+        title="人脸检测算法" /></p>
 <blockquote>
 <p>人脸检测相关文献：
 <a href="http://www.imooc.com/article/284277">http://www.imooc.com/article/284277</a></p>
@@ -676,12 +686,12 @@
 </ul>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="17.jpg"
+        data-srcset="/face06/17.jpg, 17.jpg 1.5x, /face06/17.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/17.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/17.jpg"
+        title="小人脸检测问题" /></p>
 <h3 id="72-小人脸检测问题策略">7.2 小人脸检测问题策略</h3>
 <ul>
 <li>尺度不敏感/多尺度的策略</li>
@@ -701,12 +711,12 @@
 <h3 id="82-ssd模型介绍">8.2 SSD模型介绍</h3>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="18.jpg"
+        data-srcset="/face06/18.jpg, 18.jpg 1.5x, /face06/18.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/18.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/18.jpg"
+        title="SSD模型" /></p>
 <ul>
 <li>主干网络：VGGNet</li>
 <li>多尺度Feature Map预测</li>
@@ -716,12 +726,12 @@
 <p>Anchor指特征图上的每一个点</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="19.jpg"
+        data-srcset="/face06/19.jpg, 19.jpg 1.5x, /face06/19.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/19.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/19.jpg"
+        title="Anchor" /></p>
 <h4 id="822-default-box">8.2.2 Default box</h4>
 <ul>
 <li>
@@ -768,8 +778,11 @@
 <li>以0.5的概率随机的水平翻转</li>
 </ul>
 <h2 id="83-tensorflowssd环境搭建">8.3 TensorFlow+SSD环境搭建</h2>
-<div class="admonition note">
-            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>笔记<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
             <div class="admonition-content"><ul>
 <li>
 <p>安装TensorFlow环境</p>
@@ -780,19 +793,21 @@
 <li>
 <p><a href="https://github.com/tensorflow/models.git">https://github.com/tensorflow/models.git</a></p>
 <ul>
-<li><a href="https://github.com/tensorflow/models/tree/master/research/object_detection" target="_blank" rel="noopener noreffer">目标检测算法源码框架</a>
-</li>
-<li><a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md" target="_blank" rel="noopener noreffer">安装教程</a>
-</li>
+<li><a href="https://github.com/tensorflow/models/tree/master/research/object_detection" target="_blank" rel="noopener noreffer">目标检测算法源码框架</a></li>
+<li><a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md" target="_blank" rel="noopener noreffer">安装教程</a></li>
 </ul>
 </li>
 </ul>
 </div>
         </div>
+    </div>
 <h2 id="9-人脸检测数据集">9 人脸检测数据集</h2>
 <h3 id="91-wider-face-数据集">9.1 WIDER FACE 数据集</h3>
-<div class="admonition note">
-            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>笔记<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
             <div class="admonition-content"><p>WIDER FACE数据集</p>
 <ul>
 <li>由香港中文大学提出</li>
@@ -803,29 +818,33 @@
 </ul>
 </div>
         </div>
+    </div>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="20.jpg"
+        data-srcset="/face06/20.jpg, 20.jpg 1.5x, /face06/20.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/20.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/20.jpg"
+        title="WIDER FACE 数据集" /></p>
 <h3 id="92-passcal-voc">9.2 Passcal VOC</h3>
 <ul>
 <li>对于WIDER FACE数据集，我们首先会将他转化为Passcal VOC格式<br>
 <img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="21.jpg"
+        data-srcset="/face06/21.jpg, 21.jpg 1.5x, /face06/21.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/21.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></li>
+        alt="/face06/21.jpg"
+        title="Passcal VOC" /></li>
 <li>VOC主要有三个重要的文件夹</li>
 </ul>
-<div class="admonition note">
-            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>笔记</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>笔记<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
             <div class="admonition-content"><ul>
 <li>Annotations 存放标注信息</li>
 <li>ImageSets	  存放训练和测试用到的文件列表</li>
@@ -833,6 +852,7 @@
 </ul>
 </div>
         </div>
+    </div>
 <ul>
 <li>VOC数据基本结构</li>
 </ul>
@@ -1120,12 +1140,12 @@ sync_face.config，模型主要用于解决人脸识别问题，所以需要将n
 </div><p>模型训练中，预设的训练次数为100000次，通过观察tensorboard中的loss曲线，模型训练的loss在40000次后已经趋于稳定，在训练74839次时停止了模型的训练，总的loss曲线如下图所示：</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="22.jpg"
+        data-srcset="/face06/22.jpg, 22.jpg 1.5x, /face06/22.jpg 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/22.jpg,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
-        title="Minion" /></p>
+        alt="/face06/22.jpg"
+        title="loss曲线" /></p>
 <h3 id="103-模型固化">10.3 模型固化</h3>
 <p>在模型结束后，使用tensorflow models提供的export_interence_graph.py脚本将已经训练好的模型打包成pb文件，命令与参数配置如下：</p>
 <div class="highlight"><div class="chroma">
@@ -1191,100 +1211,68 @@ sync_face.config，模型主要用于解决人脸识别问题，所以需要将n
 </div><p>模型测试的结果如下图所示：</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.small.min.svg"
+        src="/svg/loading.min.svg"
+        data-src="23.png"
+        data-srcset="/face06/23.png, 23.png 1.5x, /face06/23.png 2x"
         data-sizes="auto"
-        data-srcset="/images/face/face06/23.png,  1.5x,  2x"
-        data-src=""
-        alt="Minion"
+        alt="/face06/23.png"
         title="Minion" /></p>
 <h2 id="11-参考资料">11 参考资料</h2>
-<div class="admonition note">
-            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>参考资料</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>参考资料<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
             <div class="admonition-content"><ul>
-<li><a href="https://yinguobing.com/fddb/" target="_blank" rel="noopener noreffer">FDDB人脸检测算法评价标准</a>
-</li>
-<li><a href="https://www.cnblogs.com/zfcode/p/mu-biao-jian-ce-IOU-jiao-bing-bi-li-jie-bi-ji.html" target="_blank" rel="noopener noreffer">目标检测 IOU（交并比） 理解笔记</a>
-</li>
-<li><a href="https://blog.csdn.net/zchang81/article/details/71515490" target="_blank" rel="noopener noreffer">走近人脸检测（2）——VJ人脸检测器及其发展</a>
-</li>
-<li><a href="https://www.cnblogs.com/llguanli/p/8918677.html" target="_blank" rel="noopener noreffer">Viola-Jones人脸检測</a>
-</li>
-<li><a href="https://blog.csdn.net/weixin_41798111/article/details/79989794" target="_blank" rel="noopener noreffer">DPM目标检测算法</a>
-</li>
-<li><a href="https://blog.csdn.net/smf0504/article/details/52244254" target="_blank" rel="noopener noreffer">解读 Joint Cascade Face Detection and Alignment 人脸检测算法</a>
-</li>
-<li><a href="https://www.cnblogs.com/sciencefans/p/4394861.html" target="_blank" rel="noopener noreffer">人脸识别技术大总结1——Face Detection &amp; Alignment</a>
-</li>
+<li><a href="https://yinguobing.com/fddb/" target="_blank" rel="noopener noreffer">FDDB人脸检测算法评价标准</a></li>
+<li><a href="https://www.cnblogs.com/zfcode/p/mu-biao-jian-ce-IOU-jiao-bing-bi-li-jie-bi-ji.html" target="_blank" rel="noopener noreffer">目标检测 IOU（交并比） 理解笔记</a></li>
+<li><a href="https://blog.csdn.net/zchang81/article/details/71515490" target="_blank" rel="noopener noreffer">走近人脸检测（2）——VJ人脸检测器及其发展</a></li>
+<li><a href="https://www.cnblogs.com/llguanli/p/8918677.html" target="_blank" rel="noopener noreffer">Viola-Jones人脸检測</a></li>
+<li><a href="https://blog.csdn.net/weixin_41798111/article/details/79989794" target="_blank" rel="noopener noreffer">DPM目标检测算法</a></li>
+<li><a href="https://blog.csdn.net/smf0504/article/details/52244254" target="_blank" rel="noopener noreffer">解读 Joint Cascade Face Detection and Alignment 人脸检测算法</a></li>
+<li><a href="https://www.cnblogs.com/sciencefans/p/4394861.html" target="_blank" rel="noopener noreffer">人脸识别技术大总结1——Face Detection &amp; Alignment</a></li>
 </ul>
 </div>
-        </div></div><div class="post-footer" id="post-footer">
+        </div>
+    </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>本文于 2021-01-16 更新</span>
+                <span>更新于 2021-01-16</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现" data-via="ieblYang" data-hashtags="人脸识别,TensorFlow,人脸检测"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://ieblyang.tech/face06/" data-hashtag="人脸识别"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://ieblyang.tech/face06/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现" data-image="/images/face/featured-image.png" data-ralateuid="ieblYang"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现"><i class="loveit it-baidu-fill"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现"><i class="fab fa-skype fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现" data-via="ieblYang" data-hashtags="FaceRecognition,TensorFlow,FaceDetection"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://ieblyang.tech/face06/" data-hashtag="FaceRecognition"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://ieblyang.tech/face06/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现" data-ralateuid="ieblYang"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/baidu.svg"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现"><i class="fab fa-skype fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB">人脸识别</a>,&nbsp;<a href="/tags/tensorflow">TensorFlow</a>,&nbsp;<a href="/tags/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B">人脸检测</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/facerecognition/">人脸识别</a>,&nbsp;<a href="/tags/tensorflow/">TensorFlow</a>,&nbsp;<a href="/tags/facedetection/">人脸检测</a></section>
         <section>
-            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
     <div class="post-nav"><a href="/face05/" class="prev" rel="prev" title="Tensorflow Cifar-10图像分类任务"><i class="fas fa-angle-left fa-fw"></i>Tensorflow Cifar-10图像分类任务</a>
             <a href="/flask01/" class="next" rel="next" title="结合官方文档 入门Flask">结合官方文档 入门Flask<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
-<div class="comment"><div id="valine"></div><script>
-            document.addEventListener("DOMContentLoaded", function(event) {
-                new Valine({
-                    el: '#valine',
-                    appId: 'kpgPchgfg6K9RMdLzdhxQyOV-gzGzoHsz',
-                    appKey: 'erpDYbf9JmO61Yn1YtUw7AXB',placeholder: '你的评论 ...',verify: true,avatar: 'mp',pageSize: 10,lang: 'zh-cn',visitor: true,recordIP: true,});
-            });
-        </script>
-        <noscript>
-            Please enable JavaScript to view the <a href="https://valine.js.org/">comments powered by Valine.</a>
-        </noscript></div>
-    </article></div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
             </main><footer class="footer">
-    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
+    </footer></div>
 
-        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-    </div>
-</footer>
-</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
-            <i class="fas fa-chevron-up fa-fw"></i>
-        </a><script>
-        document.addEventListener('DOMContentLoaded', function () {
-            lightGallery(document.getElementById('content'), {
-                selector: '.lightgallery',
-                speed: 400,
-                hideBarsDelay: 2000,
-                thumbnail: true,
-                exThumbImage: 'data-thumbnail',
-                thumbWidth: 80,
-                thumbContHeight: 80,
-            });
-        });
-    </script><script>
-        document.addEventListener('DOMContentLoaded', function () {
-            renderMathInElement(document.body, {
-                delimiters: [
-                    { left: '$$', right: '$$', display: true },
-                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
-                    { left: '\\(', right: '\\)', display: false },],
-                strict: false,
-            });
-        });
-    </script><link rel="stylesheet" href="/lib/valine/valine.48fc8c7a134ff56a24e2e2d3106ec39a.css" integrity="md5-SPyMehNP9Wok4uLTEG7Dmg=="><link rel="stylesheet" href="/lib/iconfont/iconfont.min.60491d359fba28667d44b1b4c808a0bd.css" integrity="md5-YEkdNZ&#43;6KGZ9RLG0yAigvQ=="><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.f0e116a1a6b325059928a106254352e1.css" integrity="md5-8OEWoaazJQWZKKEGJUNS4Q=="><link rel="stylesheet" href="/lib/katex/katex.min.4afae7d446ba01ebf7fff19893eaf3a1.css" integrity="md5-Svrn1Ea6Aev3//GYk&#43;rzoQ=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.b1994d1b9785dd8801dbf655df7bf6d9.css" integrity="md5-sZlNG5eF3YgB2/ZV33v22Q=="><script src="/lib/valine/Valine.min.1698240d38b9277036a3059775e55a03.js" integrity="md5-FpgkDTi5J3A2owWXdeVaAw=="></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.c4f5974788ebb82890a0e7771763939c.js" integrity="md5-xPWXR4jruCiQoOd3F2OTnA=="></script><script src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script src="/lib/lazysizes/lazysizes.min.0812d0f17b90a4aefd97bb91085ad252.js" integrity="md5-CBLQ8XuQpK79l7uRCFrSUg=="></script><script src="/lib/lightgallery/lightgallery.min.4bc95325ef47ddceda10ae0ee66e925c.js" integrity="md5-S8lTJe9H3c7aEK4O5m6SXA=="></script><script src="/lib/lightgallery/lg-thumbnail.min.874045ba82acdc496e8c871b77c5c1e5.js" integrity="md5-h0BFuoKs3ElujIcbd8XB5Q=="></script><script src="/lib/lightgallery/lg-zoom.min.409e9d2da92a979799deed01377eeff6.js" integrity="md5-QJ6dLakql5eZ3u0BN37v9g=="></script><script src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script src="/js/theme.min.2d8c56f0eeaac5b7d58911d3c7522b29.js" integrity="md5-LYxW8O6qxbfViRHTx1IrKQ=="></script></body>
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"kpgPchgfg6K9RMdLzdhxQyOV-gzGzoHsz","appKey":"erpDYbf9JmO61Yn1YtUw7AXB","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"2WIOUBN71W","algoliaIndex":"ieblyang","algoliaSearchKey":"f169f964063f4eed7cd46b7826cd7bf0","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.7bc7989e979c4a19d97db3ab311a80fe.js" integrity="md5-e8eYnpecShnZfbOrMRqA/g=="></script></body>
 </html>

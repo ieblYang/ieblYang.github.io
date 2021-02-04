@@ -1,81 +1,80 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>ieblYang | ieblYang</title>
+        <title>ieblYang</title>
         <link>https://ieblyang.tech/</link>
-        <description>ieblYang | ieblYang</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 06 May 2020 21:03:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/" rel="self" type="application/rss+xml" /><item>
-                <title>Posts</title>
-                <link>https://ieblyang.tech/posts/</link>
-                <pubDate>Wed, 06 May 2020 21:03:40 &#43;0800</pubDate><guid>https://ieblyang.tech/posts/</guid>
-                <description></description>
-            </item><item>
-                <title>关于</title>
-                <link>https://ieblyang.tech/about/</link>
-                <pubDate>Wed, 11 Mar 2020 11:04:49 &#43;0800</pubDate><guid>https://ieblyang.tech/about/</guid>
-                <description>&lt;h4 id=&#34;个人简介&#34;&gt;个人简介&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;昵称：菠萝&lt;/li&gt;
-&lt;li&gt;学校：郑州大学&lt;/li&gt;
-&lt;li&gt;专业：软件工程&lt;/li&gt;
-&lt;li&gt;编程语言：Java、Python、C语言、Scratch&lt;/li&gt;
-&lt;li&gt;专业方向：Java Web、深度学习&lt;/li&gt;
-&lt;li&gt;特长：视频制作、摄影、After Effects、Premiere、Photoshop &amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!--
-* 主要项目经验:
-	* [郑州大学青年大学习登录检测系统](http://zzdxqndxx.zzu.edu.cn/user/to_login)
-	* 郑州大学我最喜爱的老师投票小程序
-	* FaceAI人脸识别智能小程序
-	* 酒店客房管理系统
-	* 网上图书商城
-	* 初高中教务系统
-	* ...
-
-* 主要视频作品：
-	* 郑州大学2017级新生开学典礼正片及开场
-	* 郑州大学2018级新生开学典礼正片及开场
-	* [郑州大学2019级新生开学典礼正片及开场](https://www.bilibili.com/video/BV17E411R7fp)
-	* 郑州大学2017年毕业典礼正片及开场
-	* 郑州大学2018年毕业典礼正片及开场
-	* [郑州大学2019年毕业典礼正片及开场](https://www.bilibili.com/video/BV1EE411R7jx)
-	* 郑州大学第五届国际文化节开场视频
-	* 郑州大学我最喜爱的老师颁奖典礼系列视频
-	* [郑州大学工学60年（原工学院55年）暨创新发展论坛](https://mp.weixin.qq.com/s/HznF_AKqcI0GKCg5tYrwfg)
-	* [微电影：“浮”屏之外](https://v.qq.com/x/page/d03502e1ctb.html)
-	* “互联网+” 项目一分钟介绍系列视频
-	* ...
---&gt;
-&lt;h4 id=&#34;博客详情&#34;&gt;博客详情&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;技术支持：&lt;a href=&#34;https://github.com/dillonzq/LoveIt/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;&lt;img
-        class=&#34;lazyload&#34;
-        src=&#34;https://ieblyang.tech/svg/loading.small.min.svg&#34;
-        data-sizes=&#34;auto&#34;
-        data-srcset=&#34;https://img.shields.io/github/v/release/dillonzq/LoveIt?style=flat-square,  1.5x,  2x&#34;
-        data-src=&#34;&#34;
-        alt=&#34;GitHub release (latest by date)&#34;
-        title=&#34;GitHub release (latest by date)&#34; /&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;技术支持：&lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;&lt;img
-        class=&#34;lazyload&#34;
-        src=&#34;https://ieblyang.tech/svg/loading.small.min.svg&#34;
-        data-sizes=&#34;auto&#34;
-        data-srcset=&#34;https://img.shields.io/badge/Hugo-%5E0.62.0-ff4088?style=flat-square&amp;amp;logo=hugo,  1.5x,  2x&#34;
-        data-src=&#34;&#34;
-        alt=&#34;Hugo&#34;
-        title=&#34;Hugo&#34; /&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;使用主题：&lt;a href=&#34;https://github.com/dillonzq/LoveIt&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;LoveIt :(far fa-heart):&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;联系方式&#34;&gt;联系方式&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;QQ：1030007324&lt;/li&gt;
-&lt;li&gt;Mail：bolon.young@gmail.com&lt;/li&gt;
-&lt;li&gt;TEL:185****0827&lt;/li&gt;
-&lt;li&gt;Bilibili：&lt;a href=&#34;https://space.bilibili.com/92547562?from=search&amp;amp;seid=11925650061458383377&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;波玻拨啵菠萝&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-            </item></channel>
+        <description>菠萝</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 03 Feb 2021 17:33:40 &#43;0800</lastBuildDate>
+            <atom:link href="https://ieblyang.tech/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>Markdown 基本语法</title>
+    <link>https://ieblyang.tech/basic-markdown-syntax/</link>
+    <pubDate>Wed, 11 Mar 2020 16:45:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/basic-markdown-syntax/</guid>
+    <description><![CDATA[<p>这篇文章提供了博客中使用的基本 Markdown 语法示例.</p>]]></description>
+</item><item>
+    <title>Emoji 支持</title>
+    <link>https://ieblyang.tech/emoji-support/</link>
+    <pubDate>Wed, 11 Mar 2020 16:45:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/emoji-support/</guid>
+    <description><![CDATA[<p>Emoji 可以通过多种方式在 Hugo 项目中启用.</p>]]></description>
+</item><item>
+    <title>扩展 Shortcodes</title>
+    <link>https://ieblyang.tech/extended-shortcodes/</link>
+    <pubDate>Wed, 11 Mar 2020 16:29:59 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/extended-shortcodes/</guid>
+    <description><![CDATA[<p><strong>LoveIt</strong> 主题在 Hugo 内置的 shortcode 的基础上提供多个扩展的 shortcode.</p>]]></description>
+</item><item>
+    <title>Java基础语法</title>
+    <link>https://ieblyang.tech/java01/</link>
+    <pubDate>Wed, 03 Feb 2021 17:33:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/java01/</guid>
+    <description><![CDATA[<p>Java 核心技术读书笔记——Java基础语法</p>]]></description>
+</item><item>
+    <title>微信小程序自定义showToast图片</title>
+    <link>https://ieblyang.tech/miniprogram03/</link>
+    <pubDate>Wed, 06 May 2020 21:03:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/miniprogram03/</guid>
+    <description><![CDATA[微信小程序自定义showToast图片]]></description>
+</item><item>
+    <title>微信小程序函数节流，防止多次点击跳转</title>
+    <link>https://ieblyang.tech/miniprogram02/</link>
+    <pubDate>Mon, 20 Apr 2020 13:53:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/miniprogram02/</guid>
+    <description><![CDATA[微信小程序函数节流，防止多次点击跳转]]></description>
+</item><item>
+    <title>Ubuntu16.04安装Mysql数据库</title>
+    <link>https://ieblyang.tech/ubuntu-mysql/</link>
+    <pubDate>Sat, 18 Apr 2020 10:17:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/ubuntu-mysql/</guid>
+    <description><![CDATA[<p>这篇文章展示了如何在Ubuntu16.04系统中安装Mysql数据库，并安装可视化工具WorkBench</p>]]></description>
+</item><item>
+    <title>人脸属性业务实战</title>
+    <link>https://ieblyang.tech/face12/</link>
+    <pubDate>Mon, 23 Mar 2020 11:22:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/face12/</guid>
+    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 人脸属性业务实战</p>]]></description>
+</item><item>
+    <title>活体检测业务实战</title>
+    <link>https://ieblyang.tech/face11/</link>
+    <pubDate>Sun, 22 Mar 2020 10:27:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/face11/</guid>
+    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 活体检测业务实战</p>]]></description>
+</item><item>
+    <title>结合官方文档，入门微信小程序</title>
+    <link>https://ieblyang.tech/miniprogram01/</link>
+    <pubDate>Sat, 21 Mar 2020 13:53:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/miniprogram01/</guid>
+    <description><![CDATA[<p>结合微信小程序官方文档，学习小程序基础必背知识</p>]]></description>
+</item></channel>
 </rss>

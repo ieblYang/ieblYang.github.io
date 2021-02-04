@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Java基础语法 - ieblYang</title><meta name="Description" content="Java基础语法"><meta property="og:title" content="Java基础语法" />
+<meta property="og:description" content="Java基础语法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ieblyang.tech/java01/" />
+<meta property="og:image" content="https://ieblyang.tech/java01/featured-image.png"/>
+<meta property="article:published_time" content="2021-02-03T17:33:40+08:00" />
+<meta property="article:modified_time" content="2021-02-03T17:33:40+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ieblyang.tech/java01/featured-image.png"/>
+<meta name="twitter:title" content="Java基础语法"/>
+<meta name="twitter:description" content="Java基础语法"/>
+<meta name="application-name" content="ieblYang">
+<meta name="apple-mobile-web-app-title" content="ieblYang"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ieblyang.tech/java01/" /><link rel="prev" href="https://ieblyang.tech/miniprogram03/" /><link rel="next" href="https://ieblyang.tech/extended-shortcodes/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Java基础语法",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ieblyang.tech\/java01\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/ieblyang.tech\/java01\/featured-image.png",
+                            "width":  1420 ,
+                            "height":  708 
+                        }],"genre": "posts","keywords": "Java, JavaVolume","wordcount":  3653 ,
+        "url": "https:\/\/ieblyang.tech\/java01\/","datePublished": "2021-02-03T17:33:40+08:00","dateModified": "2021-02-03T17:33:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "ieblYang","logo": "https:\/\/ieblyang.tech\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "ieblYang"
+            },"description": "Java基础语法"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="ieblYang"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>ieblYang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/java01/">English</option><option value="/java01/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="ieblYang"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>ieblYang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/en/java01/">English</option><option value="/java01/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Java基础语法</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://ieblyang.tech/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ieblYang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-03">2021-02-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3653 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/java01/" class="leancloud_visitors" data-flag-title="Java基础语法">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/java01/featured-image.png"
+        data-srcset="/java01/featured-image.png, /java01/featured-image.png 1.5x, /java01/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/java01/featured-image.png"
+        title="Java基础语法" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-主要特性">1 主要特性</a></li>
+    <li><a href="#2-java语法规范">2 Java语法规范</a>
+      <ul>
+        <li><a href="#21-基本语法">2.1 基本语法</a></li>
+        <li><a href="#22-java-标识符">2.2 Java 标识符</a></li>
+        <li><a href="#23-java-修饰符">2.3 Java 修饰符</a></li>
+        <li><a href="#24-java-变量">2.4 Java 变量</a></li>
+        <li><a href="#25-java-关键字">2.5 Java 关键字</a></li>
+        <li><a href="#26-java-注释">2.6 Java 注释</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-数据类型">3 数据类型</a>
+      <ul>
+        <li><a href="#31-整型">3.1 整型</a></li>
+        <li><a href="#32-浮点类型">3.2 浮点类型</a></li>
+        <li><a href="#33-char-型">3.3 char 型</a></li>
+        <li><a href="#34-boolean-类型">3.4 boolean 类型</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-变量">4 变量</a>
+      <ul>
+        <li><a href="#41-变量初始化">4.1 变量初始化</a></li>
+        <li><a href="#42-常量">4.2 常量</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-运算符">5 运算符</a>
+      <ul>
+        <li><a href="#51-数值类型之间的转换">5.1 数值类型之间的转换</a></li>
+        <li><a href="#52-强制类型转换">5.2 强制类型转换</a></li>
+        <li><a href="#53-结合赋值和运算符">5.3 结合赋值和运算符</a></li>
+        <li><a href="#54-自增与自减运算符">5.4 自增与自减运算符</a></li>
+        <li><a href="#55-关系和-boolean-运算符">5.5 关系和 boolean 运算符</a></li>
+        <li><a href="#56-位运算符">5.6 位运算符</a></li>
+        <li><a href="#57-括号与运算符级别">5.7 括号与运算符级别</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Java 核心技术读书笔记——Java基础语法</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>Java简介<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Java 是由Sun Microsystems公司于1995年5月推出的Java面向对象程序设计语言和Java平台的总称。由James Gosling和同事们共同研发，并在1995年正式推出。</p>
+<p>Java 分为三个体系：</p>
+<ul>
+<li>JavaSE（J2SE）（Java2 Platform Standard Edition，java平台标准版）</li>
+<li>JavaEE(J2EE)(Java 2 Platform,Enterprise Edition，java平台企业版)</li>
+<li>JavaME(J2ME)(Java 2 Platform Micro Edition，java平台微型版)。
+2005年6月，JavaOne大会召开，SUN公司公开Java SE 6。此时，Java的各种版本已经更名以取消其中的数字&quot;2&quot;：J2EE更名为Java EE, J2SE更名为Java SE，J2ME更名为Java ME。</li>
+</ul>
+</div>
+        </div>
+    </div>
+<h2 id="1-主要特性">1 主要特性</h2>
+<ul>
+<li>简单性</li>
+<li>面向对象</li>
+<li>分布式</li>
+<li>健壮性</li>
+<li>安全性</li>
+<li>体系结构中立</li>
+<li>可移植性</li>
+<li>解释型</li>
+<li>高性能</li>
+<li>多线程</li>
+<li>动态性</li>
+</ul>
+<h2 id="2-java语法规范">2 Java语法规范</h2>
+<p>Java 是面向对象的编程语言，一个 Java 程序可以认为是一系列对象的集合，而这些对象通过调用彼此的方法来协同工作。下面简要介绍下类、对象、方法和实例变量的概念。</p>
+<ul>
+<li>对象：对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。</li>
+<li>类：类是一个模板，它描述一类对象的行为和状态。</li>
+<li>方法：方法就是行为，一个类可以有很多方法。逻辑运算、数据修改以及所有动作都是在方法中完成的。</li>
+<li>实例变量：每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定。</li>
+</ul>
+<h3 id="21-基本语法">2.1 基本语法</h3>
+<ul>
+<li>大小写敏感</li>
+<li>类名：是以大写字母开头的名词。如果名字由多个单词组成，每个单词的第一个字母都应该大写（这种在一个单词中间使用大写字母的方式称为胳蛇命名法。以其自身为例， 应该写成 <code>CamelCase</code>)。</li>
+<li>方法名：所有的方法名都应该以小写字母开头。如果方法名含有若干单词，则后面的每个单词首字母大写。</li>
+<li>源文件名：源代码的文件名必须与公共类的名字相同，并用 <code>.java</code> 作为扩展名。</li>
+<li>主方法： <code>public static void main(String[] args)</code> 运行已编译的程序时，Java 虚拟机将从指定类中的 <code>main</code>方法开始执行（这里的“方法”就是 Java 中所说的“ 函数”），因此为了代码能够执行，在类的源文件中必须包含一个 <code>main</code> 方法。</li>
+</ul>
+<h3 id="22-java-标识符">2.2 Java 标识符</h3>
+<p>Java 所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符。</p>
+<ul>
+<li>所有的标识符都应该以字母（<code>A-Z</code> 或者 <code>a-z</code>）、美元符（<code>$</code>）、或者下划线（<code>_</code>）开始</li>
+<li>首字符之后可以是字母（<code>A-Z</code> 或者 <code>a-z</code>）,美元符（<code>$</code>）、下划线（<code>_</code>）或数字的任何字符组合</li>
+<li>关键字不能用作标识符</li>
+<li>标识符是大小写敏感的</li>
+<li>合法标识符举例：<code>age</code>、<code>$salary</code>、<code>_value</code>、<code>__1_value</code></li>
+<li>非法标识符举例：<code>123abc</code>、<code>-salary</code></li>
+</ul>
+<h3 id="23-java-修饰符">2.3 Java 修饰符</h3>
+<p>Java 可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：</p>
+<ul>
+<li>访问控制修饰符 : <code>default</code>, <code>public</code> , <code>protected</code>, <code>private</code></li>
+<li>非访问控制修饰符 : <code>final</code>, <code>abstract</code>, <code>static</code>, <code>synchronized</code></li>
+</ul>
+<h3 id="24-java-变量">2.4 Java 变量</h3>
+<p>Java 中主要有如下几种类型的变量</p>
+<ul>
+<li>局部变量</li>
+<li>类变量（静态变量）</li>
+<li>成员变量（非静态变量）</li>
+</ul>
+<h3 id="25-java-关键字">2.5 Java 关键字</h3>
+<table>
+   <tr>
+      <th>类别</th>
+      <th>关键字</th>
+      <th>说明</th>
+   </tr>
+   <tr>
+      <td rowspan="3">访问控制</td>
+      <td>private</td>
+      <td>私有的</td>
+   </tr>
+   <tr>
+      <td>protected</td>
+      <td>受保护的</td>
+   </tr>
+   <tr>
+      <td>public</td>
+      <td>公共的</td>
+   </tr>
+   <tr>
+      <td rowspan="13">类、方法和变量修饰符</td>
+      <td>abstract</td>
+      <td>声明抽象</td>
+   </tr>
+   <tr>
+      <td>class</td>
+      <td>类</td>
+   </tr>
+   <tr>
+      <td>extends</td>
+      <td>扩充,继承</td>
+   </tr>
+   <tr>
+      <td>final</td>
+      <td>最终值,不可改变的</td>
+   </tr>
+   <tr>
+      <td>implements</td>
+      <td>实现（接口）</td>
+   </tr>
+   <tr>
+      <td>interface</td>
+      <td>接口</td>
+   </tr>
+   <tr>
+      <td>native</td>
+      <td>本地，原生方法（非 Java 实现）</td>
+   </tr>
+   <tr>
+      <td>new</td>
+      <td>新,创建</td>
+   </tr>
+   <tr>
+      <td>static</td>
+      <td>静态</td>
+   </tr>
+   <tr>
+      <td>strictfp</td>
+      <td>严格,精准</td>
+   </tr>
+   <tr>
+      <td>synchronized</td>
+      <td>线程,同步</td>
+   </tr>
+   <tr>
+      <td>transient</td>
+      <td>短暂</td>
+   </tr>
+   <tr>
+      <td>volatile</td>
+      <td>易失</td>
+   </tr>
+   <tr>
+      <td rowspan="12">程序控制语句</td>
+      <td>break</td>
+      <td>跳出循环</td>
+   </tr>
+   <tr>
+      <td>case</td>
+      <td>定义一个值以供 switch 选择</td>
+   </tr>
+   <tr>
+      <td>continue</td>
+      <td>继续</td>
+   </tr>
+   <tr>
+      <td>default</td>
+      <td>默认</td>
+   </tr>
+   <tr>
+      <td>do</td>
+      <td>运行</td>
+   </tr>
+   <tr>
+      <td>else</td>
+      <td>否则</td>
+   </tr>
+   <tr>
+      <td>for</td>
+      <td>循环</td>
+   </tr>
+   <tr>
+      <td>if</td>
+      <td>如果</td>
+   </tr>
+   <tr>
+      <td>instanceof</td>
+      <td>实例</td>
+   </tr>
+   <tr>
+      <td>return</td>
+      <td>返回</td>
+   </tr>
+   <tr>
+      <td>switch</td>
+      <td>根据值选择执行</td>
+   </tr>
+   <tr>
+      <td>while</td>
+      <td>循环</td>
+   </tr>
+   <tr>
+      <td rowspan="6">错误处理</td>
+      <td>assert</td>
+      <td>断言表达式是否为真</td>
+   </tr>
+   <tr>
+      <td>catch</td>
+      <td>捕捉异常</td>
+   </tr>
+   <tr>
+      <td>finally</td>
+      <td>有没有异常都执行</td>
+   </tr>
+   <tr>
+      <td>throw</td>
+      <td>抛出一个异常对象</td>
+   </tr>
+   <tr>
+      <td>throws</td>
+      <td>声明一个异常可能被抛出</td>
+   </tr>
+   <tr>
+      <td>try</td>
+      <td>捕获异常</td>
+   </tr>
+   <tr>
+      <td rowspan="2">包相关</td>
+      <td>import</td>
+      <td>引入</td>
+   </tr>
+   <tr>
+      <td>package</td>
+      <td>包</td>
+   </tr>
+   <tr>
+      <td rowspan="8">基本类型</td>
+      <td>boolean</td>
+      <td>布尔型</td>
+   </tr>
+   <tr>
+      <td>byte</td>
+      <td>字节型</td>
+   </tr>
+   <tr>
+      <td>char</td>
+      <td>字符型</td>
+   </tr>
+   <tr>
+      <td>double</td>
+      <td>双精度浮点</td>
+   </tr>
+   <tr>
+      <td>float</td>
+      <td>单精度浮点</td>
+   </tr>
+   <tr>
+      <td>int</td>
+      <td>整型</td>
+   </tr>
+   <tr>
+      <td>long</td>
+      <td>长整型</td>
+   </tr>
+   <tr>
+      <td>short</td>
+      <td>短整型</td>
+   </tr>
+   <tr>
+      <td rowspan="3">变量引用</td>
+      <td>super</td>
+      <td>父类,超类</td>
+   </tr>
+   <tr>
+      <td>this</td>
+      <td>本类</td>
+   </tr>
+   <tr>
+      <td>void</td>
+      <td>无返回值</td>
+   </tr>
+   <tr>
+      <td rowspan="3">保留关键字</td>
+      <td>goto</td>
+      <td>是关键字，但不能使用</td>
+   </tr>
+   <tr>
+      <td>const</td>
+      <td>是关键字，但不能使用</td>
+   </tr>
+   <tr>
+      <td>null</td>
+      <td>空</td>
+   </tr>
+</table>
+<h3 id="26-java-注释">2.6 Java 注释</h3>
+<p>Java 中的注释不会出现在可执行程序中。因此，可以在源程序中根据需要添加任意多的注释，而不必担心可执行代码会膨胀。</p>
+<ul>
+<li>单行注释 <code>//</code></li>
+<li>长段注释 <code>/*</code> <code>*/</code></li>
+<li>多行注释 <code>/**</code> <code>*/</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="cm">/**
+</span><span class="cm"> * 这是一个多行注释示例
+</span><span class="cm"> * 
+</span><span class="cm"> * ©author ieblYang
+</span><span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FirstSample</span>
+<span class="o">{</span>
+
+	<span class="cm">/*这是一个长段注释示例*/</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
+	<span class="o">{</span>
+		<span class="c1">//这是一个单行注释示例
+</span><span class="c1"></span>		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;We will not use &#39;Hello, World!&#39;&#34;</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3-数据类型">3 数据类型</h2>
+<p>Java 是一种强类型语言。这就意味着必须为每一个变量声明一种类型: 在 Java 中，一共有 8 种基本类型（ <code>primitive type</code> ),其中有 4 种整型、 2 种浮点类型、 1 种用于表示 <code>Unicode</code> 编码的字符单元的字符类型 <code>char</code> 和 1 种用于表示真值的 <code>boolean</code> 类型。</p>
+<h3 id="31-整型">3.1 整型</h3>
+<p>整型用于表示没有小数部分的数值，可以是正数也可是负数。Java 提供了 4 种整型。如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>存储需求</th>
+<th>取值范围</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>4字节</td>
+<td>-2147483648 ～ 2147483647 (正好超过 20 亿)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>short</td>
+<td>2字节</td>
+<td>-32768 ～ 32767</td>
+<td>0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>8字节</td>
+<td>-9223372036854775808 ～ 9223372036854775807</td>
+<td>0L</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>1字节</td>
+<td>-128 ～ 127</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-浮点类型">3.2 浮点类型</h3>
+<p>浮点类型用于表示有小数部分的数值。在 Java 中有两种浮点类型，具体内容如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>存储需求</th>
+<th>取值范围</th>
+<th>表示</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>float</td>
+<td>4字节</td>
+<td>大约 ± 3.40282347E+38F (有效位数为 6 ~ 7 位）</td>
+<td>后缀 F 或 f</td>
+<td>0.0f</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8字节</td>
+<td>大约 ± 1.79769313486231570E+308 (有效位数为15位）</td>
+<td>无后缀或添加后缀 D 或 d</td>
+<td>0.0d</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-char-型">3.3 char 型</h3>
+<p>char类型是一个单一的 16 位 Unicode 字符,最小值是 <code>\u0000</code>（即为 0）,最大值是 <code>\uffff</code>（即为65535）,char 数据类型可以储存任何字符.</p>
+<h3 id="34-boolean-类型">3.4 boolean 类型</h3>
+<p>boolean (布尔）类型有两个值：<code>false</code>（默认值） 和 <code>true</code>, 用来判定逻辑条件整型值和布尔值之间不能进行相互转换。</p>
+<h2 id="4-变量">4 变量</h2>
+<p>在 Java 中，每个变量都有一个类型（ type)。在声明变量时，变量的类型位于变量名之前。</p>
+<p>Java语言支持的变量类型有：</p>
+<ul>
+<li>类变量：独立于方法之外的变量，用 <code>static</code> 修饰。</li>
+<li>实例变量：独立于方法之外的变量，不过没有 <code>static</code> 修饰。</li>
+<li>局部变量：类的方法中的变量。</li>
+</ul>
+<h3 id="41-变量初始化">4.1 变量初始化</h3>
+<p>声明一个变量之后，必须用赋值语句对变量进行显式初始化， 千万不要使用未初始化的变量。</p>
+<p>在 Java 中， 变量的声明尽可能地靠近变量第一次使用的地方， 这是一种良好的程序编写风格。</p>
+<h3 id="42-常量">4.2 常量</h3>
+<p>在 Java 中， 利用关键字 <code>final</code> 指示常量。
+关键字 <code>final</code> 表示这个变量只能被赋值一次。一旦被赋值之后，就不能够再更改了。习惯上,常量名使用<strong>全大写</strong>。</p>
+<h2 id="5-运算符">5 运算符</h2>
+<p>在 Java 中，使用算术运算符 <code>+</code>、 <code>-</code>、 <code>*</code>、 <code>/</code> 表示加、减、 乘、除运算。 当参与 <code>/</code> 运算的两个操作数都是整数时， 表示整数除法；否则，表示浮点除法。 整数的求余操作（有时称为取模）用 <code>％</code> 表示。</p>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">整数被 <code>0</code> 除将会产生一个异常， 而浮点数被 <code>0</code> 除将会得到无穷大或 <code>NaN</code> 结果。</div>
+        </div>
+    </div>
+<h3 id="51-数值类型之间的转换">5.1 数值类型之间的转换</h3>
+<h3 id="52-强制类型转换">5.2 强制类型转换</h3>
+<p>强制类型转换的语法格式是在圆括号中给出想要转换的目标类型，后面紧跟待转换的变量名。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="cm">/*直接进行强制类型转换*/</span>
+<span class="kt">double</span> <span class="n">x</span> <span class="o">*</span> <span class="n">9</span><span class="o">.</span><span class="na">997</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">nx</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">x</span><span class="o">;</span>	<span class="c1">//变量 nx 的值为 9。强制类型转换通过截断小数部分将浮点值转换为整型
+</span><span class="c1"></span>
+<span class="cm">/*使用 Math_ round 方法对浮点数进行舍入运算，得到最接近的整数*/</span>
+<span class="kt">double</span> <span class="n">x</span> <span class="n">z</span> <span class="n">9</span><span class="o">.</span><span class="na">997</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">nx</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">Math</span><span class="o">.</span><span class="na">round</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>	<span class="c1">//变量 nx 的值为 9。当调用 round 的时候返回的结果为 long 型,需要使用强制类型转换。
+</span><span class="c1"></span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">如果试图将一个数值从一种类型强制转换为另一种类型， 而又超出了目标类型的表示范围，结果就会截断成一个完全不同的值。例如，<code>(byte)300</code> 的实际值为 44。</div>
+        </div>
+    </div>
+<h3 id="53-结合赋值和运算符">5.3 结合赋值和运算符</h3>
+<p>可以在赋值中使用二元运算符，这是一种很方便的简写形式。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="n">x</span> <span class="o">+=</span> <span class="n">4</span><span class="o">;</span>
+<span class="c1">//等价于
+</span><span class="c1"></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">4</span><span class="o">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="54-自增与自减运算符">5.4 自增与自减运算符</h3>
+<ul>
+<li>自增运算符：<code>++</code></li>
+<li>自减运算符：<code>--</code></li>
+<li>前缀自增自减法(++a,&ndash;a): 先进行自增或者自减运算，再进行表达式运算。</li>
+<li>后缀自增自减法(a++,a&ndash;): 先进行表达式运算，再进行自增或者自减运算。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">7</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">7</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">2</span> <span class="o">*</span> <span class="o">++</span><span class="n">m</span><span class="o">;</span> <span class="c1">// now a is 16, m is 8
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">2</span> <span class="o">*</span> <span class="n">n</span><span class="o">++;</span> <span class="c1">// now b is 14, n is 8
+</span><span class="c1"></span><span class="cm">/* 建议不要在表达式中使用 ++, 因为这样的代码很容易让人闲惑，而且会带来烦人的 bug。 */</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="55-关系和-boolean-运算符">5.5 关系和 boolean 运算符</h3>
+<ul>
+<li>相等：<code>==</code></li>
+<li>不等：<code>!=</code></li>
+<li>小于：<code>&lt;</code></li>
+<li>大于：<code>&gt;</code></li>
+<li>小于等于：<code>&lt;=</code></li>
+<li>大于等于：<code>&gt;=</code></li>
+<li>逻辑“与”：<code>&amp;&amp;</code></li>
+<li>逻辑“或”：<code>||</code></li>
+<li>逻辑“非”：<code>!</code></li>
+<li>三元运算符：<code>?:</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="cm">/* &amp;&amp; 和 || 运算符是按照“短路”方式来求值的：如果第一个操作数已经能够确定表达式的值，第二个操作数就不必计算了。*/</span>
+<span class="n">x</span> <span class="o">!=</span> <span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">1</span> <span class="o">/</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="c1">// no division by 0 ，如果 x 等于 0, 那么第二部分就不会计算。
+</span><span class="c1"></span>
+<span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="o">?</span> <span class="n">x</span> <span class="o">:</span> <span class="n">y</span> <span class="c1">//会返回 x 和 y 中较小的一个
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="56-位运算符">5.6 位运算符</h3>
+<p>Java 定义了位运算符，应用于整数类型(int)，长整型(long)，短整型(short)，字符型(char)，和字节型(byte)等类型。位运算符作用在所有的位上，并且按位运算。
+下表列出了位运算符的基本运算，假设整数变量 A 的值为 60 和变量 B 的值为 13：</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>＆</td>
+<td>如果相对应位都是1，则结果为1，否则为0</td>
+<td><code>(A＆B)</code>，得到12，即 0000 1100</td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>如果相对应位都是 0，则结果为 0，否则为 1</td>
+<td><code>（A | B）</code>得到61，即 0011 1101</td>
+</tr>
+<tr>
+<td>^</td>
+<td>如果相对应位值相同，则结果为0，否则为1</td>
+<td><code>（A ^ B）</code>得到49，即 0011 0001</td>
+</tr>
+<tr>
+<td>〜</td>
+<td>按位取反运算符翻转操作数的每一位，即0变成1，1变成0。</td>
+<td><code>(〜A)</code>得到-61，即 1100 0011</td>
+</tr>
+<tr>
+<td>&laquo;</td>
+<td>按位左移运算符。左操作数按位左移右操作数指定的位数。</td>
+<td><code>A &lt;&lt; 2</code>得到240，即 1111 0000</td>
+</tr>
+<tr>
+<td>&raquo;</td>
+<td>按位右移运算符。左操作数按位右移右操作数指定的位数。</td>
+<td><code>A &gt;&gt; 2</code>得到15，即 1111</td>
+</tr>
+<tr>
+<td>&raquo;&gt;</td>
+<td>按位右移补零操作符。左操作数的值按右操作数指定的位数右移，移动得到的空位以零填充。</td>
+<td><code>A&gt;&gt;&gt;2</code>得到15，即 0000 1111</td>
+</tr>
+</tbody>
+</table>
+<h3 id="57-括号与运算符级别">5.7 括号与运算符级别</h3></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-02-03</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://ieblyang.tech/java01/" data-title="Java基础语法" data-via="ieblYang" data-hashtags="Java,JavaVolume"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://ieblyang.tech/java01/" data-hashtag="Java"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://ieblyang.tech/java01/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://ieblyang.tech/java01/" data-title="Java基础语法" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://ieblyang.tech/java01/" data-title="Java基础语法" data-ralateuid="ieblYang"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://ieblyang.tech/java01/" data-title="Java基础语法"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/baidu.svg"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://ieblyang.tech/java01/" data-title="Java基础语法"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://ieblyang.tech/java01/" data-title="Java基础语法"><i class="fab fa-skype fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/java/">Java</a>,&nbsp;<a href="/tags/javavolume/">《Java 核心技术》</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/miniprogram03/" class="prev" rel="prev" title="微信小程序自定义showToast图片"><i class="fas fa-angle-left fa-fw"></i>微信小程序自定义showToast图片</a>
+            <a href="/extended-shortcodes/" class="next" rel="next" title="扩展 Shortcodes">扩展 Shortcodes<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"kpgPchgfg6K9RMdLzdhxQyOV-gzGzoHsz","appKey":"erpDYbf9JmO61Yn1YtUw7AXB","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"2WIOUBN71W","algoliaIndex":"ieblyang","algoliaSearchKey":"f169f964063f4eed7cd46b7826cd7bf0","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.7bc7989e979c4a19d97db3ab311a80fe.js" integrity="md5-e8eYnpecShnZfbOrMRqA/g=="></script></body>
+</html>

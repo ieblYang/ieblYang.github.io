@@ -1,75 +1,57 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>TensorFlow on ieblYang</title>
-    <link>https://ieblyang.tech/en/tags/tensorflow/</link>
-    <description>Recent content in TensorFlow on ieblYang</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 23 Mar 2020 11:22:40 +0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>人脸属性业务实战</title>
-      <link>https://ieblyang.tech/en/face12/</link>
-      <pubDate>Mon, 23 Mar 2020 11:22:40 +0800</pubDate>
-      
-      <guid>https://ieblyang.tech/en/face12/</guid>
-      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸属性业务实战&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>活体检测业务实战</title>
-      <link>https://ieblyang.tech/en/face11/</link>
-      <pubDate>Sun, 22 Mar 2020 10:27:40 +0800</pubDate>
-      
-      <guid>https://ieblyang.tech/en/face11/</guid>
-      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 活体检测业务实战&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>人脸对齐/关键点训练业务理论及实现</title>
-      <link>https://ieblyang.tech/en/face10/</link>
-      <pubDate>Wed, 18 Mar 2020 19:24:40 +0800</pubDate>
-      
-      <guid>https://ieblyang.tech/en/face10/</guid>
-      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务理论及实现&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>人脸匹配业务理论及实现</title>
-      <link>https://ieblyang.tech/en/face09/</link>
-      <pubDate>Sat, 14 Mar 2020 13:07:40 +0800</pubDate>
-      
-      <guid>https://ieblyang.tech/en/face09/</guid>
-      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配业务理论及实现&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>人脸检测业务理论及实现</title>
-      <link>https://ieblyang.tech/en/face06/</link>
-      <pubDate>Thu, 12 Mar 2020 17:33:40 +0800</pubDate>
-      
-      <guid>https://ieblyang.tech/en/face06/</guid>
-      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Tensorflow Cifar-10图像分类任务</title>
-      <link>https://ieblyang.tech/en/face05/</link>
-      <pubDate>Thu, 12 Mar 2020 15:12:40 +0800</pubDate>
-      
-      <guid>https://ieblyang.tech/en/face05/</guid>
-      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现  Tensorflow Cifar-10图像分类任务&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>TensorFlow基础串讲</title>
-      <link>https://ieblyang.tech/en/face04/</link>
-      <pubDate>Thu, 12 Mar 2020 15:12:40 +0800</pubDate>
-      
-      <guid>https://ieblyang.tech/en/face04/</guid>
-      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 TensorFlow基础串讲&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>TensorFlow - Tag - ieblYang</title>
+        <link>https://ieblyang.tech/en/tags/tensorflow/</link>
+        <description>TensorFlow - Tag - ieblYang</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 23 Mar 2020 11:22:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/tags/tensorflow/" rel="self" type="application/rss+xml" /><item>
+    <title>人脸属性业务实战</title>
+    <link>https://ieblyang.tech/en/face12/</link>
+    <pubDate>Mon, 23 Mar 2020 11:22:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/face12/</guid>
+    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 人脸属性业务实战</p>]]></description>
+</item><item>
+    <title>活体检测业务实战</title>
+    <link>https://ieblyang.tech/en/face11/</link>
+    <pubDate>Sun, 22 Mar 2020 10:27:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/face11/</guid>
+    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 活体检测业务实战</p>]]></description>
+</item><item>
+    <title>人脸对齐/关键点训练业务理论及实现</title>
+    <link>https://ieblyang.tech/en/face10/</link>
+    <pubDate>Wed, 18 Mar 2020 19:24:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/face10/</guid>
+    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务理论及实现</p>]]></description>
+</item><item>
+    <title>人脸匹配业务理论及实现</title>
+    <link>https://ieblyang.tech/en/face09/</link>
+    <pubDate>Sat, 14 Mar 2020 13:07:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/face09/</guid>
+    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配业务理论及实现</p>]]></description>
+</item><item>
+    <title>人脸检测业务理论及实现</title>
+    <link>https://ieblyang.tech/en/face06/</link>
+    <pubDate>Thu, 12 Mar 2020 17:33:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/face06/</guid>
+    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现</p>]]></description>
+</item><item>
+    <title>Tensorflow Cifar-10图像分类任务</title>
+    <link>https://ieblyang.tech/en/face05/</link>
+    <pubDate>Thu, 12 Mar 2020 15:12:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/face05/</guid>
+    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现  Tensorflow Cifar-10图像分类任务</p>]]></description>
+</item><item>
+    <title>TensorFlow基础串讲</title>
+    <link>https://ieblyang.tech/en/face04/</link>
+    <pubDate>Thu, 12 Mar 2020 15:12:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/face04/</guid>
+    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 TensorFlow基础串讲</p>]]></description>
+</item></channel>
 </rss>

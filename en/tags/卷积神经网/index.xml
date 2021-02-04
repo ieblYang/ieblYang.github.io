@@ -1,21 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>卷积神经网 on ieblYang</title>
-    <link>https://ieblyang.tech/en/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91/</link>
-    <description>Recent content in 卷积神经网 on ieblYang</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 12 Mar 2020 12:43:40 +0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>卷积神经网基础串讲</title>
-      <link>https://ieblyang.tech/en/face03/</link>
-      <pubDate>Thu, 12 Mar 2020 12:43:40 +0800</pubDate>
-      
-      <guid>https://ieblyang.tech/en/face03/</guid>
-      <description>&lt;p&gt;基于TensorFlow的人脸识别智能小程序的设计与实现 卷积神经网基础串讲&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>卷积神经网 - Tag - ieblYang</title>
+        <link>https://ieblyang.tech/en/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91/</link>
+        <description>卷积神经网 - Tag - ieblYang</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 12 Mar 2020 12:43:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91/" rel="self" type="application/rss+xml" /><item>
+    <title>卷积神经网基础串讲</title>
+    <link>https://ieblyang.tech/en/face03/</link>
+    <pubDate>Thu, 12 Mar 2020 12:43:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/face03/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/face/featured-image.png" referrerpolicy="no-referrer">
+            </div><p>基于TensorFlow的人脸识别智能小程序的设计与实现 卷积神经网基础串讲</p>]]></description>
+</item></channel>
 </rss>

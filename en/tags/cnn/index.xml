@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>CNN - Tag - ieblYang</title>
+        <link>https://ieblyang.tech/en/tags/cnn/</link>
+        <description>CNN - Tag - ieblYang</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 12 Mar 2020 12:43:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/tags/cnn/" rel="self" type="application/rss+xml" /><item>
+    <title>卷积神经网基础串讲</title>
+    <link>https://ieblyang.tech/en/face03/</link>
+    <pubDate>Thu, 12 Mar 2020 12:43:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/face03/</guid>
+    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 卷积神经网基础串讲</p>]]></description>
+</item></channel>
+</rss>
