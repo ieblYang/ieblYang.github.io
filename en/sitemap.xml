@@ -29,6 +29,15 @@
                     hreflang="en"
                     href="https://ieblyang.tech/en/basic-markdown-syntax/"
                     /></url><url>
+            <loc>https://ieblyang.tech/en/tags/algolia/</loc><lastmod>2021-02-20T22:18:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://ieblyang.tech/tags/algolia/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://ieblyang.tech/en/tags/algolia/"
+                    /></url><url>
             <loc>https://ieblyang.tech/en/categories/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -38,6 +47,42 @@
                     hreflang="en"
                     href="https://ieblyang.tech/en/categories/"
                     /></url><url>
+            <loc>https://ieblyang.tech/en/tags/github/</loc><lastmod>2021-02-20T22:18:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://ieblyang.tech/tags/github/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://ieblyang.tech/en/tags/github/"
+                    /></url><url>
+            <loc>https://ieblyang.tech/en/categories/github/</loc><lastmod>2021-02-20T22:18:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://ieblyang.tech/categories/github/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://ieblyang.tech/en/categories/github/"
+                    /></url><url>
+            <loc>https://ieblyang.tech/en/tags/hugo/</loc><lastmod>2021-02-20T22:18:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://ieblyang.tech/tags/hugo/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://ieblyang.tech/en/tags/hugo/"
+                    /></url><url>
+            <loc>https://ieblyang.tech/en/hugo-algolia/</loc><lastmod>2021-02-20T22:18:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://ieblyang.tech/hugo-algolia/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://ieblyang.tech/en/hugo-algolia/"
+                    /></url><url>
             <loc>https://ieblyang.tech/en/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -46,6 +91,24 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://ieblyang.tech/en/"
+                    /></url><url>
+            <loc>https://ieblyang.tech/en/posts/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://ieblyang.tech/posts/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://ieblyang.tech/en/posts/"
+                    /></url><url>
+            <loc>https://ieblyang.tech/en/tags/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://ieblyang.tech/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://ieblyang.tech/en/tags/"
                     /></url><url>
             <loc>https://ieblyang.tech/en/tags/java/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
@@ -73,24 +136,6 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://ieblyang.tech/en/java01/"
-                    /></url><url>
-            <loc>https://ieblyang.tech/en/posts/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://ieblyang.tech/posts/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://ieblyang.tech/en/posts/"
-                    /></url><url>
-            <loc>https://ieblyang.tech/en/tags/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://ieblyang.tech/tags/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://ieblyang.tech/en/tags/"
                     /></url><url>
             <loc>https://ieblyang.tech/en/tags/javavolume/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
@@ -577,33 +622,6 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://ieblyang.tech/en/vncviever-aliyun-ecs/"
-                    /></url><url>
-            <loc>https://ieblyang.tech/en/tags/github/</loc><lastmod>2020-03-11T22:10:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://ieblyang.tech/tags/github/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://ieblyang.tech/en/tags/github/"
-                    /></url><url>
-            <loc>https://ieblyang.tech/en/categories/github/</loc><lastmod>2020-03-11T22:10:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://ieblyang.tech/categories/github/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://ieblyang.tech/en/categories/github/"
-                    /></url><url>
-            <loc>https://ieblyang.tech/en/tags/hugo/</loc><lastmod>2020-03-11T22:10:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://ieblyang.tech/tags/hugo/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://ieblyang.tech/en/tags/hugo/"
                     /></url><url>
             <loc>https://ieblyang.tech/en/tags/windows/</loc><lastmod>2020-03-11T22:10:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"

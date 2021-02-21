@@ -4,7 +4,7 @@
         <link>https://ieblyang.tech/en/</link>
         <description>ieblYang</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
-            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 03 Feb 2021 17:33:40 &#43;0800</lastBuildDate>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 20 Feb 2021 22:18:58 &#43;0800</lastBuildDate>
             <atom:link href="https://ieblyang.tech/en/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Extended Shortcodes</title>
@@ -27,6 +27,14 @@
     <author>Author</author>
     <guid>https://ieblyang.tech/en/basic-markdown-syntax/</guid>
     <description><![CDATA[<p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files.</p>]]></description>
+</item><item>
+    <title>Hugo添加Algolia搜索支持</title>
+    <link>https://ieblyang.tech/en/hugo-algolia/</link>
+    <pubDate>Sat, 20 Feb 2021 22:18:58 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/hugo-algolia/</guid>
+    <description><![CDATA[<p>这篇文章介绍了如何在Hugo上添加Algolia搜索支持。</p>
+<p>以 LoveIt 主题为例。</p>]]></description>
 </item><item>
     <title>Java基础语法</title>
     <link>https://ieblyang.tech/en/java01/</link>
@@ -69,12 +77,5 @@
     <author>Author</author>
     <guid>https://ieblyang.tech/en/face11/</guid>
     <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 活体检测业务实战</p>]]></description>
-</item><item>
-    <title>结合官方文档，入门微信小程序</title>
-    <link>https://ieblyang.tech/en/miniprogram01/</link>
-    <pubDate>Sat, 21 Mar 2020 13:53:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://ieblyang.tech/en/miniprogram01/</guid>
-    <description><![CDATA[<p>结合微信小程序官方文档，学习小程序基础必背知识</p>]]></description>
 </item></channel>
 </rss>
