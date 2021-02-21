@@ -2,24 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://ieblyang.tech/basic-markdown-syntax/</loc><lastmod>2020-03-11T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://ieblyang.tech/en/basic-markdown-syntax/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://ieblyang.tech/basic-markdown-syntax/"
-                    /></url><url>
-            <loc>https://ieblyang.tech/emoji-support/</loc><lastmod>2020-03-11T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://ieblyang.tech/en/emoji-support/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://ieblyang.tech/emoji-support/"
-                    /></url><url>
+            <loc>https://ieblyang.tech/zzu01/</loc><lastmod>2020-06-28T15:56:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://ieblyang.tech/extended-shortcodes/</loc><lastmod>2020-03-11T16:29:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -29,7 +12,33 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/extended-shortcodes/"
                     /></url><url>
-            <loc>https://ieblyang.tech/categories/</loc><lastmod>2021-02-03T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://ieblyang.tech/cc02/</loc><lastmod>2019-09-22T23:18:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://ieblyang.tech/cc03/</loc><lastmod>2019-09-05T23:19:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://ieblyang.tech/cc04/</loc><lastmod>2019-09-05T23:19:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://ieblyang.tech/cc01/</loc><lastmod>2019-02-12T21:12:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://ieblyang.tech/zzu02/</loc><lastmod>2020-06-28T17:56:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://ieblyang.tech/emoji-support/</loc><lastmod>2020-03-11T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.tech/en/emoji-support/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.tech/emoji-support/"
+                    /></url><url>
+            <loc>https://ieblyang.tech/zzu04/</loc><lastmod>2020-02-12T22:55:47&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://ieblyang.tech/zzu05/</loc><lastmod>2020-02-12T22:55:47&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://ieblyang.tech/zzu03/</loc><lastmod>2019-09-28T23:13:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://ieblyang.tech/basic-markdown-syntax/</loc><lastmod>2020-03-11T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.tech/en/basic-markdown-syntax/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.tech/basic-markdown-syntax/"
+                    /></url><url>
+            <loc>https://ieblyang.tech/categories/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/categories/"
@@ -38,7 +47,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/categories/"
                     /></url><url>
-            <loc>https://ieblyang.tech/</loc><lastmod>2021-02-03T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://ieblyang.tech/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/"
@@ -47,7 +56,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/"
                     /></url><url>
-            <loc>https://ieblyang.tech/tags/java/</loc><lastmod>2021-02-03T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://ieblyang.tech/tags/java/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/tags/java/"
@@ -56,7 +65,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/tags/java/"
                     /></url><url>
-            <loc>https://ieblyang.tech/categories/java/</loc><lastmod>2021-02-03T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://ieblyang.tech/categories/java/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/categories/java/"
@@ -65,7 +74,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/categories/java/"
                     /></url><url>
-            <loc>https://ieblyang.tech/java01/</loc><lastmod>2021-02-03T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://ieblyang.tech/java01/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/java01/"
@@ -74,7 +83,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/java01/"
                     /></url><url>
-            <loc>https://ieblyang.tech/posts/</loc><lastmod>2021-02-03T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://ieblyang.tech/posts/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/posts/"
@@ -83,7 +92,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/posts/"
                     /></url><url>
-            <loc>https://ieblyang.tech/tags/</loc><lastmod>2021-02-03T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://ieblyang.tech/tags/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/tags/"
@@ -92,7 +101,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/tags/"
                     /></url><url>
-            <loc>https://ieblyang.tech/tags/javavolume/</loc><lastmod>2021-02-03T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://ieblyang.tech/tags/javavolume/</loc><lastmod>2021-02-21T17:33:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/tags/javavolume/"
@@ -100,6 +109,16 @@
                     rel="alternate"
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/tags/javavolume/"
+                    /></url><url>
+            <loc>https://ieblyang.tech/tags/zzu/</loc><lastmod>2020-06-28T17:56:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://ieblyang.tech/categories/video/</loc><lastmod>2020-06-28T17:56:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.tech/en/categories/video/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.tech/categories/video/"
                     /></url><url>
             <loc>https://ieblyang.tech/tags/showtoast/</loc><lastmod>2020-05-06T21:03:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
@@ -200,7 +219,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/tags/workbench/"
                     /></url><url>
-            <loc>https://ieblyang.tech/tags/tensorflow/</loc><lastmod>2021-01-16T11:54:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://ieblyang.tech/tags/tensorflow/</loc><lastmod>2021-01-16T11:54:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/tags/tensorflow/"
@@ -209,7 +228,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/tags/tensorflow/"
                     /></url><url>
-            <loc>https://ieblyang.tech/tags/faceattribute/</loc><lastmod>2021-01-16T11:54:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://ieblyang.tech/tags/faceattribute/</loc><lastmod>2021-01-16T11:54:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/tags/faceattribute/"
@@ -218,7 +237,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/tags/faceattribute/"
                     /></url><url>
-            <loc>https://ieblyang.tech/face12/</loc><lastmod>2021-01-16T11:54:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://ieblyang.tech/face12/</loc><lastmod>2021-01-16T11:54:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/face12/"
@@ -227,7 +246,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/face12/"
                     /></url><url>
-            <loc>https://ieblyang.tech/categories/facerecognition/</loc><lastmod>2021-01-16T11:54:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://ieblyang.tech/categories/facerecognition/</loc><lastmod>2021-01-16T11:54:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/categories/facerecognition/"
@@ -236,7 +255,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/categories/facerecognition/"
                     /></url><url>
-            <loc>https://ieblyang.tech/tags/facerecognition/</loc><lastmod>2021-01-16T11:54:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://ieblyang.tech/tags/facerecognition/</loc><lastmod>2021-01-16T11:54:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/tags/facerecognition/"
@@ -244,6 +263,15 @@
                     rel="alternate"
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/tags/facerecognition/"
+                    /></url><url>
+            <loc>https://ieblyang.tech/tags/facealignment/</loc><lastmod>2021-01-16T11:42:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://ieblyang.tech/en/tags/facealignment/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://ieblyang.tech/tags/facealignment/"
                     /></url><url>
             <loc>https://ieblyang.tech/tags/facebiopsy/</loc><lastmod>2020-01-16T12:22:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
@@ -253,15 +281,6 @@
                     rel="alternate"
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/tags/facebiopsy/"
-                    /></url><url>
-            <loc>https://ieblyang.tech/tags/facealignment/</loc><lastmod>2021-01-16T11:42:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://ieblyang.tech/en/tags/facealignment/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://ieblyang.tech/tags/facealignment/"
                     /></url><url>
             <loc>https://ieblyang.tech/face11/</loc><lastmod>2020-01-16T12:22:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
@@ -281,7 +300,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/miniprogram01/"
                     /></url><url>
-            <loc>https://ieblyang.tech/tags/senet/</loc><lastmod>2021-01-16T11:42:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://ieblyang.tech/tags/senet/</loc><lastmod>2021-01-16T11:42:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/tags/senet/"
@@ -290,7 +309,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/tags/senet/"
                     /></url><url>
-            <loc>https://ieblyang.tech/face10/</loc><lastmod>2021-01-16T11:42:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://ieblyang.tech/face10/</loc><lastmod>2021-01-16T11:42:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/face10/"
@@ -362,7 +381,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/bug01/"
                     /></url><url>
-            <loc>https://ieblyang.tech/face09/</loc><lastmod>2021-01-16T11:31:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://ieblyang.tech/face09/</loc><lastmod>2021-01-16T11:31:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/face09/"
@@ -407,7 +426,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/flask01/"
                     /></url><url>
-            <loc>https://ieblyang.tech/tags/facedetection/</loc><lastmod>2021-01-16T10:27:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://ieblyang.tech/tags/facedetection/</loc><lastmod>2021-01-16T10:27:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/tags/facedetection/"
@@ -416,7 +435,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/tags/facedetection/"
                     /></url><url>
-            <loc>https://ieblyang.tech/face06/</loc><lastmod>2021-01-16T10:27:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://ieblyang.tech/face06/</loc><lastmod>2021-01-16T10:27:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://ieblyang.tech/en/face06/"
@@ -668,6 +687,7 @@
                     hreflang="zh-cn"
                     href="https://ieblyang.tech/about/"
                     /></url><url>
+            <loc>https://ieblyang.tech/tags/challengecup/</loc><lastmod>2019-09-22T23:18:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://ieblyang.tech/tags/facecompare/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"

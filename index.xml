@@ -7,19 +7,12 @@
             <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 03 Feb 2021 17:33:40 &#43;0800</lastBuildDate>
             <atom:link href="https://ieblyang.tech/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Markdown 基本语法</title>
-    <link>https://ieblyang.tech/basic-markdown-syntax/</link>
-    <pubDate>Wed, 11 Mar 2020 16:45:40 &#43;0800</pubDate>
+    <title>《再见，郑大》 郑州大学2020官方毕业视频</title>
+    <link>https://ieblyang.tech/zzu01/</link>
+    <pubDate>Sun, 28 Jun 2020 15:56:14 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://ieblyang.tech/basic-markdown-syntax/</guid>
-    <description><![CDATA[<p>这篇文章提供了博客中使用的基本 Markdown 语法示例.</p>]]></description>
-</item><item>
-    <title>Emoji 支持</title>
-    <link>https://ieblyang.tech/emoji-support/</link>
-    <pubDate>Wed, 11 Mar 2020 16:45:40 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://ieblyang.tech/emoji-support/</guid>
-    <description><![CDATA[<p>Emoji 可以通过多种方式在 Hugo 项目中启用.</p>]]></description>
+    <guid>https://ieblyang.tech/zzu01/</guid>
+    <description><![CDATA[视频信息 2020年郑州大学官方毕业视频《再见，郑大》 郑州大学党委学生工作部、学生处，郑州大学信息工程学院，联合制作]]></description>
 </item><item>
     <title>扩展 Shortcodes</title>
     <link>https://ieblyang.tech/extended-shortcodes/</link>
@@ -28,53 +21,60 @@
     <guid>https://ieblyang.tech/extended-shortcodes/</guid>
     <description><![CDATA[<p><strong>LoveIt</strong> 主题在 Hugo 内置的 shortcode 的基础上提供多个扩展的 shortcode.</p>]]></description>
 </item><item>
-    <title>Java基础语法</title>
-    <link>https://ieblyang.tech/java01/</link>
-    <pubDate>Wed, 03 Feb 2021 17:33:40 &#43;0800</pubDate>
+    <title>【挑战杯】新型医用敷料参赛视频</title>
+    <link>https://ieblyang.tech/cc02/</link>
+    <pubDate>Sun, 22 Sep 2019 23:18:58 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://ieblyang.tech/java01/</guid>
-    <description><![CDATA[<p>Java 核心技术读书笔记——Java基础语法</p>]]></description>
+    <guid>https://ieblyang.tech/cc02/</guid>
+    <description><![CDATA[视频信息 【挑战杯】新型医用敷料参赛视频。 制作软件：AE Pr 视频制作：杨勃隆]]></description>
 </item><item>
-    <title>微信小程序自定义showToast图片</title>
-    <link>https://ieblyang.tech/miniprogram03/</link>
-    <pubDate>Wed, 06 May 2020 21:03:40 &#43;0800</pubDate>
+    <title>【挑战杯】新型绿色墙砖参赛视频</title>
+    <link>https://ieblyang.tech/cc03/</link>
+    <pubDate>Thu, 05 Sep 2019 23:19:28 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://ieblyang.tech/miniprogram03/</guid>
-    <description><![CDATA[微信小程序自定义showToast图片]]></description>
+    <guid>https://ieblyang.tech/cc03/</guid>
+    <description><![CDATA[视频信息 【挑战杯】新型绿色墙砖参赛视频。 制作软件：AE Pr 视频制作：杨勃隆]]></description>
 </item><item>
-    <title>微信小程序函数节流，防止多次点击跳转</title>
-    <link>https://ieblyang.tech/miniprogram02/</link>
-    <pubDate>Mon, 20 Apr 2020 13:53:40 &#43;0800</pubDate>
+    <title>【挑战杯】机器人工作室宣传视频</title>
+    <link>https://ieblyang.tech/cc04/</link>
+    <pubDate>Thu, 05 Sep 2019 23:19:28 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://ieblyang.tech/miniprogram02/</guid>
-    <description><![CDATA[微信小程序函数节流，防止多次点击跳转]]></description>
+    <guid>https://ieblyang.tech/cc04/</guid>
+    <description><![CDATA[视频信息 【挑战杯】机器人工作室宣传视频。 制作软件：AE Pr 视频制作：杨勃隆]]></description>
 </item><item>
-    <title>Ubuntu16.04安装Mysql数据库</title>
-    <link>https://ieblyang.tech/ubuntu-mysql/</link>
-    <pubDate>Sat, 18 Apr 2020 10:17:40 &#43;0800</pubDate>
+    <title>【挑战杯】口袋医学参赛视频</title>
+    <link>https://ieblyang.tech/cc01/</link>
+    <pubDate>Tue, 12 Feb 2019 21:12:45 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://ieblyang.tech/ubuntu-mysql/</guid>
-    <description><![CDATA[<p>这篇文章展示了如何在Ubuntu16.04系统中安装Mysql数据库，并安装可视化工具WorkBench</p>]]></description>
+    <guid>https://ieblyang.tech/cc01/</guid>
+    <description><![CDATA[视频信息 【挑战杯】口袋医学参赛视频，解放大脑的断层解剖数据库。 制作软件：AE Pr 视频制作：杨勃隆]]></description>
 </item><item>
-    <title>人脸属性业务实战</title>
-    <link>https://ieblyang.tech/face12/</link>
-    <pubDate>Mon, 23 Mar 2020 11:22:40 &#43;0800</pubDate>
+    <title>《致2020即将毕业的研究生》郑州大学2020研究生官方毕业视频</title>
+    <link>https://ieblyang.tech/zzu02/</link>
+    <pubDate>Sun, 28 Jun 2020 17:56:14 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://ieblyang.tech/face12/</guid>
-    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 人脸属性业务实战</p>]]></description>
+    <guid>https://ieblyang.tech/zzu02/</guid>
+    <description><![CDATA[视频信息 2020年郑州大学研究生毕业视频《致2020即将毕业的研究生》 郑州大学研究生院、党委研究生工作部出品 菠萝视频工作室制作]]></description>
 </item><item>
-    <title>活体检测业务实战</title>
-    <link>https://ieblyang.tech/face11/</link>
-    <pubDate>Sun, 22 Mar 2020 10:27:40 &#43;0800</pubDate>
+    <title>Emoji 支持</title>
+    <link>https://ieblyang.tech/emoji-support/</link>
+    <pubDate>Wed, 11 Mar 2020 16:45:40 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://ieblyang.tech/face11/</guid>
-    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 活体检测业务实战</p>]]></description>
+    <guid>https://ieblyang.tech/emoji-support/</guid>
+    <description><![CDATA[<p>Emoji 可以通过多种方式在 Hugo 项目中启用.</p>]]></description>
 </item><item>
-    <title>结合官方文档，入门微信小程序</title>
-    <link>https://ieblyang.tech/miniprogram01/</link>
-    <pubDate>Sat, 21 Mar 2020 13:53:40 &#43;0800</pubDate>
+    <title>【郑州大学】2018郑州大学研究生毕业宣传片</title>
+    <link>https://ieblyang.tech/zzu04/</link>
+    <pubDate>Wed, 12 Feb 2020 22:55:47 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://ieblyang.tech/miniprogram01/</guid>
-    <description><![CDATA[<p>结合微信小程序官方文档，学习小程序基础必背知识</p>]]></description>
+    <guid>https://ieblyang.tech/zzu04/</guid>
+    <description><![CDATA[视频信息 【郑州大学】2018郑州大学研究生毕业宣传片 郑州大学研究生院、党委研究生工作部出品 菠萝视频工作室制作]]></description>
+</item><item>
+    <title>【郑州大学】2019级新生开学典礼正片</title>
+    <link>https://ieblyang.tech/zzu05/</link>
+    <pubDate>Wed, 12 Feb 2020 22:55:47 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/zzu05/</guid>
+    <description><![CDATA[视频信息 【郑州大学】2019级新生开学典礼正片 郑州大学党委学生工作部、学生处，郑州大学信息工程学院出品 菠萝视频工作室制作]]></description>
 </item></channel>
 </rss>
