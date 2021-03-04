@@ -4,7 +4,11 @@
         <link>https://ieblyang.tech/en/</link>
         <description>ieblYang</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+<<<<<<< HEAD
             <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 25 Feb 2021 09:46:33 &#43;0800</lastBuildDate>
+=======
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 20 Feb 2021 22:18:58 &#43;0800</lastBuildDate>
+>>>>>>> 68afb362a37e6515bba4af68cf71b476e1947bb0
             <atom:link href="https://ieblyang.tech/en/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Extended Shortcodes</title>
@@ -28,6 +32,7 @@
     <guid>https://ieblyang.tech/en/basic-markdown-syntax/</guid>
     <description><![CDATA[<p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files.</p>]]></description>
 </item><item>
+<<<<<<< HEAD
     <title>13. 罗马数字转整数</title>
     <link>https://ieblyang.tech/en/13/</link>
     <pubDate>Thu, 25 Feb 2021 09:46:33 &#43;0800</pubDate>
@@ -63,6 +68,8 @@
     <guid>https://ieblyang.tech/en/baidumap/</guid>
     <description><![CDATA[<p>在写项目时，需要通过浏览器获取用户所在城市定位，并计算两个定位之间的距离，于是先利用百度地图API实现网页定位接着进行距离计算。</p>]]></description>
 </item><item>
+=======
+>>>>>>> 68afb362a37e6515bba4af68cf71b476e1947bb0
     <title>Hugo添加Algolia搜索支持</title>
     <link>https://ieblyang.tech/en/hugo-algolia/</link>
     <pubDate>Sat, 20 Feb 2021 22:18:58 &#43;0800</pubDate>
@@ -77,5 +84,43 @@
     <author>Author</author>
     <guid>https://ieblyang.tech/en/java01/</guid>
     <description><![CDATA[<p>Java 核心技术读书笔记——Java基础语法</p>]]></description>
+<<<<<<< HEAD
+=======
+</item><item>
+    <title>微信小程序自定义showToast图片</title>
+    <link>https://ieblyang.tech/en/miniprogram03/</link>
+    <pubDate>Wed, 06 May 2020 21:03:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/miniprogram03/</guid>
+    <description><![CDATA[微信小程序自定义showToast图片]]></description>
+</item><item>
+    <title>微信小程序函数节流，防止多次点击跳转</title>
+    <link>https://ieblyang.tech/en/miniprogram02/</link>
+    <pubDate>Mon, 20 Apr 2020 13:53:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/miniprogram02/</guid>
+    <description><![CDATA[微信小程序函数节流，防止多次点击跳转]]></description>
+</item><item>
+    <title>Ubuntu16.04安装Mysql数据库</title>
+    <link>https://ieblyang.tech/en/ubuntu-mysql/</link>
+    <pubDate>Sat, 18 Apr 2020 10:17:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/ubuntu-mysql/</guid>
+    <description><![CDATA[<p>这篇文章展示了如何在Ubuntu16.04系统中安装Mysql数据库，并安装可视化工具WorkBench</p>]]></description>
+</item><item>
+    <title>人脸属性业务实战</title>
+    <link>https://ieblyang.tech/en/face12/</link>
+    <pubDate>Mon, 23 Mar 2020 11:22:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/face12/</guid>
+    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 人脸属性业务实战</p>]]></description>
+</item><item>
+    <title>活体检测业务实战</title>
+    <link>https://ieblyang.tech/en/face11/</link>
+    <pubDate>Sun, 22 Mar 2020 10:27:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/face11/</guid>
+    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 活体检测业务实战</p>]]></description>
+>>>>>>> 68afb362a37e6515bba4af68cf71b476e1947bb0
 </item></channel>
 </rss>
