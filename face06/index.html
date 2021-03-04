@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>人脸检测业务理论及实现 - ieblYang</title><meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现"><meta property="og:title" content="人脸检测业务理论及实现" />
+<meta property="og:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ieblyang.tech/face06/" />
+<meta property="og:image" content="https://ieblyang.tech/face06/featured-image.png"/>
+<meta property="article:published_time" content="2020-03-12T17:33:40+08:00" />
+<meta property="article:modified_time" content="2021-01-16T10:27:40+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ieblyang.tech/face06/featured-image.png"/>
+<meta name="twitter:title" content="人脸检测业务理论及实现"/>
+<meta name="twitter:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现"/>
+<meta name="application-name" content="ieblYang">
+<meta name="apple-mobile-web-app-title" content="ieblYang"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ieblyang.tech/face06/" /><link rel="prev" href="https://ieblyang.tech/face05/" /><link rel="next" href="https://ieblyang.tech/flask01/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "人脸检测业务理论及实现",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ieblyang.tech\/face06\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/ieblyang.tech\/face06\/featured-image.png",
+                            "width":  1420 ,
+                            "height":  708 
+                        }],"genre": "posts","keywords": "FaceRecognition, TensorFlow, FaceDetection","wordcount":  5486 ,
+        "url": "https:\/\/ieblyang.tech\/face06\/","datePublished": "2020-03-12T17:33:40+08:00","dateModified": "2021-01-16T10:27:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "ieblYang","logo": "https:\/\/ieblyang.tech\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "ieblYang"
+            },"description": "基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="ieblYang"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>ieblYang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/categories/video/"> 视频 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/face06/">English</option><option value="/face06/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="ieblYang"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>ieblYang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/categories/video/" title="">视频</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ieblYang" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/en/face06/">English</option><option value="/face06/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">人脸检测业务理论及实现</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://ieblyang.tech" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ieblYang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/facerecognition/"><i class="far fa-folder fa-fw"></i>人脸识别</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-12">2020-03-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5486 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;<span id="/face06/" class="leancloud_visitors" data-flag-title="人脸检测业务理论及实现">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/face06/featured-image.png"
+        data-srcset="/face06/featured-image.png, /face06/featured-image.png 1.5x, /face06/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/face06/featured-image.png"
+        title="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-人脸业务场景综述">1 人脸业务场景综述</a>
+      <ul>
+        <li><a href="#11-生物信息识别">1.1 生物信息识别</a></li>
+        <li><a href="#12-人脸业务场景">1.2 人脸业务场景</a>
+          <ul>
+            <li><a href="#121-人脸检测face-detection">1.2.1 人脸检测（Face Detection）</a></li>
+            <li><a href="#122-人脸关键点人脸对齐-face-alignment">1.2.2 人脸关键点（人脸对齐 Face Alignment）</a></li>
+            <li><a href="#123-人脸属性face-attribute">1.2.3 人脸属性（Face Attribute）</a></li>
+            <li><a href="#124-人脸对比face-compare">1.2.4 人脸对比（Face Compare）</a></li>
+            <li><a href="#125-其他人脸业务场景">1.2.5 其他人脸业务场景</a></li>
+          </ul>
+        </li>
+        <li><a href="#13-人脸业务流程">1.3 人脸业务流程</a></li>
+        <li><a href="#14-人脸采集相关问题">1.4 人脸采集相关问题</a></li>
+        <li><a href="#15-人脸资源相关数据集">1.5 人脸资源——相关数据集</a></li>
+        <li><a href="#16-人脸资源相关厂商">1.6 人脸资源——相关厂商</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-人脸检测问题">2 人脸检测问题</a></li>
+    <li><a href="#3-人脸标注方法">3 人脸标注方法</a>
+      <ul>
+        <li><a href="#31-矩形框">3.1 矩形框</a></li>
+        <li><a href="#32-椭圆形标注">3.2 椭圆形标注</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-人脸检测性能评价指标">4 人脸检测性能评价指标</a>
+      <ul>
+        <li><a href="#41-检测率误报率">4.1 检测率、误报率</a></li>
+        <li><a href="#42-速度fps">4.2 速度：FPS</a></li>
+        <li><a href="#43-iouintersection-over-union">4.3 IOU(Intersection-over-Union)</a></li>
+        <li><a href="#44-precision-recallroc">4.4 Precision-Recall/ROC</a>
+          <ul>
+            <li><a href="#441-pr曲线">4.4.1 PR曲线</a></li>
+            <li><a href="#442-roc曲线">4.4.2 ROC曲线</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#5-人脸检测方法介绍">5 人脸检测方法介绍</a>
+      <ul>
+        <li><a href="#51-传统的人脸检测方法">5.1 传统的人脸检测方法</a></li>
+        <li><a href="#52-从粗粒度到细粒度的级联模型deep-learning">5.2 从粗粒度到细粒度的级联模型（Deep Learning）</a></li>
+        <li><a href="#53-通用目标检测算法基于人脸问题的优化">5.3 通用目标检测算法+基于人脸问题的优化</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-人脸检测问题挑战及解决思路">6 人脸检测问题挑战及解决思路</a></li>
+    <li><a href="#7-小人脸检测问题策略">7 小人脸检测问题/策略</a>
+      <ul>
+        <li><a href="#71-小人脸检测问题">7.1 小人脸检测问题</a></li>
+        <li><a href="#72-小人脸检测问题策略">7.2 小人脸检测问题策略</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-ssd模型">8 SSD模型</a>
+      <ul>
+        <li><a href="#81-single-shot-multibox-detectorone-stage方法">8.1 Single Shot MultiBox Detector(one-stage方法)</a></li>
+        <li><a href="#82-ssd模型介绍">8.2 SSD模型介绍</a>
+          <ul>
+            <li><a href="#821-anchor">8.2.1 Anchor</a></li>
+            <li><a href="#822-default-box">8.2.2 Default box</a></li>
+            <li><a href="#823-prior-box">8.2.3 Prior box</a></li>
+            <li><a href="#824-损失函数">8.2.4 损失函数</a></li>
+            <li><a href="#825-样本构造">8.2.5 样本构造</a></li>
+            <li><a href="#826-数据增强">8.2.6 数据增强</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#83-tensorflowssd环境搭建">8.3 TensorFlow+SSD环境搭建</a></li>
+    <li><a href="#9-人脸检测数据集">9 人脸检测数据集</a>
+      <ul>
+        <li><a href="#91-wider-face-数据集">9.1 WIDER FACE 数据集</a></li>
+        <li><a href="#92-passcal-voc">9.2 Passcal VOC</a></li>
+        <li><a href="#93-wider-face-标注文件">9.3 WIDER FACE 标注文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#10-实例代码">10 实例代码</a>
+      <ul>
+        <li><a href="#101-数据集处理">10.1 数据集处理</a></li>
+        <li><a href="#102-模型训练">10.2 模型训练</a></li>
+        <li><a href="#103-模型固化">10.3 模型固化</a></li>
+        <li><a href="#104-模型测试">10.4 模型测试</a></li>
+      </ul>
+    </li>
+    <li><a href="#11-参考资料">11 参考资料</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现</p>
+<h2 id="1-人脸业务场景综述">1 人脸业务场景综述</h2>
+<h3 id="11-生物信息识别">1.1 生物信息识别</h3>
+<ul>
+<li>人脸识别是生物信息识别领域重要研究方向之一</li>
+<li>生物特征有手形、指纹、脸形、虹膜、视网膜、脉搏、耳廓等</li>
+</ul>
+<h3 id="12-人脸业务场景">1.2 人脸业务场景</h3>
+<h4 id="121-人脸检测face-detection">1.2.1 人脸检测（Face Detection）</h4>
+<ul>
+<li>
+<p>检测出图像中人脸所在位置的一项技术</p>
+</li>
+<li>
+<p>基础提供支持</p>
+<ul>
+<li>姿态和表情的变化</li>
+<li>不同人的外观差异</li>
+<li>光照、遮挡、视角</li>
+<li>不同大小、位置</li>
+</ul>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="1.jpg"
+        data-srcset="/face06/1.jpg, 1.jpg 1.5x, /face06/1.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/1.jpg"
+        title="人脸检测" /></p>
+<h4 id="122-人脸关键点人脸对齐-face-alignment">1.2.2 人脸关键点（人脸对齐 Face Alignment）</h4>
+<ul>
+<li>
+<p>定位出人脸上五官等关键点坐标的一项技术</p>
+</li>
+<li>
+<p>人脸美颜、活体检测等基础</p>
+<ul>
+<li>人脸外观差异</li>
+<li>角度、姿态、遮挡等问题</li>
+<li>实时性</li>
+<li>稠密关键点（&gt;68点）</li>
+</ul>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="2.jpg"
+        data-srcset="/face06/2.jpg, 2.jpg 1.5x, /face06/2.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/2.jpg"
+        title="人脸关键点" /></p>
+<h4 id="123-人脸属性face-attribute">1.2.3 人脸属性（Face Attribute）</h4>
+<ul>
+<li>
+<p>识别出人脸的性别、年龄、姿态、表情等属性值的一项技术</p>
+</li>
+<li>
+<p>人脸分析基础</p>
+<ul>
+<li>人脸外观差异</li>
+<li>角度、姿态、遮挡等问题</li>
+<li>等等</li>
+</ul>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="3.jpg"
+        data-srcset="/face06/3.jpg, 3.jpg 1.5x, /face06/3.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/3.jpg"
+        title="人脸属性" /></p>
+<h4 id="124-人脸对比face-compare">1.2.4 人脸对比（Face Compare）</h4>
+<p>计算两个人脸之间的相似度</p>
+<ul>
+<li>人脸验证（Face Verification)</li>
+<li>人脸识别（Face Compere）</li>
+<li>人脸检索（Face Retrieval）</li>
+<li>人脸聚类（Face Cluster）</li>
+<li>等等</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="4.jpg"
+        data-srcset="/face06/4.jpg, 4.jpg 1.5x, /face06/4.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/4.jpg"
+        title="人脸对比" /></p>
+<h4 id="125-其他人脸业务场景">1.2.5 其他人脸业务场景</h4>
+<ul>
+<li>人脸活体检测</li>
+<li>情绪识别</li>
+<li>面相分析</li>
+<li>颜值评分</li>
+<li>明星脸匹配</li>
+<li>人脸生成</li>
+<li>人脸美妆、美颜</li>
+<li>人脸风格化</li>
+<li>痘痘、皱纹检测</li>
+<li>人脸换脸</li>
+</ul>
+<h3 id="13-人脸业务流程">1.3 人脸业务流程</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="5.jpg"
+        data-srcset="/face06/5.jpg, 5.jpg 1.5x, /face06/5.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/5.jpg"
+        title="人脸业务流程" /></p>
+<h3 id="14-人脸采集相关问题">1.4 人脸采集相关问题</h3>
+<ul>
+<li>不同性别分布，男性、女性。</li>
+<li>不同年龄分布，儿童、少年、中年、老年。</li>
+<li>不同人种分布，黑人、白人、黄种人。.</li>
+<li>不同脸型分布，人脸、猪脸、猴脸。</li>
+<li>人脸没有正对摄像头，角度有倾斜，左右倾斜、. 上下倾斜。</li>
+<li>翻拍的人脸照片，清晰照片、不清晰照片。</li>
+<li>摄像头内包含单张人脸、多张人脸。</li>
+<li>测试所处的环境:光线正常、过亮、过暗、暖光、冷光、白平衡等</li>
+<li>不同场景:室内、室外、车站、超市等</li>
+</ul>
+<h3 id="15-人脸资源相关数据集">1.5 人脸资源——相关数据集</h3>
+<ul>
+<li>PubFig: Public Figures Face Database(哥伦比亚大学公众人物脸部数据库)</li>
+<li><strong>Large-scale CelebFaces Attributes (CelebA) Dataset</strong></li>
+<li>Colorferet</li>
+<li>Multi-Task Facial Landmark (MTFL) dataset</li>
+<li>BiolD Face Database - FaceDB</li>
+<li><strong>Labeled Faces in the Wild Home (LFW)</strong></li>
+<li>Person identification in TV series</li>
+<li>CMUVASC &amp; PIE Face dataset</li>
+<li>YouTube Faces</li>
+<li><strong>Wider-face</strong></li>
+<li>MegaFace</li>
+<li>CASIA-FaceV5</li>
+<li>The CNBC Face Database</li>
+<li>CASIA-3D FaceV1</li>
+<li>IMDB-WIKI</li>
+<li>FDDB</li>
+<li>Caltech人脸数据库</li>
+<li>The Japanese Female Facial Expression (JAFFE) Database</li>
+</ul>
+<h3 id="16-人脸资源相关厂商">1.6 人脸资源——相关厂商</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="6.jpg"
+        data-srcset="/face06/6.jpg, 6.jpg 1.5x, /face06/6.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/6.jpg"
+        title="人脸资源" /></p>
+<h2 id="2-人脸检测问题">2 人脸检测问题</h2>
+<ul>
+<li>
+<p>什么是人脸检测问题？</p>
+<ul>
+<li>从图像中找到人脸的位置</li>
+</ul>
+</li>
+<li>
+<p>人脸检测的用处？</p>
+<ul>
+<li>更准确的人脸业务
+<ul>
+<li>人脸识别</li>
+<li>人脸对比</li>
+<li>人脸关键点</li>
+<li>人脸属性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="7.jpg"
+        data-srcset="/face06/7.jpg, 7.jpg 1.5x, /face06/7.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/7.jpg"
+        title="多人脸识别" /></p>
+<h2 id="3-人脸标注方法">3 人脸标注方法</h2>
+<h3 id="31-矩形框">3.1 矩形框</h3>
+<p>传统方法都采用矩形标记法，用一个矩形框将画面中的人脸区域包含在内。这种标记方法存在的问题在于很难给出一个恰好包含面部的矩形框，并且获得各种不同算法的一致的认可。因此采用矩形框的方法无法很好的对不同算法的结果做出准确且有效的评价。</p>
+<ul>
+<li>常用四个值来标定(x,y,w,h)</li>
+<li>(x,y)表示矩形左上角的坐标，w 矩形的宽，h 矩形的高</li>
+<li>优点：网络学习起来更容易，目前很多人脸检测算法框架也采用矩形框标注的方法。</li>
+<li>缺点：标注的区域中一部分并不属于人脸。</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="8.jpg"
+        data-srcset="/face06/8.jpg, 8.jpg 1.5x, /face06/8.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/8.jpg"
+        title="矩形框标注" /></p>
+<h3 id="32-椭圆形标注">3.2 椭圆形标注</h3>
+<p>由于人脸天然呈现为椭圆形，所以用椭圆形来表征是一种较为准确的方法，如下图所示,这种方法可以对侧脸与转动后的面部进行描述，常用5个值来标定。</p>
+<ul>
+<li>ra：椭圆长轴半径</li>
+<li>rb：椭圆短轴半径</li>
+<li>theta：椭圆长轴偏转角度</li>
+<li>cx：椭圆圆心x坐标</li>
+<li>cy：椭圆圆心y坐标</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="9.jpg"
+        data-srcset="/face06/9.jpg, 9.jpg 1.5x, /face06/9.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/9.jpg"
+        title="椭圆形标注" /></p>
+<h2 id="4-人脸检测性能评价指标">4 人脸检测性能评价指标</h2>
+<h3 id="41-检测率误报率">4.1 检测率、误报率</h3>
+<ul>
+<li>检测率 = 正确检出人脸个数/真实人脸个数</li>
+<li>误报率 = 检出目标中错误的人脸数量/总共检测出的目标数量</li>
+<li>每一个<strong><ruby>标记<rt>真值:GT</rt></ruby></strong>只允许有一个检测与之相对应</li>
+<li>重复检测会被视为错误检测</li>
+</ul>
+<h3 id="42-速度fps">4.2 速度：FPS</h3>
+<h3 id="43-iouintersection-over-union">4.3 IOU(Intersection-over-Union)</h3>
+<ul>
+<li>$IOU = \dfrac{area(C) \bigcap area(G)}{area(C) \bigcup area(G)}$</li>
+<li>产生的候选框（candidate bound）与原标记框（ground truth bound）的交叠率,即它们的交集与并集的比值。</li>
+<li>最理想情况是完全重叠，即比值为1。</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="10.jpg"
+        data-srcset="/face06/10.jpg, 10.jpg 1.5x, /face06/10.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/10.jpg"
+        title="IOU" /></p>
+<h3 id="44-precision-recallroc">4.4 Precision-Recall/ROC</h3>
+<ul>
+<li>accuracy $ =\frac{TP}{P+N}$</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">p</td>
+<td style="text-align:center">Positive 正样本数量</td>
+</tr>
+<tr>
+<td style="text-align:center">n</td>
+<td style="text-align:center">Negative 负样本数量</td>
+</tr>
+<tr>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">预测为正样本数量</td>
+</tr>
+<tr>
+<td style="text-align:center">N</td>
+<td style="text-align:center">预测为负样本数量</td>
+</tr>
+</tbody>
+</table>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="11.jpg"
+        data-srcset="/face06/11.jpg, 11.jpg 1.5x, /face06/11.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/11.jpg"
+        title="Precision-Recall/ROC" /></p>
+<h4 id="441-pr曲线">4.4.1 PR曲线</h4>
+<ul>
+<li>precisidon$ =\frac{TP}{TP+FP}$</li>
+<li>recall$ = \frac{TP}{P}$</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">以人脸识别（PR）为例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">p</td>
+<td style="text-align:center">真实人脸区域</td>
+</tr>
+<tr>
+<td style="text-align:center">n</td>
+<td style="text-align:center">真实背景区域</td>
+</tr>
+<tr>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">检出的人脸框</td>
+</tr>
+<tr>
+<td style="text-align:center">N</td>
+<td style="text-align:center">没有检出区域</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>11-point interpolated average precision</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="12.jpg"
+        data-srcset="/face06/12.jpg, 12.jpg 1.5x, /face06/12.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/12.jpg"
+        title="PR曲线" /></p>
+<h4 id="442-roc曲线">4.4.2 ROC曲线</h4>
+<ul>
+<li>前提：当前图片智能有一个人脸</li>
+<li>通常用于FDDB数据集</li>
+<li>fp rate$ =\frac{FP}{N}$</li>
+<li>tp rate $= \frac{TP}{P}$</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">以人脸识别（ROC）为例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">p</td>
+<td style="text-align:center">图片中存在人脸的图片</td>
+</tr>
+<tr>
+<td style="text-align:center">n</td>
+<td style="text-align:center">图片中不存在人脸的图片</td>
+</tr>
+<tr>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">在当前图片中检测出人脸</td>
+</tr>
+<tr>
+<td style="text-align:center">N</td>
+<td style="text-align:center">在当前图片中没有检测出人脸</td>
+</tr>
+</tbody>
+</table>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="11.1.jpg"
+        data-srcset="/face06/11.1.jpg, 11.1.jpg 1.5x, /face06/11.1.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/11.1.jpg"
+        title="ROC曲线" /></p>
+<h2 id="5-人脸检测方法介绍">5 人脸检测方法介绍</h2>
+<h3 id="51-传统的人脸检测方法">5.1 传统的人脸检测方法</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="13.jpg"
+        data-srcset="/face06/13.jpg, 13.jpg 1.5x, /face06/13.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/13.jpg"
+        title="传统的人脸检测方法" /></p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>笔记<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>
+<p>VJ(Viola-Jones)框架算法要点:</p>
+<ul>
+<li>使用类Haar输入特征：对矩形图像区域的和或差进行阈值化。</li>
+<li>积分图像技术加速了矩形图像区域的45度旋转的值的计算，这个图像结构被用来加速类Haar输入特征的计算。</li>
+<li>使用Adaboost来创建二分类问题（人脸与非人脸）的分类器节点（高通过率，低拒绝率）。</li>
+<li>把分类器节点组成筛选式级联（在筛选式级联里，一个节点是Adaboost类型的一组分类器）。</li>
+</ul>
+</li>
+<li>
+<p>DPM</p>
+<ul>
+<li>DPM算法由Felzenszwalb提出，是一种基于部件的检测方法，
+对目标的形变具有很强的鲁棒性。目前DPM已成为众多分类、分割、姿态估计等
+算法的核心部分，Felzenszwalb本人也因此被VOC授予&quot;终身成就奖&quot;。</li>
+<li>DPM算法采用了改进后的HOG特征，SVM分类器和滑动窗口（Sliding Windows）检测思想，
+针对目标的多视角问题，采用了多组件（Component）的策略，针对目标本身的形变问题，
+采用了基于图结构（Pictorial Structure）的部件模型策略。
+此外，将样本的所属的模型类别，部件模型的位置等作为潜变量（Latent Variable），
+采用多示例学习（Multiple-instance Learning）来自动确定。</li>
+</ul>
+</li>
+<li>
+<p>JDA（Joint Cascade Face Detection and Alignment）</p>
+<ul>
+<li>目前比较先进的人脸检测算法.它结合了 cascade 和 alignment ，一方面做alignment对进一步的人脸识别意义重大，
+另一方面作者在 section 2 讲到了landmark附近的特征可促进分类器分辨出更准确的结果，
+最后，将这两者放在一起做不仅相互促进而且还相互节省了时间。</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+<h3 id="52-从粗粒度到细粒度的级联模型deep-learning">5.2 从粗粒度到细粒度的级联模型（Deep Learning）</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="14.jpg"
+        data-srcset="/face06/14.jpg, 14.jpg 1.5x, /face06/14.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/14.jpg"
+        title="从粗粒度到细粒度的级联模型" /></p>
+<h3 id="53-通用目标检测算法基于人脸问题的优化">5.3 通用目标检测算法+基于人脸问题的优化</h3>
+<ul>
+<li>通用目标检测算法</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="15.jpg"
+        data-srcset="/face06/15.jpg, 15.jpg 1.5x, /face06/15.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/15.jpg"
+        title="通用目标检测算法" /></p>
+<ul>
+<li>人脸检测算法</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="16.jpg"
+        data-srcset="/face06/16.jpg, 16.jpg 1.5x, /face06/16.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/16.jpg"
+        title="人脸检测算法" /></p>
+<blockquote>
+<p>人脸检测相关文献：
+<a href="http://www.imooc.com/article/284277">http://www.imooc.com/article/284277</a></p>
+</blockquote>
+<h2 id="6-人脸检测问题挑战及解决思路">6 人脸检测问题挑战及解决思路</h2>
+<ul>
+<li>人脸可能出现在图像中的任何一个位置</li>
+<li>人脸可能有不同的大小</li>
+<li>人脸在图像中可能有不同的视角和姿态</li>
+<li>人脸可能部分被遮挡</li>
+</ul>
+<h2 id="7-小人脸检测问题策略">7 小人脸检测问题/策略</h2>
+<h3 id="71-小人脸检测问题">7.1 小人脸检测问题</h3>
+<ul>
+<li>下采样倍率很大时，人脸区域基本消失</li>
+<li>相比于感受野和anchor的尺寸来说，人脸的尺寸太小</li>
+<li>Anchor匹配策略（IOU小且变化敏感）</li>
+<li>正负样本比例失衡</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="17.jpg"
+        data-srcset="/face06/17.jpg, 17.jpg 1.5x, /face06/17.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/17.jpg"
+        title="小人脸检测问题" /></p>
+<h3 id="72-小人脸检测问题策略">7.2 小人脸检测问题策略</h3>
+<ul>
+<li>尺度不敏感/多尺度的策略</li>
+<li>调整优化Anchor策略</li>
+<li>在线的难例挖掘</li>
+<li>IOU计算方式</li>
+<li>数据增强</li>
+</ul>
+<h2 id="8-ssd模型">8 SSD模型</h2>
+<h3 id="81-single-shot-multibox-detectorone-stage方法">8.1 Single Shot MultiBox Detector(one-stage方法)</h3>
+<ul>
+<li>Wei Liu在ECCV 2016提出</li>
+<li>端到端的训练</li>
+<li>直接回归目标类别和位置</li>
+<li>不同尺度的特征图上进行预测</li>
+</ul>
+<h3 id="82-ssd模型介绍">8.2 SSD模型介绍</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="18.jpg"
+        data-srcset="/face06/18.jpg, 18.jpg 1.5x, /face06/18.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/18.jpg"
+        title="SSD模型" /></p>
+<ul>
+<li>主干网络：VGGNet</li>
+<li>多尺度Feature Map预测</li>
+<li>Default bounding boxes的类别分数、偏移量</li>
+</ul>
+<h4 id="821-anchor">8.2.1 Anchor</h4>
+<p>Anchor指特征图上的每一个点</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="19.jpg"
+        data-srcset="/face06/19.jpg, 19.jpg 1.5x, /face06/19.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/19.jpg"
+        title="Anchor" /></p>
+<h4 id="822-default-box">8.2.2 Default box</h4>
+<ul>
+<li>
+<p><code>m*n</code>个单元，每个单元称作一个Anchor</p>
+</li>
+<li>
+<p>每个单元上生成固定尺度和长宽比的box</p>
+<ul>
+<li>假设一个特征图有mxn个单元，每个单元对应k个default box,每个default box预测c个类别概率分布和4个坐标</li>
+<li><code>(c+4)*k*m*n</code>个输出值</li>
+</ul>
+</li>
+</ul>
+<h4 id="823-prior-box">8.2.3 Prior box</h4>
+<ul>
+<li>实际选择的default box</li>
+<li><code>38*38*4 + 19*19*6 + 10*10*6 + 5*5*6 + 3*3*4+1*1*4= 8732</code>个prior box</li>
+</ul>
+<h4 id="824-损失函数">8.2.4 损失函数</h4>
+<p>$$L(x,c,l,g)=\dfrac{1}{N} (L_{conf}(x,c)+\alpha L_{loc}(x,l,g))$$</p>
+<h4 id="825-样本构造">8.2.5 样本构造</h4>
+<ul>
+<li>
+<p>正样本</p>
+<ul>
+<li>从GT box出发给找到最匹配的prior box放入候选正样本集</li>
+<li>从prior box集出发，寻找与GT box满足lOU&gt; 0.5的最大prior box放入候选正样本集</li>
+</ul>
+</li>
+<li>
+<p>负样本</p>
+<ul>
+<li>难例挖掘</li>
+<li>正负样本比 1:3</li>
+</ul>
+</li>
+</ul>
+<h4 id="826-数据增强">8.2.6 数据增强</h4>
+<ul>
+<li>随机采样多个path,与物体之间最小的<code>jaccard overlap</code>为: 0.1, 0.3, 0.5, 0.7与0.9</li>
+<li>采样的区域比例是[0.3, 1.0]， aspect ratio 在0.5或2</li>
+<li>GTbox中心在采样区域中且面积大于0</li>
+<li>Resize到固定大小</li>
+<li>以0.5的概率随机的水平翻转</li>
+</ul>
+<h2 id="83-tensorflowssd环境搭建">8.3 TensorFlow+SSD环境搭建</h2>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>笔记<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>
+<p>安装TensorFlow环境</p>
+<ul>
+<li>TensorFlow-gpu版本1.12以上</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/tensorflow/models.git">https://github.com/tensorflow/models.git</a></p>
+<ul>
+<li><a href="https://github.com/tensorflow/models/tree/master/research/object_detection" target="_blank" rel="noopener noreffer">目标检测算法源码框架</a></li>
+<li><a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md" target="_blank" rel="noopener noreffer">安装教程</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+<h2 id="9-人脸检测数据集">9 人脸检测数据集</h2>
+<h3 id="91-wider-face-数据集">9.1 WIDER FACE 数据集</h3>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>笔记<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>WIDER FACE数据集</p>
+<ul>
+<li>由香港中文大学提出</li>
+<li>32203个图像和393703个人脸图像</li>
+<li>在尺度，姿势，遮挡，表情，装扮，光照等</li>
+<li>61个事件类别组织的，对于每一个事件类别，选取其中的40%作为训练集,10%用于交叉验证，50%作为测试集</li>
+<li>下载地址：<a href="http://shuoyang1213.me/WIDERFACE/">http://shuoyang1213.me/WIDERFACE/</a></li>
+</ul>
+</div>
+        </div>
+    </div>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="20.jpg"
+        data-srcset="/face06/20.jpg, 20.jpg 1.5x, /face06/20.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/20.jpg"
+        title="WIDER FACE 数据集" /></p>
+<h3 id="92-passcal-voc">9.2 Passcal VOC</h3>
+<ul>
+<li>对于WIDER FACE数据集，我们首先会将他转化为Passcal VOC格式<br>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="21.jpg"
+        data-srcset="/face06/21.jpg, 21.jpg 1.5x, /face06/21.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/21.jpg"
+        title="Passcal VOC" /></li>
+<li>VOC主要有三个重要的文件夹</li>
+</ul>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>笔记<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Annotations 存放标注信息</li>
+<li>ImageSets	  存放训练和测试用到的文件列表</li>
+<li>JPEGImages  存放图片信息</li>
+</ul>
+</div>
+        </div>
+    </div>
+<ul>
+<li>VOC数据基本结构</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;annotaion&gt;
+	&lt;floder&gt;widerface&lt;/floder&gt;
+	&lt;filename&gt;0--Parade_0_Parade_marchingband_1_5.jpg&lt;/filename&gt; #指向了JPEGImage下面的一个图片
+	&lt;source&gt; #图片来源
+		&lt;databse&gt;wider face Database&lt;/databse&gt;
+		&lt;annotation&gt;PASCAL VOC2007&lt;/annotaion&gt;
+		&lt;image&gt;flickr&lt;/image&gt;
+		&lt;flickrid&gt;1&lt;/flickerid&gt;
+	&lt;source&gt;
+	&lt;owner&gt;
+		&lt;flickerid&gt;ieblyang&lt;/flickerid&gt;
+		&lt;name&gt;ieblyang&lt;/name&gt;
+	&lt;/owner&gt;
+	&lt;size&gt; #当前图片的尺寸，通道数
+		&lt;width&gt;1024&lt;/width&gt;
+		&lt;height&gt;683&lt;/height&gt;
+		&lt;depth&gt;3&lt;/depth&gt;
+	&lt;/size&gt;
+	&lt;segmented&gt;0&lt;/segmented&gt;
+	&lt;object&gt; #一个object对应一个人脸
+		&lt;name&gt;face&lt;/name&gt;
+		&lt;pose&gt;Unspecified&lt;/poss&gt;
+		&lt;truncated&gt;1&lt;/truncated&gt;
+		&lt;diffcult&gt;0&lt;/diffcult&gt;
+		&lt;bndbox&gt;#记录了矩形框的坐标值
+			&lt;xmin&gt;495&lt;/xmin&gt;
+			&lt;ymin&gt;347&lt;/ymin&gt;
+			&lt;xmax&gt;532&lt;/xmax&gt;
+			&lt;ymax&gt;398&lt;/ymax&gt;
+		&lt;/bndbox&gt;
+	&lt;/object&gt;
+...
+&lt;/annotaion&gt;		   
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="93-wider-face-标注文件">9.3 WIDER FACE 标注文件</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># wider_face_train_bbx_gt.txt
+0--Parade/0_Parade_marchingband_1_849.jpg   # 图片路径
+1                                           # 针对当前图片中的人脸个数
+449 330 122 149 0 0 0 0 0 0                 # 当前人脸的标准信息
+↑   ↑
+前两个值人脸框左上角坐标
+        ↑   ↑
+        第三四个值表示人脸框的大小
+                ↑ ↑ ↑ ↑ ↑ ↑
+                后六个值分别表示Scale、Pose、Occlusion、Expression、Makeup、Illumation
+                利用这六个值可以对人脸数据进行清洗
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="10-实例代码">10 实例代码</h2>
+<h3 id="101-数据集处理">10.1 数据集处理</h3>
+<p>WIDER FACE数据集在使用前，需要将它转化为Passcal VOC2007格式。Passcal VOC2007格式主要有三个重要的文件夹，Annotations用来存放标注信息，ImageSets存放训练和测试用到的文件列表，JPEGImages用来存放图片信息。</p>
+<p>第一步，将WIDER FACE解析好的数据写入到xml文件中，处理时需要获取图片的基本信息，代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">size</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">)</span>		<span class="c1"># 获取图片的基本信息</span>
+<span class="n">annotation</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+<span class="n">width</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;width&#39;</span><span class="p">)</span>	   <span class="c1"># 宽度</span>
+<span class="n">width</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">saveimg</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
+<span class="n">height</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">)</span>	<span class="c1"># 高度</span>
+<span class="n">height</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">saveimg</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+<span class="n">depth</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;depth&#39;</span><span class="p">)</span>		<span class="c1"># 通道数量</span>
+<span class="n">depth</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">saveimg</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">])))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在这一步中，需要获取到人脸的坐标信息，代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1"># bboxes 当前图片中人脸框的坐标</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bboxes</span><span class="p">)):</span>		
+<span class="n">bbox</span> <span class="o">=</span> <span class="n">bboxes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">objects</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
+<span class="n">annotation</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">objects</span><span class="p">)</span>
+<span class="n">object_name</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+<span class="n">object_name</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="s1">&#39;face&#39;</span><span class="p">))</span>
+<span class="n">objects</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">object_name</span><span class="p">)</span>
+<span class="n">pose</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;pose&#39;</span><span class="p">)</span>
+<span class="n">pose</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="s1">&#39;Unspecified&#39;</span><span class="p">))</span>
+<span class="n">objects</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">pose</span><span class="p">)</span>
+<span class="n">truncated</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;truncated&#39;</span><span class="p">)</span>
+<span class="n">truncated</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">))</span>
+<span class="n">objects</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">truncated</span><span class="p">)</span>
+<span class="n">difficult</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;difficult&#39;</span><span class="p">)</span>
+<span class="n">difficult</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">))</span>
+<span class="n">objects</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">difficult</span><span class="p">)</span>
+<span class="n">bndbox</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;bndbox&#39;</span><span class="p">)</span>
+<span class="n">objects</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">bndbox</span><span class="p">)</span>
+<span class="n">xmin</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;xmin&#39;</span><span class="p">)</span>
+<span class="n">xmin</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+<span class="n">bndbox</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">xmin</span><span class="p">)</span>
+<span class="n">ymin</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;ymin&#39;</span><span class="p">)</span>
+<span class="n">ymin</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
+<span class="n">bndbox</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">ymin</span><span class="p">)</span>
+<span class="n">xmax</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;xmax&#39;</span><span class="p">)</span>
+<span class="n">xmax</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">])))</span>
+<span class="n">bndbox</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">xmax</span><span class="p">)</span>
+<span class="n">ymax</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;ymax&#39;</span><span class="p">)</span>
+<span class="n">ymax</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">])))</span>
+<span class="n">bndbox</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">ymax</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>第二步，对WIDER FACE数据集的训练集和测试集的真值文件进行解析。在这一过程中，需要对WIDER FACE数据集进行简单的数据清洗操作，使训练数据更加接近实际的业务场景，主要代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">sc</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">im_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">im_data_tmp</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">sc</span><span class="p">,</span> <span class="n">sc</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  <span class="n">dtype</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">off_w</span> <span class="o">=</span> <span class="p">(</span><span class="n">sc</span> <span class="o">-</span> <span class="n">im_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="o">//</span>  <span class="mi">2</span>
+<span class="n">off_h</span> <span class="o">=</span> <span class="p">(</span><span class="n">sc</span> <span class="o">-</span> <span class="n">im_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="o">//</span>  <span class="mi">2</span>
+<span class="c1"># 对图片进行周围填充，填充为正方形</span>
+<span class="n">im_data_tmp</span><span class="p">[</span><span class="n">off_h</span><span class="p">:</span><span class="n">im_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">off_h</span><span class="p">,</span> <span class="n">off_w</span><span class="p">:</span><span class="n">im_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">off_w</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="n">im_data</span>
+<span class="n">im_data</span> <span class="o">=</span> <span class="n">im_data_tmp</span>
+<span class="n">numbox</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">gt</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">bboxes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numbox</span><span class="p">):</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">gt</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">infos</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">infos</span><span class="o">.</span><span class="fm">__len__</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+<span class="n">infos</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">infos</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="c1"># 数据清洗：保留resize到640×640 尺寸在8×8以上的人脸</span>
+<span class="k">if</span> <span class="n">infos</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">80</span> <span class="o">&lt;</span> <span class="n">im_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">infos</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">80</span> <span class="o">&lt;</span> <span class="n">im_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+<span class="k">continue</span>
+<span class="n">bbox</span> <span class="o">=</span> <span class="p">(</span><span class="n">infos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">off_w</span><span class="p">,</span> <span class="n">infos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">off_h</span><span class="p">,</span> <span class="n">infos</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">infos</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bbox</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>第三步，以SSD模型中的create_pascal_tf_record.py脚本为基础新建create_face_tf_record.py脚本对已经转化成Passcal VOC2007格式的训练样本和测试样本分别进行打包，在这一过程中需要将源码中的YEARS修改为widerface，将label_map_path指定到face_lable_map.pbtxt，训练集数据打包的命令参数如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">python3 object_detection/dataset_tools/create_face_tf_record.py <span class="se">\
+</span><span class="se"></span>--data_dir<span class="o">=</span>/mnt/dataset <span class="se">\
+</span><span class="se"></span>--year<span class="o">=</span>widerface <span class="se">\
+</span><span class="se"></span>--output_path<span class="o">=</span>/mnt/dataset/widerface/TF-data/train.record <span class="se">\
+</span><span class="se"></span>--set<span class="o">=</span>train
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="102-模型训练">10.2 模型训练</h3>
+<p>在SSD模型训练中，主要用到的是model_main脚本，由于源码中没有提供专门针对于resnet_50_v1_fpn这一结构的配置文件，所以在选取主干网络时，以ssd_resnet50_v1_fpn_shared_box_predictor_640x640_coco14_sync.config
+为基础进行修改，将其修改为用于人脸检测任务的配置文件，并将修改好的配置文件重命名为ssd_resnet50_v1_fpn_shared_box_predictor_640x640_coco14_
+sync_face.config，模型主要用于解决人脸识别问题，所以需要将num_classes设置为1。在训练过程中不需要用到预训练模型，所以将预训练模型fine_tune_checkpoint删除或注释掉，最后，修改输入输出的数据。
+模型训练的命令及参数配置如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">python3 object_detection/model_main.py <span class="se">\ </span>
+--pipeline_config_path<span class="o">=</span> <span class="se">\
+</span><span class="se"></span>/mnt/FaceAI/models/research/object_detection/samples/configs/ssd_resnet50_v1_fpn_shared_box_predictor_640x640_coco14_sync_face.config 
+--model_dir<span class="o">=</span>/mnt/dataset/widerface/resnet50v1-fpn <span class="se">\
+</span><span class="se"></span>--num_train_steps<span class="o">=</span><span class="m">100000</span> <span class="se">\
+</span><span class="se"></span>--alsologtostder <span class="se">\
+</span></code></pre></td></tr></table>
+</div>
+</div><p>模型训练中，预设的训练次数为100000次，通过观察tensorboard中的loss曲线，模型训练的loss在40000次后已经趋于稳定，在训练74839次时停止了模型的训练，总的loss曲线如下图所示：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="22.jpg"
+        data-srcset="/face06/22.jpg, 22.jpg 1.5x, /face06/22.jpg 2x"
+        data-sizes="auto"
+        alt="/face06/22.jpg"
+        title="loss曲线" /></p>
+<h3 id="103-模型固化">10.3 模型固化</h3>
+<p>在模型结束后，使用tensorflow models提供的export_interence_graph.py脚本将已经训练好的模型打包成pb文件，命令与参数配置如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Bash" data-lang="Bash">python3 object_detection/export_inference_graph.py <span class="se">\ </span>
+--input_type <span class="o">=</span>image_tensor <span class="se">\
+</span><span class="se"></span>--popeline_config_path<span class="o">=</span> <span class="se">\
+</span><span class="se"></span>/mnt/FaceAI/models/research/object_detection/samples/configs/ssd_resnet50_v1_fpn_shared_box_predictor_640x640_coco14_sync_face.config <span class="se">\
+</span><span class="se"></span>--trained_checkpoint_prefix<span class="o">=</span> <span class="se">\
+</span><span class="se"></span>/mnt/FaceAI/dataset/widerface/model/resnet50v1-fpn/model.ckpt-75065
+--output_directory<span class="o">=</span> <span class="se">\
+</span><span class="se"></span>/mnt/FaceAI/dataset/widerface/model/resnet50v1-fpn/pb
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="104-模型测试">10.4 模型测试</h3>
+<p>在模型测试中，利用graph构图后，使用opencv读取用于测试的人脸图片，如果阈值大于0.6则表示识别出人脸，对识别出人脸的图片进行人脸框绘制，并将结果显示出来，实现代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">im_path_list</span><span class="p">:</span>
+<span class="n">imdata</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+<span class="n">sp</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">imdata</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">imdata</span><span class="p">,</span> <span class="n">IMAGE_SIZE</span><span class="p">)</span>
+<span class="n">output_dict</span>  <span class="o">=</span>  <span class="n">run_inference_for_single_image</span><span class="p">(</span> <span class="n">imdata</span><span class="p">,</span>  <span class="n">detection_graph</span> <span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">output_dict</span><span class="p">[</span><span class="s1">&#39;detection_scores&#39;</span><span class="p">])):</span>
+<span class="k">if</span> <span class="n">output_dict</span><span class="p">[</span><span class="s1">&#39;detection_scores&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.6</span><span class="p">:</span>
+    <span class="n">bbox</span> <span class="o">=</span> <span class="n">output_dict</span><span class="p">[</span><span class="s1">&#39;detection_scores&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">IMAGE_SIZE</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">IMAGE_SIZE</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">y2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">IMAGE_SIZE</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">IMAGE_SIZE</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">imdata</span><span class="p">,</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">),</span> <span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&#34;im&#34;</span><span class="p">,</span> <span class="n">imdata</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>模型测试的结果如下图所示：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="23.png"
+        data-srcset="/face06/23.png, 23.png 1.5x, /face06/23.png 2x"
+        data-sizes="auto"
+        alt="/face06/23.png"
+        title="Minion" /></p>
+<h2 id="11-参考资料">11 参考资料</h2>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>参考资料<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><a href="https://yinguobing.com/fddb/" target="_blank" rel="noopener noreffer">FDDB人脸检测算法评价标准</a></li>
+<li><a href="https://www.cnblogs.com/zfcode/p/mu-biao-jian-ce-IOU-jiao-bing-bi-li-jie-bi-ji.html" target="_blank" rel="noopener noreffer">目标检测 IOU（交并比） 理解笔记</a></li>
+<li><a href="https://blog.csdn.net/zchang81/article/details/71515490" target="_blank" rel="noopener noreffer">走近人脸检测（2）——VJ人脸检测器及其发展</a></li>
+<li><a href="https://www.cnblogs.com/llguanli/p/8918677.html" target="_blank" rel="noopener noreffer">Viola-Jones人脸检測</a></li>
+<li><a href="https://blog.csdn.net/weixin_41798111/article/details/79989794" target="_blank" rel="noopener noreffer">DPM目标检测算法</a></li>
+<li><a href="https://blog.csdn.net/smf0504/article/details/52244254" target="_blank" rel="noopener noreffer">解读 Joint Cascade Face Detection and Alignment 人脸检测算法</a></li>
+<li><a href="https://www.cnblogs.com/sciencefans/p/4394861.html" target="_blank" rel="noopener noreffer">人脸识别技术大总结1——Face Detection &amp; Alignment</a></li>
+</ul>
+</div>
+        </div>
+    </div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-01-16</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现" data-via="ieblYang" data-hashtags="FaceRecognition,TensorFlow,FaceDetection"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://ieblyang.tech/face06/" data-hashtag="FaceRecognition"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://ieblyang.tech/face06/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现" data-ralateuid="ieblYang"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/baidu.svg"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://ieblyang.tech/face06/" data-title="人脸检测业务理论及实现"><i class="fab fa-skype fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/facerecognition/">人脸识别</a>,&nbsp;<a href="/tags/tensorflow/">TensorFlow</a>,&nbsp;<a href="/tags/facedetection/">人脸检测</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/face05/" class="prev" rel="prev" title="Tensorflow Cifar-10图像分类任务"><i class="fas fa-angle-left fa-fw"></i>Tensorflow Cifar-10图像分类任务</a>
+            <a href="/flask01/" class="next" rel="next" title="结合官方文档 入门Flask">结合官方文档 入门Flask<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"kpgPchgfg6K9RMdLzdhxQyOV-gzGzoHsz","appKey":"erpDYbf9JmO61Yn1YtUw7AXB","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"2WIOUBN71W","algoliaIndex":"ieblyang","algoliaSearchKey":"f169f964063f4eed7cd46b7826cd7bf0","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.7bc7989e979c4a19d97db3ab311a80fe.js" integrity="md5-e8eYnpecShnZfbOrMRqA/g=="></script></body>
+</html>

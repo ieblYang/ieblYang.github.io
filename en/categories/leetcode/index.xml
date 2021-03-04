@@ -1,0 +1,36 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>LeetCode - Category - ieblYang</title>
+        <link>https://ieblyang.tech/en/categories/leetcode/</link>
+        <description>LeetCode - Category - ieblYang</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 25 Feb 2021 09:46:33 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/categories/leetcode/" rel="self" type="application/rss+xml" /><item>
+    <title>13. 罗马数字转整数</title>
+    <link>https://ieblyang.tech/en/13/</link>
+    <pubDate>Thu, 25 Feb 2021 09:46:33 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/13/</guid>
+    <description><![CDATA[<p>罗马数字包含以下七种字符: <code>I</code>， <code>V</code>， <code>X</code>， <code>L</code>，<code>C</code>，<code>D</code> 和 <code>M</code>。给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。</p>]]></description>
+</item><item>
+    <title>9. 回文数</title>
+    <link>https://ieblyang.tech/en/9/</link>
+    <pubDate>Thu, 25 Feb 2021 09:14:21 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/9/</guid>
+    <description><![CDATA[<p>给你一个整数 <code>x</code> ，如果 <code>x</code> 是一个回文整数，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>]]></description>
+</item><item>
+    <title>7. 整数反转</title>
+    <link>https://ieblyang.tech/en/7/</link>
+    <pubDate>Thu, 25 Feb 2021 09:00:20 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/7/</guid>
+    <description><![CDATA[<p>给你一个 32 位的有符号整数 x ，返回 x 中每位上的数字反转后的结果。</p>]]></description>
+</item><item>
+    <title>1. 两数之和</title>
+    <link>https://ieblyang.tech/en/1/</link>
+    <pubDate>Thu, 25 Feb 2021 07:48:10 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/1/</guid>
+    <description><![CDATA[<p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> 的那 <strong>两个</strong>整数，并返回它们的数组下标。</p>]]></description>
+</item></channel>
+</rss>

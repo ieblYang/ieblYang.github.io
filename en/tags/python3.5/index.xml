@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Python3.5 - Tag - ieblYang</title>
+        <link>https://ieblyang.tech/en/tags/python3.5/</link>
+        <description>Python3.5 - Tag - ieblYang</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 13 Mar 2020 17:33:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/tags/python3.5/" rel="self" type="application/rss+xml" /><item>
+    <title>结合官方文档 入门Flask</title>
+    <link>https://ieblyang.tech/en/flask01/</link>
+    <pubDate>Fri, 13 Mar 2020 17:33:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/flask01/</guid>
+    <description><![CDATA[<p>结合Flask官方中文文档，学习Flask基础入门知识</p>]]></description>
+</item><item>
+    <title>Ubuntu16.04安装Python3.5</title>
+    <link>https://ieblyang.tech/en/ubuntu-python/</link>
+    <pubDate>Thu, 12 Mar 2020 10:17:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/ubuntu-python/</guid>
+    <description><![CDATA[<p>这篇文章展示了如何在Ubuntu16.04系统中安装Python3.5并将python3.5设置为默认版本.</p>]]></description>
+</item></channel>
+</rss>

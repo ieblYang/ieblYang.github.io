@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Video - Category - ieblYang</title>
+        <link>https://ieblyang.tech/en/categories/video/</link>
+        <description>Video - Category - ieblYang</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://ieblyang.tech/en/categories/video/" rel="self" type="application/rss+xml" /></channel>
+</rss>

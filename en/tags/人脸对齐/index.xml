@@ -1,0 +1,26 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>人脸对齐 - Tag - ieblYang</title>
+        <link>https://ieblyang.tech/en/tags/%E4%BA%BA%E8%84%B8%E5%AF%B9%E9%BD%90/</link>
+        <description>人脸对齐 - Tag - ieblYang</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 22 Mar 2020 10:27:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/tags/%E4%BA%BA%E8%84%B8%E5%AF%B9%E9%BD%90/" rel="self" type="application/rss+xml" /><item>
+    <title>活体检测业务实战</title>
+    <link>https://ieblyang.tech/en/face11/</link>
+    <pubDate>Sun, 22 Mar 2020 10:27:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/face11/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/face/featured-image.png" referrerpolicy="no-referrer">
+            </div><p>基于TensorFlow的人脸识别智能小程序的设计与实现 活体检测业务实战</p>]]></description>
+</item><item>
+    <title>人脸对齐/关键点训练业务理论及实现</title>
+    <link>https://ieblyang.tech/en/face10/</link>
+    <pubDate>Wed, 18 Mar 2020 19:24:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/face10/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/face/featured-image.png" referrerpolicy="no-referrer">
+            </div><p>基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务理论及实现</p>]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Flask - Category - ieblYang</title>
+        <link>https://ieblyang.tech/en/categories/flask/</link>
+        <description>Flask - Category - ieblYang</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 13 Mar 2020 17:33:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/categories/flask/" rel="self" type="application/rss+xml" /><item>
+    <title>结合官方文档 入门Flask</title>
+    <link>https://ieblyang.tech/en/flask01/</link>
+    <pubDate>Fri, 13 Mar 2020 17:33:40 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/flask01/</guid>
+    <description><![CDATA[<p>结合Flask官方中文文档，学习Flask基础入门知识</p>]]></description>
+</item></channel>
+</rss>
