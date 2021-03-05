@@ -4,11 +4,7 @@
         <link>https://ieblyang.tech/en/posts/</link>
         <description>All Posts | ieblYang</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
-<<<<<<< HEAD
-            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 25 Feb 2021 09:46:33 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/posts/" rel="self" type="application/rss+xml" /><item>
-=======
-            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 20 Feb 2021 22:18:58 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/posts/" rel="self" type="application/rss+xml" /><item>
->>>>>>> 68afb362a37e6515bba4af68cf71b476e1947bb0
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 26 Feb 2021 10:15:18 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/en/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Extended Shortcodes</title>
     <link>https://ieblyang.tech/en/extended-shortcodes/</link>
     <pubDate>Wed, 11 Mar 2020 16:29:41 &#43;0800</pubDate>
@@ -30,7 +26,34 @@
     <guid>https://ieblyang.tech/en/basic-markdown-syntax/</guid>
     <description><![CDATA[<p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files.</p>]]></description>
 </item><item>
-<<<<<<< HEAD
+    <title>26. 删除排序数组中的重复项</title>
+    <link>https://ieblyang.tech/en/26/</link>
+    <pubDate>Fri, 26 Feb 2021 10:15:18 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/26/</guid>
+    <description><![CDATA[<p>给定一个排序数组，你需要在 <strong>原地</strong> 删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。</p>]]></description>
+</item><item>
+    <title>21. 合并两个有序链表</title>
+    <link>https://ieblyang.tech/en/21/</link>
+    <pubDate>Thu, 25 Feb 2021 12:40:14 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/21/</guid>
+    <description><![CDATA[<p>将两个升序链表合并为一个新的 <strong>升序</strong>链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。</p>]]></description>
+</item><item>
+    <title>20. 有效的括号</title>
+    <link>https://ieblyang.tech/en/20/</link>
+    <pubDate>Thu, 25 Feb 2021 10:33:32 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/20/</guid>
+    <description><![CDATA[<p>给定一个只包括 <code>'('</code>，<code>')</code>'，<code>'{'</code>，<code>'}'</code>，<code>'['</code>，<code>']'</code> 的字符串 <code>s</code> ，判断字符串是否有效。</p>]]></description>
+</item><item>
+    <title>14. 最长公共前缀</title>
+    <link>https://ieblyang.tech/en/14/</link>
+    <pubDate>Thu, 25 Feb 2021 10:13:32 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://ieblyang.tech/en/14/</guid>
+    <description><![CDATA[<p>编写一个函数来查找字符串数组中的最长公共前缀。</p>]]></description>
+</item><item>
     <title>13. 罗马数字转整数</title>
     <link>https://ieblyang.tech/en/13/</link>
     <pubDate>Thu, 25 Feb 2021 09:46:33 &#43;0800</pubDate>
@@ -51,74 +74,5 @@
     <author>Author</author>
     <guid>https://ieblyang.tech/en/7/</guid>
     <description><![CDATA[<p>给你一个 32 位的有符号整数 x ，返回 x 中每位上的数字反转后的结果。</p>]]></description>
-</item><item>
-    <title>1. 两数之和</title>
-    <link>https://ieblyang.tech/en/1/</link>
-    <pubDate>Thu, 25 Feb 2021 07:48:10 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://ieblyang.tech/en/1/</guid>
-    <description><![CDATA[<p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> 的那 <strong>两个</strong>整数，并返回它们的数组下标。</p>]]></description>
-</item><item>
-    <title>利用百度地图API实现网页定位与距离计算</title>
-    <link>https://ieblyang.tech/en/baidumap/</link>
-    <pubDate>Sun, 21 Feb 2021 12:05:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://ieblyang.tech/en/baidumap/</guid>
-    <description><![CDATA[<p>在写项目时，需要通过浏览器获取用户所在城市定位，并计算两个定位之间的距离，于是先利用百度地图API实现网页定位接着进行距离计算。</p>]]></description>
-</item><item>
-=======
->>>>>>> 68afb362a37e6515bba4af68cf71b476e1947bb0
-    <title>Hugo添加Algolia搜索支持</title>
-    <link>https://ieblyang.tech/en/hugo-algolia/</link>
-    <pubDate>Sat, 20 Feb 2021 22:18:58 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://ieblyang.tech/en/hugo-algolia/</guid>
-    <description><![CDATA[<p>这篇文章介绍了如何在Hugo上添加Algolia搜索支持。</p>
-<p>以 LoveIt 主题为例。</p>]]></description>
-</item><item>
-    <title>Java基础语法</title>
-    <link>https://ieblyang.tech/en/java01/</link>
-    <pubDate>Wed, 03 Feb 2021 17:33:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://ieblyang.tech/en/java01/</guid>
-    <description><![CDATA[<p>Java 核心技术读书笔记——Java基础语法</p>]]></description>
-<<<<<<< HEAD
-=======
-</item><item>
-    <title>微信小程序自定义showToast图片</title>
-    <link>https://ieblyang.tech/en/miniprogram03/</link>
-    <pubDate>Wed, 06 May 2020 21:03:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://ieblyang.tech/en/miniprogram03/</guid>
-    <description><![CDATA[微信小程序自定义showToast图片]]></description>
-</item><item>
-    <title>微信小程序函数节流，防止多次点击跳转</title>
-    <link>https://ieblyang.tech/en/miniprogram02/</link>
-    <pubDate>Mon, 20 Apr 2020 13:53:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://ieblyang.tech/en/miniprogram02/</guid>
-    <description><![CDATA[微信小程序函数节流，防止多次点击跳转]]></description>
-</item><item>
-    <title>Ubuntu16.04安装Mysql数据库</title>
-    <link>https://ieblyang.tech/en/ubuntu-mysql/</link>
-    <pubDate>Sat, 18 Apr 2020 10:17:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://ieblyang.tech/en/ubuntu-mysql/</guid>
-    <description><![CDATA[<p>这篇文章展示了如何在Ubuntu16.04系统中安装Mysql数据库，并安装可视化工具WorkBench</p>]]></description>
-</item><item>
-    <title>人脸属性业务实战</title>
-    <link>https://ieblyang.tech/en/face12/</link>
-    <pubDate>Mon, 23 Mar 2020 11:22:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://ieblyang.tech/en/face12/</guid>
-    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 人脸属性业务实战</p>]]></description>
-</item><item>
-    <title>活体检测业务实战</title>
-    <link>https://ieblyang.tech/en/face11/</link>
-    <pubDate>Sun, 22 Mar 2020 10:27:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://ieblyang.tech/en/face11/</guid>
-    <description><![CDATA[<p>基于TensorFlow的人脸识别智能小程序的设计与实现 活体检测业务实战</p>]]></description>
->>>>>>> 68afb362a37e6515bba4af68cf71b476e1947bb0
 </item></channel>
 </rss>
