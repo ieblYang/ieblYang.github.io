@@ -19,7 +19,7 @@
 <meta name="application-name" content="ieblYang">
 <meta name="apple-mobile-web-app-title" content="ieblYang"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ieblyang.tech/26/" /><link rel="prev" href="https://ieblyang.tech/21/" /><link rel="next" href="https://ieblyang.tech/basic-markdown-syntax/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ieblyang.tech/26/" /><link rel="prev" href="https://ieblyang.tech/21/" /><link rel="next" href="https://ieblyang.tech/27/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -33,7 +33,7 @@
                             "url": "https:\/\/ieblyang.tech\/26\/featured-image.png",
                             "width":  1420 ,
                             "height":  708 
-                        }],"genre": "posts","keywords": "LeetCode, Java","wordcount":  640 ,
+                        }],"genre": "posts","keywords": "LeetCode, Java","wordcount":  634 ,
         "url": "https:\/\/ieblyang.tech\/26\/","datePublished": "2021-02-26T10:15:18+08:00","dateModified": "2021-02-26T10:15:18+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "ieblYang","logo": "https:\/\/ieblyang.tech\/images\/avatar.png"},"author": {
@@ -114,7 +114,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">26. 删除排序数组中的重复项</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://ieblyang.tech/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ieblYang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/leetcode/"><i class="far fa-folder fa-fw"></i>LeetCode</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-26">2021-02-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 640 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-26">2021-02-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 634 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/26/" class="leancloud_visitors" data-flag-title="26. 删除排序数组中的重复项">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -146,32 +146,16 @@
             <div class="admonition-content"><p>给定一个排序数组，你需要在 <strong>原地</strong>删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。</p>
 <p>不要使用额外的数组空间，你必须在 <strong>原地</strong> 修改输入数组 并在使用 <strong>O(1)</strong> 额外空间的条件下完成。</p>
 <p><strong>示例 1:</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">给定数组 nums = [1,1,2], 
+<pre><code>给定数组 nums = [1,1,2], 
 函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。
 你不需要考虑数组中超出新长度后面的元素。
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>示例 2:</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">给定 nums = [0,0,1,1,1,2,2,3,3,4],
+</code></pre>
+<p><strong>示例 2:</strong></p>
+<pre><code>给定 nums = [0,0,1,1,1,2,2,3,3,4],
 函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。
 你不需要考虑数组中超出新长度后面的元素。
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>说明:</strong></p>
+</code></pre>
+<p><strong>说明:</strong></p>
 <p>为什么返回数值是整数，但输出的答案是数组呢?</p>
 <p>请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
 <p>你可以想象内部操作如下:</p>
@@ -187,13 +171,13 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
-int len = removeDuplicates(nums);
-<p>// 在函数里修改输入数组对于调用者是可见的。
-// 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。
-for (int i = 0; i &lt; len; i++) {
-    print(nums[i]);
-}
+<pre class="chroma"><code class="language-C" data-lang="C"><span class="c1">// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">removeDuplicates</span><span class="p">(</span><span class="n">nums</span><span class="p">);</span>
+<p><span class="c1">// 在函数里修改输入数组对于调用者是可见的。
+</span><span class="c1">// 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
 </code></pre></td></tr></table></p>
 </div>
 </div></div>
@@ -307,7 +291,7 @@ for (int i = 0; i &lt; len; i++) {
     </div>
 
     <div class="post-nav"><a href="/21/" class="prev" rel="prev" title="21. 合并两个有序链表"><i class="fas fa-angle-left fa-fw"></i>21. 合并两个有序链表</a>
-            <a href="/basic-markdown-syntax/" class="next" rel="next" title="Markdown 基本语法">Markdown 基本语法<i class="fas fa-angle-right fa-fw"></i></a></div>
+            <a href="/27/" class="next" rel="next" title="27. 移除元素">27. 移除元素<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
