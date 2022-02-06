@@ -8,10 +8,10 @@
         <title>卷积神经网基础串讲 - ieblYang</title><meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 卷积神经网基础串讲"><meta property="og:title" content="卷积神经网基础串讲" />
 <meta property="og:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 卷积神经网基础串讲" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ieblyang.tech/en/face03/" />
-<meta property="og:image" content="https://ieblyang.tech/en/face03/featured-image.png"/>
+<meta property="og:url" content="https://ieblyang.tech/en/face03/" /><meta property="og:image" content="https://ieblyang.tech/en/face03/featured-image.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-12T12:43:40+08:00" />
 <meta property="article:modified_time" content="2020-03-12T12:43:40+08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://ieblyang.tech/en/face03/featured-image.png"/>
 <meta name="twitter:title" content="卷积神经网基础串讲"/>
@@ -343,7 +343,7 @@
 <h4 id="213-卷积的定义与使用caffe">2.1.3 卷积的定义与使用（caffe）</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -370,7 +370,7 @@
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">layer</span><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">layer</span><span class="p">{</span>
     <span class="n">name</span><span class="p">:</span><span class="s2">&#34;conv1&#34;</span>
     <span class="nb">type</span><span class="p">:</span><span class="s2">&#34;Convolution&#34;</span>
     <span class="n">bottom</span><span class="p">:</span><span class="s2">&#34;data&#34;</span>
@@ -400,7 +400,7 @@
 </div><h4 id="214-卷积的定义与使用tensorflow">2.1.4 卷积的定义与使用（TensorFlow）</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -409,7 +409,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">filter_weight</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_variable</span><span class="p">(</span><span class="s1">&#39;weight&#39;</span><span class="p">,[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">filter_weight</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_variable</span><span class="p">(</span><span class="s1">&#39;weight&#39;</span><span class="p">,[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span>
 <span class="n">initializer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">truncated_normal_initializer</span><span class="p">(</span><span class="n">stddev</span><span class="o">=</span><span class="mf">0.1</span><span class="p">))</span>
 <span class="n">biases</span> <span class="o">=</span> <span class="n">ft</span><span class="o">.</span><span class="n">get_variable</span><span class="p">(</span><span class="s1">&#39;biases&#39;</span><span class="p">,[</span><span class="mi">16</span><span class="p">],</span><span class="n">initializer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant_initializer</span><span class="p">(</span><span class="mf">0.1</span><span class="p">))</span>
 <span class="n">conv</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="n">filter_weight</span><span class="p">,</span><span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">)</span>
@@ -544,7 +544,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -555,7 +555,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">layer</span><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">layer</span><span class="p">{</span>
     <span class="n">bottom</span><span class="p">:</span><span class="s2">&#34;conv1&#34;</span>
     <span class="n">top</span><span class="p">:</span><span class="s2">&#34;conv1&#34;</span>
     <span class="n">name</span><span class="p">:</span><span class="s2">&#34;bn_conv1&#34;</span>
@@ -635,7 +635,7 @@
         title="交叉熵损失" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -643,12 +643,12 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1"># 交叉熵损失实现</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax_cross_entrpoy_with_logits</span><span class="p">(</span><span class="n">_sentinel</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-<span class="n">logits</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="c1"># 交叉熵损失实现</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax_cross_entrpoy_with_logits</span><span class="p">(</span><span class="n">_sentinel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="n">logits</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
-<span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">sparse_softmax_cross_entrpoy_with_logits</span><span class="p">(</span><span class="n">_sentinel</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-<span class="n">logits</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">sparse_softmax_cross_entrpoy_with_logits</span><span class="p">(</span><span class="n">_sentinel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="n">logits</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -1144,8 +1144,8 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

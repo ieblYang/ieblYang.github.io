@@ -8,10 +8,10 @@
         <title>人脸属性业务实战 - ieblYang</title><meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸属性业务实战"><meta property="og:title" content="人脸属性业务实战" />
 <meta property="og:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸属性业务实战" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ieblyang.tech/face12/" />
-<meta property="og:image" content="https://ieblyang.tech/face12/featured-image.png"/>
+<meta property="og:url" content="https://ieblyang.tech/face12/" /><meta property="og:image" content="https://ieblyang.tech/face12/featured-image.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-23T11:22:40+08:00" />
 <meta property="article:modified_time" content="2021-01-16T11:54:40+08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://ieblyang.tech/face12/featured-image.png"/>
 <meta name="twitter:title" content="人脸属性业务实战"/>
@@ -469,7 +469,7 @@
 <p>对<code>img_celeba.7z.001~img_celeba.7z.014</code>这14个文件进行合并，得到一个<code>img_celeba.7z</code>文件，并解压</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -477,7 +477,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Bash" data-lang="Bash"><span class="c1"># 数据合并</span>
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="c1"># 数据合并</span>
 cat img_celeba.7z.0** &gt; img_celeba.7z
 <span class="c1"># 安装 7z</span>
 sudo apt-get install p7zip-full 
@@ -501,7 +501,7 @@ sudo apt-get install p7zip-full
 <p>在数据集处理中，使用dlib库定义人脸检测器，对数据集中的人脸图片进行人脸检测，若没有发现人脸信息则将这张图片过滤掉，在成功获取到人脸框之后，需要对人脸框进行一定的扩充，对扩充后的人脸框仍然小于<code>50 * 50</code>的人脸图片要将其过滤掉，对数据集中的图片进行过滤的代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -512,7 +512,7 @@ sudo apt-get install p7zip-full
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rects</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rects</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">continue</span>
     <span class="n">x1</span> <span class="o">=</span> <span class="n">rects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
     <span class="n">y1</span> <span class="o">=</span> <span class="n">rects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">top</span><span class="p">()</span>
@@ -526,7 +526,7 @@ sudo apt-get install p7zip-full
 </div><p>对符合要求的人脸图片，先进行人脸对齐，将图片裁剪为<code>128 * 128</code>的大小，然后定义<code>tfrecord字典</code>的格式，其中<code>image</code>为<code>byte</code>型，<code>eyeglasses</code>、<code>male</code>、<code>smiling</code>、<code>young</code>为<code>int</code>型，相关代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -557,7 +557,7 @@ sudo apt-get install p7zip-full
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">ex</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Example</span><span class="p">(</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">ex</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Example</span><span class="p">(</span>
         <span class="n">features</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Features</span><span class="p">(</span>
             <span class="n">feature</span> <span class="o">=</span> <span class="p">{</span>
                 <span class="s2">&#34;image&#34;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Feature</span><span class="p">(</span>
@@ -593,7 +593,7 @@ sudo apt-get install p7zip-full
 <p>主干网络使用slim提供的<code>inception_v3_base</code>，<code>batch_norm层</code>的参数配置如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -607,14 +607,14 @@ sudo apt-get install p7zip-full
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">batch_norm_params</span> <span class="o">=</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">batch_norm_params</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&#34;is_training&#34;</span><span class="p">:</span> <span class="n">is_training</span><span class="p">,</span>
-        <span class="s2">&#34;trainable&#34;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+        <span class="s2">&#34;trainable&#34;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
         <span class="s2">&#34;decay&#34;</span><span class="p">:</span> <span class="mf">0.9997</span><span class="p">,</span>
         <span class="s2">&#34;epsilon&#34;</span><span class="p">:</span> <span class="mf">0.00001</span><span class="p">,</span>
         <span class="s2">&#34;variables_collections&#34;</span><span class="p">:{</span>
-            <span class="s2">&#34;beta&#34;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
-            <span class="s2">&#34;gamma&#34;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s2">&#34;beta&#34;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">&#34;gamma&#34;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
             <span class="s2">&#34;moving_mean&#34;</span><span class="p">:[</span><span class="s2">&#34;moving_vars&#34;</span><span class="p">],</span>
             <span class="s2">&#34;moving_variance&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;moving_var&#39;</span><span class="p">]</span>
         <span class="p">}</span>
@@ -624,7 +624,7 @@ sudo apt-get install p7zip-full
 </div><p>对卷积层和全连接层进行权值上的约束时，正则化方法采用L2正则，并定义这些层是可训练的，对卷积层的参数进行初始化，调用主干网络即<code>inception_v3_base</code>传入图片，获取到<code>inception_v3_base网络</code>的输出结果，使用<code>tf.reduce_mean</code>函数计算张量<code>tensor</code>沿着1、2维度上的平均值。使用<code>tf.nn.dropout函数</code>在训练过程中随机的扔掉一部分神经元，防止或减轻过拟合问题，针对系统研究的四个属性以主干网络的输出为四个分支的输入来定义分支，主要代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -648,11 +648,11 @@ sudo apt-get install p7zip-full
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">weights_regularizer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">l2_regularizer</span><span class="p">(</span><span class="mf">0.00004</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">weights_regularizer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">l2_regularizer</span><span class="p">(</span><span class="mf">0.00004</span><span class="p">)</span>
     <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">slim</span><span class="o">.</span><span class="n">arg_scope</span><span class="p">(</span>
         <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">slim</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">],</span>
         <span class="n">weights_regularizer</span> <span class="o">=</span> <span class="n">weights_regularizer</span><span class="p">,</span>
-        <span class="n">trainable</span> <span class="o">=</span> <span class="bp">True</span><span class="p">):</span>
+        <span class="n">trainable</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">slim</span><span class="o">.</span><span class="n">arg_scope</span><span class="p">(</span>
             <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span><span class="p">],</span>
             <span class="n">weights_initializer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">truncated_normal_initializer</span><span class="p">(</span><span class="n">stddev</span><span class="o">=</span><span class="mf">0.1</span><span class="p">),</span>
@@ -660,39 +660,39 @@ sudo apt-get install p7zip-full
             <span class="n">normalizer_fn</span> <span class="o">=</span> <span class="n">batch_norm</span><span class="p">,</span>
             <span class="n">normalizer_params</span> <span class="o">=</span> <span class="n">batch_norm_params</span><span class="p">):</span>
             <span class="n">nets</span><span class="p">,</span> <span class="n">endpoints</span> <span class="o">=</span> <span class="n">inception_v3_base</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">nets</span><span class="p">)</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">endpoints</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">nets</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">endpoints</span><span class="p">)</span>
             <span class="n">net</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">nets</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
             <span class="n">net</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">drop_out</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;droplast&#34;</span><span class="p">)</span>
             <span class="n">net</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&#34;flatten&#34;</span><span class="p">)</span>
-    <span class="n">net_eyeglasses</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">activation_fn</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span>
-    <span class="n">net_male</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">activation_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-    <span class="n">net_smiling</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">activation_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-    <span class="n">net_young</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">activation_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+    <span class="n">net_eyeglasses</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">activation_fn</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">net_male</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">activation_fn</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">net_smiling</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">activation_fn</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">net_young</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">activation_fn</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">net_eyeglasses</span><span class="p">,</span> <span class="n">net_male</span><span class="p">,</span> <span class="n">net_smiling</span><span class="p">,</span> <span class="n">net_young</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>输入和label定义：网络搭建完成后，定义输入和label，并获取网络的预测结果，对于模型训练设置<code>dropout=0.5</code>，<code>is_training=True</code>，代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">input_x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="n">label_eyeglasses</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="n">label_male</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="n">label_smiling</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="n">label_young</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">input_x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">label_eyeglasses</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">label_male</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">label_smiling</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">label_young</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Loss的定义：采用交叉熵损失作为模型训练的Loss，对于<code>tf.losses.sparse_softmax_cross_entropy</code>其中<code>labels</code>是一维的， 预测结果是二维的，最后结果选取二维的最大值所对应的索引，即概率分布中最大的值。使用<code>tf.nn.softmax</code>将预测结果处理到<code>0 ~ 1</code>之间，将<code>loss_eyeglasses</code>，<code>loss_male</code>，<code>loss_smiling</code>，<code>loss_young</code>相加来定义总的loss，接着定义正则化的loss，定义loss的代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -709,7 +709,7 @@ sudo apt-get install p7zip-full
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">loss_eyeglasses</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">sparse_softmax_cross_entropy</span><span class="p">(</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">loss_eyeglasses</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">sparse_softmax_cross_entropy</span><span class="p">(</span>
 <span class="n">labels</span><span class="o">=</span> <span class="n">label_eyeglasses</span><span class="p">,</span> <span class="n">logits</span> <span class="o">=</span> <span class="n">logits_eyeglasses</span><span class="p">)</span>
 <span class="n">loss_male</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">sparse_softmax_cross_entropy</span><span class="p">(</span>
 <span class="n">labels</span><span class="o">=</span><span class="n">label_male</span><span class="p">,</span> <span class="n">logits</span> <span class="o">=</span> <span class="n">logits_male</span><span class="p">)</span>
@@ -729,29 +729,29 @@ sudo apt-get install p7zip-full
 </div><p>学习方式与学习率的定义：定义学习率的衰减方式为指数衰减，初始学习率为0.0001，衰减的步长为1000，每次衰减的比率为0.98，相关代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">global_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">global_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">lr</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">exponential_decay</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">global_step</span><span class="p">,</span>
                                 <span class="n">decay_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
                                 <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.98</span><span class="p">,</span>
-                                <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+                                <span class="n">staircase</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>优化器的定义:定义训练的方式为AdamOptimizer，传入学习率和loss，相关代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">update_ops</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_collection</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">GraphKeys</span><span class="o">.</span><span class="n">UPDATE_OPS</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">update_ops</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_collection</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">GraphKeys</span><span class="o">.</span><span class="n">UPDATE_OPS</span><span class="p">)</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">control_dependencies</span><span class="p">(</span><span class="n">update_ops</span><span class="p">):</span>
     <span class="n">train_op</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">AdamOptimizer</span><span class="p">(</span><span class="n">lr</span><span class="p">)</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">loss</span> <span class="o">+</span> <span class="n">l2_loss</span><span class="p">,</span> <span class="n">global_step</span><span class="p">)</span>
 </code></pre></td></tr></table>
@@ -759,7 +759,7 @@ sudo apt-get install p7zip-full
 </div><p>对于训练集使用<code>tf.train.shuffle_batch</code>将队列中的数据打乱后再读取，在数据打包时，各个属性的label值用<code>-1</code>,<code>1</code>来表示，对这些值进行处理，将数据变为0,1，相关代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -767,7 +767,7 @@ sudo apt-get install p7zip-full
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">batch_im</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="s2">&#34;image&#34;</span><span class="p">]</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">batch_im</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="s2">&#34;image&#34;</span><span class="p">]</span>
     <span class="n">batch_eye</span> <span class="o">=</span> <span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s2">&#34;Eyeglasses&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
     <span class="n">batch_male</span> <span class="o">=</span> <span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s2">&#34;Male&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
     <span class="n">batch_smiling</span> <span class="o">=</span> <span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="s2">&#34;Smiling&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
@@ -789,7 +789,7 @@ sudo apt-get install p7zip-full
 为了使预测结果更直观，调用起来更方便，将<code>softmax值</code>转换成<code>argmax值</code>，得到概率分布值高的所对应的轴，实现代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -800,7 +800,7 @@ sudo apt-get install p7zip-full
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">logits_eyeglasses</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits_eyeglasses</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">logits_eyeglasses</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits_eyeglasses</span><span class="p">)</span>
 <span class="n">logits_male</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits_male</span><span class="p">)</span>
 <span class="n">logits_smiling</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits_smiling</span><span class="p">)</span>
 <span class="n">logits_young</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits_young</span><span class="p">)</span>
@@ -814,7 +814,7 @@ sudo apt-get install p7zip-full
 </div><p>使用<code>convert_variables_to_constants函数</code>将计算图中的变量取值以常量的形式保存。在人脸属性模型的多任务网络中，在模型固化的节点list中放入人脸属性的四个节点的tensor的name，从而转化多任务网络的pb模型，参数配置如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -823,7 +823,7 @@ sudo apt-get install p7zip-full
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">output_graph_def</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">graph_util</span><span class="o">.</span>\
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">output_graph_def</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">graph_util</span><span class="o">.</span>\
         <span class="n">convert_variables_to_constants</span><span class="p">(</span><span class="n">session</span><span class="p">,</span>
                <span class="n">session</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">as_graph_def</span><span class="p">(),</span>
                <span class="p">[</span><span class="s1">&#39;ArgMax&#39;</span><span class="p">,</span>
@@ -871,8 +871,8 @@ sudo apt-get install p7zip-full
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

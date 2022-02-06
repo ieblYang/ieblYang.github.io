@@ -8,10 +8,10 @@
         <title>人脸对齐/关键点训练业务理论及实现 - ieblYang</title><meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务理论及实现"><meta property="og:title" content="人脸对齐/关键点训练业务理论及实现" />
 <meta property="og:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸对齐/关键点训练业务理论及实现" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ieblyang.tech/en/face10/" />
-<meta property="og:image" content="https://ieblyang.tech/en/face10/featured-image.png"/>
+<meta property="og:url" content="https://ieblyang.tech/en/face10/" /><meta property="og:image" content="https://ieblyang.tech/en/face10/featured-image.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-18T19:24:40+08:00" />
 <meta property="article:modified_time" content="2021-01-16T11:42:40+08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://ieblyang.tech/en/face10/featured-image.png"/>
 <meta name="twitter:title" content="人脸对齐/关键点训练业务理论及实现"/>
@@ -580,12 +580,12 @@ Residual的特征进行了特征重标定。如果对Addition后主支上的特�
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">X1 = conv(X0)
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">X1 = conv(X0)
 X2 = weight(X0)
 X3 = X0 + X1 ** X2
 </code></pre></td></tr></table>
@@ -624,7 +624,7 @@ X3 = X0 + X1 ** X2
 <p>对landmark中的标注信息进行适当的调整，代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -634,7 +634,7 @@ X3 = X0 + X1 ** X2
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">x_max</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">landmark</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">68</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">x_max</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">landmark</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">68</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
 <span class="n">x_min</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">landmark</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">68</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
 <span class="n">y_max</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">landmark</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">68</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
 <span class="n">y_min</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">landmark</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">68</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
@@ -647,11 +647,11 @@ X3 = X0 + X1 ** X2
 </div><p>对数据进行裁剪，将人脸区域抠出来，获取人脸框的大小并对landmark数据进行标准化，将其归一化到<code>0~1</code>之间，对<code>x</code>,<code>y</code>的处理如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">im_point</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">landmark</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x_min</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">sp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">im_point</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">landmark</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x_min</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">sp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">im_point</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">landmark</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y_min</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">sp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </code></pre></td></tr></table>
 </div>
@@ -661,21 +661,21 @@ X3 = X0 + X1 ** X2
 <p>定义网络结构：定义输入为<code>placeholder</code>，数据类型为<code>float32</code>，<code>shape</code>中<code>batch_size</code>定义为<code>None</code>，图像尺寸为<code>128 * 128 * 3</code>；模型共需要预测68个人脸关键点共136个点，将<code>label</code>的<code>shape</code>定义为<code>136</code>，具体代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">input_x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="n">label</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">136</span><span class="p">])</span>
-<span class="n">logits</span> <span class="o">=</span> <span class="n">SENet</span><span class="p">(</span><span class="n">input_x</span><span class="p">,</span> <span class="n">is_training</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">keep_prob</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">input_x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">label</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">136</span><span class="p">])</span>
+<span class="n">logits</span> <span class="o">=</span> <span class="n">SENet</span><span class="p">(</span><span class="n">input_x</span><span class="p">,</span> <span class="n">is_training</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">keep_prob</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>SENet:定义<code>senet_blob(net, in_dim, on_dim, stride)</code>函数，其中<code>in_dim</code>为输入特征图通道数，<code>on_dim</code>为输出特征图通道数，<code>stride</code>表示当前网络是否进行下采样。对输入的张量进行备份，并进行卷积操作，对通道的数量进行适当的降维，第一次，降4倍，进行<code>1 * 1</code>的卷积，接着进行<code>3 * 3</code>的卷积，接着再进行1 * 1的卷积，得到与输出维度相同的卷积，对<code>stride大于1</code>的数据通道<code>poll2d</code>进行下采样。通过<code>reduce_mean</code>对1、2维度进行<code>average_pooling</code>，调用<code>slim.fully_connected</code>加入全连接层，加入激活层，再次加入全连接层，使用<code>sigomid</code>将权重映射到0,1之间，得到通道加权之后的网络结构，将得到的值与备份的张量相加，实现跳连部分。</p>
 <p>定义好基本模块之后，开始搭建SENet网络结构，定义权重可选的正则化程序为<code>slim.l2_regularizer(0.00001)</code>、定义权重初始化程序为<code>slim.variance_scaling_initializer()</code>、定义激活函数为<code>tf.nn.relu</code>、定义正则化函数为<code>slim.batch_norm</code>、定义正则化函数的参数为<code>bn_param</code>。网络结构定义代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -691,7 +691,7 @@ X3 = X0 + X1 ** X2
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">with</span> <span class="n">slim</span><span class="o">.</span><span class="n">arg_scope</span><span class="p">([</span><span class="n">slim</span><span class="o">.</span><span class="n">batch_norm</span><span class="p">],</span> <span class="o">**</span><span class="n">bn_param</span><span class="p">):</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="k">with</span> <span class="n">slim</span><span class="o">.</span><span class="n">arg_scope</span><span class="p">([</span><span class="n">slim</span><span class="o">.</span><span class="n">batch_norm</span><span class="p">],</span> <span class="o">**</span><span class="n">bn_param</span><span class="p">):</span>
      <span class="n">net</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">input_x</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
      <span class="n">net</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">avg_pool2d</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&#34;SAME&#34;</span><span class="p">)</span>
      <span class="n">net</span> <span class="o">=</span> <span class="n">senet_blob</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -719,7 +719,7 @@ X3 = X0 + X1 ** X2
 <p>学习率：学习率采用衰减学习率，初始学习率为0.001，衰减步长为1000步，每次衰减0.98，定义<code>update_ops</code>对<code>batchnorm层</code>进行更新，具体代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -729,11 +729,11 @@ X3 = X0 + X1 ** X2
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">global_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">global_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">lr</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">exponential_decay</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">global_step</span><span class="p">,</span>
                                 <span class="n">decay_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
                                 <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.98</span><span class="p">,</span>
-                                <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+                                <span class="n">staircase</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">update_ops</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_collection</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">GraphKeys</span><span class="o">.</span><span class="n">UPDATE_OPS</span><span class="p">)</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">control_dependencies</span><span class="p">(</span><span class="n">update_ops</span><span class="p">):</span>
     <span class="n">train_op</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">AdamOptimizer</span><span class="p">(</span><span class="n">lr</span><span class="p">)</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">global_step</span><span class="p">)</span>
@@ -752,7 +752,7 @@ X3 = X0 + X1 ** X2
 <p>模型固化部分的网络结构与模型训练中的基本一致，需要将<code>is_training</code>修改为<code>False</code>、<code>keep_prob</code>修改为<code>1.0</code>,将<code>shape</code>中的<code>None</code>置为<code>1</code>表示每次处理一张图片，修改前后的代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -770,18 +770,18 @@ X3 = X0 + X1 ** X2
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#修改前：input_x = tf.placeholder(tf.float32, shape=[None, 128, 128, 3])</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#修改前：input_x = tf.placeholder(tf.float32, shape=[None, 128, 128, 3])</span>
 <span class="n">input_x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="c1">#修改前：logits = SENet(input_x, is_training=True, keep_prob=0.8)</span>
-<span class="n">logits</span> <span class="o">=</span> <span class="n">SENet</span><span class="p">(</span><span class="n">input_x</span><span class="p">,</span> <span class="n">is_training</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">keep_prob</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="err">根据读取到的</span><span class="n">ckpt文件恢复当前的graph</span><span class="err">，定义输出的网络节点的对应部分，并保存</span><span class="n">pb文件</span><span class="err">，相关代码如下：</span>
+<span class="n">logits</span> <span class="o">=</span> <span class="n">SENet</span><span class="p">(</span><span class="n">input_x</span><span class="p">,</span> <span class="n">is_training</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">keep_prob</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">根据读取到的ckpt文件恢复当前的graph</span><span class="err">，</span><span class="n">定义输出的网络节点的对应部分</span><span class="err">，</span><span class="n">并保存pb文件</span><span class="err">，</span><span class="n">相关代码如下</span><span class="err">：</span>
     <span class="n">coord</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Coordinator</span><span class="p">()</span>
     <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">start_queue_runners</span><span class="p">(</span><span class="n">sess</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="n">coord</span><span class="p">)</span>
     <span class="n">init_op</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">(),</span> <span class="n">tf</span><span class="o">.</span><span class="n">local_variables_initializer</span><span class="p">())</span>
     <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">init_op</span><span class="p">)</span>
     <span class="n">ckpt</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">get_checkpoint_state</span><span class="p">(</span><span class="s2">&#34;models-3&#34;</span><span class="p">)</span>
     <span class="n">saver</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">ckpt</span><span class="o">.</span><span class="n">model_checkpoint_path</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">ckpt</span><span class="o">.</span><span class="n">model_checkpoint_path</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ckpt</span><span class="o">.</span><span class="n">model_checkpoint_path</span><span class="p">)</span>
     <span class="n">output_graph_def</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">graph_util</span><span class="o">.</span><span class="n">convert_variables_to_constants</span><span class="p">(</span><span class="n">session</span><span class="p">,</span><span class="n">session</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">as_graph_def</span><span class="p">(),[</span><span class="s1">&#39;fully_connected_9/Relu&#39;</span><span class="p">])</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">gfile</span><span class="o">.</span><span class="n">FastGFile</span><span class="p">(</span><span class="s2">&#34;face_landmark_model.pb&#34;</span><span class="p">,</span> <span class="s2">&#34;wb&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output_graph_def</span><span class="o">.</span><span class="n">SerializeToString</span><span class="p">())</span>
@@ -792,7 +792,7 @@ X3 = X0 + X1 ** X2
 <p>读取打包好的pb文件，从pb文件中恢复当前的graph， 接着进行前项推理，通过<code>opencv</code>读取用于测试的人脸图片，将图片<code>resize</code>到<code>128 * 128</code>，将读取到的图片扩充为四维后传给网络，使用<code>opencv</code>对68个人脸关键点进行绘制，并显示输出结果，相关代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -806,7 +806,7 @@ X3 = X0 + X1 ** X2
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">for</span> <span class="n">im_url</span> <span class="ow">in</span> <span class="n">im_list</span><span class="p">:</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="k">for</span> <span class="n">im_url</span> <span class="ow">in</span> <span class="n">im_list</span><span class="p">:</span>
     <span class="n">im_data</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">im_url</span><span class="p">)</span>
     <span class="n">sp</span> <span class="o">=</span> <span class="n">im_data</span><span class="o">.</span><span class="n">shape</span>
     <span class="n">im_data</span> <span class="o">=</span> <span class="n">im_data</span><span class="p">[</span><span class="n">sp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1</span><span class="o">//</span><span class="mi">4</span><span class="p">:,:,:]</span>
@@ -875,8 +875,8 @@ X3 = X0 + X1 ** X2
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

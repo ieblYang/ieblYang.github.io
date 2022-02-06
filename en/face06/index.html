@@ -8,10 +8,10 @@
         <title>人脸检测业务理论及实现 - ieblYang</title><meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现"><meta property="og:title" content="人脸检测业务理论及实现" />
 <meta property="og:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸检测业务理论及实现" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ieblyang.tech/en/face06/" />
-<meta property="og:image" content="https://ieblyang.tech/en/face06/featured-image.png"/>
+<meta property="og:url" content="https://ieblyang.tech/en/face06/" /><meta property="og:image" content="https://ieblyang.tech/en/face06/featured-image.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-12T17:33:40+08:00" />
 <meta property="article:modified_time" content="2021-01-16T10:27:40+08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://ieblyang.tech/en/face06/featured-image.png"/>
 <meta name="twitter:title" content="人脸检测业务理论及实现"/>
@@ -667,7 +667,7 @@
         title="人脸检测算法" /></p>
 <blockquote>
 <p>人脸检测相关文献：
-<a href="http://www.imooc.com/article/284277">http://www.imooc.com/article/284277</a></p>
+<a href="http://www.imooc.com/article/284277" target="_blank" rel="noopener noreffer">http://www.imooc.com/article/284277</a></p>
 </blockquote>
 <h2 id="6-人脸检测问题挑战及解决思路">6 人脸检测问题挑战及解决思路</h2>
 <ul>
@@ -791,7 +791,7 @@
 </ul>
 </li>
 <li>
-<p><a href="https://github.com/tensorflow/models.git">https://github.com/tensorflow/models.git</a></p>
+<p><a href="https://github.com/tensorflow/models.git" target="_blank" rel="noopener noreffer">https://github.com/tensorflow/models.git</a></p>
 <ul>
 <li><a href="https://github.com/tensorflow/models/tree/master/research/object_detection" target="_blank" rel="noopener noreffer">目标检测算法源码框架</a></li>
 <li><a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md" target="_blank" rel="noopener noreffer">安装教程</a></li>
@@ -814,7 +814,7 @@
 <li>32203个图像和393703个人脸图像</li>
 <li>在尺度，姿势，遮挡，表情，装扮，光照等</li>
 <li>61个事件类别组织的，对于每一个事件类别，选取其中的40%作为训练集,10%用于交叉验证，50%作为测试集</li>
-<li>下载地址：<a href="http://shuoyang1213.me/WIDERFACE/">http://shuoyang1213.me/WIDERFACE/</a></li>
+<li>下载地址：<a href="http://shuoyang1213.me/WIDERFACE/" target="_blank" rel="noopener noreffer">http://shuoyang1213.me/WIDERFACE/</a></li>
 </ul>
 </div>
         </div>
@@ -858,7 +858,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -893,7 +893,7 @@
 </span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;annotaion&gt;
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&lt;annotaion&gt;
 	&lt;floder&gt;widerface&lt;/floder&gt;
 	&lt;filename&gt;0--Parade_0_Parade_marchingband_1_5.jpg&lt;/filename&gt; #指向了JPEGImage下面的一个图片
 	&lt;source&gt; #图片来源
@@ -931,7 +931,7 @@
 </div><h3 id="93-wider-face-标注文件">9.3 WIDER FACE 标注文件</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -944,7 +944,7 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"># wider_face_train_bbx_gt.txt
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># wider_face_train_bbx_gt.txt
 0--Parade/0_Parade_marchingband_1_849.jpg   # 图片路径
 1                                           # 针对当前图片中的人脸个数
 449 330 122 149 0 0 0 0 0 0                 # 当前人脸的标准信息
@@ -963,7 +963,7 @@
 <p>第一步，将WIDER FACE解析好的数据写入到xml文件中，处理时需要获取图片的基本信息，代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -973,7 +973,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">size</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">)</span>		<span class="c1"># 获取图片的基本信息</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">size</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">)</span>		<span class="c1"># 获取图片的基本信息</span>
 <span class="n">annotation</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
 <span class="n">width</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;width&#39;</span><span class="p">)</span>	   <span class="c1"># 宽度</span>
 <span class="n">width</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">saveimg</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
@@ -986,7 +986,7 @@
 </div><p>在这一步中，需要获取到人脸的坐标信息，代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1019,7 +1019,7 @@
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1"># bboxes 当前图片中人脸框的坐标</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="c1"># bboxes 当前图片中人脸框的坐标</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bboxes</span><span class="p">)):</span>		
 <span class="n">bbox</span> <span class="o">=</span> <span class="n">bboxes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 <span class="n">objects</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
@@ -1055,7 +1055,7 @@
 </div><p>第二步，对WIDER FACE数据集的训练集和测试集的真值文件进行解析。在这一过程中，需要对WIDER FACE数据集进行简单的数据清洗操作，使训练数据更加接近实际的业务场景，主要代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1076,7 +1076,7 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">sc</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">im_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">sc</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">im_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">im_data_tmp</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">sc</span><span class="p">,</span> <span class="n">sc</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  <span class="n">dtype</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="n">off_w</span> <span class="o">=</span> <span class="p">(</span><span class="n">sc</span> <span class="o">-</span> <span class="n">im_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="o">//</span>  <span class="mi">2</span>
 <span class="n">off_h</span> <span class="o">=</span> <span class="p">(</span><span class="n">sc</span> <span class="o">-</span> <span class="n">im_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="o">//</span>  <span class="mi">2</span>
@@ -1100,14 +1100,14 @@
 </div><p>第三步，以SSD模型中的create_pascal_tf_record.py脚本为基础新建create_face_tf_record.py脚本对已经转化成Passcal VOC2007格式的训练样本和测试样本分别进行打包，在这一过程中需要将源码中的YEARS修改为widerface，将label_map_path指定到face_lable_map.pbtxt，训练集数据打包的命令参数如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Bash" data-lang="Bash">python3 object_detection/dataset_tools/create_face_tf_record.py <span class="se">\
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash">python3 object_detection/dataset_tools/create_face_tf_record.py <span class="se">\
 </span><span class="se"></span>--data_dir<span class="o">=</span>/mnt/dataset <span class="se">\
 </span><span class="se"></span>--year<span class="o">=</span>widerface <span class="se">\
 </span><span class="se"></span>--output_path<span class="o">=</span>/mnt/dataset/widerface/TF-data/train.record <span class="se">\
@@ -1121,7 +1121,7 @@ sync_face.config，模型主要用于解决人脸识别问题，所以需要将n
 模型训练的命令及参数配置如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1129,7 +1129,7 @@ sync_face.config，模型主要用于解决人脸识别问题，所以需要将n
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Bash" data-lang="Bash">python3 object_detection/model_main.py <span class="se">\ </span>
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash">python3 object_detection/model_main.py <span class="se">\ </span>
 --pipeline_config_path<span class="o">=</span> <span class="se">\
 </span><span class="se"></span>/mnt/FaceAI/models/research/object_detection/samples/configs/ssd_resnet50_v1_fpn_shared_box_predictor_640x640_coco14_sync_face.config 
 --model_dir<span class="o">=</span>/mnt/dataset/widerface/resnet50v1-fpn <span class="se">\
@@ -1150,7 +1150,7 @@ sync_face.config，模型主要用于解决人脸识别问题，所以需要将n
 <p>在模型结束后，使用tensorflow models提供的export_interence_graph.py脚本将已经训练好的模型打包成pb文件，命令与参数配置如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1160,7 +1160,7 @@ sync_face.config，模型主要用于解决人脸识别问题，所以需要将n
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Bash" data-lang="Bash">python3 object_detection/export_inference_graph.py <span class="se">\ </span>
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash">python3 object_detection/export_inference_graph.py <span class="se">\ </span>
 --input_type <span class="o">=</span>image_tensor <span class="se">\
 </span><span class="se"></span>--popeline_config_path<span class="o">=</span> <span class="se">\
 </span><span class="se"></span>/mnt/FaceAI/models/research/object_detection/samples/configs/ssd_resnet50_v1_fpn_shared_box_predictor_640x640_coco14_sync_face.config <span class="se">\
@@ -1174,7 +1174,7 @@ sync_face.config，模型主要用于解决人脸识别问题，所以需要将n
 <p>在模型测试中，利用graph构图后，使用opencv读取用于测试的人脸图片，如果阈值大于0.6则表示识别出人脸，对识别出人脸的图片进行人脸框绘制，并将结果显示出来，实现代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1191,7 +1191,7 @@ sync_face.config，模型主要用于解决人脸识别问题，所以需要将n
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">im_path_list</span><span class="p">:</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">im_path_list</span><span class="p">:</span>
 <span class="n">imdata</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
 <span class="n">sp</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">shape</span>
 <span class="n">imdata</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">imdata</span><span class="p">,</span> <span class="n">IMAGE_SIZE</span><span class="p">)</span>
@@ -1264,8 +1264,8 @@ sync_face.config，模型主要用于解决人脸识别问题，所以需要将n
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

@@ -8,10 +8,10 @@
         <title>TensorFlow基础串讲 - ieblYang</title><meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 TensorFlow基础串讲"><meta property="og:title" content="TensorFlow基础串讲" />
 <meta property="og:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 TensorFlow基础串讲" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ieblyang.tech/en/face04/" />
-<meta property="og:image" content="https://ieblyang.tech/en/face04/featured-image.png"/>
+<meta property="og:url" content="https://ieblyang.tech/en/face04/" /><meta property="og:image" content="https://ieblyang.tech/en/face04/featured-image.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-12T15:12:40+08:00" />
 <meta property="article:modified_time" content="2020-03-12T15:12:40+08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://ieblyang.tech/en/face04/featured-image.png"/>
 <meta name="twitter:title" content="TensorFlow基础串讲"/>
@@ -183,8 +183,8 @@
 <h2 id="1-什么是tensorflow">1 什么是TensorFlow？</h2>
 <ul>
 <li>Google开源的基于数据流图的科学计算库，适合用于机器学习、深度学习等人工智能领；</li>
-<li><a href="https://github.com/tensorflow">https://github.com/tensorflow</a></li>
-<li><a href="https://github.com/tensorflow/models">https://github.com/tensorflow/models</a></li>
+<li><a href="https://github.com/tensorflow" target="_blank" rel="noopener noreffer">https://github.com/tensorflow</a></li>
+<li><a href="https://github.com/tensorflow/models" target="_blank" rel="noopener noreffer">https://github.com/tensorflow/models</a></li>
 <li>Tensor(张量、数据)+Flow（数据流、数据流向）=TensorFlow（整个数据按一定的方向流动，在流动的同时需要进行一系列的运算）</li>
 </ul>
 <h2 id="2-tensorflow的架构">2 TensorFlow的架构</h2>
@@ -229,7 +229,7 @@
         title="Graph" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -276,7 +276,7 @@
 </span><span class="lnt">45
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#声明</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#声明</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_default_graph</span><span class="p">()</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -294,11 +294,11 @@
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">(</span><span class="n">graph</span><span class="o">=</span><span class="n">g2</span><span class="p">)</span> <span class="k">as</span> <span class="n">sess1</span><span class="p">:</span>
     <span class="n">x1_list</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">import_graph_def</span><span class="p">(</span><span class="n">g1</span><span class="o">.</span><span class="n">as_graph_def</span><span class="p">,</span>
             <span class="n">return_elements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;x1:0&#34;</span><span class="p">],</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">sess_1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">x1_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">x2</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sess_1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">x1_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">x2</span><span class="p">)))</span>
     
 <span class="c1">#保存pb</span>
 <span class="n">g1</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">write_graph</span><span class="p">(</span><span class="n">g1</span><span class="o">.</span><span class="n">as_graph_def</span><span class="p">(),</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;graph.pb&#39;</span><span class="p">,</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">write_graph</span><span class="p">(</span><span class="n">g1</span><span class="o">.</span><span class="n">as_graph_def</span><span class="p">(),</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;graph.pb&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1">#从pb中恢复Graph</span>
 <span class="c1">#load graph</span>
@@ -312,7 +312,7 @@
 <span class="n">c1</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">c1_tensor</span><span class="p">)</span> <span class="c1">#计算计算图相应节点的值</span>
 
 <span class="c1">#使用tensorboard可视化计算图结构</span>
-<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;input a&#39;</span><span class="p">)</span> <span class="c1">#定义常量</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;input b&#39;</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;maltiply_c&#39;</span><span class="p">)</span>
@@ -339,7 +339,7 @@
         title="Session" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -369,7 +369,7 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#创建和关闭会话</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#创建和关闭会话</span>
 <span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="c1">#常用</span>
 <span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">InteractiveSession</span><span class="p">()</span> <span class="c1">#交互式，对交互性要求比较高的脚本中，希望实时看到脚本运行的结果</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">Sess</span><span class="p">:</span> <span class="c1">#定义Session的作用域，和sess = tf.Session() 等价</span>
@@ -391,11 +391,11 @@
 <span class="n">add</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
     <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&#34;/cpu:0&#34;</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">ass</span><span class="p">,</span><span class="n">feed_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="p">:</span><span class="mi">1</span><span class="p">}))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">ass</span><span class="p">,</span><span class="n">feed_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="p">:</span><span class="mi">1</span><span class="p">}))</span>
         
 <span class="c1">#资源分配-控制GPU资源使用率</span>
 <span class="n">config</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">ConfigProto</span><span class="p">()</span>
-<span class="n">config</span><span class="o">.</span><span class="n">gpu_options</span><span class="o">.</span><span class="n">allow_growth</span> <span class="o">=</span> <span class="bp">True</span>  <span class="c1">#按需分配</span>
+<span class="n">config</span><span class="o">.</span><span class="n">gpu_options</span><span class="o">.</span><span class="n">allow_growth</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1">#按需分配</span>
 <span class="n">session</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
@@ -406,7 +406,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -421,9 +421,9 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#Tensor的定义</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#Tensor的定义</span>
 <span class="c1">#tf.constant() 常量</span>
-<span class="n">cons</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;testconst&#39;</span><span class="p">,</span><span class="n">verify_shape</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">cons</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;testconst&#39;</span><span class="p">,</span><span class="n">verify_shape</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="c1">#                  取值         类型             形状        名称              形状是否可以改变</span>
 
 <span class="c1">#tf.Variable() 变量</span>
@@ -431,7 +431,7 @@
 
 <span class="c1">#tf.placeholder() 占位符</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">144</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span><span class="bp">None</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span><span class="kc">None</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 
 <span class="c1">#tf.SparseTensor() 稀疏的张量        </span>
 </code></pre></td></tr></table>
@@ -445,7 +445,7 @@
 <p>通过feed为计算图注入值</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -453,18 +453,18 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">a</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="n">b</span><span class="p">:</span><span class="mi">4</span><span class="p">})</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> 
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="5-tensorflow在深度学习中使用的api">5 TensorFlow在深度学习中使用的API</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -493,7 +493,7 @@
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">tf.split(split_dam,num_split,value,name=&#39;split&#39;)
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">tf.split(split_dam,num_split,value,name=&#39;split&#39;)
 tf.concat(concat_dim,values,name=&#39;concat&#39;)
 tf.cast()
 tf.reshape()
@@ -534,13 +534,13 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 <h3 id="62-数据写入相关的api方法">6.2 数据写入相关的API方法</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">writer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">python_io</span><span class="o">.</span><span class="n">TFRecordWriter</span><span class="p">()</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">writer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">python_io</span><span class="o">.</span><span class="n">TFRecordWriter</span><span class="p">()</span>
 <span class="n">example</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Example</span><span class="p">()</span>
 <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="n">writer</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">SerializeToString</span><span class="p">())</span>
@@ -553,19 +553,19 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">string_input_producer</span><span class="err">、</span><span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">slice_input_producer</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">data库</span><span class="err">（动态图机制）</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">string_input_producer</span><span class="err">、</span><span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">slice_input_producer</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">data库</span><span class="err">（</span><span class="n">动态图机制</span><span class="err">）</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="7-tensorflow在深度学习中高级封装">7 TensorFlow在深度学习中高级封装</h2>
 <h3 id="71-tensorflow在深度学习中使用的api">7.1 TensorFlow在深度学习中使用的API</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -577,7 +577,7 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#slim</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#slim</span>
 <span class="n">slim</span> <span class="n">layers</span>
 <span class="n">slim</span><span class="o">.</span><span class="n">arg_scope</span>
 <span class="n">slim</span><span class="o">.</span><span class="n">data</span>
@@ -597,7 +597,7 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -613,17 +613,17 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">net</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span><span class="mi">4</span><span class="p">,</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">net</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span><span class="mi">4</span><span class="p">,</span>
                     <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span>
                     <span class="n">weights_initializer</span><span class="o">=</span>
                     <span class="n">tf</span><span class="o">.</span><span class="n">truncated_normal_initializer</span> <span class="p">(</span><span class="n">stddey</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span><span class="err">，</span>
                     <span class="n">weights_regularizer</span><span class="o">=</span>
-                    <span class="n">slim</span><span class="o">.</span><span class="mi">12</span><span class="n">_regularizer</span><span class="p">(</span><span class="mf">0.0005</span><span class="p">),</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;convl&#39;</span><span class="p">)</span>
+                    <span class="n">slim</span><span class="mf">.12</span><span class="n">_regularizer</span><span class="p">(</span><span class="mf">0.0005</span><span class="p">),</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;convl&#39;</span><span class="p">)</span>
 <span class="k">with</span> <span class="n">slim</span><span class="o">.</span><span class="n">arg_scope</span> <span class="p">([</span><span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span><span class="p">],</span><span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span>
                     <span class="n">weights_initializer</span><span class="o">=</span>
                     <span class="n">tf</span><span class="o">.</span><span class="n">truncated</span> <span class="n">normal</span> <span class="n">initializer</span><span class="p">(</span><span class="n">stddev</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
                     <span class="n">weights_regularizer</span><span class="o">=</span>
-                    <span class="n">slim</span><span class="o">.</span><span class="mi">12</span><span class="n">_regularizer</span><span class="p">(</span><span class="mf">0.</span> <span class="mo">0005</span><span class="p">)):</span>
+                    <span class="n">slim</span><span class="mf">.12</span><span class="n">_regularizer</span><span class="p">(</span><span class="mf">0.</span> <span class="mi">0005</span><span class="p">)):</span>
     <span class="n">net</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span> <span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="mi">64</span><span class="p">,[</span><span class="mi">11</span><span class="err">，</span> <span class="mi">11</span><span class="p">],</span> <span class="n">scope</span><span class="o">=</span><span class="s1">&#39;conv1&#39;</span><span class="p">)</span>
     <span class="n">net</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span> <span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="mi">128</span><span class="p">,[</span><span class="mi">11</span><span class="err">，</span> <span class="mi">11</span><span class="p">],</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;VALID&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span> <span class="s1">&#39;conv2&#39;</span><span class="p">)</span>
     <span class="n">net</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">net</span><span class="err">，</span> <span class="mi">256</span><span class="p">,[</span><span class="mi">11</span><span class="err">，</span> <span class="mi">11</span><span class="p">],</span> <span class="n">scope</span><span class="o">=</span> <span class="s1">&#39;conv3&#39;</span><span class="p">)</span>
@@ -632,7 +632,7 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </div><h3 id="73-batchnorm层使用技巧">7.3 BatchNorm层使用技巧</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -664,12 +664,12 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#slim.batch_norm()函数</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#slim.batch_norm()函数</span>
     <span class="n">normalizer_fn</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="n">batch_norm</span>
     <span class="n">normalizer_params</span> <span class="o">=</span> <span class="n">batch_norm_params</span>
 <span class="c1">#batch_norm_params</span>
     <span class="s1">&#39;is_training&#39;</span><span class="p">:</span><span class="n">is_training</span><span class="p">,</span>
-    <span class="s1">&#39;zero_debias_moving_mean&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span>
+    <span class="s1">&#39;zero_debias_moving_mean&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
     <span class="s1">&#39;decay&#39;</span><span class="p">:</span><span class="n">batch_norm_decay</span><span class="p">,</span>
     <span class="s1">&#39;epsilon&#39;</span><span class="p">:</span><span class="n">batch_norm_epsilon</span><span class="p">,</span>
     <span class="s1">&#39;scale&#39;</span><span class="p">:</span><span class="n">batch_nrom_scale</span><span class="p">,</span>
@@ -677,7 +677,7 @@ tf.train.start_queue_runners(sess=sess,coord=coord
     
 <span class="k">with</span> <span class="n">slim</span><span class="o">.</span><span class="n">arg_</span> <span class="n">scope</span><span class="p">(</span>
     <span class="p">[</span><span class="n">slim</span><span class="o">.</span><span class="n">conv2d</span><span class="p">],</span>
-    <span class="n">weights_regularizer</span><span class="o">=</span><span class="n">slim</span><span class="o">.</span><span class="mi">12</span><span class="n">_regularizer</span><span class="p">(</span><span class="n">weight_decay</span><span class="p">),</span>
+    <span class="n">weights_regularizer</span><span class="o">=</span><span class="n">slim</span><span class="mf">.12</span><span class="n">_regularizer</span><span class="p">(</span><span class="n">weight_decay</span><span class="p">),</span>
     <span class="n">weights_initializer</span><span class="o">=</span><span class="n">slim</span><span class="o">.</span><span class="n">variance_scaling_initializer</span><span class="p">(),</span>
     <span class="n">activation_fn</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">relu</span><span class="p">,</span>
     <span class="n">normalizer_fn</span><span class="o">=</span><span class="n">slim</span><span class="o">.</span><span class="n">batch_</span> <span class="n">norm</span><span class="p">,</span>
@@ -699,7 +699,7 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </div><h3 id="74-slim-net">7.4 slim net</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -708,7 +708,7 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.nets</span> <span class="kn">import</span> <span class="n">alexnet</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.nets</span> <span class="kn">import</span> <span class="n">alexnet</span>
 <span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.nets</span> <span class="kn">import</span> <span class="n">inception</span>
 <span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.nets</span> <span class="kn">import</span> <span class="n">oxerfeat</span>
 <span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.nets</span> <span class="kn">import</span> <span class="n">resnet_utils</span>
@@ -736,7 +736,7 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -748,8 +748,8 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">weights_</span> <span class="n">regularizer</span> <span class="o">=</span> <span class="n">slim</span><span class="o">.</span><span class="mi">12</span> <span class="n">regularizer</span> <span class="p">(</span><span class="mf">0.0005</span><span class="p">)</span> <span class="p">)</span>
-<span class="n">loss_val</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="mi">12</span><span class="n">_loss</span> <span class="p">(</span><span class="n">var</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">weights_</span> <span class="n">regularizer</span> <span class="o">=</span> <span class="n">slim</span><span class="mf">.12</span> <span class="n">regularizer</span> <span class="p">(</span><span class="mf">0.0005</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">loss_val</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="mf">.12</span><span class="n">_loss</span> <span class="p">(</span><span class="n">var</span><span class="p">)</span>
 <span class="n">regularization_loss</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">add_n</span><span class="p">(</span>
     <span class="n">slim</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">get_regularization_losses</span><span class="p">()</span>
 <span class="p">)</span>
@@ -773,17 +773,17 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">piecewise_constant</span> <span class="err">分段常数衰减</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">inverse_time_decay</span> <span class="err">反时限衰减</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">polynomial_decay</span> <span class="err">多项式衰减</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">exponential_decay</span> <span class="err">指数衰减</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">piecewise_constant</span> <span class="n">分段常数衰减</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">inverse_time_decay</span> <span class="n">反时限衰减</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">polynomial_decay</span> <span class="n">多项式衰减</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">exponential_decay</span> <span class="n">指数衰减</span>
 <span class="o">...</span>
 </code></pre></td></tr></table>
 </div>
@@ -795,13 +795,13 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">mae_</span> <span class="n">value_</span> <span class="n">op</span><span class="p">,</span> <span class="n">mae_</span> <span class="n">update</span> <span class="n">_op</span> <span class="o">=</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">mae_</span> <span class="n">value_</span> <span class="n">op</span><span class="p">,</span> <span class="n">mae_</span> <span class="n">update</span> <span class="n">_op</span> <span class="o">=</span>
     <span class="n">slim</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">streaming_mean_absolute_error</span><span class="p">(</span>
         <span class="n">predictions</span><span class="p">,</span> <span class="n">labels</span>
         <span class="p">)</span>
@@ -813,7 +813,7 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -823,7 +823,7 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">slim</span><span class="o">.</span><span class="n">evaluation</span><span class="o">.</span><span class="n">evaluation_1oop</span><span class="p">(</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">slim</span><span class="o">.</span><span class="n">evaluation</span><span class="o">.</span><span class="n">evaluation_1oop</span><span class="p">(</span>
     <span class="s1">&#39;local&#39;</span><span class="p">,</span>
     <span class="n">checkpoint_dir</span><span class="p">,</span>
     <span class="mi">1</span><span class="n">og_dir</span><span class="p">,</span>
@@ -843,7 +843,7 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -852,7 +852,7 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.data</span> <span class="kn">import</span> <span class="n">data_decoder</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.data</span> <span class="kn">import</span> <span class="n">data_decoder</span>
 <span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.data</span> <span class="kn">import</span> <span class="n">data_provider</span>
 <span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.data</span> <span class="kn">import</span> <span class="n">dataset</span>
 <span class="kn">from</span> <span class="nn">tensorflow.contrib.slim.python.slim.data</span> <span class="kn">import</span> <span class="n">dataset_data_provider</span>
@@ -882,7 +882,7 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -896,7 +896,7 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="s2">&#34;&#34;&#34;图像亮度[-1, 1]&#34;&#34;&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="s2">&#34;&#34;&#34;图像亮度[-1, 1]&#34;&#34;&#34;</span>
 <span class="c1"># img_data = tf.image.adjust_brightness(img_data, delta=-.7) </span>
 <span class="s2">&#34;&#34;&#34;随机图像亮度&#34;&#34;&#34;</span>
 <span class="c1"># img_data = tf.image.random_brightness(img_data, max_delta=0.6)</span>
@@ -914,12 +914,12 @@ tf.train.start_queue_runners(sess=sess,coord=coord
 <h3 id="91-tensorboard可以进行网络可视化训练中间结果可视化">9.1 Tensorboard可以进行网络可视化/训练中间结果可视化</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Bash" data-lang="Bash">pip3 install tensorboard
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash">pip3 install tensorboard
 tensorboard --logdir logs
 <span class="c1">#Scalars/Graph/lmage/Histogram/Distributions</span>
 </code></pre></td></tr></table>
@@ -927,7 +927,7 @@ tensorboard --logdir logs
 </div><h3 id="92-tfsummary">9.2 tf.summary</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -936,7 +936,7 @@ tensorboard --logdir logs
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">writer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">FileWriter</span><span class="p">(</span><span class="s2">&#34;logs/&#34;</span><span class="p">,</span> <span class="n">sess</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="n">writer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">FileWriter</span><span class="p">(</span><span class="s2">&#34;logs/&#34;</span><span class="p">,</span> <span class="n">sess</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
 <span class="n">tf</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">histogram</span><span class="s1">&#39;bias&#39;</span><span class="p">,</span><span class="n">bias</span><span class="p">)</span>
 <span class="n">tf</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">scalar</span><span class="p">(</span><span class="s1">&#39;loss&#39;</span><span class="p">,</span><span class="n">loss</span><span class="p">)</span>
 <span class="n">tf</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">image</span><span class="p">(</span> <span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="n">image</span><span class="p">)</span>
@@ -975,8 +975,8 @@ tensorboard --logdir logs
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

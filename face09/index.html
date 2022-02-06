@@ -8,10 +8,10 @@
         <title>人脸匹配业务理论及实现 - ieblYang</title><meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配业务理论及实现"><meta property="og:title" content="人脸匹配业务理论及实现" />
 <meta property="og:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 人脸匹配业务理论及实现" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ieblyang.tech/face09/" />
-<meta property="og:image" content="https://ieblyang.tech/face09/featured-image.png"/>
+<meta property="og:url" content="https://ieblyang.tech/face09/" /><meta property="og:image" content="https://ieblyang.tech/face09/featured-image.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-14T13:07:40+08:00" />
 <meta property="article:modified_time" content="2021-01-16T11:31:40+08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://ieblyang.tech/face09/featured-image.png"/>
 <meta name="twitter:title" content="人脸匹配业务理论及实现"/>
@@ -430,7 +430,7 @@ $$D_M(x)=\sqrt{(x−μ)^TS^{-1}(x−μ)}$$</li>
     </div>
 <h4 id="413-loss设计">4.1.3 Loss设计</h4>
 <p>$$\displaystyle\sum_{i=1}^N[\text{\textbardbl}f(x{_i^a})-f(x{_i^p})\text{\textbardbl}{_2^2}
--\text{\textbardbl}f(x{_i^a})-f(x{_i^n})\text{\textbardbl}{_2^2}+\alpha]_+$$</p>
+-\text{\textbardbl}f(x{_i^a})-f(x{_i^n})\text{\textbardbl}{<em>2^2}+\alpha]</em>+$$</p>
 <div class="details admonition note open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-pencil-alt fa-fw"></i>笔记<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -505,9 +505,9 @@ $$D_M(x)=\sqrt{(x−μ)^TS^{-1}(x−μ)}$$</li>
             <div class="admonition-content"><ul>
 <li>源码地址：
 <ul>
-<li><a href="https://github.com/davidsandberg/facenet">https://github.com/davidsandberg/facenet</a></li>
+<li><a href="https://github.com/davidsandberg/facenet" target="_blank" rel="noopener noreffer">https://github.com/davidsandberg/facenet</a></li>
 <li>TensorFlow1.12、Ubuntu16.04、Python3.5</li>
-<li><a href="https://github.com/VisualComputingInstitute/triplet-reid">https://github.com/VisualComputingInstitute/triplet-reid</a></li>
+<li><a href="https://github.com/VisualComputingInstitute/triplet-reid" target="_blank" rel="noopener noreffer">https://github.com/VisualComputingInstitute/triplet-reid</a></li>
 </ul>
 </li>
 </ul>
@@ -516,7 +516,7 @@ $$D_M(x)=\sqrt{(x−μ)^TS^{-1}(x−μ)}$$</li>
     </div>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -527,7 +527,7 @@ $$D_M(x)=\sqrt{(x−μ)^TS^{-1}(x−μ)}$$</li>
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Bash" data-lang="Bash"><span class="c1">#下载FaceNet</span>
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="c1">#下载FaceNet</span>
 git clone https://github.com/davidsandberg/facenet
 <span class="c1"># 进入facenet目录下</span>
 <span class="nb">cd</span> facenet
@@ -576,7 +576,7 @@ sudo pip3 install -r requirements.txt
 <h5 id="1方法一">1.方法一</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -588,7 +588,7 @@ sudo pip3 install -r requirements.txt
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Bash" data-lang="Bash"><span class="c1">#下载FaceNet源码</span>
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="c1">#下载FaceNet源码</span>
 git clone https://github.com/davidsandberg/facenet
 <span class="c1"># 进入facenet目录下</span>
 <span class="nb">cd</span> facenet
@@ -612,16 +612,16 @@ python3 src/align/align_dataset_mtcnn.py lfw lfw_160--image_size <span class="m"
 <p>LFW数据集的处理：在使用FaceNet框架时需要将图片裁剪到<code>160*160</code>，系统使用FaceNet自带的<code>align_dataset_mtcnn.py</code>脚本对LFW数据集中的人脸图片进行处理。命令和参数的配置如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Bash" data-lang="Bash">python3 src/align/align_dataset_mtcnn.py /mnt/dataset/LFW  /mnt/dataset/LFW-160  --image_size <span class="m">160</span> --margin <span class="m">32</span>  --random_order  --gpu_memory_fraction 0.25
+<pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash">python3 src/align/align_dataset_mtcnn.py /mnt/dataset/LFW  /mnt/dataset/LFW-160  --image_size <span class="m">160</span> --margin <span class="m">32</span>  --random_order  --gpu_memory_fraction 0.25
 </code></pre></td></tr></table>
 </div>
 </div><p>CASIA-FaceV5亚洲人脸数据集的处理：使用dlib库创建人脸检测器，利用人脸检测器对数据集中的图片依次进行检测，将未检测出人脸的图片过滤掉，成功检测出人脸的图片先获取到检测出的人脸位置，对检测出的人脸框进行扩充，这样做可以保证获取到的人脸是一张完整的人脸，根据扩充后的坐标将图片裁剪为160 * 160大小，裁剪后的图片根据不同的人存储到相对应的文件夹下，主要代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -650,10 +650,10 @@ python3 src/align/align_dataset_mtcnn.py lfw lfw_160--image_size <span class="m"
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">for</span> <span class="n">idx_folder</span> <span class="ow">in</span> <span class="n">im_folder_list</span><span class="p">:</span>
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="k">for</span> <span class="n">idx_folder</span> <span class="ow">in</span> <span class="n">im_folder_list</span><span class="p">:</span>
     <span class="n">im_items_list</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">idx_folder</span> <span class="o">+</span> <span class="s2">&#34;/*&#34;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&#34;{}/{}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">crop_im_path</span><span class="p">,</span> <span class="n">idx</span><span class="p">)):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&#34;{}/{}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">crop_im_path</span><span class="p">,</span> <span class="n">idx</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">crop_im_path</span><span class="p">,</span> <span class="n">idx</span><span class="p">)):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">crop_im_path</span><span class="p">,</span> <span class="n">idx</span><span class="p">))</span>
     <span class="n">idx_im</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">im_path</span> <span class="ow">in</span> <span class="n">im_items_list</span><span class="p">:</span>
         <span class="n">im_data</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">im_path</span><span class="p">)</span>
@@ -673,7 +673,7 @@ python3 src/align/align_dataset_mtcnn.py lfw lfw_160--image_size <span class="m"
         <span class="n">y2</span> <span class="o">=</span> <span class="n">y2</span>
         <span class="n">im_crop_data</span> <span class="o">=</span> <span class="n">im_data</span><span class="p">[</span><span class="n">y1</span><span class="p">:</span><span class="n">y2</span><span class="p">,</span><span class="n">x1</span><span class="p">:</span><span class="n">x2</span><span class="p">]</span>
         <span class="n">im_data</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">im_crop_data</span><span class="p">,</span> <span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="mi">160</span><span class="p">))</span>
-        <span class="n">im_save_path</span> <span class="o">=</span> <span class="s2">&#34;{}/{}/{}_{}.jpg&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">crop_im_path</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="s2">&#34;</span><span class="si">%04d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">idx_im</span><span class="p">)</span>
+        <span class="n">im_save_path</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">.jpg&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">crop_im_path</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="s2">&#34;</span><span class="si">%04d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">idx_im</span><span class="p">)</span>
         <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">im_save_path</span><span class="p">,</span> <span class="n">im_data</span><span class="p">)</span>
         <span class="n">idx_im</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -683,13 +683,13 @@ python3 src/align/align_dataset_mtcnn.py lfw lfw_160--image_size <span class="m"
 <p>人脸匹配模型训练采用FaceNet提供的<code>train_tripletloss.py</code>脚本，在使用<code>tripletloss</code>训练时，需要修改数据的存放路径，其余参数采用默认参数，相关代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">    parser.add_argument(&#39;--data_dir&#39;, type=str,
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    parser.add_argument(&#39;--data_dir&#39;, type=str,
         help=&#39;Path to the data directory containing aligned face patches.&#39;,
         default=&#39;/mnt/dataset/64_CASIA-FaceV5/crop_image_160&#39;
                 &#39;&#39;)
@@ -766,8 +766,8 @@ python3 src/align/align_dataset_mtcnn.py lfw lfw_160--image_size <span class="m"
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

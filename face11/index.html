@@ -8,10 +8,10 @@
         <title>活体检测业务实战 - ieblYang</title><meta name="Description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 活体检测业务实战"><meta property="og:title" content="活体检测业务实战" />
 <meta property="og:description" content="基于TensorFlow的人脸识别智能小程序的设计与实现 活体检测业务实战" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ieblyang.tech/face11/" />
-<meta property="og:image" content="https://ieblyang.tech/face11/featured-image.png"/>
+<meta property="og:url" content="https://ieblyang.tech/face11/" /><meta property="og:image" content="https://ieblyang.tech/face11/featured-image.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-22T10:27:40+08:00" />
 <meta property="article:modified_time" content="2020-01-16T12:22:40+08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://ieblyang.tech/face11/featured-image.png"/>
 <meta name="twitter:title" content="活体检测业务实战"/>
@@ -259,7 +259,7 @@
 <p>系统经过多次实际测试后，选取第67和第63个点用于张闭嘴检测，并设定阈值为0.03选取图6.7中的第41、第37、第46和第44个点用于睁闭眼状态的检测，并设定阈值为0.03，将识别的结果以emoji图片和文字两种形式，实时显示在页面中，核心代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -282,7 +282,7 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">var</span> <span class="nx">diff1</span> <span class="o">=</span> <span class="nx">pos</span><span class="p">[</span><span class="mi">67</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">]</span> <span class="o">-</span> <span class="nx">pos</span><span class="p">[</span><span class="mi">63</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">var</span> <span class="nx">diff1</span> <span class="o">=</span> <span class="nx">pos</span><span class="p">[</span><span class="mi">67</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">]</span> <span class="o">-</span> <span class="nx">pos</span><span class="p">[</span><span class="mi">63</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
 <span class="kd">var</span> <span class="nx">diff2</span> <span class="o">=</span> <span class="nx">pos</span><span class="p">[</span><span class="mi">41</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">]</span> <span class="o">-</span> <span class="nx">pos</span><span class="p">[</span><span class="mi">37</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
 <span class="kd">var</span> <span class="nx">diff3</span> <span class="o">=</span> <span class="nx">pos</span><span class="p">[</span><span class="mi">46</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">]</span> <span class="o">-</span> <span class="nx">pos</span><span class="p">[</span><span class="mi">44</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
 <span class="k">if</span><span class="p">(</span><span class="nx">diff1</span> <span class="o">&gt;</span> <span class="mf">0.03</span><span class="p">){</span>
@@ -335,8 +335,8 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
