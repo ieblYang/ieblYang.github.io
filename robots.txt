@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://ieblyang.tech/en/sitemap.xml
+Sitemap: https://ieblyang.tech/sitemap.xml
