@@ -4,12 +4,12 @@
         <link>https://ieblyang.tech/tags/shortcodes/</link>
         <description>Shortcodes - 标签 - ieblYang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
-            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 11 Mar 2020 16:29:41 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/tags/shortcodes/" rel="self" type="application/rss+xml" /><item>
-    <title>Extended Shortcodes</title>
-    <link>https://ieblyang.tech/index.en/</link>
-    <pubDate>Wed, 11 Mar 2020 16:29:41 &#43;0800</pubDate>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 11 Mar 2020 16:29:59 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/tags/shortcodes/" rel="self" type="application/rss+xml" /><item>
+    <title>扩展 Shortcodes</title>
+    <link>https://ieblyang.tech/extended-shortcodes/</link>
+    <pubDate>Wed, 11 Mar 2020 16:29:59 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://ieblyang.tech/index.en/</guid>
-    <description><![CDATA[<p><strong>LoveIt</strong> theme provides multiple shortcodes on top of built-in ones in Hugo.</p>]]></description>
+    <guid>https://ieblyang.tech/extended-shortcodes/</guid>
+    <description><![CDATA[<p><strong>LoveIt</strong> 主题在 Hugo 内置的 shortcode 的基础上提供多个扩展的 shortcode.</p>]]></description>
 </item></channel>
 </rss>

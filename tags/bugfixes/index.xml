@@ -1,0 +1,36 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>BUG修复 - 标签 - ieblYang</title>
+        <link>https://ieblyang.tech/tags/bugfixes/</link>
+        <description>BUG修复 - 标签 - ieblYang</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 15 Jan 2022 20:55:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/tags/bugfixes/" rel="self" type="application/rss+xml" /><item>
+    <title>解决 ModuleNotFoundError: No module named &#39;MySQLdb&#39; 的报错</title>
+    <link>https://ieblyang.tech/bug04/</link>
+    <pubDate>Sat, 15 Jan 2022 20:55:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/bug04/</guid>
+    <description><![CDATA[<p>解决 ModuleNotFoundError: No module named &lsquo;MySQLdb&rsquo; 的报错</p>]]></description>
+</item><item>
+    <title>解决 ModuleNotFoundError: No module named &#39;flask._compat&#39;的报错</title>
+    <link>https://ieblyang.tech/bug03/</link>
+    <pubDate>Sat, 15 Jan 2022 20:46:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/bug03/</guid>
+    <description><![CDATA[<p>解决 ModuleNotFoundError: No module named &lsquo;flask._compat&rsquo; 的报错</p>]]></description>
+</item><item>
+    <title>解决AttributeError: module &#39;scipy.misc&#39; ···  &#39;imread&#39;的报错</title>
+    <link>https://ieblyang.tech/bug02/</link>
+    <pubDate>Sun, 15 Mar 2020 20:46:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/bug02/</guid>
+    <description><![CDATA[<p>解决AttributeError: module &lsquo;scipy.misc&rsquo; has no attribute &lsquo;imread&rsquo;的报错</p>]]></description>
+</item><item>
+    <title>解决ValueError: Object arrays ··· allow_pickle=False的报错</title>
+    <link>https://ieblyang.tech/bug01/</link>
+    <pubDate>Sun, 15 Mar 2020 20:30:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/bug01/</guid>
+    <description><![CDATA[<p>解决ValueError: Object arrays cannot be loaded when allow_pickle=False的报错</p>]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>文档 - 标签 - ieblYang</title>
+        <link>https://ieblyang.tech/tags/documentation/</link>
+        <description>文档 - 标签 - ieblYang</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://ieblyang.tech/tags/documentation/" rel="self" type="application/rss+xml" /></channel>
+</rss>

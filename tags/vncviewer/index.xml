@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
             <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 12 Mar 2020 08:13:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/tags/vncviewer/" rel="self" type="application/rss+xml" /><item>
     <title>VNCViewer远程阿里云ECS服务器</title>
-    <link>https://ieblyang.tech/index.en/</link>
+    <link>https://ieblyang.tech/vncviever-aliyun-ecs/</link>
     <pubDate>Thu, 12 Mar 2020 08:13:40 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://ieblyang.tech/index.en/</guid>
+    <guid>https://ieblyang.tech/vncviever-aliyun-ecs/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/ubuntu/vnc-featured-image.png" referrerpolicy="no-referrer">
             </div><p>这篇文章展示了通过VNCViewer远程控制阿里云ECS服务器的安装配置操作.</p>]]></description>

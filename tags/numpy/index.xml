@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
             <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 15 Mar 2020 20:30:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/tags/numpy/" rel="self" type="application/rss+xml" /><item>
     <title>解决ValueError: Object arrays ··· allow_pickle=False的报错</title>
-    <link>https://ieblyang.tech/index.en/</link>
+    <link>https://ieblyang.tech/bug01/</link>
     <pubDate>Sun, 15 Mar 2020 20:30:40 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://ieblyang.tech/index.en/</guid>
+    <guid>https://ieblyang.tech/bug01/</guid>
     <description><![CDATA[<p>解决ValueError: Object arrays cannot be loaded when allow_pickle=False的报错</p>]]></description>
 </item></channel>
 </rss>

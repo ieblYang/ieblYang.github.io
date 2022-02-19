@@ -1,0 +1,64 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>微信小程序 - 分类 - ieblYang</title>
+        <link>https://ieblyang.tech/categories/miniprogram/</link>
+        <description>微信小程序 - 分类 - ieblYang</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 19 Jan 2022 21:03:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/categories/miniprogram/" rel="self" type="application/rss+xml" /><item>
+    <title>微信小程序实现长按触发某一事件</title>
+    <link>https://ieblyang.tech/miniprogram08/</link>
+    <pubDate>Wed, 19 Jan 2022 21:03:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/miniprogram08/</guid>
+    <description><![CDATA[微信小程序实现长按触发某一事件]]></description>
+</item><item>
+    <title>微信小程序实现左右滑动切换页面</title>
+    <link>https://ieblyang.tech/miniprogram07/</link>
+    <pubDate>Tue, 18 Jan 2022 19:03:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/miniprogram07/</guid>
+    <description><![CDATA[微信小程序实现左右滑动切换页面]]></description>
+</item><item>
+    <title>微信小程序实现聊天输入框随键盘弹起，内容不被顶起</title>
+    <link>https://ieblyang.tech/miniprogram06/</link>
+    <pubDate>Tue, 18 Jan 2022 19:03:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/miniprogram06/</guid>
+    <description><![CDATA[微信小程序实现聊天输入框随键盘弹起，内容不被顶起]]></description>
+</item><item>
+    <title>微信小程序之tabBar（官方原生与官方自定义）</title>
+    <link>https://ieblyang.tech/miniprogram05/</link>
+    <pubDate>Mon, 17 Jan 2022 20:03:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/miniprogram05/</guid>
+    <description><![CDATA[微信小程序之tabBar（官方原生与官方自定义）]]></description>
+</item><item>
+    <title>微信小程序给图片添加阴影效果</title>
+    <link>https://ieblyang.tech/miniprogram04/</link>
+    <pubDate>Sun, 16 Jan 2022 21:03:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/miniprogram04/</guid>
+    <description><![CDATA[微信小程序给图片添加阴影效果]]></description>
+</item><item>
+    <title>微信小程序自定义showToast图片</title>
+    <link>https://ieblyang.tech/miniprogram03/</link>
+    <pubDate>Wed, 06 May 2020 21:03:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/miniprogram03/</guid>
+    <description><![CDATA[微信小程序自定义showToast图片]]></description>
+</item><item>
+    <title>微信小程序函数节流，防止多次点击跳转</title>
+    <link>https://ieblyang.tech/miniprogram02/</link>
+    <pubDate>Mon, 20 Apr 2020 13:53:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/miniprogram02/</guid>
+    <description><![CDATA[微信小程序函数节流，防止多次点击跳转]]></description>
+</item><item>
+    <title>结合官方文档，入门微信小程序</title>
+    <link>https://ieblyang.tech/miniprogram01/</link>
+    <pubDate>Sat, 21 Mar 2020 13:53:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/miniprogram01/</guid>
+    <description><![CDATA[<p>结合微信小程序官方文档，学习小程序基础必背知识</p>]]></description>
+</item></channel>
+</rss>
