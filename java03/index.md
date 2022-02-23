@@ -1,4 +1,4 @@
-# Java 继承、接口和抽象类
+# [Java核心技术] 继承、接口和抽象类
 
 
 Java 核心技术读书笔记——Java 继承、接口和抽象类
@@ -95,7 +95,8 @@ public class Woman extends Human{
   * 实现多个接口，必须实现接口中所定义的所有方法；
   * 一个类的方法，只会在当前类或者父类中定义，肯定不会在所实现的父类接口中定义
 * 接口不算类，或者说是“特殊”的类
-* 接口可以继承多个多个接口，没有实现的方法将会叠加
+* 接口可以继承多个接口，没有实现的方法将会叠加
+* 类实现接口，就必须实现所有未实现的方法，如果没有全部实现，那么只能成为一个抽象类
 * 接口里可以定义变量，但是一般是常量
 
 * `extends` 必须写在 `implements` 前面 
@@ -134,8 +135,190 @@ public class Woman extends Human{
   }
 
   ```
-* 
+* 抽象类和接口的相同点：两者都不能被实例化，不能new操作
+* 抽象类和接口的不同点：
+  * 抽象类`abstradt`，接口`interface`
+  * 抽象类可以有部分方法实现，接口所有方法不能有实现
+  * 一个类只能继承（`extends`）一个（抽象）类，实现（`implements`）多个接口
+  * 接口可以继承（extends）多个接口
+  * 抽象类有构造函数，接口没有构造函数
+  * 抽象类可以有`main`，也能运行，接口没有main函数
+  * 抽象类方法可以有`private`/`protected`，接口方法都是`public`
+
 ## 3 转型、多态和契约设计
 
+### 3.1 类转型
 
+* 变量支持相互转化，比如 `int a = (int)3.5`;
+* 类型可以相互转型，但是只限制于有继承关系的类。
+  * 子类可以转换成父类（向上转型），而父类不可以转换为子类（向下转型）。
+    ```Java
+    Human obj1 = new Man(); // Ok, Man extends Human
+    Man obj2 = new Human(); // illegal, Man is a derived class Human
+    ```
+  * 父类转子类，有一种特殊情况例外，即父类本身就是从子类转化而来的。
+    ```Java
+    Human obj1 = new Man(); // Ok, Man extends Human
+    Man obj2 = (Man) obj1; // Ok, because obj1 is born from Man class
+    ```
+
+### 3.2 多态
+
+* 类型转换，带来的作用就是**多态**。
+* 子类继承父类的所有方法，但子类可以定义一个名字、参数和父类一样的方法，这种行为就是**重写**`（覆盖，覆写）`
+* 子类的方法优先级**高于**父类。
+  ```Java
+  // Human.java
+  public class Human {
+  int height;    
+    int weight;
+    
+    public void eat()  {
+      System.out.println("I can eat!");
+    }
+  }
+
+  // Man.java
+  public class Man extends Human {
+    public void eat() {
+      System.out.println("I can eat more");
+    }
+    
+    public void plough() { }
+
+    public static void main(String[] a) {
+      Man obj1 = new Man();
+      obj1.eat();   // call Man.eat()
+      Human obj2 =  (Human) obj1;  // 类转型 obj1 -> obj2
+      obj2.eat();   // call Man.eat()
+      Man obj3 = (Man) obj2;
+      obj3.eat();   // call Man.eat()
+    }
+  }
+  ```
+* 多态的作用
+  * 以统一的接口来操纵某一类中不同对象的动态行为
+  * 对象之间的解耦
+
+  ```Java
+  // Animal.java
+  public interface Animal {
+    public void eat();
+    public void move();
+  }
+
+  // Cat.java
+  public class Cat implements Animal
+  {
+    public void eat() {
+      System.out.println("Cat: I can eat");
+    }
+    
+    public void move(){
+      System.out.println("Cat: I can move");
+    }
+  }
+
+  // Dog.java
+  public class Dog implements Animal
+  {
+    public void eat() {
+      System.out.println("Dog: I can eat");
+    }
+    
+    public void move() {
+      System.out.println("Dog: I can move");
+    }
+  }
+
+  // AnimalTest.java
+  public class AnimalTest {
+    
+    public static void haveLunch(Animal a)  {
+      a.eat();
+    }
+    
+    public static void main(String[] args) {
+      Animal[] as = new Animal[4];
+      as[0] = new Cat();
+      as[1] = new Dog();
+      as[2] = new Cat();
+      as[3] = new Dog();
+      
+      for(int i=0;i<as.length;i++) {
+        as[i].move();  //调用每个元素的自身的move方法
+      }
+      for(int i=0;i<as.length;i++) {
+        haveLunch(as[i]);
+      }
+      
+      haveLunch(new Cat());  //Animal  a = new Cat();  haveLunch(a);
+      haveLunch(new Dog());
+      haveLunch(
+          new Animal()
+          {
+            public void eat() {
+              System.out.println("I can eat from an anonymous class");            
+            }
+            public void move() {
+              System.out.println("I can move from an anonymous class");
+            }
+            
+          });
+    }
+
+    public static void huveLunch(Animal a){
+      a.eat();
+    }
+
+  }
+
+  /**
+   * 
+   * 运行结果：
+   * Dog: I can move
+   * Cat: I can move
+   * Dog: I can move
+   * Cat: I can eat
+   * Dog: I can eat
+   * Cat: I can eat
+   * Dog: I can eat
+   * Cat: I can eat
+   * Dog: I can eat
+   * I can eat from an anonymous class
+   * 
+   */
+  ```
+
+### 3.3 契约设计
+
+* 契约：规定规范了对象应该包含的行为方法
+* 接口定义了方法的名称、参数和返回值，规范了派生类的行为
+* 基于接口，利用转型和多态，不影响真正方法的调用，成功地将调用类和被调用类解耦
+* 被调用类（`haveLunch`只和`Animal`有联系）
+  ```Java
+  // Animal 是一个接口，里面所有的方法都是空的，没有方法体。
+  public static void huveLunch(Animal a){
+        a.eat();
+      }
+  ```
+* 调用类
+  ```Java
+  haveLunch(new Cat());  //Animal  a = new Cat();  haveLunch(a);
+  haveLunch(new Dog());
+  haveLunch(
+      // 匿名类只在此句用一次就结束了，
+      // 只需要传进来一个实现Animal接口的对象，就可以运行haveLunch方法。
+      new Animal()
+      {
+        public void eat() {
+          System.out.println("I can eat from an anonymous class");            
+        }
+        public void move() {
+          System.out.println("I can move from an anonymous class");
+        }
+        
+      });
+
+  ```
 

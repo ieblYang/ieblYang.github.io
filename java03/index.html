@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Java 继承、接口和抽象类 - ieblYang</title><meta name="Description" content="Java 继承、接口和抽象类"><meta property="og:title" content="Java 继承、接口和抽象类" />
-<meta property="og:description" content="Java 继承、接口和抽象类" />
+        <title>[Java核心技术] 继承、接口和抽象类 - ieblYang</title><meta name="Description" content="[Java核心技术] 继承、接口和抽象类"><meta property="og:title" content="[Java核心技术] 继承、接口和抽象类" />
+<meta property="og:description" content="[Java核心技术] 继承、接口和抽象类" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ieblyang.tech/java03/" /><meta property="og:image" content="https://ieblyang.tech/java03/featured-image.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-01-11T10:34:40+08:00" />
@@ -14,16 +14,16 @@
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://ieblyang.tech/java03/featured-image.png"/>
-<meta name="twitter:title" content="Java 继承、接口和抽象类"/>
-<meta name="twitter:description" content="Java 继承、接口和抽象类"/>
+<meta name="twitter:title" content="[Java核心技术] 继承、接口和抽象类"/>
+<meta name="twitter:description" content="[Java核心技术] 继承、接口和抽象类"/>
 <meta name="application-name" content="ieblYang">
 <meta name="apple-mobile-web-app-title" content="ieblYang"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ieblyang.tech/java03/" /><link rel="prev" href="https://ieblyang.tech/db02/" /><link rel="next" href="https://ieblyang.tech/bug03/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ieblyang.tech/java03/" /><link rel="prev" href="https://ieblyang.tech/db02/" /><link rel="next" href="https://ieblyang.tech/java04/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Java 继承、接口和抽象类",
+        "headline": "[Java核心技术] 继承、接口和抽象类",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -33,13 +33,13 @@
                             "url": "https:\/\/ieblyang.tech\/java03\/featured-image.png",
                             "width":  1420 ,
                             "height":  708 
-                        }],"genre": "posts","keywords": "Java, JavaVolume","wordcount":  1310 ,
+                        }],"genre": "posts","keywords": "Java, JavaVolume","wordcount":  2570 ,
         "url": "https:\/\/ieblyang.tech\/java03\/","datePublished": "2022-01-11T10:34:40+08:00","dateModified": "2022-01-11T10:34:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "ieblYang","logo": "https:\/\/ieblyang.tech\/images\/avatar.png"},"author": {
                 "@type": "Person",
                 "name": "ieblYang"
-            },"description": "Java 继承、接口和抽象类"
+            },"description": "[Java核心技术] 继承、接口和抽象类"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -108,10 +108,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Java 继承、接口和抽象类</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">[Java核心技术] 继承、接口和抽象类</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://ieblyang.tech/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ieblYang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-01-11">2022-01-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1310 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/java03/" class="leancloud_visitors" data-flag-title="Java 继承、接口和抽象类">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-01-11">2022-01-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2570 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/java03/" class="leancloud_visitors" data-flag-title="[Java核心技术] 继承、接口和抽象类">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="featured-image"><img
@@ -121,7 +121,7 @@
         data-srcset="/java03/featured-image.png, /java03/featured-image.png 1.5x, /java03/featured-image.png 2x"
         data-sizes="auto"
         alt="/java03/featured-image.png"
-        title="Java 继承、接口和抽象类" /></div><div class="details toc" id="toc-static"  kept="">
+        title="[Java核心技术] 继承、接口和抽象类" /></div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
@@ -133,6 +133,13 @@
       <ul>
         <li><a href="#21-抽象类">2.1 抽象类</a></li>
         <li><a href="#22-接口">2.2 接口</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-转型多态和契约设计">3 转型、多态和契约设计</a>
+      <ul>
+        <li><a href="#31-类转型">3.1 类转型</a></li>
+        <li><a href="#32-多态">3.2 多态</a></li>
+        <li><a href="#33-契约设计">3.3 契约设计</a></li>
       </ul>
     </li>
   </ul>
@@ -294,7 +301,10 @@
 <p>接口不算类，或者说是“特殊”的类</p>
 </li>
 <li>
-<p>接口可以继承多个多个接口，没有实现的方法将会叠加</p>
+<p>接口可以继承多个接口，没有实现的方法将会叠加</p>
+</li>
+<li>
+<p>类实现接口，就必须实现所有未实现的方法，如果没有全部实现，那么只能成为一个抽象类</p>
 </li>
 <li>
 <p>接口里可以定义变量，但是一般是常量</p>
@@ -374,7 +384,375 @@
 </code></pre></td></tr></table>
 </div>
 </div></li>
-<li></li>
+<li>
+<p>抽象类和接口的相同点：两者都不能被实例化，不能new操作</p>
+</li>
+<li>
+<p>抽象类和接口的不同点：</p>
+<ul>
+<li>抽象类<code>abstradt</code>，接口<code>interface</code></li>
+<li>抽象类可以有部分方法实现，接口所有方法不能有实现</li>
+<li>一个类只能继承（<code>extends</code>）一个（抽象）类，实现（<code>implements</code>）多个接口</li>
+<li>接口可以继承（extends）多个接口</li>
+<li>抽象类有构造函数，接口没有构造函数</li>
+<li>抽象类可以有<code>main</code>，也能运行，接口没有main函数</li>
+<li>抽象类方法可以有<code>private</code>/<code>protected</code>，接口方法都是<code>public</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-转型多态和契约设计">3 转型、多态和契约设计</h2>
+<h3 id="31-类转型">3.1 类转型</h3>
+<ul>
+<li>变量支持相互转化，比如 <code>int a = (int)3.5</code>;</li>
+<li>类型可以相互转型，但是只限制于有继承关系的类。
+<ul>
+<li>子类可以转换成父类（向上转型），而父类不可以转换为子类（向下转型）。
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">Human</span> <span class="n">obj1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Man</span><span class="o">();</span> <span class="c1">// Ok, Man extends Human
+</span><span class="c1"></span><span class="n">Man</span> <span class="n">obj2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Human</span><span class="o">();</span> <span class="c1">// illegal, Man is a derived class Human
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>父类转子类，有一种特殊情况例外，即父类本身就是从子类转化而来的。
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">Human</span> <span class="n">obj1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Man</span><span class="o">();</span> <span class="c1">// Ok, Man extends Human
+</span><span class="c1"></span><span class="n">Man</span> <span class="n">obj2</span> <span class="o">=</span> <span class="o">(</span><span class="n">Man</span><span class="o">)</span> <span class="n">obj1</span><span class="o">;</span> <span class="c1">// Ok, because obj1 is born from Man class
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ul>
+<h3 id="32-多态">3.2 多态</h3>
+<ul>
+<li>
+<p>类型转换，带来的作用就是<strong>多态</strong>。</p>
+</li>
+<li>
+<p>子类继承父类的所有方法，但子类可以定义一个名字、参数和父类一样的方法，这种行为就是<strong>重写</strong><code>（覆盖，覆写）</code></p>
+</li>
+<li>
+<p>子类的方法优先级<strong>高于</strong>父类。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">// Human.java
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Human</span> <span class="o">{</span>
+<span class="kt">int</span> <span class="n">height</span><span class="o">;</span>    
+  <span class="kt">int</span> <span class="n">weight</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="o">()</span>  <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;I can eat!&#34;</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Man.java
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Man</span> <span class="kd">extends</span> <span class="n">Human</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;I can eat more&#34;</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">plough</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Man</span> <span class="n">obj1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Man</span><span class="o">();</span>
+    <span class="n">obj1</span><span class="o">.</span><span class="na">eat</span><span class="o">();</span>   <span class="c1">// call Man.eat()
+</span><span class="c1"></span>    <span class="n">Human</span> <span class="n">obj2</span> <span class="o">=</span>  <span class="o">(</span><span class="n">Human</span><span class="o">)</span> <span class="n">obj1</span><span class="o">;</span>  <span class="c1">// 类转型 obj1 -&gt; obj2
+</span><span class="c1"></span>    <span class="n">obj2</span><span class="o">.</span><span class="na">eat</span><span class="o">();</span>   <span class="c1">// call Man.eat()
+</span><span class="c1"></span>    <span class="n">Man</span> <span class="n">obj3</span> <span class="o">=</span> <span class="o">(</span><span class="n">Man</span><span class="o">)</span> <span class="n">obj2</span><span class="o">;</span>
+    <span class="n">obj3</span><span class="o">.</span><span class="na">eat</span><span class="o">();</span>   <span class="c1">// call Man.eat()
+</span><span class="c1"></span>  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>多态的作用</p>
+<ul>
+<li>以统一的接口来操纵某一类中不同对象的动态行为</li>
+<li>对象之间的解耦</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">// Animal.java
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="o">();</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="c1">// Cat.java
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">implements</span> <span class="n">Animal</span>
+<span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Cat: I can eat&#34;</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">(){</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Cat: I can move&#34;</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Dog.java
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="n">Animal</span>
+<span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Dog: I can eat&#34;</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Dog: I can move&#34;</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// AnimalTest.java
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AnimalTest</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">haveLunch</span><span class="o">(</span><span class="n">Animal</span> <span class="n">a</span><span class="o">)</span>  <span class="o">{</span>
+    <span class="n">a</span><span class="o">.</span><span class="na">eat</span><span class="o">();</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Animal</span><span class="o">[]</span> <span class="n">as</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Animal</span><span class="o">[</span><span class="n">4</span><span class="o">];</span>
+    <span class="n">as</span><span class="o">[</span><span class="n">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="o">();</span>
+    <span class="n">as</span><span class="o">[</span><span class="n">1</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+    <span class="n">as</span><span class="o">[</span><span class="n">2</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="o">();</span>
+    <span class="n">as</span><span class="o">[</span><span class="n">3</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">as</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="n">as</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">move</span><span class="o">();</span>  <span class="c1">//调用每个元素的自身的move方法
+</span><span class="c1"></span>    <span class="o">}</span>
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">as</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="n">haveLunch</span><span class="o">(</span><span class="n">as</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+    <span class="o">}</span>
+
+    <span class="n">haveLunch</span><span class="o">(</span><span class="k">new</span> <span class="n">Cat</span><span class="o">());</span>  <span class="c1">//Animal  a = new Cat();  haveLunch(a);
+</span><span class="c1"></span>    <span class="n">haveLunch</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>
+    <span class="n">haveLunch</span><span class="o">(</span>
+        <span class="k">new</span> <span class="n">Animal</span><span class="o">()</span>
+        <span class="o">{</span>
+          <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;I can eat from an anonymous class&#34;</span><span class="o">);</span>            
+          <span class="o">}</span>
+          <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;I can move from an anonymous class&#34;</span><span class="o">);</span>
+          <span class="o">}</span>
+
+        <span class="o">});</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">huveLunch</span><span class="o">(</span><span class="n">Animal</span> <span class="n">a</span><span class="o">){</span>
+    <span class="n">a</span><span class="o">.</span><span class="na">eat</span><span class="o">();</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+
+<span class="cm">/**
+</span><span class="cm"> * 
+</span><span class="cm"> * 运行结果：
+</span><span class="cm"> * Dog: I can move
+</span><span class="cm"> * Cat: I can move
+</span><span class="cm"> * Dog: I can move
+</span><span class="cm"> * Cat: I can eat
+</span><span class="cm"> * Dog: I can eat
+</span><span class="cm"> * Cat: I can eat
+</span><span class="cm"> * Dog: I can eat
+</span><span class="cm"> * Cat: I can eat
+</span><span class="cm"> * Dog: I can eat
+</span><span class="cm"> * I can eat from an anonymous class
+</span><span class="cm"> * 
+</span><span class="cm"> */</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="33-契约设计">3.3 契约设计</h3>
+<ul>
+<li>契约：规定规范了对象应该包含的行为方法</li>
+<li>接口定义了方法的名称、参数和返回值，规范了派生类的行为</li>
+<li>基于接口，利用转型和多态，不影响真正方法的调用，成功地将调用类和被调用类解耦</li>
+<li>被调用类（<code>haveLunch</code>只和<code>Animal</code>有联系）
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">// Animal 是一个接口，里面所有的方法都是空的，没有方法体。
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">huveLunch</span><span class="o">(</span><span class="n">Animal</span> <span class="n">a</span><span class="o">){</span>
+      <span class="n">a</span><span class="o">.</span><span class="na">eat</span><span class="o">();</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>调用类
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">haveLunch</span><span class="o">(</span><span class="k">new</span> <span class="n">Cat</span><span class="o">());</span>  <span class="c1">//Animal  a = new Cat();  haveLunch(a);
+</span><span class="c1"></span><span class="n">haveLunch</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">());</span>
+<span class="n">haveLunch</span><span class="o">(</span>
+    <span class="c1">// 匿名类只在此句用一次就结束了，
+</span><span class="c1"></span>    <span class="c1">// 只需要传进来一个实现Animal接口的对象，就可以运行haveLunch方法。
+</span><span class="c1"></span>    <span class="k">new</span> <span class="n">Animal</span><span class="o">()</span>
+    <span class="o">{</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eat</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;I can eat from an anonymous class&#34;</span><span class="o">);</span>            
+      <span class="o">}</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;I can move from an anonymous class&#34;</span><span class="o">);</span>
+      <span class="o">}</span>
+
+    <span class="o">});</span>
+
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ul></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -386,7 +764,7 @@
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://ieblyang.tech/java03/" data-title="Java 继承、接口和抽象类" data-hashtags="Java,JavaVolume"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://ieblyang.tech/java03/" data-hashtag="Java"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://ieblyang.tech/java03/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://ieblyang.tech/java03/" data-title="Java 继承、接口和抽象类" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://ieblyang.tech/java03/" data-title="Java 继承、接口和抽象类" data-ralateuid="ieblYang"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://ieblyang.tech/java03/" data-title="Java 继承、接口和抽象类"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/baidu.svg"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://ieblyang.tech/java03/" data-title="Java 继承、接口和抽象类"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://ieblyang.tech/java03/" data-title="Java 继承、接口和抽象类"><i class="fab fa-skype fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://ieblyang.tech/java03/" data-title="[Java核心技术] 继承、接口和抽象类" data-hashtags="Java,JavaVolume"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://ieblyang.tech/java03/" data-hashtag="Java"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://ieblyang.tech/java03/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://ieblyang.tech/java03/" data-title="[Java核心技术] 继承、接口和抽象类" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://ieblyang.tech/java03/" data-title="[Java核心技术] 继承、接口和抽象类" data-ralateuid="ieblYang"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://ieblyang.tech/java03/" data-title="[Java核心技术] 继承、接口和抽象类"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/baidu.svg"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://ieblyang.tech/java03/" data-title="[Java核心技术] 继承、接口和抽象类"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://ieblyang.tech/java03/" data-title="[Java核心技术] 继承、接口和抽象类"><i class="fab fa-skype fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -399,13 +777,14 @@
     </div>
 
     <div class="post-nav"><a href="/db02/" class="prev" rel="prev" title="实体-联系模型"><i class="fas fa-angle-left fa-fw"></i>实体-联系模型</a>
-            <a href="/bug03/" class="next" rel="next" title="解决 ModuleNotFoundError: No module named &#39;flask._compat&#39;的报错">解决 ModuleNotFoundError: No module named &#39;flask._compat&#39;的报错<i class="fas fa-angle-right fa-fw"></i></a></div>
+            <a href="/java04/" class="next" rel="next" title="[Java核心技术] static、final和常量设计">[Java核心技术] static、final和常量设计<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span></div>
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp"><a href="http://www.beian.miit.gov.cn" target="_blank" rel="nofollow">陕ICP备2021001074号-2</a></span></div>
         </div>
     </footer></div>
 

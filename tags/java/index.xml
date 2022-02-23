@@ -4,8 +4,22 @@
         <link>https://ieblyang.tech/tags/java/</link>
         <description>Java - 标签 - ieblYang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
-            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 11 Jan 2022 10:34:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/tags/java/" rel="self" type="application/rss+xml" /><item>
-    <title>Java 继承、接口和抽象类</title>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 13 Jan 2022 10:34:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/tags/java/" rel="self" type="application/rss+xml" /><item>
+    <title>Java 面向对象有哪些特征？</title>
+    <link>https://ieblyang.tech/java11/</link>
+    <pubDate>Thu, 13 Jan 2022 10:34:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/java11/</guid>
+    <description><![CDATA[<p>Java 面向对象有哪些特征？</p>]]></description>
+</item><item>
+    <title>[Java核心技术] static、final和常量设计</title>
+    <link>https://ieblyang.tech/java04/</link>
+    <pubDate>Wed, 12 Jan 2022 09:34:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/java04/</guid>
+    <description><![CDATA[<p>Java 核心技术读书笔记——Java static、final和常量设计</p>]]></description>
+</item><item>
+    <title>[Java核心技术] 继承、接口和抽象类</title>
     <link>https://ieblyang.tech/java03/</link>
     <pubDate>Tue, 11 Jan 2022 10:34:40 &#43;0800</pubDate>
     <author>作者</author>
@@ -63,19 +77,5 @@
     <author>作者</author>
     <guid>https://ieblyang.tech/26/</guid>
     <description><![CDATA[<p>给定一个排序数组，你需要在 <strong>原地</strong> 删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。</p>]]></description>
-</item><item>
-    <title>21. 合并两个有序链表</title>
-    <link>https://ieblyang.tech/21/</link>
-    <pubDate>Thu, 25 Feb 2021 12:40:14 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://ieblyang.tech/21/</guid>
-    <description><![CDATA[<p>将两个升序链表合并为一个新的 <strong>升序</strong>链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。</p>]]></description>
-</item><item>
-    <title>20. 有效的括号</title>
-    <link>https://ieblyang.tech/20/</link>
-    <pubDate>Thu, 25 Feb 2021 10:33:32 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://ieblyang.tech/20/</guid>
-    <description><![CDATA[<p>给定一个只包括 <code>'('</code>，<code>')</code>'，<code>'{'</code>，<code>'}'</code>，<code>'['</code>，<code>']'</code> 的字符串 <code>s</code> ，判断字符串是否有效。</p>]]></description>
 </item></channel>
 </rss>
