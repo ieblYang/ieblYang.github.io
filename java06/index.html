@@ -19,7 +19,7 @@
 <meta name="application-name" content="ieblYang">
 <meta name="apple-mobile-web-app-title" content="ieblYang"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ieblyang.tech/java06/" /><link rel="prev" href="https://ieblyang.tech/java05/" /><link rel="next" href="https://ieblyang.tech/basic-markdown-syntax/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ieblyang.tech/java06/" /><link rel="prev" href="https://ieblyang.tech/java05/" /><link rel="next" href="https://ieblyang.tech/java07/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -33,7 +33,7 @@
                             "url": "https:\/\/ieblyang.tech\/java06\/featured-image.png",
                             "width":  1420 ,
                             "height":  708 
-                        }],"genre": "posts","keywords": "Java, JavaVolume","wordcount":  2593 ,
+                        }],"genre": "posts","keywords": "Java, JavaVolume","wordcount":  5387 ,
         "url": "https:\/\/ieblyang.tech\/java06\/","datePublished": "2022-02-15T09:34:40+08:00","dateModified": "2022-02-15T09:34:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "ieblYang","logo": "https:\/\/ieblyang.tech\/images\/avatar.png"},"author": {
@@ -110,8 +110,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">[Java核心技术] Java常用类</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://ieblyang.tech/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ieblYang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-15">2022-02-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2593 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/java06/" class="leancloud_visitors" data-flag-title="[Java核心技术] Java常用类">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-15">2022-02-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5387 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;<span id="/java06/" class="leancloud_visitors" data-flag-title="[Java核心技术] Java常用类">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="featured-image"><img
@@ -141,8 +141,46 @@
         <li><a href="#32-可变字符串">3.2 可变字符串</a></li>
       </ul>
     </li>
-    <li><a href="#4-时间相关类">4 时间相关类</a></li>
-    <li><a href="#5-格式化相关类">5 格式化相关类</a></li>
+    <li><a href="#4-时间相关类">4 时间相关类</a>
+      <ul>
+        <li><a href="#javautildate"><code>java.util.Date</code></a></li>
+        <li><a href="#javasqldate"><code>java.sql.Date</code></a></li>
+        <li><a href="#calendar"><code>Calendar</code></a>
+          <ul>
+            <li><a href="#getfield"><code>get(Field)</code></a></li>
+            <li><a href="#gettime"><code>getTime()</code></a></li>
+            <li><a href="#gettimeinmillis"><code>getTimeInMillis()</code></a></li>
+            <li><a href="#setfield"><code>set(Field)</code></a></li>
+            <li><a href="#addfieldamount"><code>add(field,amount)</code></a></li>
+            <li><a href="#rollfieldamount"><code>roll(field,amount)</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#java8-新推出的时间api"><code>java8</code> 新推出的时间API</a>
+          <ul>
+            <li><a href="#javatimechrono"><code>java.time.chrono</code></a></li>
+            <li><a href="#javatimeformat"><code>java.time.format</code></a></li>
+            <li><a href="#javatimetemporal"><code>java.time.temporal</code></a></li>
+            <li><a href="#javatimezone"><code>java.time.zone</code></a></li>
+            <li><a href="#javatimelocaldate"><code>java.time.LocalDate</code></a></li>
+            <li><a href="#javatimelocaltime"><code>java.time.LocalTime</code></a></li>
+            <li><a href="#javatimelocaldatetime"><code>java.time.LocalDateTime</code></a></li>
+            <li><a href="#javatimeinstant"><code>java.time.Instant</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#5-格式化相关类">5 格式化相关类</a>
+      <ul>
+        <li><a href="#javatext包javatextformat的子类"><code>java.text</code>包<code>java.text.Format</code>的子类</a>
+          <ul>
+            <li><a href="#numberformat数字格式化抽象类"><code>NumberFormat</code>：数字格式化，抽象类</a></li>
+            <li><a href="#messageformat字符串格式化"><code>MessageFOrmat</code>：字符串格式化</a></li>
+            <li><a href="#dateformat日期时间格式化抽象类"><code>DateFormat</code>：日期/时间格式化，抽象类</a></li>
+          </ul>
+        </li>
+        <li><a href="#javatimeformat包下"><code>java.time.format</code>包下</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>Java 核心技术读书笔记——Java常用类</p>
@@ -667,7 +705,732 @@
 </li>
 </ul>
 <h2 id="4-时间相关类">4 时间相关类</h2>
-<h2 id="5-格式化相关类">5 格式化相关类</h2></div><div class="post-footer" id="post-footer">
+<h3 id="javautildate"><code>java.util.Date</code></h3>
+<ul>
+<li>基本废弃，<code>Deprecated</code></li>
+<li><code>getTime()</code>，返回自1970.1.1以来的毫秒数</li>
+</ul>
+<h3 id="javasqldate"><code>java.sql.Date</code></h3>
+<ul>
+<li>和数据库对应的时间类</li>
+</ul>
+<h3 id="calendar"><code>Calendar</code></h3>
+<ul>
+<li>目前程序中最常用，但是是<strong>抽象类</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.GregorianCalendar</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CalendarClassTest</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Calendar</span> <span class="n">gc</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gc</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getName</span><span class="o">());</span>  <span class="c1">//java.util.GregorianCalendar
+</span><span class="c1"></span>    <span class="c1">//Calendar.getInstance();返回的是GregorianCalendar对象
+</span><span class="c1"></span>    
+    <span class="n">GregorianCalendar</span> <span class="n">gc2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GregorianCalendar</span><span class="o">();</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gc2</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getName</span><span class="o">());</span> <span class="c1">//java.util.GregorianCalendar
+</span><span class="c1"></span>  <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="getfield"><code>get(Field)</code></h4>
+<p>获取时间中每个属性的值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">// 获取年
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">year</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">YEAR</span><span class="o">);</span>
+<span class="c1">// 获取月，这里需要需要月份的范围为0~11，因此获取月份的时候需要+1才是当前月份值
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MONTH</span><span class="o">)</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span>
+<span class="c1">// 获取日
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">day</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_MONTH</span><span class="o">);</span>
+
+<span class="c1">// 获取时
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">hour</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">HOUR</span><span class="o">);</span>
+<span class="c1">// int hour = calendar.get(Calendar.HOUR_OF_DAY); // 24小时表示
+</span><span class="c1">// 获取分
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">minute</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MINUTE</span><span class="o">);</span>
+<span class="c1">// 获取秒
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">second</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">SECOND</span><span class="o">);</span>
+
+<span class="c1">// 星期，英语国家星期从星期日开始计算
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">weekday</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_WEEK</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="gettime"><code>getTime()</code></h4>
+<p>返回相应的Date对象</p>
+<h4 id="gettimeinmillis"><code>getTimeInMillis()</code></h4>
+<p>返回自1970.1.1以来毫秒数</p>
+<h4 id="setfield"><code>set(Field)</code></h4>
+<p>设置时间字段</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">YEAR</span><span class="o">,</span> <span class="n">2022</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;现在是&#34;</span> <span class="o">+</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">YEAR</span><span class="o">)</span> <span class="o">+</span> <span class="s">&#34;年&#34;</span><span class="o">);</span>  <span class="c1">//现在是2022年
+</span><span class="c1"></span>
+<span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">2022</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>
+<span class="c1">// 获取年
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">year</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">YEAR</span><span class="o">);</span>
+<span class="c1">// 获取月
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MONTH</span><span class="o">)+</span><span class="n">1</span><span class="o">;</span>
+<span class="c1">// 获取日
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">day</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_MONTH</span><span class="o">);</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;现在是&#34;</span> <span class="o">+</span> <span class="n">year</span> <span class="o">+</span> <span class="s">&#34;年&#34;</span> <span class="o">+</span> <span class="n">month</span> <span class="o">+</span> <span class="s">&#34;月&#34;</span> <span class="o">+</span> <span class="n">day</span> <span class="o">+</span> <span class="s">&#34;日&#34;</span><span class="o">);</span> <span class="c1">//现在是2022年2月1日
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="addfieldamount"><code>add(field,amount)</code></h4>
+<p>根据指定字段增加/减少时间</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java">
+<span class="c1">// 同理换成下个月的今天calendar.add(Calendar.MONTH, 1);
+</span><span class="c1"></span><span class="n">calendar</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">YEAR</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>
+
+<span class="c1">// 获取年
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">year</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">YEAR</span><span class="o">);</span>
+<span class="c1">// 获取月
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MONTH</span><span class="o">)</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span>
+<span class="c1">// 获取日
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">day</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_MONTH</span><span class="o">);</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;一年后的今天：&#34;</span> <span class="o">+</span> <span class="n">year</span> <span class="o">+</span> <span class="s">&#34;年&#34;</span> <span class="o">+</span> <span class="n">month</span> <span class="o">+</span> <span class="s">&#34;月&#34;</span> <span class="o">+</span> <span class="n">day</span> <span class="o">+</span> <span class="s">&#34;日&#34;</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="rollfieldamount"><code>roll(field,amount)</code></h4>
+<p>根据指定字段增加/减少时间，只影响当前字段，不影响进位。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">//add和roll的区别
+</span><span class="c1"></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>     
+
+    <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">2022</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>
+    <span class="n">calendar</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_MONTH</span><span class="o">,</span> <span class="o">-</span><span class="n">1</span><span class="o">);</span>
+    
+    <span class="c1">// 获取年
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">year</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">YEAR</span><span class="o">);</span>
+    <span class="c1">// 获取月
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MONTH</span><span class="o">)+</span><span class="n">1</span><span class="o">;</span>
+    <span class="c1">// 获取日
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">day</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_MONTH</span><span class="o">);</span>
+
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;2022.1.1, 用add减少1天，现在是&#34;</span> <span class="o">+</span> <span class="n">year</span> <span class="o">+</span> <span class="s">&#34;.&#34;</span> <span class="o">+</span> <span class="n">month</span> <span class="o">+</span> <span class="s">&#34;.&#34;</span> <span class="o">+</span> <span class="n">day</span><span class="o">);</span>
+    <span class="c1">//2022.1.1, 用add减少1天，现在是2021.12.31
+</span><span class="c1"></span>
+    
+    <span class="n">calendar</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">2022</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>
+    <span class="n">calendar</span><span class="o">.</span><span class="na">roll</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_MONTH</span><span class="o">,</span> <span class="o">-</span><span class="n">1</span><span class="o">);</span>
+    
+    <span class="c1">// 获取年
+</span><span class="c1"></span>    <span class="n">year</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">YEAR</span><span class="o">);</span>
+    <span class="c1">// 获取月
+</span><span class="c1"></span>    <span class="n">month</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MONTH</span><span class="o">)+</span><span class="n">1</span><span class="o">;</span>
+    <span class="c1">// 获取日
+</span><span class="c1"></span>    <span class="n">day</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_MONTH</span><span class="o">);</span>
+
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;2022.1.1, 用roll减少1天，现在是&#34;</span> <span class="o">+</span> <span class="n">year</span> <span class="o">+</span> <span class="s">&#34;.&#34;</span> <span class="o">+</span> <span class="n">month</span> <span class="o">+</span> <span class="s">&#34;.&#34;</span> <span class="o">+</span> <span class="n">day</span><span class="o">);</span>
+    <span class="c1">//2022.1.1, 用roll减少1天，现在是2022.1.31
+</span><span class="c1"></span><span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="java8-新推出的时间api"><code>java8</code> 新推出的时间API</h3>
+<ul>
+<li><code>java.time</code>包（新的Java日期/时间API的基础包）</li>
+<li>旧的设计不好（重名的类、线程不安全等）</li>
+<li>新版本优点
+<ul>
+<li>不变性，在多线程环境下</li>
+<li>遵循设计模式，设计得更好，可扩展性强</li>
+</ul>
+</li>
+</ul>
+<h4 id="javatimechrono"><code>java.time.chrono</code></h4>
+<p>为非ISO的日历系统定义了一些泛化的API</p>
+<h4 id="javatimeformat"><code>java.time.format</code></h4>
+<p>格式化和解析日期时间对象的类</p>
+<h4 id="javatimetemporal"><code>java.time.temporal</code></h4>
+<p>包含一些时态对象，可以用其找出相关日期/时间对象的某个特定日期或时间</p>
+<h4 id="javatimezone"><code>java.time.zone</code></h4>
+<p>包含支持不同时区以及相关规则的类</p>
+<h4 id="javatimelocaldate"><code>java.time.LocalDate</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.time.LocalDate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Month</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.ZoneId</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LocalDateExample</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+ 
+        <span class="c1">//当前时间
+</span><span class="c1"></span>        <span class="n">LocalDate</span> <span class="n">today</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Current Date=&#34;</span><span class="o">+</span><span class="n">today</span><span class="o">);</span>
+ 
+        <span class="c1">//根据指定时间创建LocalDate
+</span><span class="c1"></span>        <span class="n">LocalDate</span> <span class="n">firstDay_2022</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">2022</span><span class="o">,</span> <span class="n">Month</span><span class="o">.</span><span class="na">JANUARY</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Specific Date=&#34;</span><span class="o">+</span><span class="n">firstDay_2022</span><span class="o">);</span>
+ 
+        <span class="c1">//给定错误时间参数，将报异常java.time.DateTimeException
+</span><span class="c1"></span>        <span class="c1">//LocalDate feb29_2014 = LocalDate.of(2014, Month.FEBRUARY, 29);
+</span><span class="c1"></span> 
+        <span class="c1">//可以更改时区
+</span><span class="c1"></span>        <span class="n">LocalDate</span> <span class="n">todayBeijing</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">(</span><span class="n">ZoneId</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Asia/Shanghai&#34;</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Current Date in Shanghai=&#34;</span><span class="o">+</span><span class="n">todayBeijing</span><span class="o">);</span>
+ 
+        <span class="c1">//从纪元日01/01/1970开始365天 
+</span><span class="c1"></span>        <span class="n">LocalDate</span> <span class="n">dateFromBase</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">ofEpochDay</span><span class="o">(</span><span class="n">365</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;365th day from base date= &#34;</span><span class="o">+</span><span class="n">dateFromBase</span><span class="o">);</span>
+ 
+        <span class="c1">//2022年的第100天 
+</span><span class="c1"></span>        <span class="n">LocalDate</span> <span class="n">hundredDay2022</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">ofYearDay</span><span class="o">(</span><span class="n">20122</span><span class="o">,</span> <span class="n">100</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;100th day of 2022=&#34;</span><span class="o">+</span><span class="n">hundredDay2022</span><span class="o">);</span>
+    <span class="o">}</span>
+ 
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="javatimelocaltime"><code>java.time.LocalTime</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.time.LocalTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.ZoneId</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LocalTimeExample</span> <span class="o">{</span>
+ 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+ 
+        <span class="c1">//当前时间  时分秒 纳秒
+</span><span class="c1"></span>        <span class="n">LocalTime</span> <span class="n">time</span> <span class="o">=</span> <span class="n">LocalTime</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Current Time=&#34;</span><span class="o">+</span><span class="n">time</span><span class="o">);</span>
+ 
+        <span class="c1">//根据时分秒
+</span><span class="c1"></span>        <span class="n">LocalTime</span> <span class="n">specificTime</span> <span class="o">=</span> <span class="n">LocalTime</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">12</span><span class="o">,</span><span class="n">20</span><span class="o">,</span><span class="n">25</span><span class="o">,</span><span class="n">40</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Specific Time of Day=&#34;</span><span class="o">+</span><span class="n">specificTime</span><span class="o">);</span>
+ 
+        <span class="c1">//错误的时间参数 将报DateTimeException
+</span><span class="c1"></span>        <span class="c1">//LocalTime invalidTime = LocalTime.of(25,20);
+</span><span class="c1"></span> 
+        <span class="c1">//上海时间
+</span><span class="c1"></span>        <span class="n">LocalTime</span> <span class="n">timeSH</span> <span class="o">=</span> <span class="n">LocalTime</span><span class="o">.</span><span class="na">now</span><span class="o">(</span><span class="n">ZoneId</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Asia/Shanghai&#34;</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Current Time in SH=&#34;</span><span class="o">+</span><span class="n">timeSH</span><span class="o">);</span>
+ 
+        
+        <span class="c1">//一天当中第几秒
+</span><span class="c1"></span>        <span class="n">LocalTime</span> <span class="n">specificSecondTime</span> <span class="o">=</span> <span class="n">LocalTime</span><span class="o">.</span><span class="na">ofSecondOfDay</span><span class="o">(</span><span class="n">10000</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;10000th second time= &#34;</span><span class="o">+</span><span class="n">specificSecondTime</span><span class="o">);</span>
+ 
+    <span class="o">}</span>
+ 
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="javatimelocaldatetime"><code>java.time.LocalDateTime</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.time.LocalDate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Month</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.ZoneId</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.ZoneOffset</span><span class="o">;</span>
+ 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LocalDateTimeExample</span> <span class="o">{</span>
+ 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+ 
+        <span class="c1">//当前日期 时分秒
+</span><span class="c1"></span>        <span class="n">LocalDateTime</span> <span class="n">today</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Current DateTime=&#34;</span><span class="o">+</span><span class="n">today</span><span class="o">);</span>
+ 
+        <span class="c1">//根据日期， 时分秒来创建对象
+</span><span class="c1"></span>        <span class="n">today</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">(),</span> <span class="n">LocalTime</span><span class="o">.</span><span class="na">now</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Current DateTime=&#34;</span><span class="o">+</span><span class="n">today</span><span class="o">);</span>
+ 
+        <span class="c1">//指定具体时间来创建对象
+</span><span class="c1"></span>        <span class="n">LocalDateTime</span> <span class="n">specificDate</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">2022</span><span class="o">,</span> <span class="n">Month</span><span class="o">.</span><span class="na">JANUARY</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">10</span><span class="o">,</span> <span class="n">10</span><span class="o">,</span> <span class="n">30</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Specific Date=&#34;</span><span class="o">+</span><span class="n">specificDate</span><span class="o">);</span>
+ 
+        <span class="c1">//如时间不对，将报异常DateTimeException
+</span><span class="c1"></span>        <span class="c1">//LocalDateTime feb29_2022 = LocalDateTime.of(2022, Month.FEBRUARY, 28, 25,1,1);
+</span><span class="c1"></span>        
+        <span class="c1">//上海时区
+</span><span class="c1"></span>        <span class="n">LocalDateTime</span> <span class="n">todayShanghai</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(</span><span class="n">ZoneId</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Asia/Shanghai&#34;</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Current Date in Shanghai=&#34;</span><span class="o">+</span><span class="n">todayShanghai</span><span class="o">);</span>
+ 
+         
+        <span class="c1">//从01/01/1970 10000秒
+</span><span class="c1"></span>        <span class="n">LocalDateTime</span> <span class="n">dateFromBase</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">ofEpochSecond</span><span class="o">(</span><span class="n">10000</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">ZoneOffset</span><span class="o">.</span><span class="na">UTC</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;10000th second time from 01/01/1970= &#34;</span><span class="o">+</span><span class="n">dateFromBase</span><span class="o">);</span> 
+    <span class="o">}</span> 
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="javatimeinstant"><code>java.time.Instant</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.time.Duration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Instant</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+ 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">InstantExample</span> <span class="o">{</span>
+ 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//当前时间戳
+</span><span class="c1"></span>        <span class="n">Instant</span> <span class="n">timestamp</span> <span class="o">=</span> <span class="n">Instant</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Current Timestamp = &#34;</span><span class="o">+</span><span class="n">timestamp</span><span class="o">);</span>
+ 
+        <span class="c1">//从毫秒数来创建时间戳
+</span><span class="c1"></span>        <span class="n">Instant</span> <span class="n">specificTime</span> <span class="o">=</span> <span class="n">Instant</span><span class="o">.</span><span class="na">ofEpochMilli</span><span class="o">(</span><span class="n">timestamp</span><span class="o">.</span><span class="na">toEpochMilli</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Specific Time = &#34;</span><span class="o">+</span><span class="n">specificTime</span><span class="o">);</span>
+ 
+        <span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="n">Date</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">timestamp</span><span class="o">);</span> 
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;current date = &#34;</span> <span class="o">+</span> <span class="n">date</span><span class="o">);</span>
+    <span class="o">}</span>
+ 
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="5-格式化相关类">5 格式化相关类</h2>
+<h3 id="javatext包javatextformat的子类"><code>java.text</code>包<code>java.text.Format</code>的子类</h3>
+<h4 id="numberformat数字格式化抽象类"><code>NumberFormat</code>：数字格式化，抽象类</h4>
+<p><code>DecimalFormat</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">DecimalFormat</span> <span class="n">df1</span><span class="o">,</span><span class="n">df2</span><span class="o">;</span>
+         
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;整数部分为0的情况，0/#的区别&#34;</span><span class="o">);</span>
+<span class="c1">// 整数部分为0 ， #认为整数不存在，可不写； 0认为没有，但至少写一位，写0
+</span><span class="c1"></span><span class="n">df1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DecimalFormat</span><span class="o">(</span><span class="s">&#34;#.00&#34;</span><span class="o">);</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DecimalFormat</span><span class="o">(</span><span class="s">&#34;0.00&#34;</span><span class="o">);</span>
+ 
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">df1</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">0</span><span class="o">.</span><span class="na">1</span><span class="o">));</span> <span class="c1">// .10  
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">df2</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">0</span><span class="o">.</span><span class="na">1</span><span class="o">));</span> <span class="c1">// 0.10  
+</span><span class="c1"></span> 
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;小数部分0/#的区别&#34;</span><span class="o">);</span>
+<span class="c1">//#代表最多有几位，0代表必须有且只能有几位
+</span><span class="c1"></span><span class="n">df1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DecimalFormat</span><span class="o">(</span><span class="s">&#34;0.00&#34;</span><span class="o">);</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DecimalFormat</span><span class="o">(</span><span class="s">&#34;0.##&#34;</span><span class="o">);</span>
+ 
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">df1</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">0</span><span class="o">.</span><span class="na">1</span><span class="o">));</span> <span class="c1">// 0.10
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">df2</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">0</span><span class="o">.</span><span class="na">1</span><span class="o">));</span> <span class="c1">// 0.1
+</span><span class="c1"></span> 
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">df1</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">0</span><span class="o">.</span><span class="na">006</span><span class="o">));</span> <span class="c1">// 0.01
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">df2</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">0</span><span class="o">.</span><span class="na">006</span><span class="o">));</span> <span class="c1">// 0.01
+</span><span class="c1"></span> 
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;整数部分有多位&#34;</span><span class="o">);</span>
+<span class="c1">//0和#对整数部分多位时的处理是一致的 就是有几位写多少位
+</span><span class="c1"></span><span class="n">df1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DecimalFormat</span><span class="o">(</span><span class="s">&#34;0.00&#34;</span><span class="o">);</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DecimalFormat</span><span class="o">(</span><span class="s">&#34;#.00&#34;</span><span class="o">);</span>
+ 
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">df1</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">2</span><span class="o">));</span> <span class="c1">// 2.00
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">df2</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">2</span><span class="o">));</span> <span class="c1">// 2.00
+</span><span class="c1"></span> 
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">df1</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">20</span><span class="o">));</span> <span class="c1">// 20.00
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">df2</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">20</span><span class="o">));</span> <span class="c1">// 20.00
+</span><span class="c1"></span> 
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">df1</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">200</span><span class="o">));</span> <span class="c1">// 200.00
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">df2</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">200</span><span class="o">));</span> <span class="c1">// 200.00
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="messageformat字符串格式化"><code>MessageFOrmat</code>：字符串格式化</h4>
+<ul>
+<li>支持多个参数-值对位复制文本</li>
+<li>支持变量的自定义格式</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.text.MessageFormat</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessageFormatTest</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&#34;{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}&#34;</span><span class="o">;</span>  
+      
+    <span class="n">Object</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">[]{</span><span class="s">&#34;A&#34;</span><span class="o">,</span><span class="s">&#34;B&#34;</span><span class="o">,</span><span class="s">&#34;C&#34;</span><span class="o">,</span><span class="s">&#34;D&#34;</span><span class="o">,</span><span class="s">&#34;E&#34;</span><span class="o">,</span><span class="s">&#34;F&#34;</span><span class="o">,</span><span class="s">&#34;G&#34;</span><span class="o">,</span><span class="s">&#34;H&#34;</span><span class="o">,</span><span class="s">&#34;I&#34;</span><span class="o">,</span><span class="s">&#34;J&#34;</span><span class="o">,</span><span class="s">&#34;K&#34;</span><span class="o">,</span><span class="s">&#34;L&#34;</span><span class="o">,</span><span class="s">&#34;M&#34;</span><span class="o">,</span><span class="s">&#34;N&#34;</span><span class="o">,</span><span class="s">&#34;O&#34;</span><span class="o">,</span><span class="s">&#34;P&#34;</span><span class="o">,</span><span class="s">&#34;Q&#34;</span><span class="o">};</span>  
+      
+    <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">MessageFormat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">array</span><span class="o">);</span>  
+      
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>  <span class="c1">//ABCDEFGHIJKLMNOPQ
+</span><span class="c1"></span>    
+    <span class="n">message</span> <span class="o">=</span> <span class="s">&#34;oh, {0,number,#.##} is a good number&#34;</span><span class="o">;</span>  
+      
+    <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">[]{</span><span class="k">new</span> <span class="n">Double</span><span class="o">(</span><span class="n">3</span><span class="o">.</span><span class="na">1415</span><span class="o">)};</span>  
+      
+    <span class="n">value</span> <span class="o">=</span> <span class="n">MessageFormat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">array</span><span class="o">);</span>  
+      
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>  <span class="c1">//oh, 3.14 is a good number
+</span><span class="c1"></span>  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="dateformat日期时间格式化抽象类"><code>DateFormat</code>：日期/时间格式化，抽象类</h4>
+<ul>
+<li><code>SimpleDateFormat</code> 工厂模式</li>
+<li><code>parse</code> 将字符串格式化为时间对象</li>
+<li><code>format</code> 将时间对象格式化为字符串</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">strDate</span> <span class="o">=</span> <span class="s">&#34;2022-01-01 10:11:30.345&#34;</span> <span class="o">;</span>  
+<span class="c1">// 准备第一个模板，从字符串中提取出日期数字  
+</span><span class="c1"></span><span class="n">String</span> <span class="n">pat1</span> <span class="o">=</span> <span class="s">&#34;yyyy-MM-dd HH:mm:ss.SSS&#34;</span> <span class="o">;</span>  
+<span class="c1">// 准备第二个模板，将提取后的日期数字变为指定的格式  
+</span><span class="c1"></span><span class="n">String</span> <span class="n">pat2</span> <span class="o">=</span> <span class="s">&#34;yyyy年MM月dd日 HH时mm分ss秒SSS毫秒&#34;</span> <span class="o">;</span>  
+<span class="n">SimpleDateFormat</span> <span class="n">sdf1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="n">pat1</span><span class="o">)</span> <span class="o">;</span>        <span class="c1">// 实例化模板对象  
+</span><span class="c1"></span><span class="n">SimpleDateFormat</span> <span class="n">sdf2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="n">pat2</span><span class="o">)</span> <span class="o">;</span>        <span class="c1">// 实例化模板对象  
+</span><span class="c1"></span><span class="n">Date</span> <span class="n">d</span> <span class="o">=</span> <span class="kc">null</span> <span class="o">;</span>  
+<span class="k">try</span><span class="o">{</span>  
+    <span class="n">d</span> <span class="o">=</span> <span class="n">sdf1</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">strDate</span><span class="o">)</span> <span class="o">;</span>   <span class="c1">// 将给定的字符串中的日期提取出来  
+</span><span class="c1"></span><span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span>            <span class="c1">// 如果提供的字符串格式有错误，则进行异常处理  
+</span><span class="c1"></span>    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">()</span> <span class="o">;</span>       <span class="c1">// 打印异常信息  
+</span><span class="c1"></span><span class="o">}</span>  
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sdf2</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">d</span><span class="o">))</span> <span class="o">;</span>    <span class="c1">// 将日期变为新的格式  
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="javatimeformat包下"><code>java.time.format</code>包下</h3>
+<p><code>DateTimeFormatter</code></p>
+<ul>
+<li>JDK8发布，线程安全（SimpleDateFormat线程不安全）</li>
+<li><code>ofPattern</code>：设定时间格式</li>
+<li><code>parse</code> 将字符串格式化为时间对象</li>
+<li><code>format</code> 将时间对象格式化为字符串</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">//将字符串转化为时间
+</span><span class="c1"></span><span class="n">String</span> <span class="n">dateStr</span><span class="o">=</span> <span class="s">&#34;2022年01月01日&#34;</span><span class="o">;</span>
+<span class="n">DateTimeFormatter</span> <span class="n">formatter</span> <span class="o">=</span> <span class="n">DateTimeFormatter</span><span class="o">.</span><span class="na">ofPattern</span><span class="o">(</span><span class="s">&#34;yyyy年MM月dd日&#34;</span><span class="o">);</span>
+<span class="n">LocalDate</span> <span class="n">date</span><span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">dateStr</span><span class="o">,</span> <span class="n">formatter</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">date</span><span class="o">.</span><span class="na">getYear</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;-&#34;</span> <span class="o">+</span> <span class="n">date</span><span class="o">.</span><span class="na">getMonthValue</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;-&#34;</span> <span class="o">+</span> <span class="n">date</span><span class="o">.</span><span class="na">getDayOfMonth</span><span class="o">());</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;==========================&#34;</span><span class="o">);</span>
+
+<span class="c1">//将日期转换为字符串输出
+</span><span class="c1"></span><span class="n">LocalDateTime</span> <span class="n">now</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+<span class="n">DateTimeFormatter</span> <span class="n">format</span> <span class="o">=</span> <span class="n">DateTimeFormatter</span><span class="o">.</span><span class="na">ofPattern</span><span class="o">(</span><span class="s">&#34;yyyy年MM月dd日 hh:mm:ss&#34;</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">nowStr</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">format</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">nowStr</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -691,7 +1454,7 @@
     </div>
 
     <div class="post-nav"><a href="/java05/" class="prev" rel="prev" title="[Java核心技术] package,import和classpath"><i class="fas fa-angle-left fa-fw"></i>[Java核心技术] package,import和classpath</a>
-            <a href="/basic-markdown-syntax/" class="next" rel="next" title="Markdown 基本语法">Markdown 基本语法<i class="fas fa-angle-right fa-fw"></i></a></div>
+            <a href="/java07/" class="next" rel="next" title="[Java核心技术] Java异常和异常处理">[Java核心技术] Java异常和异常处理<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

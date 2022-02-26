@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>[Java核心技术] Java数据结构 - ieblYang</title><meta name="Description" content="[Java核心技术] Java数据结构"><meta property="og:title" content="[Java核心技术] Java数据结构" />
+<meta property="og:description" content="[Java核心技术] Java数据结构" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ieblyang.tech/java08/" /><meta property="og:image" content="https://ieblyang.tech/java08/featured-image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-17T09:34:40+08:00" />
+<meta property="article:modified_time" content="2022-02-17T09:34:40+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ieblyang.tech/java08/featured-image.png"/>
+<meta name="twitter:title" content="[Java核心技术] Java数据结构"/>
+<meta name="twitter:description" content="[Java核心技术] Java数据结构"/>
+<meta name="application-name" content="ieblYang">
+<meta name="apple-mobile-web-app-title" content="ieblYang"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ieblyang.tech/java08/" /><link rel="prev" href="https://ieblyang.tech/java07/" /><link rel="next" href="https://ieblyang.tech/basic-markdown-syntax/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[Java核心技术] Java数据结构",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ieblyang.tech\/java08\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/ieblyang.tech\/java08\/featured-image.png",
+                            "width":  1420 ,
+                            "height":  708 
+                        }],"genre": "posts","keywords": "Java, JavaVolume","wordcount":  5603 ,
+        "url": "https:\/\/ieblyang.tech\/java08\/","datePublished": "2022-02-17T09:34:40+08:00","dateModified": "2022-02-17T09:34:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "ieblYang","logo": "https:\/\/ieblyang.tech\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "ieblYang"
+            },"description": "[Java核心技术] Java数据结构"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="ieblYang"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>ieblYang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/categories/video/"> 视频 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="ieblYang"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>ieblYang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/categories/video/" title="">视频</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">[Java核心技术] Java数据结构</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://ieblyang.tech/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ieblYang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-17">2022-02-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5603 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 12 分钟&nbsp;<span id="/java08/" class="leancloud_visitors" data-flag-title="[Java核心技术] Java数据结构">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/java08/featured-image.png"
+        data-srcset="/java08/featured-image.png, /java08/featured-image.png 1.5x, /java08/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/java08/featured-image.png"
+        title="[Java核心技术] Java数据结构" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-数组">1 数组</a>
+      <ul>
+        <li><a href="#11-定义和初始化">1.1 定义和初始化</a></li>
+        <li><a href="#12-数组索引">1.2 数组索引</a></li>
+        <li><a href="#13-数组遍历">1.3 数组遍历</a></li>
+        <li><a href="#14-多维数组">1.4 多维数组</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-jcfjava-collection-framework">2 JCF(Java Collection Framework)</a></li>
+    <li><a href="#3-list">3 <code>List</code></a>
+      <ul>
+        <li><a href="#31-arraylist">3.1 <code>ArrayList</code></a>
+          <ul>
+            <li><a href="#声明和初始化">声明和初始化</a></li>
+            <li><a href="#add"><code>add</code></a></li>
+            <li><a href="#remove"><code>remove</code></a></li>
+            <li><a href="#遍历">遍历</a></li>
+          </ul>
+        </li>
+        <li><a href="#32-linkedlist">3.2 <code>LinkedList</code></a>
+          <ul>
+            <li><a href="#声明和初始化-1">声明和初始化</a></li>
+            <li><a href="#add-1"><code>add</code></a></li>
+            <li><a href="#remove-1"><code>remove</code></a></li>
+            <li><a href="#遍历-1">遍历</a></li>
+          </ul>
+        </li>
+        <li><a href="#arraylist与linkedlist对比"><code>ArrayList</code>与<code>LinkedList</code>对比</a></li>
+        <li><a href="#33-vector">3.3 <code>Vector</code></a>
+          <ul>
+            <li><a href="#声明和初始化-2">声明和初始化</a></li>
+            <li><a href="#add-2"><code>add</code></a></li>
+            <li><a href="#remove-2"><code>remove</code></a></li>
+            <li><a href="#遍历-2">遍历</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#4-集合set">4 集合<code>Set</code></a>
+      <ul>
+        <li><a href="#41-java中的集合接口set">4.1 <code>Java</code>中的集合接口<code>Set</code></a></li>
+        <li><a href="#42-hashset">4.2 <code>HashSet</code></a>
+          <ul>
+            <li><a href="#声明和初始化-3">声明和初始化</a></li>
+            <li><a href="#add-添加一个元素"><code>add</code> 添加一个元素</a></li>
+            <li><a href="#clear-清除整个hashset"><code>clear</code> 清除整个<code>HashSet</code></a></li>
+            <li><a href="#contains-判定是否包含一个元素"><code>contains</code> 判定是否包含一个元素</a></li>
+            <li><a href="#remove-删除一个元素"><code>remove</code> 删除一个元素</a></li>
+            <li><a href="#size-大小"><code>size</code> 大小</a></li>
+            <li><a href="#retainall-计算两个集合交集"><code>retainAll</code> 计算两个集合交集</a></li>
+            <li><a href="#遍历-3">遍历</a></li>
+          </ul>
+        </li>
+        <li><a href="#43-treeset">4.3 <code>TreeSet</code></a>
+          <ul>
+            <li><a href="#声明和初始化-4">声明和初始化</a></li>
+            <li><a href="#add-添加一个元素-1"><code>add</code> 添加一个元素</a></li>
+            <li><a href="#clear-清除整个treeset"><code>clear</code> 清除整个<code>TreeSet</code></a></li>
+            <li><a href="#contains-判定是否包含一个元素-1"><code>contains</code> 判定是否包含一个元素</a></li>
+            <li><a href="#remove-删除一个元素-1"><code>remove</code> 删除一个元素</a></li>
+            <li><a href="#size-大小-1"><code>size</code> 大小</a></li>
+            <li><a href="#遍历-4">遍历</a></li>
+          </ul>
+        </li>
+        <li><a href="#44-linkedhashset">4.4 <code>LinkedHashSet</code></a>
+          <ul>
+            <li><a href="#声明和初始化-5">声明和初始化</a></li>
+            <li><a href="#add-3"><code>add</code></a></li>
+            <li><a href="#remove-3"><code>remove</code></a></li>
+            <li><a href="#clear"><code>clear</code></a></li>
+            <li><a href="#contains"><code>contains</code></a></li>
+            <li><a href="#size"><code>size</code></a></li>
+            <li><a href="#遍历-5">遍历</a></li>
+          </ul>
+        </li>
+        <li><a href="#45-异同点">4.5 异同点</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-映射map">5 映射<code>Map</code></a></li>
+    <li><a href="#6-工具类">6 工具类</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Java 核心技术读书笔记——Java数据结构</p>
+<h2 id="1-数组">1 数组</h2>
+<ul>
+<li>数组是一个存放<strong>多个数据</strong>的容器
+<ul>
+<li>数据是同一种类型</li>
+<li>所有的数据是线性规则排列</li>
+<li>可通过位置索引来快速定位访问数据</li>
+<li>需明确容器长度</li>
+</ul>
+</li>
+</ul>
+<h3 id="11-定义和初始化">1.1 定义和初始化</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java">
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ArrayTest</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    
+    <span class="kt">int</span> <span class="n">a</span><span class="o">[];</span> <span class="c1">//a 还没有new操作  实际上是null，也不知道内存位置
+</span><span class="c1"></span>    <span class="kt">int</span><span class="o">[]</span> <span class="n">b</span><span class="o">;</span> <span class="c1">//b 还没有new操作  实际上是null，也不知道内存位置
+</span><span class="c1"></span>    <span class="kt">int</span><span class="o">[]</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">2</span><span class="o">];</span> <span class="c1">//c有2个元素，都是0
+</span><span class="c1"></span>    <span class="n">c</span><span class="o">[</span><span class="n">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">10</span><span class="o">;</span> <span class="n">c</span><span class="o">[</span><span class="n">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">20</span><span class="o">;</span> <span class="c1">//逐个初始化
+</span><span class="c1"></span>    
+    <span class="kt">int</span> <span class="n">d</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="n">0</span><span class="o">,</span><span class="n">2</span><span class="o">,</span><span class="n">4</span><span class="o">};</span><span class="c1">//d有3个元素, 0,2,4，同时定义和初始化
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">d1</span><span class="o">[]</span> <span class="o">=</span> <span class="o">{</span><span class="n">1</span><span class="o">,</span><span class="n">3</span><span class="o">,</span><span class="n">5</span><span class="o">};</span>        <span class="c1">//d1有3个元素, 1,3,5 同时定义和初始化
+</span><span class="c1"></span>    
+    <span class="c1">//注意声明变量时候没有分配内存，不需要指定大小，以下是错误示例
+</span><span class="c1"></span>    <span class="c1">//int e[5];
+</span><span class="c1"></span>    <span class="c1">//int[5] f;
+</span><span class="c1"></span>    <span class="c1">//int[5] g = new int[5];
+</span><span class="c1"></span>    <span class="c1">//int h[5] = new int[5];
+</span><span class="c1"></span>  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="12-数组索引">1.2 数组索引</h3>
+<ul>
+<li>数组的<code>length</code>属性标识数组的长度</li>
+<li>从<code>0</code>开始，到<code>length-1</code></li>
+<li>数组不能越界访问，否则会报<code>ArrayIndexOutBoundsException</code>异常</li>
+</ul>
+<h3 id="13-数组遍历">1.3 数组遍历</h3>
+<ul>
+<li>需要自己控制索引位置</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">//需要自己控制索引位置
+</span><span class="c1"></span><span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">d</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">d</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>无需控制索引位置</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">//无需控制索引位置
+</span><span class="c1"></span><span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">e</span> <span class="o">:</span> <span class="n">d</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="14-多维数组">1.4 多维数组</h3>
+<ul>
+<li>数组的数组</li>
+<li>存储是按照行存储原则</li>
+<li>规则数组</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kt">int</span> <span class="n">a</span><span class="o">[][]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">3</span><span class="o">];</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>不规则数组</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kt">int</span> <span class="n">b</span><span class="o">[][];</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">3</span><span class="o">][];</span>
+    <span class="n">b</span><span class="o">[</span><span class="n">0</span><span class="o">]=</span><span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">3</span><span class="o">];</span>
+    <span class="n">b</span><span class="o">[</span><span class="n">1</span><span class="o">]=</span><span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">4</span><span class="o">];</span>
+    <span class="n">b</span><span class="o">[</span><span class="n">2</span><span class="o">]=</span><span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">5</span><span class="o">];</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>遍历</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span>
+<span class="o">{</span>
+  <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">length</span><span class="o">;</span><span class="n">j</span><span class="o">++)</span>
+  <span class="o">{</span>
+    <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">k</span><span class="o">;</span> 
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">for</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">items</span> <span class="o">:</span> <span class="n">a</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">item</span> <span class="o">:</span> <span class="n">items</span><span class="o">)</span>
+  <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">item</span> <span class="o">+</span> <span class="s">&#34;, &#34;</span><span class="o">);</span>
+  <span class="o">}</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2-jcfjava-collection-framework">2 JCF(Java Collection Framework)</h2>
+<ul>
+<li>容器：能够存放数据的空间结构
+<ul>
+<li>数组/多维数组，只能线性存放</li>
+<li>列表/散列集/树/&hellip;&hellip;</li>
+</ul>
+</li>
+<li>容器框架：为表示和操作容器而规定的一种标准体系结构
+<ul>
+<li>对外的接口：容器中所能存放的抽象数据类型</li>
+<li>接口的实现：可复用的数据结构</li>
+<li>算法：对数据的查找和排序</li>
+</ul>
+</li>
+<li>容器框架的优点：提高数据存取效率，避免程序员重复劳动</li>
+<li>JCF的集合接口是<code>Collection</code>
+<ul>
+<li><code>add</code> 增加；</li>
+<li><code>contains</code> 包含；</li>
+<li><code>remove</code> 删除；</li>
+<li><code>size</code> 数据元素个数；</li>
+<li><code>iterator</code> 迭代器；</li>
+</ul>
+</li>
+<li>JCF的迭代器接口<code>Iterator</code>
+<ul>
+<li><code>hasNext</code> 判断是否有下一个元素；</li>
+<li><code>next</code> 获取下一个元素；</li>
+<li><code>remove</code> 删除某一个元素；</li>
+</ul>
+</li>
+<li>JCF主要的数据结构实现类
+<ul>
+<li>列表（<code>List</code>，<code>ArrayList</code>，<code>LinkedList</code>）</li>
+<li>集合（<code>Set</code>，<code>HashSet</code>，<code>TreeSet</code>，<code>LinkedHashSet</code>）</li>
+<li>映射（<code>Map</code>，<code>HashMap</code>，<code>TreeMap</code>，<code>LinkedHashMap</code>）</li>
+</ul>
+</li>
+<li>JCF主要的算法类
+<ul>
+<li><code>Arrays</code>：对数组进行查找和排序等操作</li>
+<li><code>Collections</code>：对<code>Collection</code>及其子类进行排序和查找操作</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-list">3 <code>List</code></h2>
+<ul>
+<li><code>List</code>：列表
+<ul>
+<li>有序的<code>Collection</code></li>
+<li>允许重复元素</li>
+<li>{1,2,4,{5,2},1,3}</li>
+</ul>
+</li>
+<li><code>List</code>主要实现
+<ul>
+<li><code>ArrayList</code>（非同步的）</li>
+<li><code>LinkedList</code>（非同步）</li>
+<li><code>Vector</code>（同步）</li>
+</ul>
+</li>
+</ul>
+<h3 id="31-arraylist">3.1 <code>ArrayList</code></h3>
+<ul>
+<li>以数组实现的列表，不支持同步</li>
+<li>利用索引位置可以快速定位访问</li>
+<li>不适合指定位置的插入、删除操作</li>
+<li>适合变动不大，主要用于查询的数据</li>
+<li>和Java数组相比，其容量是可动态调整的</li>
+<li><code>ArrayList</code>在元素填满容器时会自动扩充容器大小的50%</li>
+<li><code>ArrayList</code>只能装对象，当<code>add(3)</code>时，会自动将普通int变量3自动装箱为<code>Integer(3)</code>的对象，然后放入<code>ArrayList</code>容器中。</li>
+</ul>
+<h4 id="声明和初始化">声明和初始化</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">al</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="add"><code>add</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">al</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>
+<span class="n">al</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Integer</span><span class="o">(</span><span class="n">6</span><span class="o">));</span>  
+<span class="n">al</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">2</span><span class="o">,</span> <span class="n">9</span><span class="o">);</span>  <span class="c1">//将9插入到第4个元素，后面元素往后挪动
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="remove"><code>remove</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">al</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>  <span class="c1">//删除第四个元素，后面元素往前挪动
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="遍历">遍历</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByIterator</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">al</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============迭代器遍历==============&#34;</span><span class="o">);</span>  <span class="c1">//慢
+</span><span class="c1"></span>    <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">iter1</span> <span class="o">=</span> <span class="n">al</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>  
+    <span class="k">while</span><span class="o">(</span><span class="n">iter1</span><span class="o">.</span><span class="na">hasNext</span><span class="o">()){</span>  
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">iter1</span><span class="o">.</span><span class="na">next</span><span class="o">());</span>  
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByIndex</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">al</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============随机索引值遍历==============&#34;</span><span class="o">);</span> <span class="c1">//中
+</span><span class="c1"></span>    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">al</span><span class="o">.</span><span class="na">size</span><span class="o">();</span><span class="n">i</span><span class="o">++)</span>
+    <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">al</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByFor</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">al</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============for循环遍历==============&#34;</span><span class="o">);</span> <span class="c1">//快
+</span><span class="c1"></span>    <span class="k">for</span><span class="o">(</span><span class="n">Integer</span> <span class="n">item</span> <span class="o">:</span> <span class="n">al</span><span class="o">)</span>
+    <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="32-linkedlist">3.2 <code>LinkedList</code></h3>
+<ul>
+<li>以双向链表实现的列表，<strong>不支持同步</strong></li>
+<li>可被当作堆栈、队列、和双端队列进行操作</li>
+<li><strong>顺序访问</strong>高效，随机访问较差，中间插入和删除高效</li>
+<li>适用于<strong>经常变化</strong>的数据</li>
+</ul>
+<h4 id="声明和初始化-1">声明和初始化</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="o">;</span>
+<span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">ll</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>  
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="add-1"><code>add</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">ll</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>  
+<span class="n">ll</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">2</span><span class="o">);</span>  
+<span class="n">ll</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">5</span><span class="o">);</span>  
+<span class="n">ll</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">6</span><span class="o">);</span>  
+<span class="n">ll</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">6</span><span class="o">);</span>  
+<span class="n">ll</span><span class="o">.</span><span class="na">addFirst</span><span class="o">(</span><span class="n">9</span><span class="o">);</span>  <span class="c1">//在头部增加9
+</span><span class="c1"></span><span class="n">ll</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">3</span><span class="o">,</span> <span class="n">10</span><span class="o">);</span>   <span class="c1">//将10插入到第四个元素，四以及后续的元素往后挪动
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="remove-1"><code>remove</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">ll</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>    <span class="c1">//将第四个元素删除
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="遍历-1">遍历</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByIterator</span><span class="o">(</span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span>
+  <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============迭代器遍历==============&#34;</span><span class="o">);</span>  <span class="c1">//中
+</span><span class="c1"></span>    <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">iter1</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>  
+    <span class="k">while</span><span class="o">(</span><span class="n">iter1</span><span class="o">.</span><span class="na">hasNext</span><span class="o">()){</span>  
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">iter1</span><span class="o">.</span><span class="na">next</span><span class="o">());</span>  
+    <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByIndex</span><span class="o">(</span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span>
+  <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============随机索引值遍历==============&#34;</span><span class="o">);</span> <span class="c1">//慢
+</span><span class="c1"></span>    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span><span class="n">i</span><span class="o">++)</span>
+    <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByFor</span><span class="o">(</span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span>
+  <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============for循环遍历==============&#34;</span><span class="o">);</span> <span class="c1">//快
+</span><span class="c1"></span>    <span class="k">for</span><span class="o">(</span><span class="n">Integer</span> <span class="n">item</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span>
+    <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="arraylist与linkedlist对比"><code>ArrayList</code>与<code>LinkedList</code>对比</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span><span class="lnt">95
+</span><span class="lnt">96
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ListCompareTest</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">times</span> <span class="o">=</span> <span class="n">10</span> <span class="o">*</span> <span class="n">1000</span><span class="o">;</span>
+      <span class="c1">// times = 100 * 1000;
+</span><span class="c1"></span>      <span class="c1">// times = 1000 * 1000;
+</span><span class="c1"></span>      
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">arrayList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+      <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">linkedList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Test times = &#34;</span> <span class="o">+</span> <span class="n">times</span><span class="o">);</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;-------------------------&#34;</span><span class="o">);</span>
+      
+      <span class="c1">// ArrayList add
+</span><span class="c1"></span>      <span class="kt">long</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">times</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="n">arrayList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">0</span><span class="o">,</span><span class="n">i</span><span class="o">);</span>
+      <span class="o">}</span>
+      <span class="kt">long</span> <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+      <span class="kt">long</span> <span class="n">duration</span> <span class="o">=</span> <span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">duration</span> <span class="o">+</span> <span class="s">&#34; &lt;--ArrayList add&#34;</span><span class="o">);</span>
+
+      <span class="c1">// LinkedList add
+</span><span class="c1"></span>      <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">times</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="n">linkedList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">0</span><span class="o">,</span><span class="n">i</span><span class="o">);</span>
+      <span class="o">}</span>
+      <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+      <span class="n">duration</span> <span class="o">=</span> <span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">duration</span> <span class="o">+</span> <span class="s">&#34; &lt;--LinkedList add&#34;</span><span class="o">);</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;-------------------------&#34;</span><span class="o">);</span>
+      
+      <span class="c1">// ArrayList get
+</span><span class="c1"></span>      <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">times</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="n">arrayList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+      <span class="o">}</span>
+      <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+      <span class="n">duration</span> <span class="o">=</span> <span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">duration</span> <span class="o">+</span> <span class="s">&#34; &lt;--ArrayList get&#34;</span><span class="o">);</span>
+
+      <span class="c1">// LinkedList get
+</span><span class="c1"></span>      <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">times</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="n">linkedList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+      <span class="o">}</span>
+      <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+      <span class="n">duration</span> <span class="o">=</span> <span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">duration</span> <span class="o">+</span> <span class="s">&#34; &lt;--LinkedList get&#34;</span><span class="o">);</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;-------------------------&#34;</span><span class="o">);</span>
+
+      <span class="c1">// ArrayList remove
+</span><span class="c1"></span>      <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">times</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="n">arrayList</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+      <span class="o">}</span>
+      <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+      <span class="n">duration</span> <span class="o">=</span> <span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">duration</span> <span class="o">+</span> <span class="s">&#34; &lt;--ArrayList remove&#34;</span><span class="o">);</span>
+
+      <span class="c1">// LinkedList remove
+</span><span class="c1"></span>      <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">times</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="n">linkedList</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+      <span class="o">}</span>
+      <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+      <span class="n">duration</span> <span class="o">=</span> <span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">duration</span> <span class="o">+</span> <span class="s">&#34; &lt;--LinkedList remove&#34;</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="cm">/**
+</span><span class="cm"> * 
+</span><span class="cm"> * 输出结果
+</span><span class="cm"> * Test times = 10000
+</span><span class="cm"> * -------------------------
+</span><span class="cm"> * 3857300 &lt;--ArrayList add
+</span><span class="cm"> * 848700 &lt;--LinkedList add
+</span><span class="cm"> * -------------------------
+</span><span class="cm"> * 363100 &lt;--ArrayList get
+</span><span class="cm"> * 32779501 &lt;--LinkedList get
+</span><span class="cm"> * -------------------------
+</span><span class="cm"> * 3671900 &lt;--ArrayList remove
+</span><span class="cm"> * 495300 &lt;--LinkedList remove
+</span><span class="cm"> * 
+</span><span class="cm"> * 
+</span><span class="cm"> */</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>由以上代码可知
+<ul>
+<li><code>LinkedList</code> 使用于频繁增删的数据</li>
+<li><code>ArrayList</code>适用于查询的（静态）数据</li>
+</ul>
+</li>
+</ul>
+<h3 id="33-vector">3.3 <code>Vector</code></h3>
+<ul>
+<li>和<code>ArrayList</code>一样，可变数组实现的列表</li>
+<li><code>Vector</code>同步，适合在多线程下使用</li>
+<li>官方文档建议，在非同步情况下，优先采用<code>ArrayList</code></li>
+</ul>
+<h4 id="声明和初始化-2">声明和初始化</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.util.Vector</span><span class="o">;</span>
+<span class="n">Vector</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="add-2"><code>add</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">v</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+<span class="n">v</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">2</span><span class="o">);</span>
+<span class="n">v</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>
+<span class="n">v</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">5</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="remove-2"><code>remove</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">v</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">2</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="遍历-2">遍历</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Vector</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByIterator</span><span class="o">(</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============迭代器遍历==============&#34;</span><span class="o">);</span> <span class="c1">//最慢
+</span><span class="c1"></span>  <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">iter1</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+  <span class="k">while</span> <span class="o">(</span><span class="n">iter1</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">iter1</span><span class="o">.</span><span class="na">next</span><span class="o">());</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByIndex</span><span class="o">(</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============随机索引值遍历==============&#34;</span><span class="o">);</span> <span class="c1">//较快
+</span><span class="c1"></span>  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">v</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByFor</span><span class="o">(</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============for循环遍历==============&#34;</span><span class="o">);</span> <span class="c1">//最快
+</span><span class="c1"></span>  <span class="k">for</span> <span class="o">(</span><span class="n">Integer</span> <span class="n">item</span> <span class="o">:</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByEnumeration</span><span class="o">(</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============Enumeration遍历==============&#34;</span><span class="o">);</span><span class="c1">//较慢
+</span><span class="c1"></span>  <span class="k">for</span> <span class="o">(</span><span class="n">Enumeration</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">enu</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="na">elements</span><span class="o">();</span> <span class="n">enu</span><span class="o">.</span><span class="na">hasMoreElements</span><span class="o">();)</span> <span class="o">{</span>
+    <span class="n">enu</span><span class="o">.</span><span class="na">nextElement</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="4-集合set">4 集合<code>Set</code></h2>
+<ul>
+<li><strong>确定性</strong>：对任意对象都能判定其是否属于某一个集合</li>
+<li><strong>互异性</strong>：集合内每个元素都是不相同的，注意是内同互异</li>
+<li><strong>无序性</strong>：集合内的顺序无关</li>
+</ul>
+<h3 id="41-java中的集合接口set">4.1 <code>Java</code>中的集合接口<code>Set</code></h3>
+<ul>
+<li><code>HashSet</code>：基于散列函数的集合，无序，不支持同步</li>
+<li><code>TreeSet</code>：基于树结构的集合，可排序的，不支持同步</li>
+<li><code>LinkedHashSet</code>：基于散列函数和双向链表的集合，可排序的，不支持同步</li>
+</ul>
+<h3 id="42-hashset">4.2 <code>HashSet</code></h3>
+<ul>
+<li>基于<code>HashMap</code>实现的，可以容纳<code>null</code>元素，不支持同步
+<ul>
+<li>将不同步的<code>HashSet</code>变为同步的<code>HashSet</code>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">Set</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Collections</span><span class="o">.</span><span class="na">synchronizedSet</span><span class="o">(</span><span class="k">new</span> <span class="n">HashSet</span><span class="o">(...));</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ul>
+<h4 id="声明和初始化-3">声明和初始化</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.HashSet</span><span class="o">;</span>
+<span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="add-添加一个元素"><code>add</code> 添加一个元素</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+<span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">1000</span><span class="o">);</span>
+<span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">20</span><span class="o">);</span>
+<span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>
+<span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">40000</span><span class="o">);</span>
+<span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">5000000</span><span class="o">);</span>
+<span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>                      <span class="c1">//3 重复
+</span><span class="c1"></span><span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>   
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="clear-清除整个hashset"><code>clear</code> 清除整个<code>HashSet</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">hs</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="contains-判定是否包含一个元素"><code>contains</code> 判定是否包含一个元素</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="k">if</span><span class="o">(!</span><span class="n">hs</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">6</span><span class="o">))</span>
+<span class="o">{</span>
+  <span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">6</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="remove-删除一个元素"><code>remove</code> 删除一个元素</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">hs</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">4</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="size-大小"><code>size</code> 大小</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">hs</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="retainall-计算两个集合交集"><code>retainAll</code> 计算两个集合交集</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============测试集合交集==============&#34;</span><span class="o">);</span>
+      
+<span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">set1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+<span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">set2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+
+<span class="n">set1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;a&#34;</span><span class="o">);</span>
+<span class="n">set1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;b&#34;</span><span class="o">);</span>
+<span class="n">set1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;c&#34;</span><span class="o">);</span>
+
+<span class="n">set2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;c&#34;</span><span class="o">);</span>
+<span class="n">set2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;d&#34;</span><span class="o">);</span>
+<span class="n">set2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;e&#34;</span><span class="o">);</span>
+
+<span class="c1">//交集
+</span><span class="c1"></span><span class="n">set1</span><span class="o">.</span><span class="na">retainAll</span><span class="o">(</span><span class="n">set2</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;交集是 &#34;</span><span class="o">+</span><span class="n">set1</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="遍历-3">遍历</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.HashSet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>
+ 
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByIterator</span><span class="o">(</span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hs</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============迭代器遍历==============&#34;</span><span class="o">);</span> 
+  <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">iter1</span> <span class="o">=</span> <span class="n">hs</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>  
+  <span class="k">while</span><span class="o">(</span><span class="n">iter1</span><span class="o">.</span><span class="na">hasNext</span><span class="o">()){</span>  
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">iter1</span><span class="o">.</span><span class="na">next</span><span class="o">());</span>  
+  <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByFor</span><span class="o">(</span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hs</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============for循环遍历==============&#34;</span><span class="o">);</span> 
+  <span class="k">for</span><span class="o">(</span><span class="n">Integer</span> <span class="n">item</span> <span class="o">:</span> <span class="n">hs</span><span class="o">)</span>
+  <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="43-treeset">4.3 <code>TreeSet</code></h3>
+<ul>
+<li>基于TreeMap实现，不可以容纳null元素，不支持同步</li>
+<li>将不同步的<code>TreeSet</code>变为同步的<code>TreeSet</code>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">SortedSet</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Collections</span><span class="o">.</span><span class="na">synchronizedSortrfSet</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeSet</span><span class="o">(...));</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>根据<code>CompareTo</code>方法或指定<code>Comparator</code>排序</li>
+</ul>
+<h4 id="声明和初始化-4">声明和初始化</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.TreeSet</span><span class="o">;</span>
+<span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">ts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="add-添加一个元素-1"><code>add</code> 添加一个元素</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">// ts.add(null);  错误，不支持null
+</span><span class="c1"></span><span class="n">ts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">1000</span><span class="o">);</span>
+<span class="n">ts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">20</span><span class="o">);</span>
+<span class="n">ts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>
+<span class="n">ts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">40000</span><span class="o">);</span>
+<span class="n">ts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">5000000</span><span class="o">);</span>
+<span class="n">ts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>                      <span class="c1">//3 重复  
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="clear-清除整个treeset"><code>clear</code> 清除整个<code>TreeSet</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">ts</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="contains-判定是否包含一个元素-1"><code>contains</code> 判定是否包含一个元素</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="k">if</span><span class="o">(!</span><span class="n">ts</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">6</span><span class="o">))</span>
+<span class="o">{</span>
+  <span class="n">ts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">6</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="remove-删除一个元素-1"><code>remove</code> 删除一个元素</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">ts</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">4</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="size-大小-1"><code>size</code> 大小</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">ts</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="遍历-4">遍历</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.TreeSet</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByIterator</span><span class="o">(</span><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hs</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============迭代器遍历==============&#34;</span><span class="o">);</span> 
+  <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">iter1</span> <span class="o">=</span> <span class="n">hs</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>  
+  <span class="k">while</span><span class="o">(</span><span class="n">iter1</span><span class="o">.</span><span class="na">hasNext</span><span class="o">()){</span>  
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">iter1</span><span class="o">.</span><span class="na">next</span><span class="o">());</span>  
+  <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByFor</span><span class="o">(</span><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hs</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============for循环遍历==============&#34;</span><span class="o">);</span> 
+  <span class="k">for</span><span class="o">(</span><span class="n">Integer</span> <span class="n">item</span> <span class="o">:</span> <span class="n">hs</span><span class="o">)</span>
+  <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="44-linkedhashset">4.4 <code>LinkedHashSet</code></h3>
+<ul>
+<li>基于<code>HashMap</code>实现的，可以容纳<code>null</code>元素，不支持同步
+<ul>
+<li>将不同步的<code>LinkedHashSet</code>变为同步的<code>LinkedHashSet</code>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">Set</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Collections</span><span class="o">.</span><span class="na">synchronizedSet</span><span class="o">(</span><span class="k">new</span> <span class="n">LinkedHashSet</span><span class="o">(...));</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>方法和<code>HashSet</code>基本一致</li>
+<li>通过一个双向链表维护插入顺序</li>
+</ul>
+<h4 id="声明和初始化-5">声明和初始化</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.util.LinkedHashSet</span><span class="o">;</span>
+<span class="n">LinkedHashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">lhs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedHashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="add-3"><code>add</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+<span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">1000</span><span class="o">);</span>
+<span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">20</span><span class="o">);</span>
+<span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>
+<span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">40000</span><span class="o">);</span>
+<span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">5000000</span><span class="o">);</span>
+<span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>                      <span class="c1">//3 重复
+</span><span class="c1"></span><span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>                   <span class="c1">//null 重复
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="remove-3"><code>remove</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">lhs</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">4</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="clear"><code>clear</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">lhs</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="contains"><code>contains</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="k">if</span><span class="o">(!</span><span class="n">lhs</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">6</span><span class="o">))</span>
+<span class="o">{</span>
+  <span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">6</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="size"><code>size</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="n">lhs</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="遍历-5">遍历</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.LinkedHashSet</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByIterator</span><span class="o">(</span><span class="n">LinkedHashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hs</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============迭代器遍历==============&#34;</span><span class="o">);</span> 
+  <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">iter1</span> <span class="o">=</span> <span class="n">hs</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>  
+  <span class="k">while</span><span class="o">(</span><span class="n">iter1</span><span class="o">.</span><span class="na">hasNext</span><span class="o">()){</span>  
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">iter1</span><span class="o">.</span><span class="na">next</span><span class="o">());</span>  
+  <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">traverseByFor</span><span class="o">(</span><span class="n">LinkedHashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hs</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;============for循环遍历==============&#34;</span><span class="o">);</span> 
+  <span class="k">for</span><span class="o">(</span><span class="n">Integer</span> <span class="n">item</span> <span class="o">:</span> <span class="n">hs</span><span class="o">)</span>
+  <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="45-异同点">4.5 异同点</h3>
+<ul>
+<li><code>HashSet</code>，<code>LinkedHashSet</code>，<code>TreeSet</code>的元素都只能是对象</li>
+<li><code>HashSet</code>和<code>LinkedHashSet</code>判定元素重复的原则
+<ul>
+<li>判定两个元素的<code>hashCode</code>返回值是否相同，若不同，返回<code>false</code></li>
+<li>若两者<code>hashCode</code>相同，判定<code>equals</code>方法，若不同，返回<code>false</code>；否则返回<code>true</code></li>
+<li><code>hashCode</code>和<code>equals</code>方法是所有类都有的，因为<code>Object</code>类有</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// Cat.java
+</span><span class="c1"></span><span class="kd">class</span> <span class="nc">Cat</span>
+<span class="o">{</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">size</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">Cat</span><span class="o">(</span><span class="kt">int</span> <span class="n">size</span><span class="o">)</span>
+  <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">size</span> <span class="o">=</span> <span class="n">size</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Dog.java
+</span><span class="c1"></span><span class="kd">class</span> <span class="nc">Dog</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">size</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Dog</span><span class="o">(</span><span class="kt">int</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
+    <span class="o">}</span>      
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSize</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">size</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="cm">/**
+</span><span class="cm">   * 
+</span><span class="cm">   * 这三个方法三位一体，
+</span><span class="cm">   * equals()是相同的；
+</span><span class="cm">   * hashCode()是相同的；
+</span><span class="cm">   * toString()也应该相同；
+</span><span class="cm">   * 
+</span><span class="cm">   */</span>
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj2</span><span class="o">)</span>   <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Dog equals()~~~~~~~~~~~&#34;</span><span class="o">);</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">0</span><span class="o">==</span><span class="n">size</span> <span class="o">-</span> <span class="o">((</span><span class="n">Dog</span><span class="o">)</span> <span class="n">obj2</span><span class="o">).</span><span class="na">getSize</span><span class="o">())</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+      <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Dog hashCode()~~~~~~~~~~~&#34;</span><span class="o">);</span>
+      <span class="k">return</span> <span class="n">size</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&#34;Dog toString()~~~~~~~~~~~&#34;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">size</span> <span class="o">+</span> <span class="s">&#34;&#34;</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">//Tiger.java
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Tiger</span> <span class="kd">implements</span> <span class="n">Comparable</span><span class="o">{</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">size</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Tiger</span><span class="o">(</span><span class="kt">int</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>    
+    <span class="o">}</span>    
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSize</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">size</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Tiger compareTo()~~~~~~~~~~~&#34;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">size</span> <span class="o">-</span> <span class="o">((</span><span class="n">Tiger</span><span class="o">)</span> <span class="n">o</span><span class="o">).</span><span class="na">getSize</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// ObjectHashSetTest.java
+</span><span class="c1"></span><span class="kn">import</span> <span class="nn">java.util.HashSet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.LinkedHashSet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.TreeSet</span><span class="o">;</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ObjectHashSetTest</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="cm">/**
+</span><span class="cm">     * 
+</span><span class="cm">     * Cat类本身没有hashCode(),而是继承Object类的，
+</span><span class="cm">     * 而Object类的hashCode()会返回对象信息和内存地址经过运算的一个int值
+</span><span class="cm">     * 两个Cat(4)对象，它们的hashCode()返回值是不同的。
+</span><span class="cm">     * 
+</span><span class="cm">     */</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;==========Cat HashSet ==============&#34;</span><span class="o">);</span>
+    <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">hs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;();</span>  
+    <span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Cat</span><span class="o">(</span><span class="n">2</span><span class="o">));</span>  
+    <span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Cat</span><span class="o">(</span><span class="n">1</span><span class="o">));</span>  
+    <span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Cat</span><span class="o">(</span><span class="n">3</span><span class="o">));</span>  
+    <span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Cat</span><span class="o">(</span><span class="n">5</span><span class="o">));</span>  
+    <span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Cat</span><span class="o">(</span><span class="n">4</span><span class="o">));</span> 
+    <span class="n">hs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Cat</span><span class="o">(</span><span class="n">4</span><span class="o">));</span> 
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">hs</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>  <span class="c1">//6
+</span><span class="c1"></span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;========================&#34;</span><span class="o">);</span>
+    <span class="n">LinkedHashSet</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span> <span class="n">lhs</span><span class="o">=</span> <span class="k">new</span> <span class="n">LinkedHashSet</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;();</span>  
+    <span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Cat</span><span class="o">(</span><span class="n">2</span><span class="o">));</span>  
+    <span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Cat</span><span class="o">(</span><span class="n">1</span><span class="o">));</span>  
+    <span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Cat</span><span class="o">(</span><span class="n">3</span><span class="o">));</span>  
+    <span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Cat</span><span class="o">(</span><span class="n">5</span><span class="o">));</span>  
+    <span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Cat</span><span class="o">(</span><span class="n">4</span><span class="o">));</span>  
+    <span class="n">lhs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Cat</span><span class="o">(</span><span class="n">4</span><span class="o">));</span>    
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">lhs</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>  <span class="c1">//6
+</span><span class="c1"></span>
+    <span class="cm">/**
+</span><span class="cm">     * 
+</span><span class="cm">     * Dog类本身改写了hashCode()方法，子返回值是具体的size。
+</span><span class="cm">     * 所以两个不同Dog(4)，它们的hashCode()返回值是相同的。
+</span><span class="cm">     * 
+</span><span class="cm">     */</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;==========Dog HashSet ==============&#34;</span><span class="o">);</span>
+    <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">hs2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;();</span>  
+    <span class="n">hs2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">(</span><span class="n">2</span><span class="o">));</span>  
+    <span class="n">hs2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">(</span><span class="n">1</span><span class="o">));</span>  
+    <span class="n">hs2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">(</span><span class="n">3</span><span class="o">));</span>  
+    <span class="n">hs2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">(</span><span class="n">5</span><span class="o">));</span>  
+    <span class="n">hs2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">(</span><span class="n">4</span><span class="o">));</span> 
+    <span class="n">hs2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">(</span><span class="n">4</span><span class="o">));</span> 
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">hs2</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>  <span class="c1">//5
+</span><span class="c1"></span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;========================&#34;</span><span class="o">);</span>
+    <span class="n">LinkedHashSet</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span> <span class="n">lhs2</span><span class="o">=</span> <span class="k">new</span> <span class="n">LinkedHashSet</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;();</span>  
+    <span class="n">lhs2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">(</span><span class="n">2</span><span class="o">));</span>  
+    <span class="n">lhs2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">(</span><span class="n">1</span><span class="o">));</span>  
+    <span class="n">lhs2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">(</span><span class="n">3</span><span class="o">));</span>  
+    <span class="n">lhs2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">(</span><span class="n">5</span><span class="o">));</span>  
+    <span class="n">lhs2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">(</span><span class="n">4</span><span class="o">));</span>  
+    <span class="n">lhs2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Dog</span><span class="o">(</span><span class="n">4</span><span class="o">));</span>     
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">lhs2</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>  <span class="c1">//5
+</span><span class="c1"></span>
+    <span class="cm">/**
+</span><span class="cm">     * 
+</span><span class="cm">     * Java四个重要接口：
+</span><span class="cm">     * Comparable：可比较的；
+</span><span class="cm">     * Clonable：可克隆的；
+</span><span class="cm">     * Runnable：可线程化的；
+</span><span class="cm">     * Serializable：可序列化的；
+</span><span class="cm">     * 
+</span><span class="cm">     * Tiger实现Comparable接口，所以必须实现compareTo方法比较大小
+</span><span class="cm">     * compareTo方法具体规则如下：
+</span><span class="cm">     * int a = obj1.comparaTo(obj2);
+</span><span class="cm">     * 如果 a &gt;  0，则obj1 &gt; obj2；
+</span><span class="cm">     * 如果 a == 0，则obj1 == obj2；
+</span><span class="cm">     * 如果 a &lt;  0，则obj1 &lt; obj2；
+</span><span class="cm">     * 
+</span><span class="cm">     * 
+</span><span class="cm">     * HashSet元素判定规则和comparaTo方法无关
+</span><span class="cm">     * 
+</span><span class="cm">     */</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;==========Tiger HashSet ==============&#34;</span><span class="o">);</span>   
+    <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Tiger</span><span class="o">&gt;</span> <span class="n">hs3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Tiger</span><span class="o">&gt;();</span>  
+    <span class="n">hs3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">2</span><span class="o">));</span>  
+    <span class="n">hs3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">1</span><span class="o">));</span>  
+    <span class="n">hs3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">3</span><span class="o">));</span>  
+    <span class="n">hs3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">5</span><span class="o">));</span>  
+    <span class="n">hs3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">4</span><span class="o">));</span> 
+    <span class="n">hs3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">4</span><span class="o">));</span> 
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">hs3</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>  <span class="c1">//6
+</span><span class="c1"></span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;========================&#34;</span><span class="o">);</span>
+    <span class="n">LinkedHashSet</span><span class="o">&lt;</span><span class="n">Tiger</span><span class="o">&gt;</span> <span class="n">lhs3</span><span class="o">=</span> <span class="k">new</span> <span class="n">LinkedHashSet</span><span class="o">&lt;</span><span class="n">Tiger</span><span class="o">&gt;();</span>  
+    <span class="n">lhs3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">2</span><span class="o">));</span>  
+    <span class="n">lhs3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">1</span><span class="o">));</span>  
+    <span class="n">lhs3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">3</span><span class="o">));</span>  
+    <span class="n">lhs3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">5</span><span class="o">));</span>  
+    <span class="n">lhs3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">4</span><span class="o">));</span>  
+    <span class="n">lhs3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">4</span><span class="o">));</span>     
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">lhs3</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>  <span class="c1">//6
+</span><span class="c1"></span>  <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li><code>TreeSet</code>判定元素重复的原则
+<ul>
+<li>需要元素继承自<code>Comparable</code>接口</li>
+<li>比较两个元素的<code>compareTo</code>方法</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">//Tiger.java
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Tiger</span> <span class="kd">implements</span> <span class="n">Comparable</span><span class="o">{</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">size</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Tiger</span><span class="o">(</span><span class="kt">int</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>    
+    <span class="o">}</span>    
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSize</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">size</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Tiger compareTo()~~~~~~~~~~~&#34;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">size</span> <span class="o">-</span> <span class="o">((</span><span class="n">Tiger</span><span class="o">)</span> <span class="n">o</span><span class="o">).</span><span class="na">getSize</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// ObjectTreeSetTest.java
+</span><span class="c1"></span><span class="kn">import</span> <span class="nn">java.util.TreeSet</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ObjectTreeSetTest</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//添加到TreeSet的，需要实现Comparable接口，即实现compareTo方法
+</span><span class="c1"></span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;==========Tiger TreeSet ==============&#34;</span><span class="o">);</span>
+
+
+    <span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Tiger</span><span class="o">&gt;</span> <span class="n">ts3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Tiger</span><span class="o">&gt;();</span>  
+    <span class="n">ts3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">2</span><span class="o">));</span>  
+    <span class="n">ts3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">1</span><span class="o">));</span>  
+    <span class="n">ts3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">3</span><span class="o">));</span>  
+    <span class="n">ts3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">5</span><span class="o">));</span>  
+    <span class="n">ts3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">4</span><span class="o">));</span> 
+    <span class="n">ts3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Tiger</span><span class="o">(</span><span class="n">4</span><span class="o">));</span> 
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ts3</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>  <span class="c1">//5
+</span><span class="c1"></span>  <span class="o">}</span>
+
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="5-映射map">5 映射<code>Map</code></h2>
+<h2 id="6-工具类">6 工具类</h2></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-02-17</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://ieblyang.tech/java08/" data-title="[Java核心技术] Java数据结构" data-hashtags="Java,JavaVolume"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://ieblyang.tech/java08/" data-hashtag="Java"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://ieblyang.tech/java08/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://ieblyang.tech/java08/" data-title="[Java核心技术] Java数据结构" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://ieblyang.tech/java08/" data-title="[Java核心技术] Java数据结构" data-ralateuid="ieblYang"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://ieblyang.tech/java08/" data-title="[Java核心技术] Java数据结构"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/baidu.svg"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://ieblyang.tech/java08/" data-title="[Java核心技术] Java数据结构"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://ieblyang.tech/java08/" data-title="[Java核心技术] Java数据结构"><i class="fab fa-skype fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/java/">Java</a>,&nbsp;<a href="/tags/javavolume/">《Java 核心技术》</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/java07/" class="prev" rel="prev" title="[Java核心技术] Java异常和异常处理"><i class="fas fa-angle-left fa-fw"></i>[Java核心技术] Java异常和异常处理</a>
+            <a href="/basic-markdown-syntax/" class="next" rel="next" title="Markdown 基本语法">Markdown 基本语法<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ieblYang</a></span>&nbsp;|&nbsp;<span class="license"><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=61032202000144">陕公网安备 61032202000144号</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp"><a href="http://www.beian.miit.gov.cn" target="_blank" rel="nofollow">陕ICP备2021001074号-2</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"kpgPchgfg6K9RMdLzdhxQyOV-gzGzoHsz","appKey":"erpDYbf9JmO61Yn1YtUw7AXB","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"2WIOUBN71W","algoliaIndex":"ieblyang","algoliaSearchKey":"f169f964063f4eed7cd46b7826cd7bf0","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.7bc7989e979c4a19d97db3ab311a80fe.js" integrity="md5-e8eYnpecShnZfbOrMRqA/g=="></script></body>
+</html>
