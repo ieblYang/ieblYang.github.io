@@ -33,7 +33,7 @@
                             "url": "https:\/\/ieblyang.tech\/java10\/featured-image.png",
                             "width":  1420 ,
                             "height":  708 
-                        }],"genre": "posts","keywords": "Java, JavaVolume","wordcount":  5459 ,
+                        }],"genre": "posts","keywords": "Java, JavaVolume","wordcount":  5457 ,
         "url": "https:\/\/ieblyang.tech\/java10\/","datePublished": "2022-02-20T09:34:40+08:00","dateModified": "2022-02-20T09:34:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "ieblYang","logo": "https:\/\/ieblyang.tech\/images\/avatar.png"},"author": {
@@ -110,7 +110,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">[Java核心技术] Java多线程</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://ieblyang.tech/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ieblYang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-20">2022-02-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5459 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-20">2022-02-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5457 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;<span id="/java10/" class="leancloud_visitors" data-flag-title="[Java核心技术] Java多线程">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -218,11 +218,11 @@
 </ul>
 <h3 id="14-多进程vs多线程">1.4 多进程VS多线程</h3>
 <ul>
-<li>线程共享数据</li>
-<li>线程通讯更高效</li>
-<li>线程更轻量级，更容易切换</li>
-<li>多个线程更容易管理</li>
-<li>多进程实例
+<li>线程<strong>共享数据</strong></li>
+<li>线程<strong>通讯更高效</strong></li>
+<li>线程<strong>更轻量级</strong>，<strong>更容易切换</strong></li>
+<li>多个线程<strong>更容易管理</strong></li>
+<li><strong>多进程</strong>实例
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -254,7 +254,7 @@
       <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()</span> <span class="o">*</span> <span class="n">100</span><span class="o">);</span>
       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34; main thread is running &#34;</span> <span class="o">+</span> <span class="n">a</span><span class="o">);</span>
       <span class="k">try</span> <span class="o">{</span>
-        <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">5000</span><span class="o">);</span> <span class="c1">//5000ºÁÃë
+        <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">5000</span><span class="o">);</span> <span class="c1">//5000毫秒
 </span><span class="c1"></span>      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// TODO Auto-generated catch block
 </span><span class="c1"></span>        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
@@ -266,7 +266,7 @@
 </code></pre></td></tr></table>
 </div>
 </div></li>
-<li>多线程实例
+<li><strong>多线程</strong>实例
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
