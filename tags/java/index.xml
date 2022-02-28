@@ -4,7 +4,14 @@
         <link>https://ieblyang.tech/tags/java/</link>
         <description>Java - 标签 - ieblYang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
-            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 20 Feb 2022 09:34:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/tags/java/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 22 Feb 2022 09:34:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/tags/java/" rel="self" type="application/rss+xml" /><item>
+    <title>[Java核心技术] Java并发编程</title>
+    <link>https://ieblyang.tech/java11/</link>
+    <pubDate>Tue, 22 Feb 2022 09:34:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/java11/</guid>
+    <description><![CDATA[<p>Java 核心技术读书笔记——Java并发编程</p>]]></description>
+</item><item>
     <title>[Java核心技术] Java多线程</title>
     <link>https://ieblyang.tech/java10/</link>
     <pubDate>Sun, 20 Feb 2022 09:34:40 &#43;0800</pubDate>
@@ -68,13 +75,5 @@
     <author>作者</author>
     <guid>https://ieblyang.tech/53/</guid>
     <description><![CDATA[<p>给定一个整数数组 <code>nums</code>，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>]]></description>
-</item><item>
-    <title>38. 外观数列</title>
-    <link>https://ieblyang.tech/38/</link>
-    <pubDate>Thu, 04 Mar 2021 19:12:07 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://ieblyang.tech/38/</guid>
-    <description><![CDATA[<p>给定一个正整数 n ，输出外观数列的第 n 项。</p>
-<p>「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。</p>]]></description>
 </item></channel>
 </rss>

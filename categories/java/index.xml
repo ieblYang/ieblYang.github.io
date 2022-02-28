@@ -4,7 +4,14 @@
         <link>https://ieblyang.tech/categories/java/</link>
         <description>Java - 分类 - ieblYang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
-            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 20 Feb 2022 09:34:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/categories/java/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 22 Feb 2022 09:34:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/categories/java/" rel="self" type="application/rss+xml" /><item>
+    <title>[Java核心技术] Java并发编程</title>
+    <link>https://ieblyang.tech/java11/</link>
+    <pubDate>Tue, 22 Feb 2022 09:34:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/java11/</guid>
+    <description><![CDATA[<p>Java 核心技术读书笔记——Java并发编程</p>]]></description>
+</item><item>
     <title>[Java核心技术] Java多线程</title>
     <link>https://ieblyang.tech/java10/</link>
     <pubDate>Sun, 20 Feb 2022 09:34:40 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://ieblyang.tech/baidumap/</guid>
     <description><![CDATA[<p>在写项目时，需要通过浏览器获取用户所在城市定位，并计算两个定位之间的距离，于是先利用百度地图API实现网页定位接着进行距离计算。</p>]]></description>
-</item><item>
-    <title>[Java核心技术] 基本语句和结构</title>
-    <link>https://ieblyang.tech/java01/</link>
-    <pubDate>Wed, 03 Feb 2021 17:33:40 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://ieblyang.tech/java01/</guid>
-    <description><![CDATA[<p>Java 核心技术读书笔记——基本语句和结构</p>]]></description>
 </item></channel>
 </rss>

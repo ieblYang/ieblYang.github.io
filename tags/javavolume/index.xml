@@ -4,7 +4,14 @@
         <link>https://ieblyang.tech/tags/javavolume/</link>
         <description>《Java 核心技术》 - 标签 - ieblYang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bolon.young@gmail.com (ieblYang)</managingEditor>
-            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 20 Feb 2022 09:34:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/tags/javavolume/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>bolon.young@gmail.com (ieblYang)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 22 Feb 2022 09:34:40 &#43;0800</lastBuildDate><atom:link href="https://ieblyang.tech/tags/javavolume/" rel="self" type="application/rss+xml" /><item>
+    <title>[Java核心技术] Java并发编程</title>
+    <link>https://ieblyang.tech/java11/</link>
+    <pubDate>Tue, 22 Feb 2022 09:34:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ieblyang.tech/java11/</guid>
+    <description><![CDATA[<p>Java 核心技术读书笔记——Java并发编程</p>]]></description>
+</item><item>
     <title>[Java核心技术] Java多线程</title>
     <link>https://ieblyang.tech/java10/</link>
     <pubDate>Sun, 20 Feb 2022 09:34:40 &#43;0800</pubDate>
