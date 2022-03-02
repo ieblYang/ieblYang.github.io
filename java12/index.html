@@ -33,7 +33,7 @@
                             "url": "https:\/\/ieblyang.tech\/java12\/featured-image.png",
                             "width":  1420 ,
                             "height":  708 
-                        }],"genre": "posts","keywords": "Java, JavaVolume","wordcount":  5420 ,
+                        }],"genre": "posts","keywords": "Java, JavaVolume","wordcount":  9875 ,
         "url": "https:\/\/ieblyang.tech\/java12\/","datePublished": "2022-02-24T09:34:40+08:00","dateModified": "2022-02-24T09:34:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "ieblYang","logo": "https:\/\/ieblyang.tech\/images\/avatar.png"},"author": {
@@ -110,8 +110,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">[Java核心技术] Java网络编程</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://ieblyang.tech/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ieblYang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-24">2022-02-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5420 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;<span id="/java12/" class="leancloud_visitors" data-flag-title="[Java核心技术] Java网络编程">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-24">2022-02-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 9875 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 20 分钟&nbsp;<span id="/java12/" class="leancloud_visitors" data-flag-title="[Java核心技术] Java网络编程">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="featured-image"><img
@@ -176,7 +176,47 @@
             <li><a href="#nioclient">NioClient</a></li>
           </ul>
         </li>
-        <li><a href="#java-aio-编程">Java AIO 编程</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-java-aio-编程">6 Java AIO 编程</a>
+      <ul>
+        <li><a href="#61-主要类">6.1 主要类</a></li>
+        <li><a href="#62-三种-io-的区别">6.2 三种 I/O 的区别</a></li>
+        <li><a href="#63-实例">6.3 实例</a>
+          <ul>
+            <li><a href="#aioserver">AioServer</a></li>
+            <li><a href="#aioclient">AioClient</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#7-netty-编程">7 Netty 编程</a>
+      <ul>
+        <li><a href="#71-关键技术">7.1 关键技术</a>
+          <ul>
+            <li><a href="#711-通道-channel">7.1.1 通道 Channel</a></li>
+            <li><a href="#712-事件-eventloop">7.1.2 事件 EventLoop</a></li>
+            <li><a href="#713-事件">7.1.3 事件</a></li>
+            <li><a href="#714-事件处理-channelhandler">7.1.4 事件处理 ChannelHandler</a></li>
+            <li><a href="#715-channelhandler工作模式责任链">7.1.5 ChannelHandler工作模式：责任链</a></li>
+            <li><a href="#716-bytebuf">7.1.6 ByteBuf</a></li>
+            <li><a href="#717-实例">7.1.7 实例</a></li>
+          </ul>
+        </li>
+        <li><a href="#72-书籍推荐">7.2 书籍推荐</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-java-mail-编程">8 Java Mail 编程</a>
+      <ul>
+        <li><a href="#81-java-mail-服务器配置">8.1 Java Mail 服务器配置</a></li>
+        <li><a href="#82-java-mail-工具包">8.2 Java Mail 工具包</a></li>
+        <li><a href="#83-关键类">8.3 关键类</a></li>
+        <li><a href="#84-实例">8.4 实例</a>
+          <ul>
+            <li><a href="#接收邮件">接收邮件</a></li>
+            <li><a href="#发送邮件">发送邮件</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1552,7 +1592,21 @@
 </div><h2 id="5-java-nio-编程">5 Java NIO 编程</h2>
 <ul>
 <li>传统的TCP和UDP通讯属于 <code>Blocking I/O </code></li>
-<li><strong>NIO</strong>（<code>Non-Blocking I/O</code>，非阻塞I/O，又名 New I/O）提供<strong>非阻塞</strong>通讯等方式，避免同步I/O通讯效率过低，一个线程可以管理多个连接，减少线程多的压力</li>
+<li><strong>NIO</strong>（<code>Non-Blocking I/O</code>，非阻塞I/O，又名 New I/O）提供<strong>非阻塞</strong>通讯等方式，避免同步I/O通讯效率过低，一个线程可以管理多个连接，减少线程多的压力，不是真异步。</li>
+</ul>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>笔记<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><strong>并发编程的同步</strong>：是指多个线程需要以一种同步的方式来访问某一个数据结构。这里同步的反义词是非同步的，即线程不安全的。</li>
+<li><strong>网络通讯的同步</strong>：是指客户端和服务端直接的通讯等待方式。这里的同步的反义词是异步，即无需等待另一端操作完成。</li>
+</ul>
+</div>
+        </div>
+    </div>
+<ul>
 <li>JDK 1.4引入，1.7升级 NIO 2.0 (包括了AIO)</li>
 <li>主要在<code>java.nio</code>包中</li>
 <li>主要类
@@ -2163,8 +2217,1532 @@
 </span><span class="cm"> */</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="java-aio-编程">Java AIO 编程</h3>
-<p>待更新</p></div><div class="post-footer" id="post-footer">
+</div><h2 id="6-java-aio-编程">6 Java AIO 编程</h2>
+<ul>
+<li>Asynchronous I/O, 异步I/O</li>
+<li>JDK 1.7引入，主要在java.nio包中</li>
+<li>异步I/O，采用回调方法进行处理读写操作</li>
+</ul>
+<h3 id="61-主要类">6.1 主要类</h3>
+<ul>
+<li><code>AsynchronousServerSocketChannel</code> 服务器接受请求通道
+<ul>
+<li><code>bind</code> 绑定在某一个端口</li>
+<li><code>accept</code> 接受客户端请求</li>
+</ul>
+</li>
+<li><code>AsynchronousSocketChannel</code> Socket通讯通道
+<ul>
+<li><code>read</code> 读数据</li>
+<li><code>write</code> 写数据</li>
+</ul>
+</li>
+<li><strong><code>CompletionHandler</code> 异步处理类</strong>
+<ul>
+<li><strong><code>completed</code> 操作完成后异步调用方法</strong></li>
+<li><strong><code>failed</code> 操作失败后异步调用方法</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="62-三种-io-的区别">6.2 三种 I/O 的区别</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">BIO</th>
+<th style="text-align:center">NIO</th>
+<th style="text-align:center">AIO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>阻塞方式</td>
+<td style="text-align:center">阻塞</td>
+<td style="text-align:center">非阻塞</td>
+<td style="text-align:center">非阻塞</td>
+</tr>
+<tr>
+<td>同步方式</td>
+<td style="text-align:center">同步</td>
+<td style="text-align:center">同步</td>
+<td style="text-align:center">异步</td>
+</tr>
+<tr>
+<td>编程难度</td>
+<td style="text-align:center">简单</td>
+<td style="text-align:center">较难</td>
+<td style="text-align:center">困难</td>
+</tr>
+<tr>
+<td>客户机/服务器线程对比</td>
+<td style="text-align:center">1：1</td>
+<td style="text-align:center">N：1</td>
+<td style="text-align:center">N：1</td>
+</tr>
+<tr>
+<td>性能</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">高</td>
+</tr>
+</tbody>
+</table>
+<h3 id="63-实例">6.3 实例</h3>
+<h4 id="aioserver">AioServer</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.InetSocketAddress</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.ByteBuffer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.CharBuffer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.channels.AsynchronousChannelGroup</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.channels.AsynchronousServerSocketChannel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.channels.AsynchronousSocketChannel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.channels.CompletionHandler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.charset.Charset</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.charset.CharsetDecoder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.ExecutorService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.Executors</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AioServer</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>  
+      <span class="n">AsynchronousServerSocketChannel</span> <span class="n">server</span> <span class="o">=</span> <span class="n">AsynchronousServerSocketChannel</span><span class="o">.</span><span class="na">open</span><span class="o">();</span>   
+        <span class="n">server</span><span class="o">.</span><span class="na">bind</span><span class="o">(</span><span class="k">new</span> <span class="n">InetSocketAddress</span><span class="o">(</span><span class="s">&#34;localhost&#34;</span><span class="o">,</span> <span class="n">8001</span><span class="o">));</span>  
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;服务器在8001端口守候&#34;</span><span class="o">);</span>
+        
+        <span class="c1">//开始等待客户端连接，一旦有连接，做completed(AsynchronousSocketChannel channel, Object attachment)任务
+</span><span class="c1"></span>        <span class="n">server</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="k">new</span> <span class="n">CompletionHandler</span><span class="o">&lt;</span><span class="n">AsynchronousSocketChannel</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;()</span> <span class="o">{</span>  
+            <span class="nd">@Override</span>  
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">completed</span><span class="o">(</span><span class="n">AsynchronousSocketChannel</span> <span class="n">channel</span><span class="o">,</span> <span class="n">Object</span> <span class="n">attachment</span><span class="o">)</span> <span class="o">{</span>  
+               <span class="n">server</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span> <span class="c1">//持续接收新的客户端请求
+</span><span class="c1"></span>               
+                 <span class="n">ByteBuffer</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">ByteBuffer</span><span class="o">.</span><span class="na">allocate</span><span class="o">(</span><span class="n">1024</span><span class="o">);</span> <span class="c1">//准备读取空间
+</span><span class="c1"></span>                 <span class="c1">//开始读取客户端内容，一旦读取结束，做 completed(Integer result_num, ByteBuffer attachment) 任务
+</span><span class="c1"></span>                 <span class="n">channel</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buffer</span><span class="o">,</span> <span class="n">buffer</span><span class="o">,</span> <span class="k">new</span> <span class="n">CompletionHandler</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">ByteBuffer</span><span class="o">&gt;()</span> <span class="o">{</span>
+                     <span class="nd">@Override</span>
+                     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">completed</span><span class="o">(</span><span class="n">Integer</span> <span class="n">result_num</span><span class="o">,</span> <span class="n">ByteBuffer</span> <span class="n">attachment</span><span class="o">)</span> <span class="o">{</span>
+                         <span class="n">attachment</span><span class="o">.</span><span class="na">flip</span><span class="o">();</span> <span class="c1">//反转此Buffer 
+</span><span class="c1"></span>                         <span class="n">CharBuffer</span> <span class="n">charBuffer</span> <span class="o">=</span> <span class="n">CharBuffer</span><span class="o">.</span><span class="na">allocate</span><span class="o">(</span><span class="n">1024</span><span class="o">);</span>
+                         <span class="n">CharsetDecoder</span> <span class="n">decoder</span> <span class="o">=</span> <span class="n">Charset</span><span class="o">.</span><span class="na">defaultCharset</span><span class="o">().</span><span class="na">newDecoder</span><span class="o">();</span>
+                         <span class="n">decoder</span><span class="o">.</span><span class="na">decode</span><span class="o">(</span><span class="n">attachment</span><span class="o">,</span><span class="n">charBuffer</span><span class="o">,</span><span class="kc">false</span><span class="o">);</span>
+                         <span class="n">charBuffer</span><span class="o">.</span><span class="na">flip</span><span class="o">();</span>
+                         <span class="n">String</span> <span class="n">data</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">charBuffer</span><span class="o">.</span><span class="na">array</span><span class="o">(),</span><span class="n">0</span><span class="o">,</span> <span class="n">charBuffer</span><span class="o">.</span><span class="na">limit</span><span class="o">());</span>
+                         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;client said: &#34;</span> <span class="o">+</span> <span class="n">data</span><span class="o">);</span>
+                         <span class="n">channel</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">ByteBuffer</span><span class="o">.</span><span class="na">wrap</span><span class="o">((</span><span class="n">data</span> <span class="o">+</span> <span class="s">&#34; 666&#34;</span><span class="o">).</span><span class="na">getBytes</span><span class="o">()));</span> <span class="c1">//返回结果给客户端
+</span><span class="c1"></span>                         <span class="k">try</span><span class="o">{</span>
+                             <span class="n">channel</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                         <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span>
+                           <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                         <span class="o">}</span>
+                     <span class="o">}</span>
+      
+                     <span class="nd">@Override</span>
+                     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">failed</span><span class="o">(</span><span class="n">Throwable</span> <span class="n">exc</span><span class="o">,</span> <span class="n">ByteBuffer</span> <span class="n">attachment</span><span class="o">)</span> <span class="o">{</span>
+                         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;read error &#34;</span><span class="o">+</span><span class="n">exc</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+                     <span class="o">}</span>
+                 <span class="o">});</span>
+                 
+
+            <span class="o">}</span>  
+  
+            <span class="nd">@Override</span>  
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">failed</span><span class="o">(</span><span class="n">Throwable</span> <span class="n">exc</span><span class="o">,</span> <span class="n">Object</span> <span class="n">attachment</span><span class="o">)</span> <span class="o">{</span>  
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&#34;failed: &#34;</span> <span class="o">+</span> <span class="n">exc</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>  
+            <span class="o">}</span>  
+        <span class="o">});</span>  
+
+        <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span>
+          <span class="k">try</span> <span class="o">{</span>
+        <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">5000</span><span class="o">);</span>
+      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// TODO Auto-generated catch block
+</span><span class="c1"></span>        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+      <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>  
+<span class="o">}</span>
+
+<span class="cm">/**
+</span><span class="cm"> * 
+</span><span class="cm"> * 
+</span><span class="cm"> * 
+</span><span class="cm"> * 服务器在8001端口守候
+</span><span class="cm"> * client said: 178a8702-cd42-4b5a-b95b-2c5647a8356a
+</span><span class="cm"> * 
+</span><span class="cm"> */</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="aioclient">AioClient</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">java.net.InetSocketAddress</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.ByteBuffer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.CharBuffer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.channels.AsynchronousSocketChannel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.channels.CompletionHandler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.charset.Charset</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.charset.CharsetDecoder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.UUID</span><span class="o">;</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AioClient</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">try</span>
+    <span class="o">{</span>
+      <span class="n">AsynchronousSocketChannel</span> <span class="n">channel</span> <span class="o">=</span> <span class="n">AsynchronousSocketChannel</span><span class="o">.</span><span class="na">open</span><span class="o">();</span>
+      
+      <span class="c1">//channel连接成功后，自动做channel.connect任务
+</span><span class="c1"></span>      <span class="n">channel</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="k">new</span> <span class="n">InetSocketAddress</span><span class="o">(</span><span class="s">&#34;localhost&#34;</span><span class="o">,</span> <span class="n">8001</span><span class="o">),</span> <span class="kc">null</span><span class="o">,</span> <span class="k">new</span> <span class="n">CompletionHandler</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">,</span> <span class="n">Void</span><span class="o">&gt;()</span> <span class="o">{</span>
+
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">completed</span><span class="o">(</span><span class="n">Void</span> <span class="n">result</span><span class="o">,</span> <span class="n">Void</span> <span class="n">attachment</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+          
+          <span class="c1">//str向服务器写数据成功后，自动做 new CompletionHandler&lt;Integer, Object&gt;() 任务
+</span><span class="c1"></span>          <span class="n">channel</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">ByteBuffer</span><span class="o">.</span><span class="na">wrap</span><span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">getBytes</span><span class="o">()),</span> <span class="kc">null</span><span class="o">,</span>
+              <span class="k">new</span> <span class="n">CompletionHandler</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;()</span> <span class="o">{</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">completed</span><span class="o">(</span><span class="n">Integer</span> <span class="n">result</span><span class="o">,</span> <span class="n">Object</span> <span class="n">attachment</span><span class="o">)</span> <span class="o">{</span>
+                  <span class="k">try</span> <span class="o">{</span>
+                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;write &#34;</span> <span class="o">+</span> <span class="n">str</span> <span class="o">+</span> <span class="s">&#34;, and wait response&#34;</span><span class="o">);</span>
+                    <span class="c1">//等待服务器响应
+</span><span class="c1"></span>                    <span class="n">ByteBuffer</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">ByteBuffer</span><span class="o">.</span><span class="na">allocate</span><span class="o">(</span><span class="n">1024</span><span class="o">);</span> <span class="c1">//准备读取空间
+</span><span class="c1"></span>                             <span class="c1">//开始读取服务器反馈内容，一旦读取结束，做completed(Integer result_num, ByteBuffer attachment) 任务
+</span><span class="c1"></span>                    <span class="n">channel</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buffer</span><span class="o">,</span> <span class="n">buffer</span><span class="o">,</span> <span class="k">new</span> <span class="n">CompletionHandler</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">ByteBuffer</span><span class="o">&gt;()</span> <span class="o">{</span>
+                                 <span class="nd">@Override</span>
+                                 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">completed</span><span class="o">(</span><span class="n">Integer</span> <span class="n">result_num</span><span class="o">,</span> <span class="n">ByteBuffer</span> <span class="n">attachment</span><span class="o">)</span> <span class="o">{</span>
+                                     <span class="n">attachment</span><span class="o">.</span><span class="na">flip</span><span class="o">();</span> <span class="c1">//反转此Buffer 
+</span><span class="c1"></span>                                     <span class="n">CharBuffer</span> <span class="n">charBuffer</span> <span class="o">=</span> <span class="n">CharBuffer</span><span class="o">.</span><span class="na">allocate</span><span class="o">(</span><span class="n">1024</span><span class="o">);</span>
+                                     <span class="n">CharsetDecoder</span> <span class="n">decoder</span> <span class="o">=</span> <span class="n">Charset</span><span class="o">.</span><span class="na">defaultCharset</span><span class="o">().</span><span class="na">newDecoder</span><span class="o">();</span>
+                                     <span class="n">decoder</span><span class="o">.</span><span class="na">decode</span><span class="o">(</span><span class="n">attachment</span><span class="o">,</span><span class="n">charBuffer</span><span class="o">,</span><span class="kc">false</span><span class="o">);</span>
+                                     <span class="n">charBuffer</span><span class="o">.</span><span class="na">flip</span><span class="o">();</span>
+                                     <span class="n">String</span> <span class="n">data</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">charBuffer</span><span class="o">.</span><span class="na">array</span><span class="o">(),</span><span class="n">0</span><span class="o">,</span> <span class="n">charBuffer</span><span class="o">.</span><span class="na">limit</span><span class="o">());</span>
+                                     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;server said: &#34;</span> <span class="o">+</span> <span class="n">data</span><span class="o">);</span>
+                                     <span class="k">try</span><span class="o">{</span>
+                                         <span class="n">channel</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                                     <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span>
+                                       <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                                     <span class="o">}</span>
+                                 <span class="o">}</span>
+                  
+                                 <span class="nd">@Override</span>
+                                 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">failed</span><span class="o">(</span><span class="n">Throwable</span> <span class="n">exc</span><span class="o">,</span> <span class="n">ByteBuffer</span> <span class="n">attachment</span><span class="o">)</span> <span class="o">{</span>
+                                     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;read error &#34;</span><span class="o">+</span><span class="n">exc</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+                                 <span class="o">}</span>
+                             <span class="o">});</span>
+                             
+                    <span class="n">channel</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                  <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                  <span class="o">}</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">failed</span><span class="o">(</span><span class="n">Throwable</span> <span class="n">exc</span><span class="o">,</span> <span class="n">Object</span> <span class="n">attachment</span><span class="o">)</span> <span class="o">{</span>
+                  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;write error&#34;</span><span class="o">);</span>
+                <span class="o">}</span>
+
+              <span class="o">});</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">failed</span><span class="o">(</span><span class="n">Throwable</span> <span class="n">exc</span><span class="o">,</span> <span class="n">Void</span> <span class="n">attachment</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;fail&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+
+      <span class="o">});</span>
+      <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">10000</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="cm">/**
+</span><span class="cm"> * 
+</span><span class="cm"> * 
+</span><span class="cm"> * write 178a8702-cd42-4b5a-b95b-2c5647a8356a, and wait response
+</span><span class="cm"> * server said: 178a8702-cd42-4b5a-b95b-2c5647a8356a 666
+</span><span class="cm"> * 
+</span><span class="cm"> * 
+</span><span class="cm"> */</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="7-netty-编程">7 Netty 编程</h2>
+<ul>
+<li>Netty, <a href="http://netty.io" target="_blank" rel="noopener noreffer">http://netty.io</a></li>
+<li>最早由韩国 Trustin Lee 设计开发的，后来由 JBoss 接手开发，现在是独立的 Netty Project</li>
+<li>一个<strong>非阻塞</strong>的<strong>客户端-服务端</strong>网络通讯框架</li>
+<li>基于<strong>异步</strong>事件驱动模型</li>
+<li>简化Java的 TCP 和 UDP 编程</li>
+<li>支持 HTTP/2， SSL 等多种协议</li>
+<li>支持多种数据格式，如 JSON 等</li>
+</ul>
+<h3 id="71-关键技术">7.1 关键技术</h3>
+<h4 id="711-通道-channel">7.1.1 通道 Channel</h4>
+<ul>
+<li><code>ServerSocketChannel</code>/<code>NioServerSocketChannel</code>/…</li>
+<li><code>SocketChannel</code>/<code>NioSocketChannel</code></li>
+</ul>
+<h4 id="712-事件-eventloop">7.1.2 事件 EventLoop</h4>
+<ul>
+<li>为每个通道定义一个<code>EventLoop</code>，处理所有的I/O事件</li>
+<li><code>EventLoop</code>注册事件</li>
+<li><code>EventLoop</code>将事件派发给<code>ChannelHandler</code></li>
+<li><code>EventLoop</code>安排进一步操作</li>
+</ul>
+<h4 id="713-事件">7.1.3 事件</h4>
+<ul>
+<li>事件按照数据流向进行分类</li>
+<li>入站事件：连接激活/数据读取/……</li>
+<li>出站事件：打开到远程连接/写数据/……</li>
+</ul>
+<h4 id="714-事件处理-channelhandler">7.1.4 事件处理 ChannelHandler</h4>
+<ul>
+<li><code>Channel</code>通道发生数据或状态改变</li>
+<li><code>EventLoop</code>会将事件分类，并调用<code>ChannelHandler</code>的回调函数</li>
+<li>程序员需要实现<code>ChannelHandler</code>内的回调函数</li>
+<li><code>ChannelInboundHandler</code>/<code>ChannelOutboundHandler</code></li>
+</ul>
+<h4 id="715-channelhandler工作模式责任链">7.1.5 ChannelHandler工作模式：责任链</h4>
+<ul>
+<li>责任链模式：
+<ul>
+<li>将请求的接收者连成一条链</li>
+<li>在链上传递请求，直到有一个接收者处理该请求</li>
+<li>避免请求者和接收者的耦合</li>
+</ul>
+</li>
+</ul>
+<p><figure><a class="lightgallery" href="/java12/05.png" title="责任链模式" data-thumbnail="/java12/05.png" data-sub-html="<h2>责任链模式</h2><p>责任链模式</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="05.png"
+            data-srcset="/java12/05.png, 05.png 1.5x, /java12/05.png 2x"
+            data-sizes="auto"
+            alt="/java12/05.png" />
+    </a><figcaption class="image-caption">责任链模式</figcaption>
+    </figure></p>
+<ul>
+<li><code>ChannelHandler</code>可以有多个，依次进行调用</li>
+<li><code>ChannelPipeline</code>作为容器，承载多个<code>ChannelHandler</code></li>
+</ul>
+<h4 id="716-bytebuf">7.1.6 ByteBuf</h4>
+<ul>
+<li>强大的字节容器，提供丰富API进行操作</li>
+</ul>
+<h4 id="717-实例">7.1.7 实例</h4>
+<ul>
+<li>EchoServer
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">// EchoServer.java
+</span><span class="c1"></span><span class="kn">import</span> <span class="nn">io.netty.bootstrap.ServerBootstrap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.ChannelFuture</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.ChannelInitializer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.EventLoopGroup</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.nio.NioEventLoopGroup</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.socket.SocketChannel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.socket.nio.NioServerSocketChannel</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.net.InetSocketAddress</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EchoServer</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="n">8001</span><span class="o">;</span>
+        <span class="kd">final</span> <span class="n">EchoServerHandler</span> <span class="n">serverHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EchoServerHandler</span><span class="o">();</span>
+        <span class="n">EventLoopGroup</span> <span class="n">group</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NioEventLoopGroup</span><span class="o">();</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="c1">//ServerBootstrap是netty中的一个服务器引导类
+</span><span class="c1"></span>            <span class="n">ServerBootstrap</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ServerBootstrap</span><span class="o">();</span>
+            <span class="n">b</span><span class="o">.</span><span class="na">group</span><span class="o">(</span><span class="n">group</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">channel</span><span class="o">(</span><span class="n">NioServerSocketChannel</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>  <span class="c1">//设置通道类型
+</span><span class="c1"></span>                <span class="o">.</span><span class="na">localAddress</span><span class="o">(</span><span class="k">new</span> <span class="n">InetSocketAddress</span><span class="o">(</span><span class="n">port</span><span class="o">))</span>  <span class="c1">//设置监听端口
+</span><span class="c1"></span>                <span class="o">.</span><span class="na">childHandler</span><span class="o">(</span><span class="k">new</span> <span class="n">ChannelInitializer</span><span class="o">&lt;</span><span class="n">SocketChannel</span><span class="o">&gt;()</span> <span class="o">{</span> <span class="c1">//初始化责任链
+</span><span class="c1"></span>                    <span class="nd">@Override</span>
+                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initChannel</span><span class="o">(</span><span class="n">SocketChannel</span> <span class="n">ch</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                        <span class="n">ch</span><span class="o">.</span><span class="na">pipeline</span><span class="o">().</span><span class="na">addLast</span><span class="o">(</span><span class="n">serverHandler</span><span class="o">);</span> <span class="c1">//添加处理类
+</span><span class="c1"></span>                    <span class="o">}</span>
+                <span class="o">});</span>
+
+            <span class="n">ChannelFuture</span> <span class="n">f</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="na">bind</span><span class="o">().</span><span class="na">sync</span><span class="o">();</span>  <span class="c1">//开启监听
+</span><span class="c1"></span>            <span class="k">if</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="na">isSuccess</span><span class="o">()){</span>
+              <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">EchoServer</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span>
+                        <span class="s">&#34; started and listening for connections on &#34;</span> <span class="o">+</span> <span class="n">f</span><span class="o">.</span><span class="na">channel</span><span class="o">().</span><span class="na">localAddress</span><span class="o">());</span>
+            <span class="o">}</span>
+
+            <span class="n">f</span><span class="o">.</span><span class="na">channel</span><span class="o">().</span><span class="na">closeFuture</span><span class="o">().</span><span class="na">sync</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="n">group</span><span class="o">.</span><span class="na">shutdownGracefully</span><span class="o">().</span><span class="na">sync</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>    
+<span class="o">}</span>
+
+<span class="c1">// EchoServerHandler.java
+</span><span class="c1"></span><span class="kn">import</span> <span class="nn">io.netty.buffer.ByteBuf</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.buffer.Unpooled</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.ChannelFutureListener</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.ChannelHandler.Sharable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.ChannelHandlerContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.ChannelInboundHandlerAdapter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.util.CharsetUtil</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EchoServerHandler</span> <span class="kd">extends</span> <span class="n">ChannelInboundHandlerAdapter</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">channelRead</span><span class="o">(</span><span class="n">ChannelHandlerContext</span> <span class="n">ctx</span><span class="o">,</span> <span class="n">Object</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">ByteBuf</span> <span class="n">in</span> <span class="o">=</span> <span class="o">(</span><span class="n">ByteBuf</span><span class="o">)</span> <span class="n">msg</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">content</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">CharsetUtil</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Server received: &#34;</span> <span class="o">+</span> <span class="n">content</span><span class="o">);</span>
+
+        <span class="n">ByteBuf</span> <span class="n">out</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="na">alloc</span><span class="o">().</span><span class="na">buffer</span><span class="o">(</span><span class="n">1024</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">writeBytes</span><span class="o">((</span><span class="n">content</span> <span class="o">+</span> <span class="s">&#34; 666&#34;</span><span class="o">).</span><span class="na">getBytes</span><span class="o">());</span>
+        <span class="n">ctx</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">out</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">channelReadComplete</span><span class="o">(</span><span class="n">ChannelHandlerContext</span> <span class="n">ctx</span><span class="o">)</span>
+            <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>    
+        <span class="n">ctx</span><span class="o">.</span><span class="na">writeAndFlush</span><span class="o">(</span><span class="n">Unpooled</span><span class="o">.</span><span class="na">EMPTY_BUFFER</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">addListener</span><span class="o">(</span><span class="n">ChannelFutureListener</span><span class="o">.</span><span class="na">CLOSE</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">exceptionCaught</span><span class="o">(</span><span class="n">ChannelHandlerContext</span> <span class="n">ctx</span><span class="o">,</span>
+        <span class="n">Throwable</span> <span class="n">cause</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">cause</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="n">ctx</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="cm">/**
+</span><span class="cm"> * 
+</span><span class="cm"> * 
+</span><span class="cm"> * MOOC1808.EchoServer started and listening for connections on /0:0:0:0:0:0:0:0:8001
+</span><span class="cm"> * Server received: Netty rocks!
+</span><span class="cm"> * 
+</span><span class="cm"> * 
+</span><span class="cm"> */</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>EchoClient
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">// EchoClient.java
+</span><span class="c1"></span><span class="kn">import</span> <span class="nn">io.netty.bootstrap.Bootstrap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.ChannelFuture</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.ChannelInitializer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.EventLoopGroup</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.nio.NioEventLoopGroup</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.socket.SocketChannel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.socket.nio.NioSocketChannel</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.net.InetSocketAddress</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EchoClient</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+      <span class="n">String</span> <span class="n">host</span> <span class="o">=</span> <span class="s">&#34;localhost&#34;</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="n">8001</span><span class="o">;</span>
+
+        <span class="n">EventLoopGroup</span> <span class="n">group</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NioEventLoopGroup</span><span class="o">();</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">Bootstrap</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bootstrap</span><span class="o">();</span>
+            <span class="n">b</span><span class="o">.</span><span class="na">group</span><span class="o">(</span><span class="n">group</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">channel</span><span class="o">(</span><span class="n">NioSocketChannel</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">remoteAddress</span><span class="o">(</span><span class="k">new</span> <span class="n">InetSocketAddress</span><span class="o">(</span><span class="n">host</span><span class="o">,</span> <span class="n">port</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">handler</span><span class="o">(</span><span class="k">new</span> <span class="n">ChannelInitializer</span><span class="o">&lt;</span><span class="n">SocketChannel</span><span class="o">&gt;()</span> <span class="o">{</span>
+                    <span class="nd">@Override</span>
+                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initChannel</span><span class="o">(</span><span class="n">SocketChannel</span> <span class="n">ch</span><span class="o">)</span>
+                        <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                        <span class="n">ch</span><span class="o">.</span><span class="na">pipeline</span><span class="o">().</span><span class="na">addLast</span><span class="o">(</span><span class="k">new</span> <span class="n">EchoClientHandler</span><span class="o">());</span>
+                    <span class="o">}</span>
+                <span class="o">});</span>
+            <span class="n">ChannelFuture</span> <span class="n">f</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="na">connect</span><span class="o">().</span><span class="na">sync</span><span class="o">();</span>
+            <span class="n">f</span><span class="o">.</span><span class="na">channel</span><span class="o">().</span><span class="na">closeFuture</span><span class="o">().</span><span class="na">sync</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="n">group</span><span class="o">.</span><span class="na">shutdownGracefully</span><span class="o">().</span><span class="na">sync</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>   
+<span class="o">}</span>
+
+<span class="c1">// EchoClientHandler.java
+</span><span class="c1"></span><span class="kn">import</span> <span class="nn">io.netty.buffer.ByteBuf</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.buffer.Unpooled</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.ChannelHandler.Sharable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.ChannelHandlerContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.channel.SimpleChannelInboundHandler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.netty.util.CharsetUtil</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EchoClientHandler</span>
+    <span class="kd">extends</span> <span class="n">SimpleChannelInboundHandler</span><span class="o">&lt;</span><span class="n">ByteBuf</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">channelActive</span><span class="o">(</span><span class="n">ChannelHandlerContext</span> <span class="n">ctx</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">ctx</span><span class="o">.</span><span class="na">writeAndFlush</span><span class="o">(</span><span class="n">Unpooled</span><span class="o">.</span><span class="na">copiedBuffer</span><span class="o">(</span><span class="s">&#34;Netty rocks!&#34;</span><span class="o">,</span>
+                <span class="n">CharsetUtil</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">channelRead0</span><span class="o">(</span><span class="n">ChannelHandlerContext</span> <span class="n">ctx</span><span class="o">,</span> <span class="n">ByteBuf</span> <span class="n">in</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
+                <span class="s">&#34;Client received: &#34;</span> <span class="o">+</span> <span class="n">in</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">CharsetUtil</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">exceptionCaught</span><span class="o">(</span><span class="n">ChannelHandlerContext</span> <span class="n">ctx</span><span class="o">,</span>
+        <span class="n">Throwable</span> <span class="n">cause</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">cause</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="n">ctx</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="cm">/**
+</span><span class="cm"> * 
+</span><span class="cm"> * 
+</span><span class="cm"> * 
+</span><span class="cm"> * Client received: Netty rocks! 666
+</span><span class="cm"> * 
+</span><span class="cm"> * 
+</span><span class="cm"> * 
+</span><span class="cm"> */</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="72-书籍推荐">7.2 书籍推荐</h3>
+<ul>
+<li>《Netty 实战》，Norman Maurer 著，何品 译，人民邮电出版社，2017.</li>
+<li>《Netty权威指南》，李林锋，电子工业出版社，2015</li>
+</ul>
+<h2 id="8-java-mail-编程">8 Java Mail 编程</h2>
+<p><figure><a class="lightgallery" href="/java12/06.png" title="Java Mail" data-thumbnail="/java12/06.png" data-sub-html="<h2>Java Mail</h2><p>Java Mail</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="06.png"
+            data-srcset="/java12/06.png, 06.png 1.5x, /java12/06.png 2x"
+            data-sizes="auto"
+            alt="/java12/06.png" />
+    </a><figcaption class="image-caption">Java Mail</figcaption>
+    </figure></p>
+<h3 id="81-java-mail-服务器配置">8.1 Java Mail 服务器配置</h3>
+<ul>
+<li>邮件服务器支持
+<ul>
+<li>需要在邮件服务内设置，可以查看相关邮件帮助</li>
+<li>需要知道pop服务器和smtp服务器信息</li>
+</ul>
+</li>
+</ul>
+<h3 id="82-java-mail-工具包">8.2 Java Mail 工具包</h3>
+<ul>
+<li>javax.mail 包和javax.mail.internet 包
+<ul>
+<li><a href="https://javaee.github.io/javamail" target="_blank" rel="noopener noreffer">https://javaee.github.io/javamail</a></li>
+<li>mvn dependency</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>com.sun.mail<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>javax.mail<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>1.6.2<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="83-关键类">8.3 关键类</h3>
+<ul>
+<li>Session: 邮件会话 和HttpSession不同</li>
+<li>Store: 邮件存储空间</li>
+<li>Folder: 邮件文件夹</li>
+<li>Message: 电子邮件</li>
+<li>Address: 邮件地址</li>
+<li>Transport: 发送协议类</li>
+</ul>
+<h3 id="84-实例">8.4 实例</h3>
+<h4 id="接收邮件">接收邮件</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">javax.mail.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.internet.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.activation.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MailClientRecv</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="n">Session</span> <span class="n">session</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">Store</span> <span class="n">store</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">username</span> <span class="o">=</span> <span class="s">&#34;ieblyang@163.com&#34;</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="s">&#34;1234567899&#34;</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">popServer</span> <span class="o">=</span> <span class="s">&#34;pop.163.com&#34;</span><span class="o">;</span>
+  
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">init</span><span class="o">()</span><span class="kd">throws</span> <span class="n">Exception</span>
+  <span class="o">{</span>
+    <span class="c1">//设置属性
+</span><span class="c1"></span>    <span class="n">Properties</span>  <span class="n">props</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Properties</span><span class="o">();</span>
+    <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;mail.store.protocol&#34;</span><span class="o">,</span> <span class="s">&#34;pop3&#34;</span><span class="o">);</span>
+    <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;mail.imap.class&#34;</span><span class="o">,</span> <span class="s">&#34;com.sun.mail.imap.IMAPStore&#34;</span><span class="o">);</span>
+    <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;mail.pop3.class&#34;</span><span class="o">,</span> <span class="s">&#34;com.sun.mail.pop3.POP3Store&#34;</span><span class="o">);</span>    
+
+    <span class="c1">// 创建Session对象
+</span><span class="c1"></span>    <span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">props</span><span class="o">,</span><span class="kc">null</span><span class="o">);</span>
+    <span class="n">session</span><span class="o">.</span><span class="na">setDebug</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span> <span class="c1">//输出跟踪日志
+</span><span class="c1"></span>
+    <span class="c1">// 创建Store对象
+</span><span class="c1"></span>    <span class="n">store</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">getStore</span><span class="o">(</span><span class="s">&#34;pop3&#34;</span><span class="o">);</span>
+    
+    <span class="c1">//连接到收邮件服务器
+</span><span class="c1"></span>    <span class="n">store</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="n">popServer</span><span class="o">,</span><span class="n">username</span><span class="o">,</span><span class="n">password</span><span class="o">);</span>
+  <span class="o">}</span>  
+  
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">receiveMessage</span><span class="o">()</span><span class="kd">throws</span> <span class="n">Exception</span>
+  <span class="o">{</span>
+  <span class="n">String</span> <span class="n">folderName</span> <span class="o">=</span> <span class="s">&#34;inbox&#34;</span><span class="o">;</span>
+    <span class="n">Folder</span> <span class="n">folder</span><span class="o">=</span><span class="n">store</span><span class="o">.</span><span class="na">getFolder</span><span class="o">(</span><span class="n">folderName</span><span class="o">);</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">folder</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span>
+    <span class="o">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="n">Exception</span><span class="o">(</span><span class="n">folderName</span><span class="o">+</span><span class="s">&#34;邮件夹不存在&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="c1">//打开信箱
+</span><span class="c1"></span>    <span class="n">folder</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="n">Folder</span><span class="o">.</span><span class="na">READ_ONLY</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;您的收件箱有&#34;</span><span class="o">+</span><span class="n">folder</span><span class="o">.</span><span class="na">getMessageCount</span><span class="o">()+</span><span class="s">&#34;封邮件.&#34;</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;您的收件箱有&#34;</span><span class="o">+</span><span class="n">folder</span><span class="o">.</span><span class="na">getUnreadMessageCount</span><span class="o">()+</span><span class="s">&#34;封未读的邮件.&#34;</span><span class="o">);</span>
+
+    <span class="c1">//读邮件
+</span><span class="c1"></span>    <span class="n">Message</span><span class="o">[]</span> <span class="n">messages</span><span class="o">=</span><span class="n">folder</span><span class="o">.</span><span class="na">getMessages</span><span class="o">();</span>
+    <span class="c1">//for(int i=1;i&lt;=messages.length;i++)
+</span><span class="c1"></span>    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">1</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">3</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span>  
+    <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;------第&#34;</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">&#34;封邮件-------&#34;</span><span class="o">);</span>
+      <span class="c1">//打印邮件信息
+</span><span class="c1"></span>      <span class="n">Message</span> <span class="n">message</span> <span class="o">=</span> <span class="n">messages</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+      <span class="c1">//folder.getMessage(i).writeTo(System.out);
+</span><span class="c1"></span>      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">((</span><span class="n">message</span><span class="o">.</span><span class="na">getFrom</span><span class="o">())[</span><span class="n">0</span><span class="o">]);</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">message</span><span class="o">.</span><span class="na">getSubject</span><span class="o">());</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="n">folder</span><span class="o">.</span><span class="na">close</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>  <span class="c1">//关闭邮件夹
+</span><span class="c1"></span>  <span class="o">}</span>
+  
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">close</span><span class="o">()</span><span class="kd">throws</span> <span class="n">Exception</span>
+  <span class="o">{</span>
+  <span class="n">store</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+  <span class="o">}</span>
+  
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span><span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">MailClientRecv</span> <span class="n">client</span><span class="o">=</span><span class="k">new</span> <span class="n">MailClientRecv</span><span class="o">();</span>
+    <span class="c1">//初始化
+</span><span class="c1"></span>    <span class="n">client</span><span class="o">.</span><span class="na">init</span><span class="o">();</span>
+    <span class="c1">//接收邮件
+</span><span class="c1"></span>    <span class="n">client</span><span class="o">.</span><span class="na">receiveMessage</span><span class="o">();</span>
+    <span class="c1">//关闭连接
+</span><span class="c1"></span>    <span class="n">client</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="发送邮件">发送邮件</h4>
+<ul>
+<li>
+<p>文本邮件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">// messages/TextMessage.java
+</span><span class="c1"></span><span class="kn">package</span> <span class="nn">messages</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Properties</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.Message</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.Session</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.internet.InternetAddress</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.internet.MimeMessage</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextMessage</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">MimeMessage</span> <span class="nf">generate</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">from</span> <span class="o">=</span> <span class="s">&#34;ieblyang@qq.com &#34;</span><span class="o">;</span> <span class="c1">// 发件人地址
+</span><span class="c1"></span>    <span class="n">String</span> <span class="n">to</span> <span class="o">=</span> <span class="s">&#34;ieblyang@163.com&#34;</span><span class="o">;</span> <span class="c1">// 收件人地址
+</span><span class="c1"></span>
+    <span class="n">String</span> <span class="n">subject</span> <span class="o">=</span> <span class="s">&#34;test&#34;</span><span class="o">;</span>
+    <span class="n">String</span> <span class="n">body</span> <span class="o">=</span> <span class="s">&#34;您好,这是来自一封ieblyang的测试邮件&#34;</span><span class="o">;</span>
+
+    <span class="c1">// 创建Session实例对象
+</span><span class="c1"></span>    <span class="n">Session</span> <span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="o">.</span><span class="na">getDefaultInstance</span><span class="o">(</span><span class="k">new</span> <span class="n">Properties</span><span class="o">());</span>
+    <span class="c1">// 创建MimeMessage实例对象
+</span><span class="c1"></span>    <span class="n">MimeMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MimeMessage</span><span class="o">(</span><span class="n">session</span><span class="o">);</span>
+    <span class="c1">// 设置发件人
+</span><span class="c1"></span>    <span class="n">message</span><span class="o">.</span><span class="na">setFrom</span><span class="o">(</span><span class="k">new</span> <span class="n">InternetAddress</span><span class="o">(</span><span class="n">from</span><span class="o">));</span>
+    <span class="c1">// 设置收件人
+</span><span class="c1"></span>    <span class="n">message</span><span class="o">.</span><span class="na">setRecipients</span><span class="o">(</span><span class="n">Message</span><span class="o">.</span><span class="na">RecipientType</span><span class="o">.</span><span class="na">TO</span><span class="o">,</span> <span class="n">InternetAddress</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">to</span><span class="o">));</span>
+    <span class="c1">// 设置发送日期
+</span><span class="c1"></span>    <span class="n">message</span><span class="o">.</span><span class="na">setSentDate</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">());</span>
+    <span class="c1">// 设置邮件主题
+</span><span class="c1"></span>    <span class="n">message</span><span class="o">.</span><span class="na">setSubject</span><span class="o">(</span><span class="n">subject</span><span class="o">);</span>
+    <span class="c1">// 设置纯文本内容的邮件正文
+</span><span class="c1"></span>    <span class="n">message</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">body</span><span class="o">);</span>
+    <span class="c1">// 保存并生成最终的邮件内容
+</span><span class="c1"></span>    <span class="n">message</span><span class="o">.</span><span class="na">saveChanges</span><span class="o">();</span>
+
+    <span class="c1">// 把MimeMessage对象中的内容写入到文件中
+</span><span class="c1"></span>    <span class="c1">//msg.writeTo(new FileOutputStream(&#34;e:/test.eml&#34;));
+</span><span class="c1"></span>    <span class="k">return</span> <span class="n">message</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>网页邮件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">// messages/
+</span><span class="c1"></span><span class="kn">package</span> <span class="nn">messages</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Properties</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.Message</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.Session</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.internet.InternetAddress</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.internet.MimeMessage</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HtmlMessage</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">MimeMessage</span> <span class="nf">generate</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> 
+  <span class="o">{</span>
+    <span class="n">String</span> <span class="n">from</span> <span class="o">=</span> <span class="s">&#34;ieblyang@qq.com &#34;</span><span class="o">;</span> <span class="c1">// 发件人地址
+</span><span class="c1"></span>    <span class="n">String</span> <span class="n">to</span> <span class="o">=</span> <span class="s">&#34;ieblyang@163.com&#34;</span><span class="o">;</span> <span class="c1">// 收件人地址
+</span><span class="c1"></span>
+    <span class="n">String</span> <span class="n">subject</span> <span class="o">=</span> <span class="s">&#34;多附件邮件&#34;</span><span class="o">;</span>        <span class="c1">//邮件主题
+</span><span class="c1"></span>    <span class="n">String</span> <span class="n">body</span> <span class="o">=</span> <span class="s">&#34;&lt;a href=https://ieblyang.tech&gt;&#34;</span> <span class="o">+</span>
+            <span class="s">&#34;欢迎大家访问我的网站&lt;/a&gt;&lt;/br&gt;&#34;</span><span class="o">;</span>
+
+    <span class="c1">// 创建Session实例对象
+</span><span class="c1"></span>    <span class="n">Session</span> <span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="o">.</span><span class="na">getDefaultInstance</span><span class="o">(</span><span class="k">new</span> <span class="n">Properties</span><span class="o">());</span>
+    <span class="c1">// 创建MimeMessage实例对象
+</span><span class="c1"></span>    <span class="n">MimeMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MimeMessage</span><span class="o">(</span><span class="n">session</span><span class="o">);</span>
+    <span class="c1">// 设置发件人
+</span><span class="c1"></span>    <span class="n">message</span><span class="o">.</span><span class="na">setFrom</span><span class="o">(</span><span class="k">new</span> <span class="n">InternetAddress</span><span class="o">(</span><span class="n">from</span><span class="o">));</span>
+    <span class="c1">// 设置收件人
+</span><span class="c1"></span>    <span class="n">message</span><span class="o">.</span><span class="na">setRecipients</span><span class="o">(</span><span class="n">Message</span><span class="o">.</span><span class="na">RecipientType</span><span class="o">.</span><span class="na">TO</span><span class="o">,</span> <span class="n">InternetAddress</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">to</span><span class="o">));</span>
+    <span class="c1">// 设置发送日期
+</span><span class="c1"></span>    <span class="n">message</span><span class="o">.</span><span class="na">setSentDate</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">());</span>
+    <span class="c1">// 设置邮件主题
+</span><span class="c1"></span>    <span class="n">message</span><span class="o">.</span><span class="na">setSubject</span><span class="o">(</span><span class="n">subject</span><span class="o">);</span>
+    <span class="c1">// 设置HTML格式的邮件正文
+</span><span class="c1"></span>    <span class="n">message</span><span class="o">.</span><span class="na">setContent</span><span class="o">(</span><span class="n">body</span><span class="o">,</span> <span class="s">&#34;text/html;charset=gb2312&#34;</span><span class="o">);</span>
+    <span class="c1">// 保存并生成最终的邮件内容
+</span><span class="c1"></span>    <span class="n">message</span><span class="o">.</span><span class="na">saveChanges</span><span class="o">();</span>
+
+    <span class="c1">// 把MimeMessage对象中的内容写入到文件中
+</span><span class="c1"></span>    <span class="c1">//msg.writeTo(new FileOutputStream(&#34;e:/HtmlMessage.eml&#34;));
+</span><span class="c1"></span>    <span class="k">return</span> <span class="n">message</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>附件邮件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">// messages/
+</span><span class="c1"></span><span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Properties</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.activation.DataHandler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.activation.FileDataSource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.Message</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.Session</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.internet.InternetAddress</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.internet.MimeBodyPart</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.internet.MimeMessage</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.mail.internet.MimeMultipart</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AttachmentMessage</span> 
+<span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">MimeMessage</span> <span class="nf">generate</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span>
+  <span class="o">{</span>
+    <span class="n">String</span> <span class="n">from</span> <span class="o">=</span> <span class="s">&#34;ieblyang@qq.com &#34;</span><span class="o">;</span> <span class="c1">// 发件人地址
+</span><span class="c1"></span>    <span class="n">String</span> <span class="n">to</span> <span class="o">=</span> <span class="s">&#34;ieblyang@163.com&#34;</span><span class="o">;</span> <span class="c1">// 收件人地址
+</span><span class="c1"></span>
+    <span class="n">String</span> <span class="n">subject</span> <span class="o">=</span> <span class="s">&#34;多附件邮件&#34;</span><span class="o">;</span>        <span class="c1">//邮件主题
+</span><span class="c1"></span>    <span class="n">String</span> <span class="n">body</span> <span class="o">=</span> <span class="s">&#34;&lt;a href=https://ieblyang.tech&gt;&#34;</span> <span class="o">+</span>
+            <span class="s">&#34;欢迎大家访问我的网站&lt;/a&gt;&lt;/br&gt;&#34;</span><span class="o">;</span> 
+
+    <span class="c1">// 创建Session实例对象
+</span><span class="c1"></span>    <span class="n">Session</span> <span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="o">.</span><span class="na">getDefaultInstance</span><span class="o">(</span><span class="k">new</span> <span class="n">Properties</span><span class="o">());</span>
+    <span class="c1">// 创建MimeMessage实例对象
+</span><span class="c1"></span>    <span class="n">MimeMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MimeMessage</span><span class="o">(</span><span class="n">session</span><span class="o">);</span>            
+    <span class="n">message</span><span class="o">.</span><span class="na">setFrom</span><span class="o">(</span><span class="k">new</span> <span class="n">InternetAddress</span><span class="o">(</span><span class="n">from</span><span class="o">));</span>
+    <span class="n">message</span><span class="o">.</span><span class="na">setRecipients</span><span class="o">(</span><span class="n">Message</span><span class="o">.</span><span class="na">RecipientType</span><span class="o">.</span><span class="na">TO</span><span class="o">,</span>
+        <span class="n">InternetAddress</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">to</span><span class="o">));</span>
+    <span class="n">message</span><span class="o">.</span><span class="na">setSubject</span><span class="o">(</span><span class="n">subject</span><span class="o">);</span>
+
+    <span class="c1">//创建代表邮件正文和附件的各个MimeBodyPart对象
+</span><span class="c1"></span>    <span class="n">MimeBodyPart</span> <span class="n">contentPart</span> <span class="o">=</span> <span class="n">createContent</span><span class="o">(</span><span class="n">body</span><span class="o">);</span>
+    <span class="n">MimeBodyPart</span> <span class="n">attachPart1</span> <span class="o">=</span> <span class="n">createAttachment</span><span class="o">(</span><span class="s">&#34;c:/temp/ieblyang1.jpg&#34;</span><span class="o">);</span>
+    <span class="n">MimeBodyPart</span> <span class="n">attachPart2</span> <span class="o">=</span> <span class="n">createAttachment</span><span class="o">(</span><span class="s">&#34;c:/temp/ieblyang2.jpg&#34;</span><span class="o">);</span>
+
+    <span class="c1">//创建用于组合邮件正文和附件的MimeMultipart对象
+</span><span class="c1"></span>    <span class="n">MimeMultipart</span> <span class="n">allMultipart</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MimeMultipart</span><span class="o">(</span><span class="s">&#34;mixed&#34;</span><span class="o">);</span>
+    <span class="n">allMultipart</span><span class="o">.</span><span class="na">addBodyPart</span><span class="o">(</span><span class="n">contentPart</span><span class="o">);</span>
+    <span class="n">allMultipart</span><span class="o">.</span><span class="na">addBodyPart</span><span class="o">(</span><span class="n">attachPart1</span><span class="o">);</span>
+    <span class="n">allMultipart</span><span class="o">.</span><span class="na">addBodyPart</span><span class="o">(</span><span class="n">attachPart2</span><span class="o">);</span>
+
+    <span class="c1">//设置整个邮件内容为最终组合出的MimeMultipart对象
+</span><span class="c1"></span>    <span class="n">message</span><span class="o">.</span><span class="na">setContent</span><span class="o">(</span><span class="n">allMultipart</span><span class="o">);</span>
+    <span class="n">message</span><span class="o">.</span><span class="na">saveChanges</span><span class="o">();</span>
+
+    <span class="c1">//message.writeTo(new FileOutputStream(&#34;e:/ComplexMessage.eml&#34;));
+</span><span class="c1"></span>    <span class="k">return</span> <span class="n">message</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">MimeBodyPart</span> <span class="nf">createContent</span><span class="o">(</span><span class="n">String</span> <span class="n">body</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span>
+  <span class="o">{</span>
+    <span class="n">MimeBodyPart</span> <span class="n">htmlBodyPart</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MimeBodyPart</span><span class="o">();</span>          
+    <span class="n">htmlBodyPart</span><span class="o">.</span><span class="na">setContent</span><span class="o">(</span><span class="n">body</span><span class="o">,</span><span class="s">&#34;text/html;charset=gb2312&#34;</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">htmlBodyPart</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">MimeBodyPart</span> <span class="nf">createAttachment</span><span class="o">(</span><span class="n">String</span> <span class="n">filename</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span>
+  <span class="o">{</span>
+    <span class="c1">//创建保存附件的MimeBodyPart对象，并加入附件内容和相应信息
+</span><span class="c1"></span>    <span class="n">MimeBodyPart</span> <span class="n">attachPart</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MimeBodyPart</span><span class="o">();</span>
+    <span class="n">FileDataSource</span> <span class="n">fds</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileDataSource</span><span class="o">(</span><span class="n">filename</span><span class="o">);</span>
+    <span class="n">attachPart</span><span class="o">.</span><span class="na">setDataHandler</span><span class="o">(</span><span class="k">new</span> <span class="n">DataHandler</span><span class="o">(</span><span class="n">fds</span><span class="o">));</span>
+    <span class="n">attachPart</span><span class="o">.</span><span class="na">setFileName</span><span class="o">(</span><span class="n">fds</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+    <span class="k">return</span> <span class="n">attachPart</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>发送邮件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">import</span> <span class="nn">javax.mail.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">messages.*</span><span class="o">;</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MailClientSend</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="n">Session</span> <span class="n">session</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">Transport</span> <span class="n">transport</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">username</span> <span class="o">=</span> <span class="s">&#34;ieblyang@qq.com&#34;</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="s">&#34;1234567899&#34;</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">smtpServer</span> <span class="o">=</span> <span class="s">&#34;smtp.qq.com&#34;</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">init</span><span class="o">()</span><span class="kd">throws</span> <span class="n">Exception</span>
+  <span class="o">{</span>
+  <span class="c1">//设置属性
+</span><span class="c1"></span>    <span class="n">Properties</span>  <span class="n">props</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Properties</span><span class="o">();</span>
+    <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;mail.transport.protocol&#34;</span><span class="o">,</span> <span class="s">&#34;smtp&#34;</span><span class="o">);</span>
+    <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;mail.smtp.class&#34;</span><span class="o">,</span> <span class="s">&#34;com.sun.mail.smtp.SMTPTransport&#34;</span><span class="o">);</span>
+    <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;mail.smtp.host&#34;</span><span class="o">,</span> <span class="n">smtpServer</span><span class="o">);</span> <span class="c1">//设置发送邮件服务器
+</span><span class="c1"></span>    <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;mail.smtp.port&#34;</span><span class="o">,</span> <span class="s">&#34;25&#34;</span><span class="o">);</span>
+    <span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;mail.smtp.auth&#34;</span><span class="o">,</span> <span class="s">&#34;true&#34;</span><span class="o">);</span> <span class="c1">//SMTP服务器需要身份验证    
+</span><span class="c1"></span>
+    <span class="c1">// 创建Session对象
+</span><span class="c1"></span>    <span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">props</span><span class="o">,</span><span class="k">new</span> <span class="n">Authenticator</span><span class="o">(){</span>   <span class="c1">//验账账户 
+</span><span class="c1"></span>        <span class="kd">public</span> <span class="n">PasswordAuthentication</span> <span class="nf">getPasswordAuthentication</span><span class="o">()</span> <span class="o">{</span> 
+          <span class="k">return</span> <span class="k">new</span> <span class="n">PasswordAuthentication</span><span class="o">(</span><span class="n">username</span><span class="o">,</span> <span class="n">password</span><span class="o">);</span> 
+        <span class="o">}</span>            
+ <span class="o">});</span>
+    <span class="n">session</span><span class="o">.</span><span class="na">setDebug</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span> <span class="c1">//输出跟踪日志
+</span><span class="c1"></span>
+    <span class="c1">// 创建Transport对象
+</span><span class="c1"></span>    <span class="n">transport</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">getTransport</span><span class="o">();</span>           
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendMessage</span><span class="o">()</span><span class="kd">throws</span> <span class="n">Exception</span><span class="o">{</span>
+    <span class="c1">//创建一个邮件
+</span><span class="c1"></span>    <span class="c1">//Message msg = TextMessage.generate();
+</span><span class="c1"></span>    <span class="c1">//Message msg = HtmlMessage.generate();
+</span><span class="c1"></span>    <span class="n">Message</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">AttachmentMessage</span><span class="o">.</span><span class="na">generate</span><span class="o">();</span>
+    <span class="c1">//发送邮件    
+</span><span class="c1"></span>    <span class="n">transport</span><span class="o">.</span><span class="na">connect</span><span class="o">();</span>
+    <span class="n">transport</span><span class="o">.</span><span class="na">sendMessage</span><span class="o">(</span><span class="n">msg</span><span class="o">,</span> <span class="n">msg</span><span class="o">.</span><span class="na">getAllRecipients</span><span class="o">());</span>
+    <span class="c1">//打印结果
+</span><span class="c1"></span>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;邮件已经成功发送&#34;</span><span class="o">);</span>
+  <span class="o">}</span> 
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">close</span><span class="o">()</span><span class="kd">throws</span> <span class="n">Exception</span>
+  <span class="o">{</span>
+  <span class="n">transport</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span><span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+
+    <span class="n">MailClientSend</span> <span class="n">client</span><span class="o">=</span><span class="k">new</span> <span class="n">MailClientSend</span><span class="o">();</span>
+    <span class="c1">//初始化
+</span><span class="c1"></span>    <span class="n">client</span><span class="o">.</span><span class="na">init</span><span class="o">();</span>
+    <span class="c1">//发送邮件
+</span><span class="c1"></span>    <span class="n">client</span><span class="o">.</span><span class="na">sendMessage</span><span class="o">();</span>
+    <span class="c1">//关闭连接
+</span><span class="c1"></span>    <span class="n">client</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
